@@ -228,6 +228,40 @@ h1.chapter-title em {
   line-height: 1.82;
 }
 
+/* dark-block header variant — label / title / subtitle inside a dark block */
+.dark-block__label {
+  font-family: 'Crimson Pro', 'Georgia', serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #4a6a8a;
+  display: block;
+  font-style: normal;
+  margin-bottom: 18px;
+}
+
+.dark-block__title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: clamp(22px, 3.5vw, 32px);
+  font-weight: 600;
+  font-style: italic;
+  color: #e8e0d4;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.dark-block__sub {
+  font-family: 'Crimson Pro', 'Georgia', serif;
+  font-size: 14px;
+  font-style: italic;
+  color: #4a6070;
+  letter-spacing: 0.04em;
+  display: block;
+  margin-bottom: 0 !important;
+}
+
 /* dark-block paragraph spacing */
 .dark-block p {
   margin-bottom: 1.3em;
