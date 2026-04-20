@@ -1,84 +1,698 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A Life of Tender Mercies — a memoir by Dee Stevens. Stories of faith, family, and the quiet ways the Lord has been paying attention.">
-  <title>A Life of Tender Mercies · Dee Stevens</title>
-  <link rel="stylesheet" href="css/styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Life of Tender Mercies — Dee Stevens</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1612;
+    --ink-soft: #3d3530;
+    --ink-muted: #7a6e68;
+    --paper: #faf7f2;
+    --paper-warm: #f5f0e8;
+    --accent: #8b3a2a;
+    --accent-soft: #c4785f;
+    --accent-pale: #e8d4cc;
+    --rule: #d9d0c4;
+    --night: #111820;
+    --moon: #e8e0cc;
+    --moon-soft: #a09070;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* COVER */
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--night);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 38%;
+    background: radial-gradient(ellipse 80% 60% at 50% 120%, #1e2c1a 0%, transparent 70%);
+    z-index: 1;
+  }
+
+  .cover::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 15% 20%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 32% 8%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 48% 15%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 67% 5%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 78% 22%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 90% 12%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 8% 40%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 25% 35%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 55% 30%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 85% 38%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 42% 45%, rgba(255,255,255,0.2) 0%, transparent 100%),
+      radial-gradient(1px 1px at 72% 42%, rgba(255,255,255,0.3) 0%, transparent 100%);
+    z-index: 0;
+  }
+
+  .moon {
+    position: absolute;
+    top: 10%; right: 14%;
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 40%, #f0e8d0 0%, #d8c8a0 60%, #b8a870 100%);
+    box-shadow: 0 0 40px rgba(232,224,192,0.25), 0 0 80px rgba(232,224,192,0.1);
+    z-index: 1;
+  }
+
+  .cover-inner {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 40px;
+    text-align: center;
+  }
+
+  .cover-series {
+    font-family: 'Crimson Pro', serif;
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--moon-soft);
+    margin-bottom: 36px;
+    display: block;
+  }
+
+  .cover-rule-top {
+    width: 48px; height: 1px;
+    background: var(--accent-soft);
+    margin: 0 auto 40px;
+  }
+
+  .cover-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 7vw, 76px);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--moon);
+    letter-spacing: -0.01em;
+    margin-bottom: 20px;
+    max-width: 680px;
+  }
+
+  .cover-title em {
+    font-style: italic;
+    color: var(--accent-soft);
+    display: block;
+    font-size: 0.85em;
+  }
+
+  .cover-subtitle {
+    font-family: 'Crimson Pro', serif;
+    font-size: clamp(16px, 2.5vw, 21px);
+    font-style: italic;
+    color: #8898a8;
+    line-height: 1.6;
+    max-width: 480px;
+    margin: 0 auto 48px;
+  }
+
+  .cover-rule-mid {
+    width: 1px; height: 48px;
+    background: linear-gradient(to bottom, var(--accent-soft), transparent);
+    margin: 0 auto 40px;
+  }
+
+  .cover-author {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(18px, 3vw, 26px);
+    font-weight: 400;
+    color: var(--moon);
+    letter-spacing: 0.06em;
+    margin-bottom: 8px;
+  }
+
+  .cover-author-dates {
+    font-family: 'Crimson Pro', serif;
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    color: var(--moon-soft);
+    text-transform: uppercase;
+  }
+
+  .cover-scroll {
+    position: absolute;
+    bottom: 36px; left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .cover-scroll span {
+    font-family: 'Crimson Pro', serif;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--moon-soft);
+  }
+
+  .cover-scroll-line {
+    width: 1px; height: 32px;
+    background: linear-gradient(to bottom, var(--moon-soft), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.4; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.1); }
+  }
+
+  /* FOREWORD */
+  .foreword {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 100px 24px 80px;
+  }
+
+  .foreword-label {
+    font-family: 'Crimson Pro', serif;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 32px;
+    display: block;
+  }
+
+  .foreword h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--ink);
+    margin-bottom: 32px;
+  }
+
+  .foreword h2 em { font-style: italic; }
+
+  .foreword p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.85;
+    color: var(--ink-soft);
+    margin-bottom: 1.5em;
+  }
+
+  .foreword p:last-child { margin-bottom: 0; }
+
+  .foreword-rule {
+    width: 100%; height: 1px;
+    background: var(--rule);
+    margin: 64px 0 0;
+  }
+
+  /* TABLE OF CONTENTS */
+  .toc {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 80px 24px 120px;
+  }
+
+  .toc-header { margin-bottom: 56px; }
+
+  .toc-label {
+    font-family: 'Crimson Pro', serif;
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .toc-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4.5vw, 42px);
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+
+  .toc-header h2 em {
+    font-style: italic;
+    color: var(--ink-muted);
+  }
+
+  .toc-part {
+    margin: 52px 0 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--ink);
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+  }
+
+  .toc-part-number {
+    font-family: 'Crimson Pro', serif;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  .toc-part-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .toc-part-subtitle {
+    font-family: 'Crimson Pro', serif;
+    font-size: 14px;
+    color: var(--ink-muted);
+    margin-left: auto;
+    white-space: nowrap;
+    font-style: italic;
+  }
+
+  .toc-chapter {
+    display: grid;
+    grid-template-columns: 40px 1fr auto;
+    gap: 0 20px;
+    align-items: start;
+    padding: 20px 16px;
+    border-bottom: 1px solid var(--rule);
+    text-decoration: none;
+    transition: background 0.15s;
+    margin: 0 -16px;
+    border-radius: 2px;
+  }
+
+  .toc-chapter:hover { background: var(--paper-warm); }
+  .toc-chapter:hover .toc-chapter-number { color: var(--accent); }
+
+  .toc-chapter-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent-soft);
+    padding-top: 4px;
+    transition: color 0.15s;
+  }
+
+  .toc-chapter-body { flex: 1; }
+
+  .toc-chapter-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(16px, 2.5vw, 20px);
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+
+  .toc-chapter-title em { font-style: italic; }
+
+  .toc-chapter-desc {
+    font-family: 'Crimson Pro', serif;
+    font-size: 15px;
+    color: var(--ink-muted);
+    line-height: 1.55;
+    font-style: italic;
+  }
+
+  .toc-chapter-tag {
+    font-family: 'Crimson Pro', serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding: 4px 10px;
+    border: 1px solid var(--accent-pale);
+    border-radius: 20px;
+    white-space: nowrap;
+    align-self: start;
+    margin-top: 4px;
+    background: var(--paper);
+  }
+
+  .toc-chapter.coming {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  .toc-chapter.coming .toc-chapter-tag {
+    color: var(--ink-muted);
+    border-color: var(--rule);
+  }
+
+  .toc-more {
+    margin: 52px 0 0;
+    padding: 40px 0 0;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+  }
+
+  .toc-more p {
+    font-family: 'Crimson Pro', serif;
+    font-size: 16px;
+    font-style: italic;
+    color: var(--ink-muted);
+    line-height: 1.7;
+    max-width: 460px;
+    margin: 0 auto 24px;
+  }
+
+  .toc-more-count {
+    display: inline-block;
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    border: 1px solid var(--accent-pale);
+    padding: 8px 20px;
+    border-radius: 20px;
+    background: var(--paper-warm);
+  }
+
+  /* SUBSCRIBE */
+  .subscribe-bar {
+    background: var(--night);
+    padding: 64px 24px;
+    text-align: center;
+  }
+
+  .subscribe-bar-inner {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .subscribe-bar h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 3.5vw, 32px);
+    font-weight: 400;
+    color: var(--moon);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .subscribe-bar p {
+    font-family: 'Crimson Pro', serif;
+    font-size: 18px;
+    color: #7a8898;
+    margin-bottom: 32px;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .subscribe-form {
+    display: flex;
+    gap: 10px;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .subscribe-form input {
+    flex: 1;
+    padding: 14px 18px;
+    background: #1e2c3a;
+    border: 1px solid #2a3c4e;
+    border-radius: 2px;
+    color: var(--moon);
+    font-family: 'Source Serif 4', serif;
+    font-size: 15px;
+    outline: none;
+  }
+
+  .subscribe-form input::placeholder { color: #3a5068; }
+  .subscribe-form input:focus { border-color: var(--accent-soft); }
+
+  .subscribe-form button {
+    padding: 14px 22px;
+    background: var(--accent);
+    border: none;
+    border-radius: 2px;
+    color: white;
+    font-family: 'Crimson Pro', serif;
+    font-size: 14px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+
+  .subscribe-form button:hover { background: var(--accent-soft); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .cover-inner { animation: fadeUp 1s ease both; }
+  .foreword { animation: fadeUp 0.7s 0.1s ease both; }
+  .toc { animation: fadeUp 0.7s 0.2s ease both; }
+
+  @media (max-width: 600px) {
+    .cover-inner { padding: 60px 28px; }
+    .toc-chapter { grid-template-columns: 32px 1fr; }
+    .toc-chapter-tag { display: none; }
+    .toc-part { flex-wrap: wrap; }
+    .toc-part-subtitle { margin-left: 0; }
+    .subscribe-form { flex-direction: column; }
+  }
+</style>
 </head>
 <body>
 
-  <!-- ============================================================
-       SHARED HEADER
-       ============================================================ -->
-  <header class="site-header" role="banner">
-    <a href="index.html" class="site-header__title">
-      A Life of <span class="site-header__accent">Tender Mercies</span> · Dee Stevens
-    </a>
-  </header>
-
-  <!-- ============================================================
-       COVER
-       ============================================================ -->
-  <section class="cover" aria-label="Book cover">
-    <div class="cover__top-rule"></div>
-
-    <p class="cover__pretitle">A Memoir</p>
-
-    <div class="cover__title-block">
-      <span class="cover__title-line1">A Life of</span>
-      <span class="cover__title-line2">Tender Mercies</span>
-    </div>
-
-    <p class="cover__subtitle">
-      Stories of faith, family, miracles, and the quiet ways<br>
-      the Lord has been paying attention —<br>
-      told by a man who noticed.
+<!-- COVER -->
+<section class="cover">
+  <div class="moon"></div>
+  <div class="cover-inner">
+    <span class="cover-series">A memoir in chapters</span>
+    <div class="cover-rule-top"></div>
+    <h1 class="cover-title">
+      A Life of
+      <em>Tender Mercies</em>
+    </h1>
+    <p class="cover-subtitle">
+      Stories of faith, family, miracles, and the quiet ways the Lord has been paying attention — told by a man who noticed.
     </p>
+    <div class="cover-rule-mid"></div>
+    <div class="cover-author">Dee Stevens</div>
+    <div class="cover-author-dates">Born 1950 &nbsp;·&nbsp; Provo, Utah</div>
+  </div>
+  <a class="cover-scroll" href="#foreword">
+    <span>Begin</span>
+    <div class="cover-scroll-line"></div>
+  </a>
+</section>
 
-    <div class="cover__vertical-rule"></div>
+<!-- FOREWORD -->
+<section class="foreword" id="foreword">
+  <span class="foreword-label">A note before we begin</span>
+  <h2>Who this is for, <em>and why it exists</em></h2>
+  <p>My name is Dee Stevens. I was born in 1950 at Utah Valley Hospital in Provo, raised in Utah County, and have lived in more places than I can count. I have been a missionary, a grocery store manager, a middle school teacher, a father of eight sons, a caretaker, and a widower. I have had both my kidneys removed and survived on a borrowed one for twenty-five years. I have buried children and parents and a wife I loved for forty-two years.</p>
+  <p>I am writing this down because I want my grandchildren and great-grandchildren to know who I was — not just what I did. I want them to know what I believed, what broke me, and what put me back together every time.</p>
+  <p>The title comes from a phrase I have returned to throughout my life. A tender mercy is what I call it when the Lord steps into an ordinary moment in a way that is unmistakably personal — not a grand public miracle, but something quiet and specific and meant for you. I have experienced more of these than I deserve, and I have tried to write down as many as I can remember, before the remembering gets any harder.</p>
+  <p>If you are one of my family, this is yours. If you are a stranger who found this somewhere — welcome. These things really happened. I was there for all of them.</p>
+  <div class="foreword-rule"></div>
+</section>
 
-    <p class="cover__author">Dee Stevens</p>
-    <p class="cover__birth">Born 1950 · Provo, Utah</p>
+<!-- TABLE OF CONTENTS -->
+<section class="toc" id="contents">
+  <div class="toc-header">
+    <span class="toc-label">Contents</span>
+    <h2>The first eleven chapters <em>&mdash; now available</em></h2>
+  </div>
 
-    <a href="#begin" class="cover__scroll" aria-label="Scroll down">
-      <span class="cover__scroll-text">Begin</span>
-      <span class="cover__scroll-arrow"></span>
-    </a>
-  </section>
+  <div class="toc-part">
+    <span class="toc-part-number">Part One</span>
+    <span class="toc-part-title">The Making of a Young Man</span>
+    <span class="toc-part-subtitle">New York &middot; 1969&ndash;1971</span>
+  </div>
 
-  <!-- ============================================================
-       FOREWORD
-       ============================================================ -->
-  <section class="foreword" id="begin">
-    <div class="foreword__inner">
-
-      <span class="foreword__label">A note before we begin</span>
-      <h2 class="foreword__title">Who this is for,<br>and why it exists</h2>
-
-      <p>My name is Dee Stevens. I was born in 1950, raised in Utah County, and have lived in more places than I can count. I have been a missionary, a grocery store manager, a middle school teacher, a father of eight sons, a caretaker, and a widower. I have had both my kidneys removed and survived on a borrowed one for twenty-five years. I have buried children and parents and a wife I loved for forty-two years.</p>
-
-      <p>I am writing this down because I want my grandchildren and great-grandchildren to know who I was — not just what I did. I want them to know what I believed, what broke me, and what put me back together every time.</p>
-
-      <p>The title comes from a phrase I have returned to throughout my life. A tender mercy is what I call it when the Lord steps into an ordinary moment in a way that is unmistakably personal — not a grand public miracle, but something quiet and specific and meant for you. I have experienced more of these than I deserve, and I have tried to write down as many as I can remember, before the remembering gets any harder.</p>
-
-      <p>If you are one of my family, this is yours. If you are a stranger who found this somewhere — welcome. These things really happened. I was there for all of them.</p>
-
-      <div class="foreword__cta">
-        <a href="contents.html" class="btn-primary">Read the Chapters &rarr;</a>
-      </div>
-
+  <a class="toc-chapter" href="chapter-1.html">
+    <div class="toc-chapter-number">1</div>
+    <div class="toc-chapter-body">
+      <div class="toc-chapter-title">The Summer That <em>Changed Everything</em></div>
+      <div class="toc-chapter-desc">Eighteen years old. A seventy-five-foot light tower. A falling block — and the summer that started it all.</div>
     </div>
-  </section>
+    <div class="toc-chapter-tag">Available</div>
+  </a>
 
-  <!-- ============================================================
-       SITE FOOTER
-       ============================================================ -->
-  <footer class="site-footer" role="contentinfo">
-    <p><em>A Life of Tender Mercies</em> &nbsp;&middot;&nbsp; Dee Stevens &nbsp;&middot;&nbsp; &copy; 2024</p>
-  </footer>
+  <a class="toc-chapter" href="chapter-2.html">
+    <div class="toc-chapter-number">2</div>
+    <div class="toc-chapter-body">
+      <div class="toc-chapter-title">The Night <em>the Rain Stopped</em></div>
+      <div class="toc-chapter-desc">Thirty thousand people heading to their cars. An apostle commands the rain to cease — and it does. Instantly.</div>
+    </div>
+    <div class="toc-chapter-tag">Available</div>
+  </a>
 
-  <script src="js/nav.js"></script>
+  <a class="toc-chapter" href="chapter-3.html">
+    <div class="toc-chapter-number">3</div>
+    <div class="toc-chapter-body">
+      <div class="toc-chapter-title">The Call <em>I Prayed For</em></div>
+      <div class="toc-chapter-desc">Night after night asking for one specific mission call out of sixty-nine possibilities. The day the letter arrived, his legs gave out.</div>
+    </div>
+    <div class="toc-chapter-tag">Available</div>
+  </a>
+
+  <a class="toc-chapter" href="chapter-4.html">
+    <div class="toc-chapter-number">4</div>
+    <div class="toc-chapter-body">
+      <div class="toc-chapter-title">Learning to Love Someone <em>You Don't Like</em></div>
+      <div class="toc-chapter-desc">A difficult companion, resentment that was eating him alive, and a secret plan involving shoe polish and an iron.</div>
+    </div>
+    <div class="toc-chapter-tag">Available</div>
+  </a>
+
+  <a class="toc-chapter" href="chapter-5.html">
+    <div class="toc-chapter-number">5</div>
+    <div class="toc-chapter-body">
+      <div class="toc-chapter-title">The Gift of a <em>Photographic Memory</em></div>
+      <div class="toc-chapter-desc">He prayed for the ability to memorize. Almost overnight his mind became a trap. When he came home, the gift quietly disappeared.</div>
+    </div>
+    <div class="toc-chapter-tag">Available</div>
+  </a>
+
+  <a class="toc-chapter" href="chapter-6.html">
+    <div class="toc-chapter-number">6</div>
+    <div class="toc-chapter-body">
+      <div class="toc-chapter-title"><em>"It's True!</em> Why Didn't You Tell Me Before?"</div>
+      <div class="toc-chapter-desc">His first conversion experience — the moment Sister Raina's eyes lit up and everything he had believed became something he had witnessed.</div>
+    </div>
+    <div class="toc-chapter-tag">Available</div>
+  </a>
+
+  <a class="toc-chapter" href="chapter-7.html">
+    <div class="toc-chapter-number">7</div>
+    <div class="toc-chapter-body">
+      <div class="toc-chapter-title">The Hippies, the Priest, <em>and the Truck Driver</em></div>
+      <div class="toc-chapter-desc">Three unlikely people — a psychedelic van, a Catholic priest, and a man who found the Book of Mormon in an Ohio laundromat at 2am — each advance the Lord's work in their own way.</div>
+    </div>
+    <div class="toc-chapter-tag">Available</div>
+  </a>
+
+  <a class="toc-chapter" href="chapter-8.html">
+    <div class="toc-chapter-number">8</div>
+    <div class="toc-chapter-body">
+      <div class="toc-chapter-title">The Little Old Lady <em>at the End of the Row</em></div>
+      <div class="toc-chapter-desc">The coldest morning of a brutal New York winter. Two missionaries who almost turn back. A woman in a rocking chair who has been waiting.</div>
+    </div>
+    <div class="toc-chapter-tag">Available</div>
+  </a>
+
+  <a class="toc-chapter" href="chapter-9.html">
+    <div class="toc-chapter-number">9</div>
+    <div class="toc-chapter-body">
+      <div class="toc-chapter-title">The Family That <em>Almost Wasn't</em></div>
+      <div class="toc-chapter-desc">A father who ran to the sidewalk to defend the Book of Mormon. A family the whole ward came to watch be baptized. And the answer nobody saw coming.</div>
+    </div>
+    <div class="toc-chapter-tag">Available</div>
+  </a>
+
+  <a class="toc-chapter" href="chapter-10.html">
+    <div class="toc-chapter-number">10</div>
+    <div class="toc-chapter-body">
+      <div class="toc-chapter-title">The Boy Who Watched the Pageant <em>Three Times in One Night</em></div>
+      <div class="toc-chapter-desc">A man who resisted for a year. One Monday night on a hillside in Palmyra. He drove home at eleven, got back in the car, and went to get his parents.</div>
+    </div>
+    <div class="toc-chapter-tag">Available</div>
+  </a>
+
+  <a class="toc-chapter" href="chapter-11.html">
+    <div class="toc-chapter-number">11</div>
+    <div class="toc-chapter-body">
+      <div class="toc-chapter-title">Running <em>the Whole Mission</em></div>
+      <div class="toc-chapter-desc">Dead last in the mission for a year. One month, one new plan, one near-miss on the highway — and a meeting with the president that went nothing like expected.</div>
+    </div>
+    <div class="toc-chapter-tag">Available</div>
+  </a>
+
+  <!-- Part Two preview -->
+  <div class="toc-part" style="margin-top: 60px;">
+    <span class="toc-part-number">Part Two</span>
+    <span class="toc-part-title">Love, Loss, and Starting Over</span>
+    <span class="toc-part-subtitle">Utah, Idaho, Washington &middot; 1972&ndash;1980</span>
+  </div>
+
+  <div class="toc-chapter coming">
+    <div class="toc-chapter-number">12</div>
+    <div class="toc-chapter-body">
+      <div class="toc-chapter-title">A Father Dies, <em>A Marriage Begins</em></div>
+      <div class="toc-chapter-desc">Coming home from his mission, losing his father to a sudden accident, and starting a life he wasn't quite ready for.</div>
+    </div>
+    <div class="toc-chapter-tag">Coming soon</div>
+  </div>
+
+  <div class="toc-chapter coming">
+    <div class="toc-chapter-number">13</div>
+    <div class="toc-chapter-body">
+      <div class="toc-chapter-title"><em>Keri Lyn</em></div>
+      <div class="toc-chapter-desc">The arrival of his first daughter — and the tender mercies that followed her through her short, miraculous life.</div>
+    </div>
+    <div class="toc-chapter-tag">Coming soon</div>
+  </div>
+
+  <div class="toc-chapter coming">
+    <div class="toc-chapter-number">14</div>
+    <div class="toc-chapter-body">
+      <div class="toc-chapter-title">The Girl Who Flew <em>Out the Window</em></div>
+      <div class="toc-chapter-desc">A mountain highway, a trailer with no brakes, and something that happened at sixty miles an hour that Dee still cannot explain.</div>
+    </div>
+    <div class="toc-chapter-tag">Coming soon</div>
+  </div>
+
+  <div class="toc-more">
+    <p>This memoir spans over fifty years and thirty-six chapters — from a summer at Hill Cumorah in 1969 to learning to live alone in Orem, Utah, in 2023. New chapters are added regularly.</p>
+    <span class="toc-more-count">36 chapters total &nbsp;·&nbsp; 11 available now</span>
+  </div>
+
+</section>
+
+<!-- SUBSCRIBE -->
+<div class="subscribe-bar">
+  <div class="subscribe-bar-inner">
+    <h3>Follow Dee's story as it unfolds</h3>
+    <p>New chapters delivered to your inbox, free. No spam — just stories.</p>
+    <div class="subscribe-form">
+      <input type="email" placeholder="your@email.com">
+      <button>Subscribe</button>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
