@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Running the Whole Mission — A Life of Tender Mercies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1612;
+    --ink-soft: #3d3530;
+    --ink-muted: #7a6e68;
+    --paper: #faf7f2;
+    --paper-warm: #f5f0e8;
+    --accent: #8b3a2a;
+    --accent-soft: #c4785f;
+    --rule: #d9d0c4;
+    --road: #101418;
+    --road-pale: #607080;
+    --road-bright: #b0c0d0;
+    --office: #181410;
+    --office-pale: #907050;
+    --office-bright: #d4b880;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 300;
+    font-size: 19px;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .masthead {
+    border-bottom: 1px solid var(--rule);
+    padding: 20px 0 18px;
+    text-align: center;
+    background: var(--paper);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .masthead-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+
+  .masthead-title span { color: var(--accent); }
+
+  .hero {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 72px 24px 0;
+  }
+
+  .series-label {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    margin-bottom: 28px;
+  }
+
+  h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ink-soft);
+  }
+
+  .byline {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 48px;
+  }
+
+  .byline-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-soft), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .byline-text {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 15px;
+    color: var(--ink-muted);
+    line-height: 1.4;
+  }
+
+  .byline-text strong {
+    color: var(--ink-soft);
+    font-weight: 400;
+    display: block;
+    font-size: 16px;
+  }
+
+  .ornamental-rule {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0 0 52px;
+  }
+
+  .ornamental-rule::before,
+  .ornamental-rule::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  .ornamental-rule-glyph {
+    color: var(--accent-soft);
+    font-size: 18px;
+  }
+
+  .article {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  .drop-cap::first-letter {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 5.2em;
+    font-weight: 600;
+    float: left;
+    line-height: 0.72;
+    margin-right: 10px;
+    margin-top: 10px;
+    color: var(--accent);
+  }
+
+  p {
+    margin-bottom: 1.6em;
+    color: var(--ink-soft);
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  .scene-break {
+    text-align: center;
+    margin: 44px 0;
+    color: var(--accent-soft);
+    font-size: 20px;
+    letter-spacing: 0.4em;
+  }
+
+  .pull-quote {
+    border-left: 3px solid var(--accent);
+    margin: 44px 0;
+    padding: 4px 0 4px 28px;
+  }
+
+  .pull-quote p {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 22px;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .inset-block {
+    background: var(--paper-warm);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--accent-soft);
+    padding: 24px 28px;
+    margin: 44px 0;
+    border-radius: 0 2px 2px 0;
+  }
+
+  .inset-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+    font-weight: 400;
+    display: block;
+  }
+
+  .inset-block p {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 17px;
+    font-style: italic;
+    color: var(--ink-soft);
+    line-height: 1.75;
+    margin: 0;
+  }
+
+  /* Stats grid — zone rankings */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin: 44px 0;
+  }
+
+  .stats-cell {
+    background: var(--paper-warm);
+    padding: 20px 22px;
+  }
+
+  .stats-label {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .stats-value {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(24px, 4vw, 38px);
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .stats-desc {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 14px;
+    color: var(--ink-muted);
+    line-height: 1.5;
+  }
+
+  /* The midnight highway moment */
+  .highway-block {
+    background: var(--road);
+    margin: 52px -24px;
+    padding: 56px 48px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .highway-block::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(96,112,128,0.3), transparent);
+    transform: translateY(-50%);
+  }
+
+  .highway-block-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .highway-label {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--road-pale);
+    margin-bottom: 24px;
+    display: block;
+  }
+
+  .highway-block .highway-moment {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(18px, 3vw, 26px);
+    font-style: italic;
+    color: var(--road-bright);
+    line-height: 1.55;
+    margin: 0 0 16px;
+  }
+
+  .highway-block .highway-follow {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 15px;
+    color: var(--road-pale);
+    font-style: normal;
+    letter-spacing: 0.06em;
+  }
+
+  /* The president's office moment */
+  .office-block {
+    background: var(--office);
+    margin: 52px -24px;
+    padding: 56px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .office-block::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(212,184,128,0.06) 0%, transparent 60%);
+  }
+
+  .office-block-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .office-label {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--office-pale);
+    margin-bottom: 24px;
+    display: block;
+  }
+
+  .office-block blockquote {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(17px, 2.8vw, 22px);
+    font-style: italic;
+    color: var(--office-bright);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  .office-attribution {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 13px;
+    color: var(--office-pale);
+    margin-top: 20px;
+    font-style: normal;
+    letter-spacing: 0.08em;
+  }
+
+  .chapter-note {
+    background: var(--paper-warm);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 24px 28px;
+    margin: 52px 0 0;
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 16px;
+    color: var(--ink-muted);
+    line-height: 1.7;
+  }
+
+  .chapter-note strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  .post-footer {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .footer-series {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 20px;
+  }
+
+  .chapter-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .nav-item {
+    flex: 1;
+    padding: 18px 20px;
+    background: var(--paper-warm);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    text-decoration: none;
+    transition: border-color 0.2s;
+  }
+
+  .nav-item:hover { border-color: var(--accent-soft); }
+
+  .nav-label {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+
+  .nav-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.35;
+  }
+
+  .nav-item.next { text-align: right; }
+
+  .subscribe-bar {
+    background: var(--ink);
+    padding: 52px 24px;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .subscribe-bar h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--paper);
+    margin-bottom: 10px;
+  }
+
+  .subscribe-bar p {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 17px;
+    color: #9a9088;
+    margin-bottom: 24px;
+  }
+
+  .subscribe-form {
+    display: flex;
+    gap: 10px;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .subscribe-form input {
+    flex: 1;
+    padding: 12px 16px;
+    background: #2a2420;
+    border: 1px solid #3d3530;
+    border-radius: 2px;
+    color: var(--paper);
+    font-family: 'Source Serif 4', serif;
+    font-size: 15px;
+    outline: none;
+  }
+
+  .subscribe-form input::placeholder { color: #5a504a; }
+  .subscribe-form input:focus { border-color: var(--accent-soft); }
+
+  .subscribe-form button {
+    padding: 12px 20px;
+    background: var(--accent);
+    border: none;
+    border-radius: 2px;
+    color: white;
+    font-family: 'Crimson Pro', serif;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+
+  .subscribe-form button:hover { background: var(--accent-soft); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero { animation: fadeUp 0.7s ease both; }
+  .article { animation: fadeUp 0.7s 0.15s ease both; }
+
+  @media (max-width: 600px) {
+    body { font-size: 17px; }
+    .stats-grid { grid-template-columns: 1fr; }
+    .highway-block { margin: 44px -24px; padding: 44px 28px; }
+    .office-block { margin: 44px -24px; padding: 44px 28px; }
+    .chapter-nav { flex-direction: column; }
+    .nav-item.next { text-align: left; }
+    .subscribe-form { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-title">A Life of <span>Tender Mercies</span> &nbsp;·&nbsp; Dee Stevens</div>
+</header>
+
+<div class="hero">
+  <span class="series-label">Part One: The Making of a Young Man &nbsp;·&nbsp; Chapter Eleven</span>
+  <h1>Running <em>the Whole Mission</em></h1>
+  <div class="byline">
+    <div class="byline-avatar">D</div>
+    <div class="byline-text">
+      <strong>Dee Stevens</strong>
+      Buffalo &amp; Rochester, New York &nbsp;·&nbsp; 1971
+    </div>
+  </div>
+  <div class="ornamental-rule"><span class="ornamental-rule-glyph">❧</span></div>
+</div>
+
+<article class="article">
+
+  <p class="drop-cap">By the time I arrived in Buffalo as a zone leader, I had been on my mission for over a year. I had tracted in the snow, taught in living rooms, watched people receive witnesses from the Holy Ghost, and watched others walk away from the door of something good. I had served under strong companions and learned from all of them. I thought I had a reasonable sense of what missionary work looked like when it was going well.</p>
+
+  <p>The Buffalo zone showed me what it looked like when it was not going well at all.</p>
+
+  <p>My companion was Elder Larry Nilson. We inherited a zone that had been sitting at the bottom of the mission in baptisms for over a year — seventh out of seven zones, dead last, and had been there long enough that people had stopped expecting anything different. The elders were going through the motions. The district leaders were managing rather than leading. The energy was gone.</p>
+
+  <div class="stats-grid">
+    <div class="stats-cell">
+      <span class="stats-label">Our zone's rank</span>
+      <span class="stats-value">7th</span>
+      <span class="stats-desc">Dead last in the mission. Had been there for over a year.</span>
+    </div>
+    <div class="stats-cell">
+      <span class="stats-label">Zones in the mission</span>
+      <span class="stats-value">7</span>
+      <span class="stats-desc">130 missionaries total. Rochester zone consistently led.</span>
+    </div>
+    <div class="stats-cell">
+      <span class="stats-label">Districts we managed</span>
+      <span class="stats-value">4</span>
+      <span class="stats-desc">Spread across the Buffalo area, each with their own district leader.</span>
+    </div>
+    <div class="stats-cell">
+      <span class="stats-label">Time we had</span>
+      <span class="stats-value">1 month</span>
+      <span class="stats-desc">To try something new and see if it made any difference at all.</span>
+    </div>
+  </div>
+
+  <p>Elder Nilson and I looked at what we had and tried to understand why it was so flat. The elders weren't lazy. The district leaders weren't incompetent. Something else was wrong — something in the structure, the energy, the way the young missionaries were relating to the work and to each other.</p>
+
+  <p>We decided to try something that had not been tried before in our mission.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <div class="inset-block">
+    <span class="inset-label">The Nilson-Stevens Plan</span>
+    <p>We would spend a week in each of the four districts — working alongside the elders personally, giving guidance to the district leaders, and then on Saturday we would gather at a church for a district workshop. We drilled the discussions. We had scripture contests. We trained hard in the morning, ate lunch together provided by ward members, and then spent the afternoon playing basketball or football. The brains were exercised. The Spirit was exercised. Their bodies got some well-deserved exercise. Then we moved to the next district and did it again.</p>
+  </div>
+
+  <p>The mission president had banned physical sports after too many elders had been injured playing them. We knew this. We proceeded anyway, reasoning — or hoping — that what we were observing in the zone was exactly the kind of backfire that came from keeping young men from playing hard. They needed an outlet. They needed to laugh together. They needed to feel like people, not just workers.</p>
+
+  <p>After a month we had gone through all four districts. The reports coming in had a different energy. The missionaries were challenging their investigators. People were accepting baptism. The numbers were moving.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>Then the president called.</p>
+
+  <p>He asked me, directly and without preamble, if I was morally clean. I told him I was. He said he wanted Elder Nilson and me in his office the following morning.</p>
+
+  <p>We spent the rest of that day trying to figure out what we had done wrong. We had broken the sports rule. We had neglected our own area to work in the districts. We had done things outside the prescribed structure. We drove toward Rochester the next morning mostly in silence, preparing ourselves for whatever was coming.</p>
+
+  <div class="highway-block">
+    <div class="highway-block-inner">
+      <span class="highway-label">The New York Thruway · Somewhere between Buffalo and Rochester</span>
+      <div class="highway-moment">"I became aware that I had fallen asleep at the wheel and had begun to drift."</div>
+      <div class="highway-follow">The shock woke me right up. I realized the Lord wanted to keep Elder Nilson alive — and was not going to let us crash before we found out what we were driving toward.</div>
+    </div>
+  </div>
+
+  <p>We arrived at the mission office and sat across from President Stephenson. The three assistants were also in the room. I expected a rebuke. I had prepared myself for one.</p>
+
+  <div class="office-block">
+    <div class="office-block-inner">
+      <span class="office-label">Mission President Stephenson's office · Rochester, New York</span>
+      <blockquote>"I want to know how in a month's time you brought the Buffalo zone — which has been the basement of the mission for the last year — up to give Rochester some very serious competition."</blockquote>
+      <div class="office-attribution">— President Stephenson</div>
+    </div>
+  </div>
+
+  <p>We carefully explained the workshop plan. We explained that it seemed to fuse new life into the young elders, and that honestly, we were as surprised as he was at the quick results. We expressed our opinion — respectfully, carefully — that keeping young men from playing hard would backfire over time. That they needed an outlet alongside the serious work of their calling. That the two things were not in conflict.</p>
+
+  <p>He listened. He turned to two of his assistants and told them to get the details of our workshops in writing and distribute them to the other zone leaders. The Nilson-Stevens plan was to become the new Cumorah Mission plan.</p>
+
+  <div class="pull-quote">
+    <p>"The third assistant was going home. I was transferred into the mission office to take his place. We had gone from the bottom of the mission to running it — in one month, with a plan we had made up as we went."</p>
+  </div>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>I want to say something about what I learned in Buffalo, because I think it applies far beyond missionary work.</p>
+
+  <p>The zone was not failing because the elders were bad. It was failing because nobody had given them a reason to believe it could be different. Nobody had sat with them, worked beside them, eaten lunch with them, played basketball with them on a Saturday afternoon and then asked them to give everything they had on Monday morning. Leadership at a distance produces results at a distance. Leadership in the room produces something else entirely.</p>
+
+  <p>I have tried to remember that in every leadership role I have held since. As a Young Men's president. As a store director. As a teacher. As a father. The people under your care do not need more management. They need someone willing to show up in their district, work alongside them, eat lunch with them, and let them beat you at basketball occasionally.</p>
+
+  <p>Then ask everything of them. They will give it.</p>
+
+  <div class="chapter-note">
+    <strong>A Note for the Grandkids</strong>
+    Grandpa inherited the worst-performing zone in his entire mission and in one month turned it into the second best. The plan he used — train hard, eat together, play hard, then get back to work — became the official plan for the whole mission. The president called him into the office expecting to hand out a rebuke and ended up promoting him instead. Grandpa almost fell asleep driving there. The Lord kept him on the road long enough to find out what was waiting at the other end.
+  </div>
+
+</article>
+
+<div class="post-footer">
+  <div class="footer-series">A Life of Tender Mercies &nbsp;·&nbsp; Part One</div>
+  <div class="chapter-nav">
+    <a class="nav-item prev" href="chapter-10.html">
+      <div class="nav-label">← Previous</div>
+      <div class="nav-title">The Boy Who Watched the Pageant Three Times</div>
+    </a>
+    <div class="nav-item next">
+      <div class="nav-label">Next →</div>
+      <div class="nav-title">Chapter 12 &mdash; Coming Soon</div>
+    </div>
+  </div>
+</div>
+
+<div class="subscribe-bar">
+  <h3>Follow along with Dee's story</h3>
+  <p>New chapters delivered to your inbox, free.</p>
+  <div class="subscribe-form">
+    <input type="email" placeholder="your@email.com">
+    <button>Subscribe</button>
+  </div>
+</div>
+
+</body>
+</html>
