@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Father Dies, A Marriage Begins — A Life of Tender Mercies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1612;
+    --ink-soft: #3d3530;
+    --ink-muted: #7a6e68;
+    --paper: #faf7f2;
+    --paper-warm: #f5f0e8;
+    --accent: #8b3a2a;
+    --accent-soft: #c4785f;
+    --rule: #d9d0c4;
+    --dark: #181410;
+    --dark-pale: #907050;
+    --dark-bright: #d4c8a8;
+    --grief: #1c1818;
+    --grief-pale: #806860;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 300;
+    font-size: 19px;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .masthead {
+    border-bottom: 1px solid var(--rule);
+    padding: 20px 0 18px;
+    text-align: center;
+    background: var(--paper);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .masthead-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+
+  .masthead-title span { color: var(--accent); }
+
+  .hero {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 72px 24px 0;
+  }
+
+  .series-label {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    margin-bottom: 28px;
+  }
+
+  h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ink-soft);
+  }
+
+  .byline {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 48px;
+  }
+
+  .byline-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-soft), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .byline-text {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 15px;
+    color: var(--ink-muted);
+    line-height: 1.4;
+  }
+
+  .byline-text strong {
+    color: var(--ink-soft);
+    font-weight: 400;
+    display: block;
+    font-size: 16px;
+  }
+
+  .ornamental-rule {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0 0 52px;
+  }
+
+  .ornamental-rule::before,
+  .ornamental-rule::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  .ornamental-rule-glyph {
+    color: var(--accent-soft);
+    font-size: 18px;
+  }
+
+  .article {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  .drop-cap::first-letter {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 5.2em;
+    font-weight: 600;
+    float: left;
+    line-height: 0.72;
+    margin-right: 10px;
+    margin-top: 10px;
+    color: var(--accent);
+  }
+
+  p {
+    margin-bottom: 1.6em;
+    color: var(--ink-soft);
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  .scene-break {
+    text-align: center;
+    margin: 44px 0;
+    color: var(--accent-soft);
+    font-size: 20px;
+    letter-spacing: 0.4em;
+  }
+
+  .pull-quote {
+    border-left: 3px solid var(--accent);
+    margin: 44px 0;
+    padding: 4px 0 4px 28px;
+  }
+
+  .pull-quote p {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 22px;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .inset-block {
+    background: var(--paper-warm);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--accent-soft);
+    padding: 24px 28px;
+    margin: 44px 0;
+    border-radius: 0 2px 2px 0;
+  }
+
+  .inset-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+    font-weight: 400;
+    display: block;
+  }
+
+  .inset-block p {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 17px;
+    font-style: italic;
+    color: var(--ink-soft);
+    line-height: 1.75;
+    margin: 0;
+  }
+
+  /* The call block — the morning everything changed */
+  .call-block {
+    background: var(--grief);
+    margin: 52px -24px;
+    padding: 56px 48px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .call-block::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(128,104,96,0.08) 0%, transparent 65%);
+  }
+
+  .call-block-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .call-label {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--grief-pale);
+    margin-bottom: 28px;
+    display: block;
+  }
+
+  .call-block .call-text {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(18px, 3vw, 26px);
+    font-style: italic;
+    color: #c8b8b0;
+    line-height: 1.6;
+    margin: 0 0 16px;
+  }
+
+  .call-block .call-detail {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 15px;
+    color: var(--grief-pale);
+    font-style: normal;
+    letter-spacing: 0.06em;
+  }
+
+  /* The homecoming block */
+  .homecoming-block {
+    background: var(--dark);
+    margin: 52px -24px;
+    padding: 56px 48px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .homecoming-block::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(212,200,168,0.06) 0%, transparent 65%);
+  }
+
+  .homecoming-block-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .homecoming-label {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--dark-pale);
+    margin-bottom: 28px;
+    display: block;
+  }
+
+  .homecoming-block p {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(17px, 2.8vw, 22px);
+    font-style: italic;
+    color: var(--dark-bright);
+    line-height: 1.65;
+    margin: 0 0 14px;
+  }
+
+  .homecoming-block p:last-child { margin: 0; }
+
+  .homecoming-block .homecoming-plain {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 15px;
+    font-style: normal;
+    color: var(--dark-pale);
+    letter-spacing: 0.06em;
+  }
+
+  .chapter-note {
+    background: var(--paper-warm);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 24px 28px;
+    margin: 52px 0 0;
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 16px;
+    color: var(--ink-muted);
+    line-height: 1.7;
+  }
+
+  .chapter-note strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  .post-footer {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .footer-series {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 20px;
+  }
+
+  .chapter-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .nav-item {
+    flex: 1;
+    padding: 18px 20px;
+    background: var(--paper-warm);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    text-decoration: none;
+    transition: border-color 0.2s;
+  }
+
+  .nav-item:hover { border-color: var(--accent-soft); }
+
+  .nav-label {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+
+  .nav-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.35;
+  }
+
+  .nav-item.next { text-align: right; }
+
+  .subscribe-bar {
+    background: var(--ink);
+    padding: 52px 24px;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .subscribe-bar h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--paper);
+    margin-bottom: 10px;
+  }
+
+  .subscribe-bar p {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 17px;
+    color: #9a9088;
+    margin-bottom: 24px;
+  }
+
+  .subscribe-form {
+    display: flex;
+    gap: 10px;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .subscribe-form input {
+    flex: 1;
+    padding: 12px 16px;
+    background: #2a2420;
+    border: 1px solid #3d3530;
+    border-radius: 2px;
+    color: var(--paper);
+    font-family: 'Source Serif 4', serif;
+    font-size: 15px;
+    outline: none;
+  }
+
+  .subscribe-form input::placeholder { color: #5a504a; }
+  .subscribe-form input:focus { border-color: var(--accent-soft); }
+
+  .subscribe-form button {
+    padding: 12px 20px;
+    background: var(--accent);
+    border: none;
+    border-radius: 2px;
+    color: white;
+    font-family: 'Crimson Pro', serif;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+
+  .subscribe-form button:hover { background: var(--accent-soft); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero { animation: fadeUp 0.7s ease both; }
+  .article { animation: fadeUp 0.7s 0.15s ease both; }
+
+  @media (max-width: 600px) {
+    body { font-size: 17px; }
+    .call-block { margin: 44px -24px; padding: 44px 28px; }
+    .homecoming-block { margin: 44px -24px; padding: 44px 28px; }
+    .chapter-nav { flex-direction: column; }
+    .nav-item.next { text-align: left; }
+    .subscribe-form { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-title">A Life of <span>Tender Mercies</span> &nbsp;·&nbsp; Dee Stevens</div>
+</header>
+
+<div class="hero">
+  <span class="series-label">Part Two: Love, Loss, and Starting Over &nbsp;·&nbsp; Chapter Twelve</span>
+  <h1>A Father Dies, <em>A Marriage Begins</em></h1>
+  <div class="byline">
+    <div class="byline-avatar">D</div>
+    <div class="byline-text">
+      <strong>Dee Stevens</strong>
+      Provo, Utah &nbsp;·&nbsp; 1972
+    </div>
+  </div>
+  <div class="ornamental-rule"><span class="ornamental-rule-glyph">❧</span></div>
+</div>
+
+<article class="article">
+
+  <p class="drop-cap">Coming home from a mission is a stranger experience than you might expect. You have been gone for two years. You have been fully occupied every waking hour — teaching, testifying, leading, knocking on doors in the cold, watching people's lives change and occasionally watching your own change alongside them. And then one day a car pulls up to the Rochester airport, you load your bags, and it is over.</p>
+
+  <p>The tarmac at Salt Lake City was dark when we landed. In those days there were no covered ramps — you walked across the open air to get to the gates, and I scanned the waiting crowd as I walked toward them. I was fifty pounds heavier than when I had left, and my younger brothers had grown so tall I didn't recognize them. We walked right past each other on the tarmac before someone turned around.</p>
+
+  <p>The reunion, when it happened, was everything it should have been.</p>
+
+  <p>Dad let me drive home — he and Mom in the front with me, and in the back seat my brothers Ed and McKay, and Grandma Stevens. We drove down State Street through Salt Lake, talking over each other, laughing, filling in two years of gaps. And then Grandma — sweet Grandma, whose short-term memory had been failing for some time — went quiet for a moment and asked:</p>
+
+  <p><em>"Now when is it we go get Dee from the airport?"</em></p>
+
+  <p>All the air went out of the car. I finally managed to squeak out: <em>"Hi Mother, here I am driving."</em></p>
+
+  <p>She laughed at herself, but I remember feeling she was embarrassed — that she could sense something was happening to her mind and couldn't quite name what it was. It was one of those moments that is funny and heartbreaking at exactly the same time.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>I came home with every intention of building something. I enrolled at BYU on a leadership scholarship in January of 1972, working toward a degree and a teaching certificate. I was living again with Grandma Stevens in Provo — Dad had moved the family to California to work with my uncles — and I threw myself into school the way I had thrown myself into the mission. With everything I had.</p>
+
+  <p>Then came August.</p>
+
+  <div class="call-block">
+    <div class="call-block-inner">
+      <span class="call-label">August, 1972 · A phone call from Lancaster, California</span>
+      <div class="call-text">Dad had been on his way to work early that morning when a truck ran a light and hit his vehicle broadside at sixty miles an hour.</div>
+      <div class="call-detail">He died later that day. He was not yet fifty years old.</div>
+    </div>
+  </div>
+
+  <p>I was crushed. There is no softer word for it. My father and I had not had enough time together — he had moved the family to California while I was away, and I had come home to an empty house and a grandmother instead of parents. We were supposed to have years ahead of us to close that distance.</p>
+
+  <p>But poor Grandma was the one who broke my heart the most. She had raised my father and his brother Dale on her own since 1937, when my grandfather was killed. They had built the family cabin together. They had lived close to each other their whole lives. The news simply undid her. Providing comfort for her in those first days was, I think, what kept me upright. You cannot fall apart when someone else needs you more.</p>
+
+  <p>We held two funerals — one in Lancaster for his California friends and family, and one in Orem for the community he had grown up in. Then we buried him and I went back to school, because there was nothing else to do.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>In those days, returning missionaries were strongly encouraged to marry soon. The counsel from Church leaders was that young couples would build strength by learning to face the challenges of starting a life together — that the difficulties of early marriage, navigated in faith, would forge something lasting. I believed this. I still believe it is often true.</p>
+
+  <p>It wasn't long before I met a woman who seemed to be everything I was looking for. She could cook and sew. She had a beautiful soprano voice. She was warm and capable and she seemed to see something in me worth choosing. We were married in the Manti Temple in October of 1972, just months after my father's death.</p>
+
+  <div class="inset-block">
+    <span class="inset-label">What those early years looked like</span>
+    <p>I was in school full time and working part time at Albertsons. We squeezed by mostly because my mother owned a set of duplexes where she allowed us to live rent free while I managed the apartments for her. It was not a comfortable life. It was not supposed to be. We were young and building something, and we told ourselves the difficulties were the point.</p>
+  </div>
+
+  <p>And in September of 1973, our daughter Keri Lyn arrived.</p>
+
+  <div class="homecoming-block">
+    <div class="homecoming-block-inner">
+      <span class="homecoming-label">September 8th, 1973</span>
+      <p>"She had the sweetest little temperament."</p>
+      <p>"How I adored that child."</p>
+      <p class="homecoming-plain">She crawled and walked and was learning to talk. She was, from the first moment, entirely herself — bright and present and full of something that made you want to be in whatever room she was in.</p>
+    </div>
+  </div>
+
+  <p>I tell you about Keri Lyn here, at the beginning, because she deserves her own chapter — and she will get one. But I want you to understand the shape of this season of my life before we go further into it. Within the span of a single year I had come home from my mission, lost my father, finished a semester of school, married, and become a father myself.</p>
+
+  <p>Life did not give me much time to catch my breath between chapters. It rarely does. What I have learned, over a long life, is that the chapters do not wait for you to be ready. They simply begin. Your job is to show up and do the next right thing, and trust that the Lord is keeping track of the larger arc even when you cannot see it yourself.</p>
+
+  <div class="pull-quote">
+    <p>"The year my father died was the year my daughter was born. That is not coincidence. That is how the Lord manages grief — He gives you something to love so fiercely that the grief has to share the room."</p>
+  </div>
+
+  <p>I did not know, when I held Keri Lyn for the first time, what her life would cost me. I did not know what was coming. What I knew was that she was here, and that she was mine, and that for the first time since August the weight in my chest had lifted a little.</p>
+
+  <p>That was enough to keep going. That has always been enough.</p>
+
+  <div class="chapter-note">
+    <strong>A Note for the Grandkids</strong>
+    Grandpa came home from his mission in 1972 and within one year lost his father, got married, and became a dad. He was twenty-one years old. His father's death hit him hard — they were just beginning to close the distance that his mission had created between them. But then Keri Lyn arrived, and she gave him something to pour himself into. She deserves her own chapter, and the next one is hers.
+  </div>
+
+</article>
+
+<div class="post-footer">
+  <div class="footer-series">A Life of Tender Mercies &nbsp;·&nbsp; Part Two</div>
+  <div class="chapter-nav">
+    <a class="nav-item prev" href="chapter-11.html">
+      <div class="nav-label">← Previous</div>
+      <div class="nav-title">Running the Whole Mission</div>
+    </a>
+    <div class="nav-item next">
+      <div class="nav-label">Next →</div>
+      <div class="nav-title">Chapter 13 &mdash; Coming Soon</div>
+    </div>
+  </div>
+</div>
+
+<div class="subscribe-bar">
+  <h3>Follow along with Dee's story</h3>
+  <p>New chapters delivered to your inbox, free.</p>
+  <div class="subscribe-form">
+    <input type="email" placeholder="your@email.com">
+    <button>Subscribe</button>
+  </div>
+</div>
+
+</body>
+</html>
