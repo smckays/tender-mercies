@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Father Dies, A Marriage Begins — A Life of Tender Mercies</title>
+<title>Keri Lyn — A Life of Tender Mercies</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <style>
@@ -18,11 +18,12 @@
     --accent: #8b3a2a;
     --accent-soft: #c4785f;
     --rule: #d9d0c4;
-    --dark: #181410;
-    --dark-pale: #907050;
-    --dark-bright: #d4c8a8;
-    --grief: #1c1818;
-    --grief-pale: #806860;
+    --tender: #1a1c20;
+    --tender-pale: #7088a0;
+    --tender-bright: #b8ccd8;
+    --mercy: #181414;
+    --mercy-pale: #907870;
+    --mercy-bright: #d4c0b8;
   }
 
   html { scroll-behavior: smooth; }
@@ -222,9 +223,9 @@
     margin: 0;
   }
 
-  /* The call block — the morning everything changed */
-  .call-block {
-    background: var(--grief);
+  /* The illness block — the fever that wouldn't break */
+  .illness-block {
+    background: var(--tender);
     margin: 52px -24px;
     padding: 56px 48px;
     position: relative;
@@ -232,94 +233,89 @@
     text-align: center;
   }
 
-  .call-block::before {
+  .illness-block::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at center, rgba(128,104,96,0.08) 0%, transparent 65%);
+    background: radial-gradient(ellipse at center, rgba(112,136,160,0.08) 0%, transparent 65%);
   }
 
-  .call-block-inner {
+  .illness-block-inner {
     position: relative;
     z-index: 1;
   }
 
-  .call-label {
+  .illness-label {
     font-family: 'Crimson Pro', Georgia, serif;
     font-size: 12px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--grief-pale);
+    color: var(--tender-pale);
     margin-bottom: 28px;
     display: block;
   }
 
-  .call-block .call-text {
+  .illness-block .illness-term {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(18px, 3vw, 26px);
+    font-size: clamp(20px, 3.5vw, 30px);
     font-style: italic;
-    color: #c8b8b0;
-    line-height: 1.6;
+    font-weight: 600;
+    color: var(--tender-bright);
+    line-height: 1.3;
     margin: 0 0 16px;
   }
 
-  .call-block .call-detail {
+  .illness-block .illness-explain {
     font-family: 'Crimson Pro', Georgia, serif;
-    font-size: 15px;
-    color: var(--grief-pale);
+    font-size: clamp(15px, 2.4vw, 18px);
+    color: var(--tender-pale);
+    line-height: 1.7;
     font-style: normal;
-    letter-spacing: 0.06em;
+    margin: 0;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  /* The homecoming block */
-  .homecoming-block {
-    background: var(--dark);
+  /* The recovery block */
+  .recovery-block {
+    background: var(--mercy);
     margin: 52px -24px;
-    padding: 56px 48px;
+    padding: 52px 48px;
     position: relative;
     overflow: hidden;
     text-align: center;
   }
 
-  .homecoming-block::before {
+  .recovery-block::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at center, rgba(212,200,168,0.06) 0%, transparent 65%);
+    background: radial-gradient(ellipse at center, rgba(144,120,112,0.08) 0%, transparent 65%);
   }
 
-  .homecoming-block-inner {
+  .recovery-block-inner {
     position: relative;
     z-index: 1;
   }
 
-  .homecoming-label {
+  .recovery-label {
     font-family: 'Crimson Pro', Georgia, serif;
     font-size: 12px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--dark-pale);
-    margin-bottom: 28px;
+    color: var(--mercy-pale);
+    margin-bottom: 24px;
     display: block;
   }
 
-  .homecoming-block p {
+  .recovery-block p {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: clamp(17px, 2.8vw, 22px);
     font-style: italic;
-    color: var(--dark-bright);
+    color: var(--mercy-bright);
     line-height: 1.65;
-    margin: 0 0 14px;
-  }
-
-  .homecoming-block p:last-child { margin: 0; }
-
-  .homecoming-block .homecoming-plain {
-    font-family: 'Crimson Pro', Georgia, serif;
-    font-size: 15px;
-    font-style: normal;
-    color: var(--dark-pale);
-    letter-spacing: 0.06em;
+    margin: 0;
   }
 
   .chapter-note {
@@ -469,8 +465,8 @@
 
   @media (max-width: 600px) {
     body { font-size: 17px; }
-    .call-block { margin: 44px -24px; padding: 44px 28px; }
-    .homecoming-block { margin: 44px -24px; padding: 44px 28px; }
+    .illness-block { margin: 44px -24px; padding: 44px 28px; }
+    .recovery-block { margin: 44px -24px; padding: 44px 28px; }
     .chapter-nav { flex-direction: column; }
     .nav-item.next { text-align: left; }
     .subscribe-form { flex-direction: column; }
@@ -484,13 +480,13 @@
 </header>
 
 <div class="hero">
-  <span class="series-label">Part Two: Love, Loss, and Starting Over &nbsp;·&nbsp; Chapter Twelve</span>
-  <h1>A Father Dies, <em>A Marriage Begins</em></h1>
+  <span class="series-label">Part Two: Love, Loss, and Starting Over &nbsp;·&nbsp; Chapter Thirteen</span>
+  <h1><em>Keri Lyn</em></h1>
   <div class="byline">
     <div class="byline-avatar">D</div>
     <div class="byline-text">
       <strong>Dee Stevens</strong>
-      Provo, Utah &nbsp;·&nbsp; 1972
+      Provo, Utah &nbsp;·&nbsp; 1973–1975
     </div>
   </div>
   <div class="ornamental-rule"><span class="ornamental-rule-glyph">❧</span></div>
@@ -498,77 +494,67 @@
 
 <article class="article">
 
-  <p class="drop-cap">Coming home from a mission is a stranger experience than you might expect. You have been gone for two years. You have been fully occupied every waking hour — teaching, testifying, leading, knocking on doors in the cold, watching people's lives change and occasionally watching your own change alongside them. And then one day a car pulls up to the Rochester airport, you load your bags, and it is over.</p>
+  <p class="drop-cap">I want to tell you about my daughter Keri Lyn — not her death, which comes later and deserves its own accounting, but her life. The particular texture of it. The way she arrived in the world and what she was like in it, before everything else happened.</p>
 
-  <p>The tarmac at Salt Lake City was dark when we landed. In those days there were no covered ramps — you walked across the open air to get to the gates, and I scanned the waiting crowd as I walked toward them. I was fifty pounds heavier than when I had left, and my younger brothers had grown so tall I didn't recognize them. We walked right past each other on the tarmac before someone turned around.</p>
+  <p>She was born September 8th, 1973. She had the sweetest little temperament from the very first days — calm and watchful and somehow already herself in a way that some babies are and some are not. She crawled and walked on schedule. She was learning to talk. She was becoming a person in front of us at the ordinary speed that children become people, and I adored every minute of it.</p>
 
-  <p>The reunion, when it happened, was everything it should have been.</p>
-
-  <p>Dad let me drive home — he and Mom in the front with me, and in the back seat my brothers Ed and McKay, and Grandma Stevens. We drove down State Street through Salt Lake, talking over each other, laughing, filling in two years of gaps. And then Grandma — sweet Grandma, whose short-term memory had been failing for some time — went quiet for a moment and asked:</p>
-
-  <p><em>"Now when is it we go get Dee from the airport?"</em></p>
-
-  <p>All the air went out of the car. I finally managed to squeak out: <em>"Hi Mother, here I am driving."</em></p>
-
-  <p>She laughed at herself, but I remember feeling she was embarrassed — that she could sense something was happening to her mind and couldn't quite name what it was. It was one of those moments that is funny and heartbreaking at exactly the same time.</p>
+  <p>How I adored that child. I want to say that plainly, before anything else.</p>
 
   <div class="scene-break">· · ·</div>
 
-  <p>I came home with every intention of building something. I enrolled at BYU on a leadership scholarship in January of 1972, working toward a degree and a teaching certificate. I was living again with Grandma Stevens in Provo — Dad had moved the family to California to work with my uncles — and I threw myself into school the way I had thrown myself into the mission. With everything I had.</p>
+  <p>Then she got sick.</p>
 
-  <p>Then came August.</p>
+  <p>It started with a fever — the kind that climbs and won't come down no matter what you do. We watched her, and worried, and did what young parents do: we hoped it would pass. It didn't pass. She began to lose weight. She lost her ability to walk. She lost her words, one by one, until she couldn't talk anymore. The bright, present little person who had been becoming herself in front of us went somewhere we couldn't follow.</p>
 
-  <div class="call-block">
-    <div class="call-block-inner">
-      <span class="call-label">August, 1972 · A phone call from Lancaster, California</span>
-      <div class="call-text">Dad had been on his way to work early that morning when a truck ran a light and hit his vehicle broadside at sixty miles an hour.</div>
-      <div class="call-detail">He died later that day. He was not yet fifty years old.</div>
+  <p>We took her to Primary Children's Hospital.</p>
+
+  <div class="illness-block">
+    <div class="illness-block-inner">
+      <span class="illness-label">What the doctors found</span>
+      <div class="illness-term">Achemotaxis</div>
+      <div class="illness-explain">She had plenty of white blood cells. They simply failed to go fight off infection — like an army that couldn't receive its orders. Her body could not defend itself. Every illness that reached her found no resistance waiting.</div>
     </div>
   </div>
 
-  <p>I was crushed. There is no softer word for it. My father and I had not had enough time together — he had moved the family to California while I was away, and I had come home to an empty house and a grandmother instead of parents. We were supposed to have years ahead of us to close that distance.</p>
+  <p>She was a very sick baby. We prayed and fasted. We had her administered to. We sat beside her hospital bed and asked the Lord, as plainly as we knew how, to let her stay.</p>
 
-  <p>But poor Grandma was the one who broke my heart the most. She had raised my father and his brother Dale on her own since 1937, when my grandfather was killed. They had built the family cabin together. They had lived close to each other their whole lives. The news simply undid her. Providing comfort for her in those first days was, I think, what kept me upright. You cannot fall apart when someone else needs you more.</p>
+  <p>Gradually — slowly, in the way that recoveries happen when you are watching every small sign — she came back. The weight returned. The walking returned. The words came back one by one, like lights being switched back on in a house that had gone dark.</p>
 
-  <p>We held two funerals — one in Lancaster for his California friends and family, and one in Orem for the community he had grown up in. Then we buried him and I went back to school, because there was nothing else to do.</p>
+  <div class="recovery-block">
+    <div class="recovery-block-inner">
+      <span class="recovery-label">What we knew afterward</span>
+      <p>"We knew it was a tender mercy from the Lord. And we were yet to learn that Keri's life was a complete set of tender mercies — one after another, stacked up like gifts, more than her short years should have been able to hold."</p>
+    </div>
+  </div>
 
   <div class="scene-break">· · ·</div>
 
-  <p>In those days, returning missionaries were strongly encouraged to marry soon. The counsel from Church leaders was that young couples would build strength by learning to face the challenges of starting a life together — that the difficulties of early marriage, navigated in faith, would forge something lasting. I believed this. I still believe it is often true.</p>
+  <p>I have thought many times about the particular mercy of those early years with Keri Lyn — the years before the harder things arrived. We were given time with her that we almost didn't get. Every morning she woke up and came padding into the kitchen was a morning we might not have had.</p>
 
-  <p>It wasn't long before I met a woman who seemed to be everything I was looking for. She could cook and sew. She had a beautiful soprano voice. She was warm and capable and she seemed to see something in me worth choosing. We were married in the Manti Temple in October of 1972, just months after my father's death.</p>
+  <p>Parents of healthy children do not always know to count these things. They assume the ordinary mornings will keep coming — the cereal on the table, the small voice asking for something, the weight of a child climbing into your lap. They assume this because it is reasonable to assume. It had always been true before.</p>
 
-  <div class="inset-block">
-    <span class="inset-label">What those early years looked like</span>
-    <p>I was in school full time and working part time at Albertsons. We squeezed by mostly because my mother owned a set of duplexes where she allowed us to live rent free while I managed the apartments for her. It was not a comfortable life. It was not supposed to be. We were young and building something, and we told ourselves the difficulties were the point.</p>
-  </div>
-
-  <p>And in September of 1973, our daughter Keri Lyn arrived.</p>
-
-  <div class="homecoming-block">
-    <div class="homecoming-block-inner">
-      <span class="homecoming-label">September 8th, 1973</span>
-      <p>"She had the sweetest little temperament."</p>
-      <p>"How I adored that child."</p>
-      <p class="homecoming-plain">She crawled and walked and was learning to talk. She was, from the first moment, entirely herself — bright and present and full of something that made you want to be in whatever room she was in.</p>
-    </div>
-  </div>
-
-  <p>I tell you about Keri Lyn here, at the beginning, because she deserves her own chapter — and she will get one. But I want you to understand the shape of this season of my life before we go further into it. Within the span of a single year I had come home from my mission, lost my father, finished a semester of school, married, and become a father myself.</p>
-
-  <p>Life did not give me much time to catch my breath between chapters. It rarely does. What I have learned, over a long life, is that the chapters do not wait for you to be ready. They simply begin. Your job is to show up and do the next right thing, and trust that the Lord is keeping track of the larger arc even when you cannot see it yourself.</p>
+  <p>We had been taught, by one fever and one long hospital stay, not to assume. To receive each ordinary morning as what it was: a gift. Not guaranteed. Not owed to us. Given.</p>
 
   <div class="pull-quote">
-    <p>"The year my father died was the year my daughter was born. That is not coincidence. That is how the Lord manages grief — He gives you something to love so fiercely that the grief has to share the room."</p>
+    <p>"She was returned to us. That is the only way I know to say it. We asked and she was returned. Whatever came after, I have never stopped being grateful for the years we got."</p>
   </div>
 
-  <p>I did not know, when I held Keri Lyn for the first time, what her life would cost me. I did not know what was coming. What I knew was that she was here, and that she was mine, and that for the first time since August the weight in my chest had lifted a little.</p>
+  <p>She grew. She became herself again — and more than herself, because children who come through something hard often do. There was a quality to Keri Lyn that I recognized but couldn't name: a kind of earnestness, a presence, as if she understood, even without words for it, that being here was not something to take lightly.</p>
 
-  <p>That was enough to keep going. That has always been enough.</p>
+  <p>She had surgeries. She had learning struggles. She faced more than her share of hard things in her ten years, and most of them are woven through the chapters that follow this one. But this chapter is not about those things. This chapter is about the girl herself — the sweetness of her temperament, the way she lit up a room without trying, the particular mercy of having her at all.</p>
+
+  <p>I am her father. I adored her from the first moment and I adore her still, across whatever distance now lies between us.</p>
+
+  <p>That is what I want you to know about Keri Lyn before anything else.</p>
+
+  <div class="inset-block">
+    <span class="inset-label">What comes next</span>
+    <p>The next chapter covers the drive to Spokane — the mountain pass, the trailer with no brakes, and the moment on a quiet stretch of highway that neither Dee nor her mother has ever been able to fully explain. Keri Lyn is not quite two years old. She is already being watched over by someone other than her parents.</p>
+  </div>
 
   <div class="chapter-note">
     <strong>A Note for the Grandkids</strong>
-    Grandpa came home from his mission in 1972 and within one year lost his father, got married, and became a dad. He was twenty-one years old. His father's death hit him hard — they were just beginning to close the distance that his mission had created between them. But then Keri Lyn arrived, and she gave him something to pour himself into. She deserves her own chapter, and the next one is hers.
+    Keri Lyn was Grandpa's firstborn child. She got very sick as a baby — sick enough that they almost lost her — and then she recovered. Grandpa has always counted those recovered years as a specific mercy from the Lord. She is buried in West Jordan, Utah. She was ten years old when she died, and Grandpa has never stopped missing her. This chapter is just about who she was. The rest of her story comes later.
   </div>
 
 </article>
@@ -576,14 +562,14 @@
 <div class="post-footer">
   <div class="footer-series">A Life of Tender Mercies &nbsp;·&nbsp; Part Two</div>
   <div class="chapter-nav">
-    <a class="nav-item prev" href="chapter-11.html">
+    <a class="nav-item prev" href="chapter-12.html">
       <div class="nav-label">← Previous</div>
-      <div class="nav-title">Running the Whole Mission</div>
+      <div class="nav-title">A Father Dies, A Marriage Begins</div>
     </a>
-    <a class="nav-item next" href="chapter-13.html">
+    <div class="nav-item next">
       <div class="nav-label">Next →</div>
-      <div class="nav-title">Keri Lyn</div>
-    </a>
+      <div class="nav-title">Chapter 14 &mdash; Coming Soon</div>
+    </div>
   </div>
 </div>
 
