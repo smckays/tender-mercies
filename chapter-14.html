@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Keri Lyn — A Life of Tender Mercies</title>
+<title>The Girl Who Flew Out the Window — A Life of Tender Mercies</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <style>
@@ -18,12 +18,9 @@
     --accent: #8b3a2a;
     --accent-soft: #c4785f;
     --rule: #d9d0c4;
-    --tender: #1a1c20;
-    --tender-pale: #7088a0;
-    --tender-bright: #b8ccd8;
-    --mercy: #181414;
-    --mercy-pale: #907870;
-    --mercy-bright: #d4c0b8;
+    --road: #1e2a1e;
+    --road-pale: #8aaa80;
+    --road-bright: #c8d8c0;
   }
 
   html { scroll-behavior: smooth; }
@@ -223,98 +220,95 @@
     margin: 0;
   }
 
-  /* The illness block — the fever that wouldn't break */
-  .illness-block {
-    background: var(--tender);
+  /* Road block — the miracle on the highway */
+  .road-block {
+    background: var(--road);
     margin: 52px -24px;
     padding: 56px 48px;
     position: relative;
     overflow: hidden;
+  }
+
+  .road-block::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(138,170,128,0.2), transparent);
+    transform: translateY(-50%);
+  }
+
+  .road-block-inner {
+    position: relative;
+    z-index: 1;
     text-align: center;
   }
 
-  .illness-block::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at center, rgba(112,136,160,0.08) 0%, transparent 65%);
-  }
-
-  .illness-block-inner {
-    position: relative;
-    z-index: 1;
-  }
-
-  .illness-label {
+  .road-label {
     font-family: 'Crimson Pro', Georgia, serif;
     font-size: 12px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--tender-pale);
+    color: var(--road-pale);
     margin-bottom: 28px;
     display: block;
   }
 
-  .illness-block .illness-term {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(20px, 3.5vw, 30px);
-    font-style: italic;
-    font-weight: 600;
-    color: var(--tender-bright);
-    line-height: 1.3;
-    margin: 0 0 16px;
-  }
-
-  .illness-block .illness-explain {
-    font-family: 'Crimson Pro', Georgia, serif;
-    font-size: clamp(15px, 2.4vw, 18px);
-    color: var(--tender-pale);
-    line-height: 1.7;
-    font-style: normal;
-    margin: 0;
-    max-width: 480px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* The recovery block */
-  .recovery-block {
-    background: var(--mercy);
-    margin: 52px -24px;
-    padding: 52px 48px;
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-  }
-
-  .recovery-block::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at center, rgba(144,120,112,0.08) 0%, transparent 65%);
-  }
-
-  .recovery-block-inner {
-    position: relative;
-    z-index: 1;
-  }
-
-  .recovery-label {
-    font-family: 'Crimson Pro', Georgia, serif;
-    font-size: 12px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--mercy-pale);
-    margin-bottom: 24px;
-    display: block;
-  }
-
-  .recovery-block p {
+  .road-block .road-line {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: clamp(17px, 2.8vw, 22px);
     font-style: italic;
-    color: var(--mercy-bright);
+    color: var(--road-bright);
     line-height: 1.65;
+    margin: 0 0 12px;
+  }
+
+  .road-block .road-line:last-child { margin: 0; }
+
+  .road-block .road-moment {
+    font-size: clamp(20px, 3.5vw, 28px);
+    font-weight: 600;
+    color: #e8f0e0;
+    margin: 16px 0 !important;
+  }
+
+  .road-block .road-attr {
+    font-family: 'Crimson Pro', serif;
+    font-size: 13px;
+    font-style: normal;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--road-pale);
+    margin-top: 24px !important;
+  }
+
+  /* Witness box */
+  .witness-box {
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--accent);
+    background: var(--paper-warm);
+    padding: 24px 28px;
+    margin: 44px 0;
+  }
+
+  .witness-box .witness-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .witness-box p {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 17px;
+    font-style: italic;
+    color: var(--ink-soft);
+    line-height: 1.75;
     margin: 0;
   }
 
@@ -465,8 +459,7 @@
 
   @media (max-width: 600px) {
     body { font-size: 17px; }
-    .illness-block { margin: 44px -24px; padding: 44px 28px; }
-    .recovery-block { margin: 44px -24px; padding: 44px 28px; }
+    .road-block { margin: 44px -24px; padding: 44px 28px; }
     .chapter-nav { flex-direction: column; }
     .nav-item.next { text-align: left; }
     .subscribe-form { flex-direction: column; }
@@ -480,13 +473,13 @@
 </header>
 
 <div class="hero">
-  <span class="series-label">Part Two: Love, Loss, and Starting Over &nbsp;·&nbsp; Chapter Thirteen</span>
-  <h1><em>Keri Lyn</em></h1>
+  <span class="series-label">Part Two: Love, Loss, and Starting Over &nbsp;·&nbsp; Chapter Fourteen</span>
+  <h1>The Girl Who Flew <em>Out the Window</em></h1>
   <div class="byline">
     <div class="byline-avatar">D</div>
     <div class="byline-text">
       <strong>Dee Stevens</strong>
-      Provo, Utah &nbsp;·&nbsp; 1973–1975
+      Highway 95, White Bird Pass, Idaho &nbsp;·&nbsp; Summer, 1975
     </div>
   </div>
   <div class="ornamental-rule"><span class="ornamental-rule-glyph">❧</span></div>
@@ -494,67 +487,84 @@
 
 <article class="article">
 
-  <p class="drop-cap">I want to tell you about my daughter Keri Lyn — not her death, which comes later and deserves its own accounting, but her life. The particular texture of it. The way she arrived in the world and what she was like in it, before everything else happened.</p>
+  <p class="drop-cap">I want to tell you something that happened on a mountain highway in Idaho in the summer of 1975. I am going to tell it to you plainly and exactly as it occurred, and I understand if you find it difficult to believe. I found it difficult to believe myself, and I was there.</p>
 
-  <p>She was born September 8th, 1973. She had the sweetest little temperament from the very first days — calm and watchful and somehow already herself in a way that some babies are and some are not. She crawled and walked on schedule. She was learning to talk. She was becoming a person in front of us at the ordinary speed that children become people, and I adored every minute of it.</p>
+  <p>My daughter Keri Lyn was not quite two years old. She was a bright, sweet little girl — the kind of child who fills a room just by being in it. She had already survived more than any baby should have to: a mysterious illness in her first year that had robbed her of her ability to walk and talk, a long stay at Primary Children's Hospital, and a slow, hard-won recovery that her doctors couldn't fully explain. We knew she was a child watched over by someone other than us.</p>
 
-  <p>How I adored that child. I want to say that plainly, before anything else.</p>
+  <p>That summer we had decided to move to Spokane, Washington — a fresh start, new city, new ward, a chance to put some distance between ourselves and the difficulties that had been accumulating back in Provo. We packed everything we owned into a small U-Haul trailer and pointed the car north.</p>
 
-  <div class="scene-break">· · ·</div>
+  <p>What we had not discovered, when we hooked up the trailer, was that the wiring between our car and the trailer was faulty. The trailer had no working brakes.</p>
 
-  <p>Then she got sick.</p>
-
-  <p>It started with a fever — the kind that climbs and won't come down no matter what you do. We watched her, and worried, and did what young parents do: we hoped it would pass. It didn't pass. She began to lose weight. She lost her ability to walk. She lost her words, one by one, until she couldn't talk anymore. The bright, present little person who had been becoming herself in front of us went somewhere we couldn't follow.</p>
-
-  <p>We took her to Primary Children's Hospital.</p>
-
-  <div class="illness-block">
-    <div class="illness-block-inner">
-      <span class="illness-label">What the doctors found</span>
-      <div class="illness-term">Achemotaxis</div>
-      <div class="illness-explain">She had plenty of white blood cells. They simply failed to go fight off infection — like an army that couldn't receive its orders. Her body could not defend itself. Every illness that reached her found no resistance waiting.</div>
-    </div>
-  </div>
-
-  <p>She was a very sick baby. We prayed and fasted. We had her administered to. We sat beside her hospital bed and asked the Lord, as plainly as we knew how, to let her stay.</p>
-
-  <p>Gradually — slowly, in the way that recoveries happen when you are watching every small sign — she came back. The weight returned. The walking returned. The words came back one by one, like lights being switched back on in a house that had gone dark.</p>
-
-  <div class="recovery-block">
-    <div class="recovery-block-inner">
-      <span class="recovery-label">What we knew afterward</span>
-      <p>"We knew it was a tender mercy from the Lord. And we were yet to learn that Keri's life was a complete set of tender mercies — one after another, stacked up like gifts, more than her short years should have been able to hold."</p>
-    </div>
-  </div>
+  <p>We found this out coming down White Bird Pass.</p>
 
   <div class="scene-break">· · ·</div>
 
-  <p>I have thought many times about the particular mercy of those early years with Keri Lyn — the years before the harder things arrived. We were given time with her that we almost didn't get. Every morning she woke up and came padding into the kitchen was a morning we might not have had.</p>
+  <p>If you have never driven White Bird Pass in Idaho, it is a long steep descent through mountain switchbacks — the kind of road that demands your full attention and your full brakes. When I hit the brakes and felt the trailer begin to sway, I knew immediately we were in trouble.</p>
 
-  <p>Parents of healthy children do not always know to count these things. They assume the ordinary mornings will keep coming — the cereal on the table, the small voice asking for something, the weight of a child climbing into your lap. They assume this because it is reasonable to assume. It had always been true before.</p>
+  <p>I did everything I could think of. I gripped the wheel. I tried to correct. But we were moving too fast, and with each correction the trailer swung wider, swerving back and forth behind us in longer and more violent arcs. The last time it swung, it lifted the rear wheels of our car clean off the pavement and dragged us toward the edge of the road.</p>
 
-  <p>We had been taught, by one fever and one long hospital stay, not to assume. To receive each ordinary morning as what it was: a gift. Not guaranteed. Not owed to us. Given.</p>
+  <p>I said one sentence out loud. I don't remember deciding to say it. It came from somewhere beneath thought:</p>
+
+  <p><em>"Father, save us."</em></p>
+
+  <p>Almost immediately — not gradually, not after a long struggle, but almost immediately — the trailer came into line. We were back under control. We pulled off the road and sat there in the sudden stillness, hearts hammering, and gave thanks.</p>
+
+  <p>We thought that was the story. We were wrong.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>Some miles later we had come down out of the mountains and were coasting along a quieter stretch of highway. In those days seatbelts were not the law and were rarely used. Linda had fallen asleep in the back seat. Keri Lyn was standing on the front seat beside me — this was simply how small children rode in cars in 1975, pressed against their parents, watching the road go by.</p>
+
+  <p>We had the windows down. It was a beautiful summer afternoon and the cool air coming through the mountains felt like a reward after the terror of the pass. Keri was enjoying it — her hair moving in the wind, her small face turned toward the open window.</p>
+
+  <p>I had to swerve. Something on the road — I don't remember what, just an obstacle, a small correction. The kind of thing you do a hundred times on any long drive without consequence.</p>
+
+  <p>In the blink of an eye, Keri Lyn was gone.</p>
+
+  <div class="road-block">
+    <div class="road-block-inner">
+      <span class="road-label">Highway 95, Idaho · Summer, 1975</span>
+      <div class="road-line">Her little body went out the passenger window head first.</div>
+      <div class="road-line road-moment">In my mind I saw her crushed beneath the wheels of the trailer.</div>
+      <div class="road-line">I yelled to Linda that her baby was gone.</div>
+      <div class="road-line">She barely had enough time to open her eyes and sit up —</div>
+      <div class="road-line">when back through the window came Keri Lyn,<br>landing safely on the seat.</div>
+      <div class="road-line road-attr">Four seconds. Maybe five. Head first out. Head first back in.</div>
+    </div>
+  </div>
+
+  <div class="witness-box">
+    <span class="witness-label">A word from Dee</span>
+    <p>I know when you read this you will doubt my words and think I must have been mistaken. But I testify to you in solemnity — she went out the window head first and came back in head first, with barely four or five seconds between. Linda and I are both still alive as I write this, and we will both bear witness to this miracle. This is not a story I have embellished over the years. It is exactly what happened.</p>
+  </div>
+
+  <p>We stopped the car. We held our daughter. We prayed.</p>
+
+  <p>Then we drove on to Spokane, shaking and grateful and certain of one thing: this child was not ours to keep or to lose. She was being held by hands larger than ours.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>Keri Lyn lived another nine years after that afternoon on the Idaho highway. They were not easy years — she faced surgeries, learning struggles, a childhood marked by one difficulty after another. She died in 1984 at the age of ten, from bone marrow cancer, while on a family trip to Hawaii.</p>
+
+  <p>I have written about her passing elsewhere in these pages. It deserves its own chapter, and it will get one. But I wanted to tell you this story first — the window story — because I think it is the key to understanding everything that came after.</p>
 
   <div class="pull-quote">
-    <p>"She was returned to us. That is the only way I know to say it. We asked and she was returned. Whatever came after, I have never stopped being grateful for the years we got."</p>
+    <p>"We were not in charge of Keri Lyn. We never had been. She was watched over from somewhere above our pay grade, on a timeline we were not shown."</p>
   </div>
 
-  <p>She grew. She became herself again — and more than herself, because children who come through something hard often do. There was a quality to Keri Lyn that I recognized but couldn't name: a kind of earnestness, a presence, as if she understood, even without words for it, that being here was not something to take lightly.</p>
+  <p>Parents are not supposed to outlive their children. When it happens, the grief is a particular kind — bottomless in a way that other grief is not, because it violates something fundamental about the order of things. I won't pretend I didn't feel that. I did.</p>
 
-  <p>She had surgeries. She had learning struggles. She faced more than her share of hard things in her ten years, and most of them are woven through the chapters that follow this one. But this chapter is not about those things. This chapter is about the girl herself — the sweetness of her temperament, the way she lit up a room without trying, the particular mercy of having her at all.</p>
+  <p>But I had stood on a mountain highway and said <em>Father, save us</em> and been answered. I had watched my daughter fly out a window and come back. I had held her afterward and felt, as clearly as I have ever felt anything, that she was not mine to protect — that she was on loan to us, watched over by someone who loved her more completely than I was capable of.</p>
 
-  <p>I am her father. I adored her from the first moment and I adore her still, across whatever distance now lies between us.</p>
+  <p>When she died, the Spirit bore witness to me that taking her home was an act of mercy. She had suffered so much in her short life. She would have suffered more. I didn't receive that witness because I was especially righteous or because I had earned it. I received it because the Lord knew I needed it, and because He had been preparing me for it since that afternoon on the Idaho highway — teaching me, one miracle at a time, that He was paying attention.</p>
 
-  <p>That is what I want you to know about Keri Lyn before anything else.</p>
+  <p>That is what I want you to know about your great-aunt Keri Lyn. She was bright and sweet and full of life. She was watched over every day she was here. And she was loved — by her father, completely and without reservation — every single one of those days.</p>
 
-  <div class="inset-block">
-    <span class="inset-label">What comes next</span>
-    <p>The next chapter covers the drive to Spokane — the mountain pass, the trailer with no brakes, and the moment on a quiet stretch of highway that neither Dee nor her mother has ever been able to fully explain. Keri Lyn is not quite two years old. She is already being watched over by someone other than her parents.</p>
-  </div>
+  <p>Even the ones after she was gone.</p>
 
   <div class="chapter-note">
     <strong>A Note for the Grandkids</strong>
-    Keri Lyn was Grandpa's firstborn child. She got very sick as a baby — sick enough that they almost lost her — and then she recovered. Grandpa has always counted those recovered years as a specific mercy from the Lord. She is buried in West Jordan, Utah. She was ten years old when she died, and Grandpa has never stopped missing her. This chapter is just about who she was. The rest of her story comes later.
+    Keri Lyn was your grandfather's firstborn child. She died before most of your parents were born, so very few of you ever had the chance to know her. But she is real, and she is part of your family, and she is buried in West Jordan, Utah. Grandpa wants you to know her story. This is the first chapter of it — the afternoon on a highway in Idaho when she flew out a window and came back. He has never forgotten that afternoon. He never will.
   </div>
 
 </article>
@@ -562,13 +572,13 @@
 <div class="post-footer">
   <div class="footer-series">A Life of Tender Mercies &nbsp;·&nbsp; Part Two</div>
   <div class="chapter-nav">
-    <a class="nav-item prev" href="chapter-12.html">
+    <a class="nav-item prev" href="chapter-13.html">
       <div class="nav-label">← Previous</div>
-      <div class="nav-title">A Father Dies, A Marriage Begins</div>
+      <div class="nav-title">Keri Lyn</div>
     </a>
-    <a class="nav-item next" href="chapter-14.html">
+    <a class="nav-item next" href="chapter-15.html">
       <div class="nav-label">Next →</div>
-      <div class="nav-title">The Girl Who Flew Out the Window</div>
+      <div class="nav-title">A Decade Falls Apart</div>
     </a>
   </div>
 </div>

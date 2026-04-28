@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Keri Lyn — A Life of Tender Mercies</title>
+<title>A Decade Falls Apart — A Life of Tender Mercies</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <style>
@@ -18,12 +18,12 @@
     --accent: #8b3a2a;
     --accent-soft: #c4785f;
     --rule: #d9d0c4;
-    --tender: #1a1c20;
-    --tender-pale: #7088a0;
-    --tender-bright: #b8ccd8;
-    --mercy: #181414;
-    --mercy-pale: #907870;
-    --mercy-bright: #d4c0b8;
+    --dark: #181414;
+    --dark-pale: #806860;
+    --dark-bright: #c8b0a8;
+    --soup: #1a1c18;
+    --soup-pale: #788060;
+    --soup-bright: #c0c8a8;
   }
 
   html { scroll-behavior: smooth; }
@@ -223,9 +223,55 @@
     margin: 0;
   }
 
-  /* The illness block — the fever that wouldn't break */
-  .illness-block {
-    background: var(--tender);
+  /* The decade block — the accumulation of hard years */
+  .decade-block {
+    background: var(--dark);
+    margin: 52px -24px;
+    padding: 56px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .decade-block::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(128,104,96,0.07) 0%, transparent 65%);
+  }
+
+  .decade-block-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .decade-label {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--dark-pale);
+    margin-bottom: 28px;
+    display: block;
+  }
+
+  .decade-block .decade-item {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(15px, 2.4vw, 18px);
+    font-style: italic;
+    color: var(--dark-bright);
+    line-height: 1.65;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .decade-block .decade-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  /* The soup block — the secret kindness */
+  .soup-block {
+    background: var(--soup);
     margin: 52px -24px;
     padding: 56px 48px;
     position: relative;
@@ -233,89 +279,38 @@
     text-align: center;
   }
 
-  .illness-block::before {
+  .soup-block::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at center, rgba(112,136,160,0.08) 0%, transparent 65%);
+    background: radial-gradient(ellipse at center, rgba(120,128,96,0.08) 0%, transparent 65%);
   }
 
-  .illness-block-inner {
+  .soup-block-inner {
     position: relative;
     z-index: 1;
   }
 
-  .illness-label {
+  .soup-label {
     font-family: 'Crimson Pro', Georgia, serif;
     font-size: 12px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--tender-pale);
+    color: var(--soup-pale);
     margin-bottom: 28px;
     display: block;
   }
 
-  .illness-block .illness-term {
+  .soup-block .soup-text {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(20px, 3.5vw, 30px);
+    font-size: clamp(18px, 3vw, 24px);
     font-style: italic;
-    font-weight: 600;
-    color: var(--tender-bright);
-    line-height: 1.3;
-    margin: 0 0 16px;
-  }
-
-  .illness-block .illness-explain {
-    font-family: 'Crimson Pro', Georgia, serif;
-    font-size: clamp(15px, 2.4vw, 18px);
-    color: var(--tender-pale);
-    line-height: 1.7;
-    font-style: normal;
-    margin: 0;
-    max-width: 480px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* The recovery block */
-  .recovery-block {
-    background: var(--mercy);
-    margin: 52px -24px;
-    padding: 52px 48px;
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-  }
-
-  .recovery-block::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at center, rgba(144,120,112,0.08) 0%, transparent 65%);
-  }
-
-  .recovery-block-inner {
-    position: relative;
-    z-index: 1;
-  }
-
-  .recovery-label {
-    font-family: 'Crimson Pro', Georgia, serif;
-    font-size: 12px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--mercy-pale);
-    margin-bottom: 24px;
-    display: block;
-  }
-
-  .recovery-block p {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(17px, 2.8vw, 22px);
-    font-style: italic;
-    color: var(--mercy-bright);
+    color: var(--soup-bright);
     line-height: 1.65;
     margin: 0;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .chapter-note {
@@ -465,8 +460,8 @@
 
   @media (max-width: 600px) {
     body { font-size: 17px; }
-    .illness-block { margin: 44px -24px; padding: 44px 28px; }
-    .recovery-block { margin: 44px -24px; padding: 44px 28px; }
+    .decade-block { margin: 44px -24px; padding: 44px 28px; }
+    .soup-block { margin: 44px -24px; padding: 44px 28px; }
     .chapter-nav { flex-direction: column; }
     .nav-item.next { text-align: left; }
     .subscribe-form { flex-direction: column; }
@@ -480,13 +475,13 @@
 </header>
 
 <div class="hero">
-  <span class="series-label">Part Two: Love, Loss, and Starting Over &nbsp;·&nbsp; Chapter Thirteen</span>
-  <h1><em>Keri Lyn</em></h1>
+  <span class="series-label">Part Two: Love, Loss, and Starting Over &nbsp;·&nbsp; Chapter Fifteen</span>
+  <h1>A Decade <em>Falls Apart</em></h1>
   <div class="byline">
     <div class="byline-avatar">D</div>
     <div class="byline-text">
       <strong>Dee Stevens</strong>
-      Provo, Utah &nbsp;·&nbsp; 1973–1975
+      Utah &nbsp;·&nbsp; 1975–1980
     </div>
   </div>
   <div class="ornamental-rule"><span class="ornamental-rule-glyph">❧</span></div>
@@ -494,67 +489,67 @@
 
 <article class="article">
 
-  <p class="drop-cap">I want to tell you about my daughter Keri Lyn — not her death, which comes later and deserves its own accounting, but her life. The particular texture of it. The way she arrived in the world and what she was like in it, before everything else happened.</p>
+  <p class="drop-cap">I am going to tell you about the hardest years of my life honestly, because I think you deserve that. A memoir that only tells the good parts is not a memoir — it is a performance. And the people I most want to reach with this book are the ones who are sitting in the middle of something hard right now, wondering if it will ever get better. I want them to know: it does. But first, here is what the middle looked like for me.</p>
 
-  <p>She was born September 8th, 1973. She had the sweetest little temperament from the very first days — calm and watchful and somehow already herself in a way that some babies are and some are not. She crawled and walked on schedule. She was learning to talk. She was becoming a person in front of us at the ordinary speed that children become people, and I adored every minute of it.</p>
+  <p>We came back from Spokane in 1977, after two years in the Pacific Northwest. I had found a job with Macey's grocery stores in Salt Lake and we bought a partially finished home in Kearns and settled in. The twins arrived in December of that year — two months early, and they had a rough go of it at first. Four months in intensive care before we could bring them home. Even then they would stop breathing from time to time and back we would go to Primary Hospital.</p>
 
-  <p>How I adored that child. I want to say that plainly, before anything else.</p>
+  <p>We eventually sold the Kearns home and bought a nicer place in Granger — three bedrooms, a beautiful yard, a large garden and fruit trees. From the outside we had a great deal going for us. From the inside, the marriage was in serious trouble.</p>
 
-  <div class="scene-break">· · ·</div>
-
-  <p>Then she got sick.</p>
-
-  <p>It started with a fever — the kind that climbs and won't come down no matter what you do. We watched her, and worried, and did what young parents do: we hoped it would pass. It didn't pass. She began to lose weight. She lost her ability to walk. She lost her words, one by one, until she couldn't talk anymore. The bright, present little person who had been becoming herself in front of us went somewhere we couldn't follow.</p>
-
-  <p>We took her to Primary Children's Hospital.</p>
-
-  <div class="illness-block">
-    <div class="illness-block-inner">
-      <span class="illness-label">What the doctors found</span>
-      <div class="illness-term">Achemotaxis</div>
-      <div class="illness-explain">She had plenty of white blood cells. They simply failed to go fight off infection — like an army that couldn't receive its orders. Her body could not defend itself. Every illness that reached her found no resistance waiting.</div>
+  <div class="decade-block">
+    <div class="decade-block-inner">
+      <span class="decade-label">What the late 1970s looked like, all at once</span>
+      <div class="decade-item">Keri had major surgery on her right leg to straighten her feet.</div>
+      <div class="decade-item">Michael wasn't talking — we were taking him to speech therapy at the University of Utah.</div>
+      <div class="decade-item">A car accident left Linda with a broken leg and Keri — age five — thrown face-first through the side panel window of the station wagon.</div>
+      <div class="decade-item">Two missionary elders happened to witness the accident. Running to help, they found Keri hanging by her stomach on the jagged glass, not breathing. They administered to her. She came back.</div>
+      <div class="decade-item">Two suspicious fires in our home.</div>
+      <div class="decade-item">By the end of the decade, I had been thrown out of my own house on false charges.</div>
     </div>
   </div>
 
-  <p>She was a very sick baby. We prayed and fasted. We had her administered to. We sat beside her hospital bed and asked the Lord, as plainly as we knew how, to let her stay.</p>
+  <p>I want to be careful here, because some of what happened in those years involves people who are still living, and because I have tried throughout my life to speak plainly without speaking cruelly. What I will say is this: my first wife was deeply unhappy in ways that neither of us fully understood at the time, and unhappiness that goes unaddressed long enough eventually finds a way to make itself known. It found a way. By the end of the 1970s our marriage was over.</p>
 
-  <p>Gradually — slowly, in the way that recoveries happen when you are watching every small sign — she came back. The weight returned. The walking returned. The words came back one by one, like lights being switched back on in a house that had gone dark.</p>
+  <p>The divorce was not clean. Divorces rarely are, but this one was particularly ragged at the edges. There were false accusations. There were custody battles. There were moments I would rather not revisit in detail, not because I am ashamed of how I behaved in them, but because they involved my children, and my children are not the story I am trying to tell here.</p>
 
-  <div class="recovery-block">
-    <div class="recovery-block-inner">
-      <span class="recovery-label">What we knew afterward</span>
-      <p>"We knew it was a tender mercy from the Lord. And we were yet to learn that Keri's life was a complete set of tender mercies — one after another, stacked up like gifts, more than her short years should have been able to hold."</p>
-    </div>
-  </div>
+  <p>What I am trying to tell you is what it felt like to be on the other side of all of it — alone, in my thirties, living in a friend's house in the ward while my children were somewhere else every night.</p>
 
   <div class="scene-break">· · ·</div>
 
-  <p>I have thought many times about the particular mercy of those early years with Keri Lyn — the years before the harder things arrived. We were given time with her that we almost didn't get. Every morning she woke up and came padding into the kitchen was a morning we might not have had.</p>
+  <p>I found solace, as I often have, in service.</p>
 
-  <p>Parents of healthy children do not always know to count these things. They assume the ordinary mornings will keep coming — the cereal on the table, the small voice asking for something, the weight of a child climbing into your lap. They assume this because it is reasonable to assume. It had always been true before.</p>
+  <p>There was always some couple in the ward having a hard time — illness, a new baby, some difficulty that made an ordinary week feel impossible. I bought a large stewpot and taught myself to make soup. Then I would make a pot, let it cool, and after dark I would leave it on someone's doorstep. No note. No knock. Just the soup, and then I would disappear back into the night.</p>
 
-  <p>We had been taught, by one fever and one long hospital stay, not to assume. To receive each ordinary morning as what it was: a gift. Not guaranteed. Not owed to us. Given.</p>
+  <div class="soup-block">
+    <div class="soup-block-inner">
+      <span class="soup-label">What the soup was really about</span>
+      <div class="soup-text">"I knew I needed some pretty serious blessings and hoped that by caring for others I would somehow rate the Lord's attention. I testify that He is aware of us all — even the humblest of His children. Even a man alone in someone else's house, making soup at midnight and leaving it on strangers' porches."</div>
+    </div>
+  </div>
+
+  <p>I prayed fervently each night during those months. Not for my circumstances to improve in any particular way — I had learned enough by then to hold my specific requests loosely — but for help. For the Lord to see me. For something to break open.</p>
+
+  <p>I asked Him, specifically and repeatedly, to help me find someone I could love and who could love my children — someone who could give them a home and give me back a reason to come home to it.</p>
 
   <div class="pull-quote">
-    <p>"She was returned to us. That is the only way I know to say it. We asked and she was returned. Whatever came after, I have never stopped being grateful for the years we got."</p>
+    <p>"Losing my home was a depressing experience. But I knew the Lord was aware of me. And I knew, even then, that this chapter was not the last one."</p>
   </div>
 
-  <p>She grew. She became herself again — and more than herself, because children who come through something hard often do. There was a quality to Keri Lyn that I recognized but couldn't name: a kind of earnestness, a presence, as if she understood, even without words for it, that being here was not something to take lightly.</p>
+  <div class="scene-break">· · ·</div>
 
-  <p>She had surgeries. She had learning struggles. She faced more than her share of hard things in her ten years, and most of them are woven through the chapters that follow this one. But this chapter is not about those things. This chapter is about the girl herself — the sweetness of her temperament, the way she lit up a room without trying, the particular mercy of having her at all.</p>
+  <p>I want to say one more thing about this period before we move forward into what came next.</p>
 
-  <p>I am her father. I adored her from the first moment and I adore her still, across whatever distance now lies between us.</p>
+  <p>It is possible to go through a decade of difficulty and come out the other side without bitterness. I know this because I did it, and I am not a particularly extraordinary person. What I had was a testimony that the Lord was keeping track even when I couldn't see the larger arc. What I had was a stewpot and a ward full of people who needed soup. What I had was the habit, learned over years, of bringing my honest self to prayer and releasing the outcome.</p>
 
-  <p>That is what I want you to know about Keri Lyn before anything else.</p>
+  <p>Those things were enough. They are often enough, when nothing else is.</p>
 
   <div class="inset-block">
-    <span class="inset-label">What comes next</span>
-    <p>The next chapter covers the drive to Spokane — the mountain pass, the trailer with no brakes, and the moment on a quiet stretch of highway that neither Dee nor her mother has ever been able to fully explain. Keri Lyn is not quite two years old. She is already being watched over by someone other than her parents.</p>
+    <span class="inset-label">What was coming next</span>
+    <p>A barber. A threat about haircuts. A woman named Kathy Metcalf who was the mother of three wild little boys. And the beginning of the best chapter of Dee Stevens' life — which starts on the very next page.</p>
   </div>
 
   <div class="chapter-note">
     <strong>A Note for the Grandkids</strong>
-    Keri Lyn was Grandpa's firstborn child. She got very sick as a baby — sick enough that they almost lost her — and then she recovered. Grandpa has always counted those recovered years as a specific mercy from the Lord. She is buried in West Jordan, Utah. She was ten years old when she died, and Grandpa has never stopped missing her. This chapter is just about who she was. The rest of her story comes later.
+    This was the hardest decade of Grandpa's life — a marriage that fell apart, children he couldn't tuck in at night, a home he lost, a divorce that was uglier than it needed to be. He got through it by making soup at midnight and leaving it on people's doorsteps. He prayed every night. He kept going. What came next is worth getting to — but he wanted you to know this part first, so you'd understand what it cost him, and what the Lord eventually gave him in return.
   </div>
 
 </article>
@@ -562,14 +557,14 @@
 <div class="post-footer">
   <div class="footer-series">A Life of Tender Mercies &nbsp;·&nbsp; Part Two</div>
   <div class="chapter-nav">
-    <a class="nav-item prev" href="chapter-12.html">
+    <a class="nav-item prev" href="chapter-14.html">
       <div class="nav-label">← Previous</div>
-      <div class="nav-title">A Father Dies, A Marriage Begins</div>
-    </a>
-    <a class="nav-item next" href="chapter-14.html">
-      <div class="nav-label">Next →</div>
       <div class="nav-title">The Girl Who Flew Out the Window</div>
     </a>
+    <div class="nav-item next">
+      <div class="nav-label">Next →</div>
+      <div class="nav-title">Chapter 16 &mdash; Coming Soon</div>
+    </div>
   </div>
 </div>
 
