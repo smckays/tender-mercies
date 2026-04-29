@@ -1,0 +1,137 @@
+# .github/workflows/publish-chapter.yml
+#
+# Automated Chapter Publisher — A Life of Tender Mercies
+#
+# How it works:
+# 1. Every day at 8am Mountain Time, this action checks the /queue folder
+# 2. If a chapter file is there, it moves the lowest-numbered one to the root
+# 3. It updates contents.html to mark that chapter as available
+# 4. It commits and pushes — Netlify deploys automatically
+#
+# To queue a chapter: drop chapter-16.html into the /queue folder and push
+# To publish immediately: go to Actions tab → "Publish Next Chapter" → Run workflow
+
+name: Publish Next Chapter
+
+on:
+  schedule:
+    # Runs at 3pm UTC = 8am Mountain Time (adjust if needed)
+    - cron: '0 15 * * *'
+  workflow_dispatch:
+    # Also allows manual trigger from GitHub Actions tab
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check for queued chapters
+        id: check_queue
+        run: |
+          # Look for the lowest-numbered chapter file in /queue
+          NEXT=$(ls queue/chapter-*.html 2>/dev/null | sort -V | head -1)
+          if [ -z "$NEXT" ]; then
+            echo "No chapters in queue. Nothing to publish."
+            echo "has_chapter=false" >> $GITHUB_OUTPUT
+          else
+            FILENAME=$(basename "$NEXT")
+            echo "Found: $FILENAME"
+            echo "has_chapter=true" >> $GITHUB_OUTPUT
+            echo "filename=$FILENAME" >> $GITHUB_OUTPUT
+            echo "filepath=$NEXT" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Move chapter to root
+        if: steps.check_queue.outputs.has_chapter == 'true'
+        run: |
+          FILENAME="${{ steps.check_queue.outputs.filename }}"
+          FILEPATH="${{ steps.check_queue.outputs.filepath }}"
+
+          # Move chapter from queue to root
+          mv "$FILEPATH" "$FILENAME"
+          echo "Moved $FILENAME to root"
+
+      - name: Update contents.html
+        if: steps.check_queue.outputs.has_chapter == 'true'
+        run: |
+          FILENAME="${{ steps.check_queue.outputs.filename }}"
+
+          # Extract chapter number from filename (e.g. chapter-16.html → 16)
+          CHAPTER_NUM=$(echo "$FILENAME" | grep -o '[0-9]*')
+
+          # Replace the coming-soon entry with an available one
+          # This looks for the href to this chapter that has "coming" class and removes it
+          python3 << EOF
+          import re
+
+          with open('contents.html', 'r') as f:
+              content = f.read()
+
+          filename = "$FILENAME"
+          chapter_num = "$CHAPTER_NUM"
+
+          # Pattern: find the toc-chapter div/anchor for this chapter that is "coming soon"
+          # Change class from "toc-chapter coming" to "toc-chapter"
+          # Change href from "#" to the actual filename
+          # Change tag from "Coming soon" to "Available"
+
+          # Replace coming-soon entry: match the chapter number in a coming block
+          old_pattern = (
+              r'(<div class="toc-chapter coming">)\s*'
+              r'(<div class="toc-chapter-number">' + chapter_num + r'</div>)'
+          )
+          new_replacement = (
+              '<a class="toc-chapter" href="' + filename + '">\n'
+              '    <div class="toc-chapter-number">' + chapter_num + '</div>'
+          )
+
+          content_new = re.sub(old_pattern, new_replacement, content, flags=re.DOTALL)
+
+          # Close the div → close the anchor
+          # Also fix the Coming soon tag → Available
+          content_new = content_new.replace(
+              '<div class="toc-chapter-tag">Coming soon</div>\n  </div>',
+              '<div class="toc-chapter-tag">Available</div>\n  </a>',
+              1
+          )
+
+          # Update the count in the footer badge
+          # Find "X available now" and increment
+          def increment_available(m):
+              n = int(m.group(1))
+              return f'{n+1} available now'
+
+          content_new = re.sub(r'(\d+) available now', increment_available, content_new)
+
+          with open('contents.html', 'w') as f:
+              f.write(content_new)
+
+          print(f"Updated contents.html — Chapter {chapter_num} marked available")
+          EOF
+
+      - name: Commit and push
+        if: steps.check_queue.outputs.has_chapter == 'true'
+        run: |
+          FILENAME="${{ steps.check_queue.outputs.filename }}"
+          CHAPTER_NUM=$(echo "$FILENAME" | grep -o '[0-9]*')
+
+          git config user.name "Tender Mercies Bot"
+          git config user.email "actions@github.com"
+
+          git add "$FILENAME" contents.html
+          git add -u queue/  # stage the deletion from queue
+
+          git commit -m "Publish Chapter $CHAPTER_NUM"
+          git push
+
+      - name: Report result
+        run: |
+          if [ "${{ steps.check_queue.outputs.has_chapter }}" == "true" ]; then
+            echo "✅ Chapter ${{ steps.check_queue.outputs.filename }} published successfully."
+            echo "Netlify will deploy within 30 seconds."
+          else
+            echo "📭 Queue is empty. No chapter published today."
+          fi
