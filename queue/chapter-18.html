@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keri's Last Tender Mercy — A Life of Tender Mercies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1612; --ink-soft: #3d3530; --ink-muted: #7a6e68;
+    --paper: #faf7f2; --paper-warm: #f5f0e8;
+    --accent: #8b3a2a; --accent-soft: #c4785f; --rule: #d9d0c4;
+    --quiet: #141418; --quiet-pale: #706878; --quiet-bright: #c0b8c8;
+    --mercy: #101810; --mercy-pale: #607850; --mercy-bright: #b0c898;
+  }
+  html { scroll-behavior: smooth; }
+  body { background-color: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-weight: 300; font-size: 19px; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+  .masthead { border-bottom: 1px solid var(--rule); padding: 20px 0 18px; text-align: center; background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .masthead-title { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); }
+  .masthead-title span { color: var(--accent); }
+  .hero { max-width: 680px; margin: 0 auto; padding: 72px 24px 0; }
+  .series-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: block; }
+  h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px, 5vw, 52px); font-weight: 600; line-height: 1.15; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 28px; }
+  h1 em { font-style: italic; font-weight: 400; color: var(--ink-soft); }
+  .byline { display: flex; align-items: center; gap: 14px; margin-bottom: 48px; }
+  .byline-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-soft), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 15px; color: white; flex-shrink: 0; }
+  .byline-text { font-family: 'Crimson Pro', Georgia, serif; font-size: 15px; color: var(--ink-muted); line-height: 1.4; }
+  .byline-text strong { color: var(--ink-soft); font-weight: 400; display: block; font-size: 16px; }
+  .ornamental-rule { display: flex; align-items: center; gap: 16px; margin: 0 0 52px; }
+  .ornamental-rule::before, .ornamental-rule::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+  .ornamental-rule-glyph { color: var(--accent-soft); font-size: 18px; }
+  .article { max-width: 680px; margin: 0 auto; padding: 0 24px 80px; }
+  .drop-cap::first-letter { font-family: 'Playfair Display', Georgia, serif; font-size: 5.2em; font-weight: 600; float: left; line-height: 0.72; margin-right: 10px; margin-top: 10px; color: var(--accent); }
+  p { margin-bottom: 1.6em; color: var(--ink-soft); }
+  p:last-child { margin-bottom: 0; }
+  .scene-break { text-align: center; margin: 44px 0; color: var(--accent-soft); font-size: 20px; letter-spacing: 0.4em; }
+  .pull-quote { border-left: 3px solid var(--accent); margin: 44px 0; padding: 4px 0 4px 28px; }
+  .pull-quote p { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-style: italic; line-height: 1.5; color: var(--ink); margin: 0; }
+  .inset-block { background: var(--paper-warm); border: 1px solid var(--rule); border-left: 4px solid var(--accent-soft); padding: 24px 28px; margin: 44px 0; border-radius: 0 2px 2px 0; }
+  .inset-label { font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 400; display: block; }
+  .inset-block p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; font-style: italic; color: var(--ink-soft); line-height: 1.75; margin: 0; }
+
+  /* The facts block — spare, clinical, the way loss arrives */
+  .facts-block {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin: 44px 0;
+    padding: 32px 0;
+  }
+  .facts-block .fact-row {
+    display: flex;
+    gap: 20px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .facts-block .fact-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .fact-label { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); min-width: 120px; padding-top: 2px; flex-shrink: 0; }
+  .fact-value { color: var(--ink-soft); font-style: italic; }
+
+  /* The quiet block — the witness Dee received */
+  .quiet-block { background: var(--quiet); margin: 52px -24px; padding: 60px 48px; position: relative; overflow: hidden; text-align: center; }
+  .quiet-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(112,104,120,0.08) 0%, transparent 65%); }
+  .quiet-block-inner { position: relative; z-index: 1; }
+  .quiet-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--quiet-pale); margin-bottom: 28px; display: block; }
+  .quiet-block .quiet-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(18px, 3vw, 26px); font-style: italic; color: var(--quiet-bright); line-height: 1.65; margin: 0; max-width: 520px; margin-left: auto; margin-right: auto; }
+
+  /* The mercy block — the temple work, the witness confirmed */
+  .mercy-block { background: var(--mercy); margin: 52px -24px; padding: 52px 48px; position: relative; overflow: hidden; text-align: center; }
+  .mercy-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(96,120,80,0.08) 0%, transparent 65%); }
+  .mercy-block-inner { position: relative; z-index: 1; }
+  .mercy-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mercy-pale); margin-bottom: 24px; display: block; }
+  .mercy-block p { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(17px, 2.8vw, 22px); font-style: italic; color: var(--mercy-bright); line-height: 1.65; margin: 0 0 14px; }
+  .mercy-block p:last-child { margin: 0; }
+
+  .chapter-note { background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; padding: 24px 28px; margin: 52px 0 0; font-family: 'Crimson Pro', Georgia, serif; font-size: 16px; color: var(--ink-muted); line-height: 1.7; }
+  .chapter-note strong { display: block; font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-style: normal; font-weight: 400; }
+  .post-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 80px; border-top: 1px solid var(--rule); }
+  .footer-series { font-family: 'Crimson Pro', Georgia, serif; font-size: 14px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 20px; }
+  .chapter-nav { display: flex; justify-content: space-between; gap: 20px; }
+  .nav-item { flex: 1; padding: 18px 20px; background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; text-decoration: none; transition: border-color 0.2s; }
+  .nav-item:hover { border-color: var(--accent-soft); }
+  .nav-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .nav-title { font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: var(--ink); line-height: 1.35; }
+  .nav-item.next { text-align: right; }
+  .subscribe-bar { background: var(--ink); padding: 52px 24px; text-align: center; margin-top: 20px; }
+  .subscribe-bar h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 400; color: var(--paper); margin-bottom: 10px; }
+  .subscribe-bar p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; color: #9a9088; margin-bottom: 24px; }
+  .subscribe-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; }
+  .subscribe-form input { flex: 1; padding: 12px 16px; background: #2a2420; border: 1px solid #3d3530; border-radius: 2px; color: var(--paper); font-family: 'Source Serif 4', serif; font-size: 15px; outline: none; }
+  .subscribe-form input::placeholder { color: #5a504a; }
+  .subscribe-form input:focus { border-color: var(--accent-soft); }
+  .subscribe-form button { padding: 12px 20px; background: var(--accent); border: none; border-radius: 2px; color: white; font-family: 'Crimson Pro', serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
+  .subscribe-form button:hover { background: var(--accent-soft); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 0.7s ease both; }
+  .article { animation: fadeUp 0.7s 0.15s ease both; }
+  @media (max-width: 600px) { body { font-size: 17px; } .quiet-block { margin: 44px -24px; padding: 44px 28px; } .mercy-block { margin: 44px -24px; padding: 44px 28px; } .facts-block .fact-row { flex-direction: column; gap: 4px; } .chapter-nav { flex-direction: column; } .nav-item.next { text-align: left; } .subscribe-form { flex-direction: column; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-title">A Life of <span>Tender Mercies</span> &nbsp;·&nbsp; Dee Stevens</div>
+</header>
+
+<div class="hero">
+  <span class="series-label">Part Three: Kathy &nbsp;·&nbsp; Chapter Eighteen</span>
+  <h1>Keri's Last <em>Tender Mercy</em></h1>
+  <div class="byline">
+    <div class="byline-avatar">D</div>
+    <div class="byline-text">
+      <strong>Dee Stevens</strong>
+      Hawaii &nbsp;·&nbsp; 1984
+    </div>
+  </div>
+  <div class="ornamental-rule"><span class="ornamental-rule-glyph">&#10022;</span></div>
+</div>
+
+<article class="article">
+
+  <p class="drop-cap">I have been circling this chapter since I began writing. Not because I don't know what to say — I have had forty years to find the words — but because some things deserve the space of silence before you speak them. Keri Lyn was ten years old. She had already survived more than most people survive in a lifetime. And then she was gone.</p>
+
+  <p>I want to tell you what happened, and then I want to tell you what I received in the middle of the grief. Because there was something — quiet, unmistakable, and entirely unearned — that came to me in the weeks after her death. I have carried it ever since. It is the thing this chapter is named for.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>In 1984 Keri Lyn contracted a bone marrow cancer. It moved quickly — the way the worst things move, faster than you can think or plan or pray your way ahead of them. Within a matter of weeks she was gravely ill.</p>
+
+  <p>Her mother took her to Hawaii for a family vacation. Keri felt too sick to go, but they went. While they were there her condition worsened sharply. The airlines would not allow her to board a return flight. She developed pneumonia. She died in Hawaii, far from home, at ten years old.</p>
+
+  <div class="facts-block">
+    <div class="fact-row">
+      <div class="fact-label">Age</div>
+      <div class="fact-value">Ten years old</div>
+    </div>
+    <div class="fact-row">
+      <div class="fact-label">Family residence</div>
+      <div class="fact-value">West Valley City, Salt Lake, Utah</div>
+    </div>
+    <div class="fact-row">
+      <div class="fact-label">Place of death</div>
+      <div class="fact-value">Hawaii</div>
+    </div>
+    <div class="fact-row">
+      <div class="fact-label">Place of burial</div>
+      <div class="fact-value">West Jordan, Salt Lake, Utah</div>
+    </div>
+  </div>
+
+  <p>I loved that girl so much. I had adored her from the first moment I held her and I had never stopped. She had been returned to me once — from the illness as a baby, from the car window on the Idaho highway — and each time I had tried to receive the returned years as the gift they were, not taking them for granted, knowing in the back of my mind that she was on loan in a way that most children are not.</p>
+
+  <p>But knowing a thing and being ready for it are not the same thing. I was not ready. You are never ready for this.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>What I want to tell you about — the reason this chapter is called what it is called — is something that happened in the weeks after Keri's death. Not a vision. Not a voice. Something quieter than that, and more certain.</p>
+
+  <p>I had been sitting with the grief, which is what you do. You sit with it because there is nothing else to do. And somewhere in that sitting, a witness came to me from the Spirit — gentle and unforced and completely clear.</p>
+
+  <div class="quiet-block">
+    <div class="quiet-block-inner">
+      <span class="quiet-label">What the Spirit bore witness to</span>
+      <div class="quiet-text">"She had suffered so many tragedies in her short life. It was pretty clear she would have suffered even more had she been allowed to stay. Taking her home was a gift of mercy from Heavenly Father."</div>
+    </div>
+  </div>
+
+  <p>I want to be careful about how I say this, because I know it can be misread. I am not saying her death was easy. I am not saying I wasn't devastated, because I was. I am not saying the grief was small or quick or clean, because it was none of those things.</p>
+
+  <p>What I am saying is that in the middle of the grief, something was given to me. A witness. A sense — arriving quietly, without drama, without any effort on my part — that her suffering here was done, and that the Lord had taken her at the precise moment He had always intended to take her, and that what looked from the outside like a terrible and premature end was, from somewhere we cannot see, an act of care.</p>
+
+  <p>I did not conjure this. I did not talk myself into it. It came the way the Spirit always comes — without asking, and unmistakable.</p>
+
+  <div class="pull-quote">
+    <p>"That witness has never left me. Forty years later I still carry it. It has not made missing her any easier. But it has made the missing of her bearable."</p>
+  </div>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>Her passing was a time of great sorrow for me. I want to say that again, plainly, because I don't want the witness I received to obscure the grief. Both things were true. The grief was real and the witness was real and they lived alongside each other without canceling each other out.</p>
+
+  <p>That, I have come to believe, is often how the Lord works in the worst moments of our lives. He does not take the sorrow away. He gives you something to hold alongside it — something true and firm enough that the sorrow doesn't swallow you entirely.</p>
+
+  <p>A year after Keri died, Kathy and my sister Karen did her temple work at the Jordan River Temple. That mattered to me more than I can easily say. The work we do for those who have gone on is not merely symbolic — it is real. It means something in whatever world she now inhabits. She was sealed and saved and claimed, and I will find her again.</p>
+
+  <div class="mercy-block">
+    <div class="mercy-block-inner">
+      <span class="mercy-label">Jordan River Temple &nbsp;·&nbsp; One year after</span>
+      <p>Kathy and Karen did her temple work.</p>
+      <p>Keri Lyn was sealed. She was claimed. She was not lost.</p>
+    </div>
+  </div>
+
+  <p>There is a particular geography to how I think about Keri Lyn now. She is buried in West Jordan. She died in Hawaii. She lived in Utah and Idaho and Washington and wherever we were. She was born on September 8th, 1973, and she was ten years old, and she is the only one of my children I have had to bury.</p>
+
+  <p>But she is not the last word. The last word is the witness I received — quiet, certain, given without drama in the middle of the grief — that she was taken in mercy, at the right moment, by the same God who sent a protective bubble around a boy lying in the grass at the base of a light tower, and who brought a baby back from the edge of death, and who delivered a little girl back through a car window on an Idaho highway.</p>
+
+  <p>He was paying attention to her the whole time. He is still paying attention. I have to believe that. On the hardest days I have had to choose to believe it, to reach back for the witness and hold it.</p>
+
+  <p>But it has never been untrue. Not once in forty years has it been untrue.</p>
+
+  <div class="chapter-note">
+    <strong>A Note for the Grandkids</strong>
+    Keri Lyn was Grandpa's firstborn daughter. She died of bone marrow cancer in Hawaii in 1984 at the age of ten. She is buried in West Jordan, Utah. In the weeks after her death, Grandpa received a quiet witness from the Spirit that her passing was an act of mercy from the Lord — that she had suffered enough in her short life, and that taking her home was a gift, not a punishment. He has held that witness for forty years. It has not made missing her easier. It has made it bearable. She is not lost. She is just ahead of us.
+  </div>
+
+</article>
+
+<div class="post-footer">
+  <div class="footer-series">A Life of Tender Mercies &nbsp;·&nbsp; Part Three</div>
+  <div class="chapter-nav">
+    <a class="nav-item prev" href="chapter-17.html">
+      <div class="nav-label">&larr; Previous</div>
+      <div class="nav-title">Hero the Dog and the Sheep Parade</div>
+    </a>
+    <a class="nav-item next" href="chapter-19.html">
+      <div class="nav-label">Next &rarr;</div>
+      <div class="nav-title">The Neighbor With the Glass Eye</div>
+    </a>
+  </div>
+</div>
+
+<div class="subscribe-bar">
+  <h3>Follow along with Dee's story</h3>
+  <p>New chapters delivered to your inbox, free.</p>
+  <div class="subscribe-form">
+    <input type="email" placeholder="your@email.com">
+    <button>Subscribe</button>
+  </div>
+</div>
+
+</body>
+</html>

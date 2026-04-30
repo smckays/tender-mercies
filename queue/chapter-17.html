@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hero the Dog and the Sheep Parade — A Life of Tender Mercies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1612; --ink-soft: #3d3530; --ink-muted: #7a6e68;
+    --paper: #faf7f2; --paper-warm: #f5f0e8;
+    --accent: #8b3a2a; --accent-soft: #c4785f; --rule: #d9d0c4;
+    --field: #141c10; --field-pale: #688050; --field-bright: #b8cc98;
+    --street: #181410; --street-pale: #907850; --street-bright: #d4c090;
+  }
+  html { scroll-behavior: smooth; }
+  body { background-color: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-weight: 300; font-size: 19px; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+  .masthead { border-bottom: 1px solid var(--rule); padding: 20px 0 18px; text-align: center; background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .masthead-title { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); }
+  .masthead-title span { color: var(--accent); }
+  .hero { max-width: 680px; margin: 0 auto; padding: 72px 24px 0; }
+  .series-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: block; }
+  h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px, 5vw, 52px); font-weight: 600; line-height: 1.15; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 28px; }
+  h1 em { font-style: italic; font-weight: 400; color: var(--ink-soft); }
+  .byline { display: flex; align-items: center; gap: 14px; margin-bottom: 48px; }
+  .byline-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-soft), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 15px; color: white; flex-shrink: 0; }
+  .byline-text { font-family: 'Crimson Pro', Georgia, serif; font-size: 15px; color: var(--ink-muted); line-height: 1.4; }
+  .byline-text strong { color: var(--ink-soft); font-weight: 400; display: block; font-size: 16px; }
+  .ornamental-rule { display: flex; align-items: center; gap: 16px; margin: 0 0 52px; }
+  .ornamental-rule::before, .ornamental-rule::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+  .ornamental-rule-glyph { color: var(--accent-soft); font-size: 18px; }
+  .article { max-width: 680px; margin: 0 auto; padding: 0 24px 80px; }
+  .drop-cap::first-letter { font-family: 'Playfair Display', Georgia, serif; font-size: 5.2em; font-weight: 600; float: left; line-height: 0.72; margin-right: 10px; margin-top: 10px; color: var(--accent); }
+  p { margin-bottom: 1.6em; color: var(--ink-soft); }
+  p:last-child { margin-bottom: 0; }
+  .scene-break { text-align: center; margin: 44px 0; color: var(--accent-soft); font-size: 20px; letter-spacing: 0.4em; }
+  .pull-quote { border-left: 3px solid var(--accent); margin: 44px 0; padding: 4px 0 4px 28px; }
+  .pull-quote p { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-style: italic; line-height: 1.5; color: var(--ink); margin: 0; }
+  .inset-block { background: var(--paper-warm); border: 1px solid var(--rule); border-left: 4px solid var(--accent-soft); padding: 24px 28px; margin: 44px 0; border-radius: 0 2px 2px 0; }
+  .inset-label { font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 400; display: block; }
+  .inset-block p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; font-style: italic; color: var(--ink-soft); line-height: 1.75; margin: 0; }
+  .field-block { background: var(--field); margin: 52px -24px; padding: 56px 48px; position: relative; overflow: hidden; text-align: center; }
+  .field-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(104,128,80,0.08) 0%, transparent 65%); }
+  .field-block-inner { position: relative; z-index: 1; }
+  .field-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--field-pale); margin-bottom: 28px; display: block; }
+  .field-block .field-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(18px, 3vw, 26px); font-style: italic; color: var(--field-bright); line-height: 1.6; margin: 0 0 16px; }
+  .field-block .field-text:last-child { margin: 0; }
+  .street-block { background: var(--street); margin: 52px -24px; padding: 52px 48px; position: relative; overflow: hidden; text-align: center; }
+  .street-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(144,120,80,0.07) 0%, transparent 65%); }
+  .street-block-inner { position: relative; z-index: 1; }
+  .street-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--street-pale); margin-bottom: 24px; display: block; }
+  .street-block .street-moment { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(20px, 3.5vw, 30px); font-weight: 600; font-style: italic; color: var(--street-bright); line-height: 1.35; margin: 0 0 16px; }
+  .street-block .street-plain { font-family: 'Crimson Pro', Georgia, serif; font-size: 16px; color: var(--street-pale); font-style: normal; letter-spacing: 0.06em; margin: 0; }
+  .chapter-note { background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; padding: 24px 28px; margin: 52px 0 0; font-family: 'Crimson Pro', Georgia, serif; font-size: 16px; color: var(--ink-muted); line-height: 1.7; }
+  .chapter-note strong { display: block; font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-style: normal; font-weight: 400; }
+  .post-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 80px; border-top: 1px solid var(--rule); }
+  .footer-series { font-family: 'Crimson Pro', Georgia, serif; font-size: 14px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 20px; }
+  .chapter-nav { display: flex; justify-content: space-between; gap: 20px; }
+  .nav-item { flex: 1; padding: 18px 20px; background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; text-decoration: none; transition: border-color 0.2s; }
+  .nav-item:hover { border-color: var(--accent-soft); }
+  .nav-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .nav-title { font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: var(--ink); line-height: 1.35; }
+  .nav-item.next { text-align: right; }
+  .subscribe-bar { background: var(--ink); padding: 52px 24px; text-align: center; margin-top: 20px; }
+  .subscribe-bar h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 400; color: var(--paper); margin-bottom: 10px; }
+  .subscribe-bar p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; color: #9a9088; margin-bottom: 24px; }
+  .subscribe-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; }
+  .subscribe-form input { flex: 1; padding: 12px 16px; background: #2a2420; border: 1px solid #3d3530; border-radius: 2px; color: var(--paper); font-family: 'Source Serif 4', serif; font-size: 15px; outline: none; }
+  .subscribe-form input::placeholder { color: #5a504a; }
+  .subscribe-form input:focus { border-color: var(--accent-soft); }
+  .subscribe-form button { padding: 12px 20px; background: var(--accent); border: none; border-radius: 2px; color: white; font-family: 'Crimson Pro', serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
+  .subscribe-form button:hover { background: var(--accent-soft); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 0.7s ease both; }
+  .article { animation: fadeUp 0.7s 0.15s ease both; }
+  @media (max-width: 600px) { body { font-size: 17px; } .field-block { margin: 44px -24px; padding: 44px 28px; } .street-block { margin: 44px -24px; padding: 44px 28px; } .chapter-nav { flex-direction: column; } .nav-item.next { text-align: left; } .subscribe-form { flex-direction: column; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-title">A Life of <span>Tender Mercies</span> &nbsp;·&nbsp; Dee Stevens</div>
+</header>
+
+<div class="hero">
+  <span class="series-label">Part Three: Kathy &nbsp;·&nbsp; Chapter Seventeen</span>
+  <h1>Hero the Dog <em>and the Sheep Parade</em></h1>
+  <div class="byline">
+    <div class="byline-avatar">D</div>
+    <div class="byline-text">
+      <strong>Dee Stevens</strong>
+      Tooele, Utah &nbsp;·&nbsp; 1983
+    </div>
+  </div>
+  <div class="ornamental-rule"><span class="ornamental-rule-glyph">&#10022;</span></div>
+</div>
+
+<article class="article">
+
+  <p class="drop-cap">Not every chapter in a life is heavy. Some of them are just a rambunctious black Labrador and a herd of sheep and a kindly officer who tears up the check. I want to tell you this one because it is true and because it is funny and because I think a life of tender mercies has to include the moments that made you laugh even when they cost you something.</p>
+
+  <p>We had been transferred to Tooele when Albertsons moved me to manage the store there. Rather than drive the distance every day we decided to rent in town, and we found a sweet little white cottage with a white picket fence, a large garden, and beautiful lilies growing all around it. We loved our ward. The neighborhood had a particular character to it — little alleyways divided the properties, most neighbors kept sheep or some other farm animal, and in the spring we would walk the alleys admiring the new baby animals. It was the kind of place that made you feel like you had wandered back into an earlier, quieter version of American life.</p>
+
+  <p>We had a dog named Hero. He was a rambunctious black Labrador retriever — big and affectionate and entirely without judgment about what constituted appropriate behavior. We loved him completely. We also had been warned, clearly and more than once, that Tooele was a sheep town and that the local people had no tolerance for dogs that got into the flocks. Dogs that threatened sheep were put down. We understood. We kept Hero as secure as we could.</p>
+
+  <p>Hero had other ideas.</p>
+
+  <div class="field-block">
+    <div class="field-block-inner">
+      <span class="field-label">One afternoon while Dee was at work</span>
+      <div class="field-text">A man came into the store with news from Main Street.</div>
+      <div class="field-text">"You should see what's going on out there — a whole herd of sheep parading right down the middle of the road."</div>
+      <div class="field-text">Someone asked if they were being driven or just wandering.</div>
+      <div class="field-text">"No," the man said. "A black lab is herding them. Pushing them right along."</div>
+    </div>
+  </div>
+
+  <p>I knew right then I was in trouble.</p>
+
+  <p>I want you to picture this, because I have pictured it many times myself: Hero, ears back, tongue out, absolutely in his element, driving an entire flock of sheep down the main street of Tooele like he had been waiting his whole life for this exact opportunity. He was not attacking them. He was not frightening them, particularly. He was herding them — with great enthusiasm and evident satisfaction — through the middle of town.</p>
+
+  <p>It was, by any objective measure, an impressive performance. It was also a death sentence.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>I contacted the sheriff, who contacted Animal Control. The officer who came was a kind man — you could see it in his face when I handed him the check to cover the expenses. He looked at it for a moment and then he tore it up.</p>
+
+  <div class="street-block">
+    <div class="street-block-inner">
+      <span class="street-label">What the officer said</span>
+      <div class="street-moment">"He didn't have the heart to charge me."</div>
+      <div class="street-plain">Hero was gone. The sheep were returned to their pen.<br>Main Street was restored to its usual quiet.<br>And somewhere in Tooele, people were telling the story.</div>
+    </div>
+  </div>
+
+  <p>I was genuinely sad. Hero had been a loyal companion, and the boys had loved him, and there is something particularly hard about losing a dog — the uncomplicated nature of what a dog gives you makes the absence of it feel simple and total in a way that more complicated losses do not.</p>
+
+  <p>But I have to be honest with you. Every time I have told this story in the fifty years since it happened, the room laughs. And I laugh with them. Because whatever else it was, a black Labrador herding an entire flock of sheep down the main street of a Utah farming town in 1983 is one of the more magnificent things I have ever had the privilege of being responsible for.</p>
+
+  <div class="pull-quote">
+    <p>"Hero was only doing what he was built to do. He found some sheep, and he herded them. That he happened to do it down the center of Main Street was a matter of circumstance, not character."</p>
+  </div>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>I tell you this story between the harder ones on purpose. Life with Kathy in those years was not all loss and difficulty — it was also lilies around a white picket fence, and baby animals in the alleyways in spring, and a dog who had one magnificent afternoon before his time ran out.</p>
+
+  <p>A life of tender mercies includes the funny ones. The Lord gives us those too, I think — the absurd moments, the stories that don't mean anything except that you were alive and paying attention and something ridiculous happened and you were there to see it.</p>
+
+  <p>Hero paraded those sheep down Main Street. The officer tore up the check. I drove home and told Kathy, and she laughed until she cried.</p>
+
+  <p>That is also a kind of mercy. Not a small one.</p>
+
+  <div class="chapter-note">
+    <strong>A Note for the Grandkids</strong>
+    Hero was the family's black Labrador in Tooele, Utah. One afternoon while Grandpa was at work, Hero escaped and herded an entire flock of sheep down Main Street. Grandpa found out when a customer came into his store with the news. The officer who came to handle it tore up the check rather than charge him. Hero was a good dog who had one very bad — and very spectacular — afternoon. Grandpa has been laughing about it ever since.
+  </div>
+
+</article>
+
+<div class="post-footer">
+  <div class="footer-series">A Life of Tender Mercies &nbsp;·&nbsp; Part Three</div>
+  <div class="chapter-nav">
+    <a class="nav-item prev" href="chapter-16.html">
+      <div class="nav-label">&larr; Previous</div>
+      <div class="nav-title">The Worst Haircut Since Samson and Delilah</div>
+    </a>
+    <a class="nav-item next" href="chapter-18.html">
+      <div class="nav-label">Next &rarr;</div>
+      <div class="nav-title">Keri's Last Tender Mercy</div>
+    </a>
+  </div>
+</div>
+
+<div class="subscribe-bar">
+  <h3>Follow along with Dee's story</h3>
+  <p>New chapters delivered to your inbox, free.</p>
+  <div class="subscribe-form">
+    <input type="email" placeholder="your@email.com">
+    <button>Subscribe</button>
+  </div>
+</div>
+
+</body>
+</html>

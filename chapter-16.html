@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Worst Haircut Since Samson and Delilah — A Life of Tender Mercies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1612; --ink-soft: #3d3530; --ink-muted: #7a6e68;
+    --paper: #faf7f2; --paper-warm: #f5f0e8;
+    --accent: #8b3a2a; --accent-soft: #c4785f; --rule: #d9d0c4;
+    --warm: #1e1810; --warm-pale: #907850; --warm-bright: #d4c09a;
+    --temple: #181820; --temple-pale: #7878a0; --temple-bright: #c0c0d8;
+  }
+  html { scroll-behavior: smooth; }
+  body { background-color: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-weight: 300; font-size: 19px; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+  .masthead { border-bottom: 1px solid var(--rule); padding: 20px 0 18px; text-align: center; background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .masthead-title { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); }
+  .masthead-title span { color: var(--accent); }
+  .hero { max-width: 680px; margin: 0 auto; padding: 72px 24px 0; }
+  .series-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: block; }
+  h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px, 5vw, 52px); font-weight: 600; line-height: 1.15; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 28px; }
+  h1 em { font-style: italic; font-weight: 400; color: var(--ink-soft); }
+  .byline { display: flex; align-items: center; gap: 14px; margin-bottom: 48px; }
+  .byline-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-soft), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 15px; color: white; flex-shrink: 0; }
+  .byline-text { font-family: 'Crimson Pro', Georgia, serif; font-size: 15px; color: var(--ink-muted); line-height: 1.4; }
+  .byline-text strong { color: var(--ink-soft); font-weight: 400; display: block; font-size: 16px; }
+  .ornamental-rule { display: flex; align-items: center; gap: 16px; margin: 0 0 52px; }
+  .ornamental-rule::before, .ornamental-rule::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+  .ornamental-rule-glyph { color: var(--accent-soft); font-size: 18px; }
+  .article { max-width: 680px; margin: 0 auto; padding: 0 24px 80px; }
+  .drop-cap::first-letter { font-family: 'Playfair Display', Georgia, serif; font-size: 5.2em; font-weight: 600; float: left; line-height: 0.72; margin-right: 10px; margin-top: 10px; color: var(--accent); }
+  p { margin-bottom: 1.6em; color: var(--ink-soft); }
+  p:last-child { margin-bottom: 0; }
+  .scene-break { text-align: center; margin: 44px 0; color: var(--accent-soft); font-size: 20px; letter-spacing: 0.4em; }
+  .pull-quote { border-left: 3px solid var(--accent); margin: 44px 0; padding: 4px 0 4px 28px; }
+  .pull-quote p { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-style: italic; line-height: 1.5; color: var(--ink); margin: 0; }
+  .inset-block { background: var(--paper-warm); border: 1px solid var(--rule); border-left: 4px solid var(--accent-soft); padding: 24px 28px; margin: 44px 0; border-radius: 0 2px 2px 0; }
+  .inset-label { font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 400; display: block; }
+  .inset-block p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; font-style: italic; color: var(--ink-soft); line-height: 1.75; margin: 0; }
+  .meeting-block { background: var(--warm); margin: 52px -24px; padding: 56px 48px; position: relative; overflow: hidden; text-align: center; }
+  .meeting-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(144,120,80,0.08) 0%, transparent 65%); }
+  .meeting-block-inner { position: relative; z-index: 1; }
+  .meeting-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--warm-pale); margin-bottom: 28px; display: block; }
+  .meeting-block .meeting-date { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(22px, 4vw, 34px); font-weight: 600; color: var(--warm-bright); line-height: 1.2; margin: 0 0 12px; }
+  .meeting-block .meeting-detail { font-family: 'Crimson Pro', Georgia, serif; font-size: clamp(15px, 2.4vw, 18px); color: var(--warm-pale); font-style: italic; line-height: 1.6; margin: 0; }
+  .temple-block { background: var(--temple); margin: 52px -24px; padding: 52px 48px; position: relative; overflow: hidden; text-align: center; }
+  .temple-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(120,120,160,0.08) 0%, transparent 65%); }
+  .temple-block-inner { position: relative; z-index: 1; }
+  .temple-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--temple-pale); margin-bottom: 24px; display: block; }
+  .temple-block p { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(17px, 2.8vw, 22px); font-style: italic; color: var(--temple-bright); line-height: 1.65; margin: 0 0 14px; }
+  .temple-block p:last-child { margin: 0; }
+  .chapter-note { background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; padding: 24px 28px; margin: 52px 0 0; font-family: 'Crimson Pro', Georgia, serif; font-size: 16px; color: var(--ink-muted); line-height: 1.7; }
+  .chapter-note strong { display: block; font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-style: normal; font-weight: 400; }
+  .post-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 80px; border-top: 1px solid var(--rule); }
+  .footer-series { font-family: 'Crimson Pro', Georgia, serif; font-size: 14px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 20px; }
+  .chapter-nav { display: flex; justify-content: space-between; gap: 20px; }
+  .nav-item { flex: 1; padding: 18px 20px; background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; text-decoration: none; transition: border-color 0.2s; }
+  .nav-item:hover { border-color: var(--accent-soft); }
+  .nav-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .nav-title { font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: var(--ink); line-height: 1.35; }
+  .nav-item.next { text-align: right; }
+  .subscribe-bar { background: var(--ink); padding: 52px 24px; text-align: center; margin-top: 20px; }
+  .subscribe-bar h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 400; color: var(--paper); margin-bottom: 10px; }
+  .subscribe-bar p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; color: #9a9088; margin-bottom: 24px; }
+  .subscribe-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; }
+  .subscribe-form input { flex: 1; padding: 12px 16px; background: #2a2420; border: 1px solid #3d3530; border-radius: 2px; color: var(--paper); font-family: 'Source Serif 4', serif; font-size: 15px; outline: none; }
+  .subscribe-form input::placeholder { color: #5a504a; }
+  .subscribe-form input:focus { border-color: var(--accent-soft); }
+  .subscribe-form button { padding: 12px 20px; background: var(--accent); border: none; border-radius: 2px; color: white; font-family: 'Crimson Pro', serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
+  .subscribe-form button:hover { background: var(--accent-soft); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 0.7s ease both; }
+  .article { animation: fadeUp 0.7s 0.15s ease both; }
+  @media (max-width: 600px) { body { font-size: 17px; } .meeting-block { margin: 44px -24px; padding: 44px 28px; } .temple-block { margin: 44px -24px; padding: 44px 28px; } .chapter-nav { flex-direction: column; } .nav-item.next { text-align: left; } .subscribe-form { flex-direction: column; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-title">A Life of <span>Tender Mercies</span> &nbsp;·&nbsp; Dee Stevens</div>
+</header>
+
+<div class="hero">
+  <span class="series-label">Part Three: Kathy &nbsp;·&nbsp; Chapter Sixteen</span>
+  <h1>The Worst Haircut <em>Since Samson and Delilah</em></h1>
+  <div class="byline">
+    <div class="byline-avatar">D</div>
+    <div class="byline-text">
+      <strong>Dee Stevens</strong>
+      Salt Lake Valley, Utah &nbsp;·&nbsp; 1981
+    </div>
+  </div>
+  <div class="ornamental-rule"><span class="ornamental-rule-glyph">❧</span></div>
+</div>
+
+<article class="article">
+
+  <p class="drop-cap">I had been praying for a specific kind of person. Not a vague request — not just "someone good" — but a particular petition: someone who could accept me and my children, and give them a home. Someone I could love and who could love us back. I prayed this prayer every night with the same honest desperation I had once prayed for a mission call to Cumorah. I had learned by then that specific prayers get specific answers. I was counting on it.</p>
+
+  <p>The answer came through my barber.</p>
+
+  <p>He was not, by any reasonable measure, a matchmaker. He was a man who cut hair. He was also, it turned out, deeply invested in the romantic prospects of his clientele, because one afternoon while he had me in the chair he told me about a woman he knew — a woman named Kathy Metcalf, the mother of three wild little boys — and informed me that I should ask her out.</p>
+
+  <p>I was not immediately persuaded.</p>
+
+  <p>He was not deterred. He explained that if I didn't ask her out, he would give me the worst haircut since Samson and Delilah. He already gave pretty bad haircuts. I did not want to find out what worse looked like. So I asked her out.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <div class="meeting-block">
+    <div class="meeting-block-inner">
+      <span class="meeting-label">The beginning of everything</span>
+      <div class="meeting-date">March 23, 1981</div>
+      <div class="meeting-detail">The day Dee Stevens met Kathy Metcalf.<br>By May 20th they were married.<br>Fifty-eight days.</div>
+    </div>
+  </div>
+
+  <p>I know what fifty-eight days sounds like. It sounds reckless. It sounds like the kind of decision that sensible people caution against. And perhaps it was — but I want to tell you what those fifty-eight days actually contained, because they were not empty.</p>
+
+  <p>Kathy Metcalf was the kind of woman who made you feel, within the first few minutes of knowing her, that she had already decided to be your friend. Not in a performative way — in a real way, the way that certain people have of giving you their full attention and making you feel seen by it. She was warm and capable and she had a laugh that could fill a room. She had been through her own hard things and come out the other side with her faith intact and her capacity for kindness undimmed.</p>
+
+  <p>She was also the mother of three boys — Travis, Jared, and Ben — who were, by her own cheerful admission, a handful. This did not discourage me. I had four children of my own. I understood handfuls.</p>
+
+  <div class="inset-block">
+    <span class="inset-label">What we were each bringing to the table</span>
+    <p>Dee: four children, a stewpot, a grocery store career, a testimony built over thirty years of alternating miracles and difficulties, and a very specific prayer that had been running for months. Kathy: three boys, a gift for caring for people that would only deepen over the years, and a laugh that would prove, over four decades, to be one of the great sounds of his life.</p>
+  </div>
+
+  <p>We were married on May 20th, 1981. Bishop Taylor from the North Jordan Ward came to Kathy's home in Bennion to perform the ceremony, with Grandpa and Grandma Metcalf standing as witnesses. It was a small, simple wedding — which was appropriate, because we were not starting small and simple lives. We were combining seven children and two full histories and a great deal of hope into something neither of us had managed to build on the first try.</p>
+
+  <p>Right after the ceremony, Kathy and I raced to the juvenile court, where proceedings were underway regarding the placement of my four children. We had hoped that being newly married and living nearby would help our case. It did not go as we planned that day — the children went into foster care for a time — but that is a story for a different chapter. What matters here is that we showed up together, on our wedding day, racing across the valley for our kids. That told you everything you needed to know about what kind of marriage this was going to be.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>On May 25th, 1982, Kathy and I were sealed in the Jordan River Temple. One of my most treasured photographs is from that day — the two of us and our seven children gathered around the flagpole at the temple, squinting into the sun, everyone dressed up and slightly rumpled and wholly present.</p>
+
+  <div class="temple-block">
+    <div class="temple-block-inner">
+      <span class="temple-label">Jordan River Temple · May 25, 1982</span>
+      <p>Seven children. Two adults. One photograph around a flagpole.</p>
+      <p>The family that a barber, a bad haircut threat, and a very specific prayer had assembled.</p>
+    </div>
+  </div>
+
+  <p>I have thought many times about the chain of events that led to that photograph. The prayer I prayed every night during the hardest months. The barber who decided his job description included matchmaking. The fifty-eight days. The courthouse on the wedding day. The sealing a year later.</p>
+
+  <div class="pull-quote">
+    <p>"The Lord answered my prayer exactly. He sent me someone who could accept me and my children. He sent me Kathy. I do not think He could have sent me anyone better suited to the specific shape of my life."</p>
+  </div>
+
+  <p>Being married to Kathy was a wonderful thing. That is not a sentence I say lightly, having been through one marriage that was not wonderful. It is a sentence I earned the right to mean.</p>
+
+  <p>She found close friends in every ward we ever lived in. She made every house we lived in feel like a home. She cooked and she cleaned and she cared for the elderly and she led music and she raised her boys and helped raise mine, and she did all of it with a steadiness and a warmth that I still cannot fully account for. Where it came from I don't entirely know. I only know that it was real and it was consistent and it never ran out, even at the end when she needed every bit of it herself.</p>
+
+  <p>But all of that comes later. This chapter is just the beginning — the barber and the threat and the fifty-eight days and the flagpole photograph. This is where Kathy enters the story.</p>
+
+  <p>Everything gets better from here.</p>
+
+  <div class="chapter-note">
+    <strong>A Note for the Grandkids</strong>
+    Your grandmother Kathy came into Grandpa's life because his barber threatened to give him a terrible haircut if he didn't ask her out. They met on March 23rd, 1981. They were married fifty-eight days later. They were sealed in the Jordan River Temple the following year with all seven of their children. Grandpa says it was the specific answer to a specific prayer he had been praying every night for months. He has never doubted that.
+  </div>
+
+</article>
+
+<div class="post-footer">
+  <div class="footer-series">A Life of Tender Mercies &nbsp;·&nbsp; Part Three</div>
+  <div class="chapter-nav">
+    <a class="nav-item prev" href="chapter-15.html">
+      <div class="nav-label">&larr; Previous</div>
+      <div class="nav-title">A Decade Falls Apart</div>
+    </a>
+    <div class="nav-item next">
+      <div class="nav-label">Next &rarr;</div>
+      <div class="nav-title">Chapter 17 &mdash; Coming Soon</div>
+    </div>
+  </div>
+</div>
+
+<div class="subscribe-bar">
+  <h3>Follow along with Dee's story</h3>
+  <p>New chapters delivered to your inbox, free.</p>
+  <div class="subscribe-form">
+    <input type="email" placeholder="your@email.com">
+    <button>Subscribe</button>
+  </div>
+</div>
+
+</body>
+</html>
