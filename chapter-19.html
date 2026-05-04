@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Neighbor With the Glass Eye — A Life of Tender Mercies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1612; --ink-soft: #3d3530; --ink-muted: #7a6e68;
+    --paper: #faf7f2; --paper-warm: #f5f0e8;
+    --accent: #8b3a2a; --accent-soft: #c4785f; --rule: #d9d0c4;
+    --class: #141414; --class-pale: #707070; --class-bright: #c8c8c8;
+    --turn: #101c10; --turn-pale: #608060; --turn-bright: #b0c8b0;
+  }
+  html { scroll-behavior: smooth; }
+  body { background-color: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-weight: 300; font-size: 19px; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+  .masthead { border-bottom: 1px solid var(--rule); padding: 20px 0 18px; text-align: center; background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .masthead-title { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); }
+  .masthead-title span { color: var(--accent); }
+  .hero { max-width: 680px; margin: 0 auto; padding: 72px 24px 0; }
+  .series-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: block; }
+  h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px, 5vw, 52px); font-weight: 600; line-height: 1.15; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 28px; }
+  h1 em { font-style: italic; font-weight: 400; color: var(--ink-soft); }
+  .byline { display: flex; align-items: center; gap: 14px; margin-bottom: 48px; }
+  .byline-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-soft), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 15px; color: white; flex-shrink: 0; }
+  .byline-text { font-family: 'Crimson Pro', Georgia, serif; font-size: 15px; color: var(--ink-muted); line-height: 1.4; }
+  .byline-text strong { color: var(--ink-soft); font-weight: 400; display: block; font-size: 16px; }
+  .ornamental-rule { display: flex; align-items: center; gap: 16px; margin: 0 0 52px; }
+  .ornamental-rule::before, .ornamental-rule::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+  .ornamental-rule-glyph { color: var(--accent-soft); font-size: 18px; }
+  .article { max-width: 680px; margin: 0 auto; padding: 0 24px 80px; }
+  .drop-cap::first-letter { font-family: 'Playfair Display', Georgia, serif; font-size: 5.2em; font-weight: 600; float: left; line-height: 0.72; margin-right: 10px; margin-top: 10px; color: var(--accent); }
+  p { margin-bottom: 1.6em; color: var(--ink-soft); }
+  p:last-child { margin-bottom: 0; }
+  .scene-break { text-align: center; margin: 44px 0; color: var(--accent-soft); font-size: 20px; letter-spacing: 0.4em; }
+  .pull-quote { border-left: 3px solid var(--accent); margin: 44px 0; padding: 4px 0 4px 28px; }
+  .pull-quote p { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-style: italic; line-height: 1.5; color: var(--ink); margin: 0; }
+  .inset-block { background: var(--paper-warm); border: 1px solid var(--rule); border-left: 4px solid var(--accent-soft); padding: 24px 28px; margin: 44px 0; border-radius: 0 2px 2px 0; }
+  .inset-label { font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 400; display: block; }
+  .inset-block p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; font-style: italic; color: var(--ink-soft); line-height: 1.75; margin: 0; }
+  .class-block { background: var(--class); margin: 52px -24px; padding: 56px 48px; position: relative; overflow: hidden; text-align: center; }
+  .class-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(112,112,112,0.07) 0%, transparent 65%); }
+  .class-block-inner { position: relative; z-index: 1; }
+  .class-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--class-pale); margin-bottom: 28px; display: block; }
+  .class-block .class-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(18px, 3vw, 26px); font-style: italic; color: var(--class-bright); line-height: 1.6; margin: 0; max-width: 520px; margin-left: auto; margin-right: auto; }
+  .turn-block { background: var(--turn); margin: 52px -24px; padding: 52px 48px; position: relative; overflow: hidden; text-align: center; }
+  .turn-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(96,128,96,0.08) 0%, transparent 65%); }
+  .turn-block-inner { position: relative; z-index: 1; }
+  .turn-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--turn-pale); margin-bottom: 24px; display: block; }
+  .turn-block p { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(17px, 2.8vw, 22px); font-style: italic; color: var(--turn-bright); line-height: 1.65; margin: 0 0 14px; }
+  .turn-block p:last-child { margin: 0; }
+  .chapter-note { background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; padding: 24px 28px; margin: 52px 0 0; font-family: 'Crimson Pro', Georgia, serif; font-size: 16px; color: var(--ink-muted); line-height: 1.7; }
+  .chapter-note strong { display: block; font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-style: normal; font-weight: 400; }
+  .post-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 80px; border-top: 1px solid var(--rule); }
+  .footer-series { font-family: 'Crimson Pro', Georgia, serif; font-size: 14px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 20px; }
+  .chapter-nav { display: flex; justify-content: space-between; gap: 20px; }
+  .nav-item { flex: 1; padding: 18px 20px; background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; text-decoration: none; transition: border-color 0.2s; }
+  .nav-item:hover { border-color: var(--accent-soft); }
+  .nav-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .nav-title { font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: var(--ink); line-height: 1.35; }
+  .nav-item.next { text-align: right; }
+  .subscribe-bar { background: var(--ink); padding: 52px 24px; text-align: center; margin-top: 20px; }
+  .subscribe-bar h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 400; color: var(--paper); margin-bottom: 10px; }
+  .subscribe-bar p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; color: #9a9088; margin-bottom: 24px; }
+  .subscribe-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; }
+  .subscribe-form input { flex: 1; padding: 12px 16px; background: #2a2420; border: 1px solid #3d3530; border-radius: 2px; color: var(--paper); font-family: 'Source Serif 4', serif; font-size: 15px; outline: none; }
+  .subscribe-form input::placeholder { color: #5a504a; }
+  .subscribe-form input:focus { border-color: var(--accent-soft); }
+  .subscribe-form button { padding: 12px 20px; background: var(--accent); border: none; border-radius: 2px; color: white; font-family: 'Crimson Pro', serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
+  .subscribe-form button:hover { background: var(--accent-soft); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 0.7s ease both; }
+  .article { animation: fadeUp 0.7s 0.15s ease both; }
+  @media (max-width: 600px) { body { font-size: 17px; } .class-block { margin: 44px -24px; padding: 44px 28px; } .turn-block { margin: 44px -24px; padding: 44px 28px; } .chapter-nav { flex-direction: column; } .nav-item.next { text-align: left; } .subscribe-form { flex-direction: column; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-title">A Life of <span>Tender Mercies</span> &nbsp;·&nbsp; Dee Stevens</div>
+</header>
+
+<div class="hero">
+  <span class="series-label">Part Three: Kathy &nbsp;·&nbsp; Chapter Nineteen</span>
+  <h1>The Neighbor <em>With the Glass Eye</em></h1>
+  <div class="byline">
+    <div class="byline-avatar">D</div>
+    <div class="byline-text">
+      <strong>Dee Stevens</strong>
+      West Valley City, Utah &nbsp;·&nbsp; Mid-1980s
+    </div>
+  </div>
+  <div class="ornamental-rule"><span class="ornamental-rule-glyph">&#10022;</span></div>
+</div>
+
+<article class="article">
+
+  <p class="drop-cap">I was called to teach the Blazer B class in Primary — boys around ten and eleven years old, at the age when they have enough energy to dismantle a room and just enough self-awareness to enjoy doing it. I loved those boys. I also had a discipline problem that was defeating me.</p>
+
+  <p>Our next-door neighbor was a gifted man but not active in the Church. He had one glass eye and could look, when the occasion called for it, genuinely fearsome. I had watched him deal with situations in the neighborhood that required a certain presence, and he had it. What struck me, though, was that underneath the capable exterior he was a decent and thoughtful person — the kind of man whose talents were going to waste because nobody had found the right way to ask him to use them.</p>
+
+  <p>I went over and knocked on his door. I told him I had a Primary class that was getting away from me and I needed an assistant scout leader. I asked if he would consider it.</p>
+
+  <p>He said he would think about it.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>The following Sunday he walked into my classroom and sat down.</p>
+
+  <p>I began my lesson. The boys started doing what they always did — talking over me, poking each other, finding every possible distraction the room had to offer. It was the usual cheerful chaos that had been resisting my best efforts for weeks.</p>
+
+  <div class="class-block">
+    <div class="class-block-inner">
+      <span class="class-label">What happened next</span>
+      <div class="class-text">"All at once my friend stood up, fixed the boys with his glass eye, and said: 'We are here in church to learn the gospel, and you all better shut up and listen to the lesson.'"</div>
+    </div>
+  </div>
+
+  <p>The room went completely silent.</p>
+
+  <p>I guarantee you that no boy ever made a sound in that class again for the rest of the year. Not one. The glass eye had done what weeks of my patient teaching could not do. Whatever force of personality he brought into that room, the boys felt it immediately and responded to it absolutely.</p>
+
+  <p>But here is the part that matters more than the silence.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>The clean classroom environment changed what was possible in the lessons. The Spirit could actually settle in now. The boys could hear. I could teach rather than manage.</p>
+
+  <p>One Sunday the lesson was on the Holy Ghost. I felt, at the end of it, a strong impression to bear my testimony — plainly, specifically, about what the Spirit had done in my own life. I followed the impression.</p>
+
+  <p>After the closing prayer my neighbor came to me. He said that the lessons we had been having lately felt especially meant for him. He thanked me for teaching. Then he told me he had decided to turn over a new leaf and start bringing his family back to church.</p>
+
+  <div class="inset-block">
+    <span class="inset-label">What he did when he got home</span>
+    <p>He went home and told his wife and children that from then on they were going to church as a family. They did exactly that. Not long afterward he was called to be the ward clerk.</p>
+  </div>
+
+  <div class="turn-block">
+    <div class="turn-block-inner">
+      <span class="turn-label">What Dee considers this</span>
+      <p>"Witnessing someone hear the doctrine and change their behavior — that is one of the singularly great experiences of my life."</p>
+      <p>He came to help with discipline. The Spirit used the quiet that followed to reach him instead.</p>
+    </div>
+  </div>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>I want to say something about what this experience taught me, because I think it is worth more than just the story itself.</p>
+
+  <p>When I knocked on my neighbor's door I was thinking about my class. I was thinking about order and discipline and how to create the conditions for learning. I was not thinking about his soul. That is an honest admission. I saw a useful man and I asked him to be useful.</p>
+
+  <p>But the Lord saw something else. He saw a man who needed a reason to come back — a specific invitation, extended by a specific person, at a specific moment in his life when he was ready to receive it. And the Lord arranged for that invitation to come wrapped in something my neighbor could say yes to: not a calling, not a formal return, but a neighbor who needed help with some boys on Sunday morning.</p>
+
+  <div class="pull-quote">
+    <p>"I asked him to help me. The Lord used the asking to help him. I have found this to be a reliable pattern — when you serve someone, you rarely know all the reasons the Lord arranged for you to be the one doing the serving."</p>
+  </div>
+
+  <p>The glass eye silenced a classroom. The silence opened a space for the Spirit. The Spirit reached a man who had been away from his faith long enough that a direct approach might have bounced off. Instead it came in through a side door — a neighbor, a Primary class, an ordinary Sunday morning — and it worked.</p>
+
+  <p>That is, I think, a fairly typical example of how the Lord conducts His business. Quietly. Through the available materials. In ways that look, from the outside, like nothing more than a man asking his neighbor for a small favor.</p>
+
+  <div class="chapter-note">
+    <strong>A Note for the Grandkids</strong>
+    Grandpa's next-door neighbor had a glass eye and hadn't been to church in years. Grandpa asked him to help with a Primary class — not for spiritual reasons, but because the boys wouldn't behave. The neighbor showed up, glared at the boys with his glass eye, and the class went quiet for the rest of the year. In that quiet the Spirit reached the neighbor himself. He went home and brought his family back to church. He was called as the ward clerk. Grandpa asked for help with discipline. The Lord had something else in mind entirely.
+  </div>
+
+</article>
+
+<div class="post-footer">
+  <div class="footer-series">A Life of Tender Mercies &nbsp;·&nbsp; Part Three</div>
+  <div class="chapter-nav">
+    <a class="nav-item prev" href="chapter-18.html">
+      <div class="nav-label">&larr; Previous</div>
+      <div class="nav-title">Keri's Last Tender Mercy</div>
+    </a>
+    <div class="nav-item next">
+      <div class="nav-label">Next &rarr;</div>
+      <div class="nav-title">Chapter 20 &mdash; Coming Soon</div>
+    </div>
+  </div>
+</div>
+
+<div class="subscribe-bar">
+  <h3>Follow along with Dee's story</h3>
+  <p>New chapters delivered to your inbox, free.</p>
+  <div class="subscribe-form">
+    <input type="email" placeholder="your@email.com">
+    <button>Subscribe</button>
+  </div>
+</div>
+
+</body>
+</html>
