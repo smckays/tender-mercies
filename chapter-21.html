@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eight Boys and a Pumpkin Patch — A Life of Tender Mercies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1612; --ink-soft: #3d3530; --ink-muted: #7a6e68;
+    --paper: #faf7f2; --paper-warm: #f5f0e8;
+    --accent: #8b3a2a; --accent-soft: #c4785f; --rule: #d9d0c4;
+    --garden: #101808; --garden-pale: #608040; --garden-bright: #b0cc80;
+    --cabin: #181008; --cabin-pale: #907040; --cabin-bright: #d4b870;
+  }
+  html { scroll-behavior: smooth; }
+  body { background-color: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-weight: 300; font-size: 19px; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+  .masthead { border-bottom: 1px solid var(--rule); padding: 20px 0 18px; text-align: center; background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .masthead-title { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); }
+  .masthead-title span { color: var(--accent); }
+  .hero { max-width: 680px; margin: 0 auto; padding: 72px 24px 0; }
+  .series-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: block; }
+  h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px, 5vw, 52px); font-weight: 600; line-height: 1.15; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 28px; }
+  h1 em { font-style: italic; font-weight: 400; color: var(--ink-soft); }
+  .byline { display: flex; align-items: center; gap: 14px; margin-bottom: 48px; }
+  .byline-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-soft), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 15px; color: white; flex-shrink: 0; }
+  .byline-text { font-family: 'Crimson Pro', Georgia, serif; font-size: 15px; color: var(--ink-muted); line-height: 1.4; }
+  .byline-text strong { color: var(--ink-soft); font-weight: 400; display: block; font-size: 16px; }
+  .ornamental-rule { display: flex; align-items: center; gap: 16px; margin: 0 0 52px; }
+  .ornamental-rule::before, .ornamental-rule::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+  .ornamental-rule-glyph { color: var(--accent-soft); font-size: 18px; }
+  .article { max-width: 680px; margin: 0 auto; padding: 0 24px 80px; }
+  .drop-cap::first-letter { font-family: 'Playfair Display', Georgia, serif; font-size: 5.2em; font-weight: 600; float: left; line-height: 0.72; margin-right: 10px; margin-top: 10px; color: var(--accent); }
+  p { margin-bottom: 1.6em; color: var(--ink-soft); }
+  p:last-child { margin-bottom: 0; }
+  .scene-break { text-align: center; margin: 44px 0; color: var(--accent-soft); font-size: 20px; letter-spacing: 0.4em; }
+  .pull-quote { border-left: 3px solid var(--accent); margin: 44px 0; padding: 4px 0 4px 28px; }
+  .pull-quote p { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-style: italic; line-height: 1.5; color: var(--ink); margin: 0; }
+  .inset-block { background: var(--paper-warm); border: 1px solid var(--rule); border-left: 4px solid var(--accent-soft); padding: 24px 28px; margin: 44px 0; border-radius: 0 2px 2px 0; }
+  .inset-label { font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 400; display: block; }
+  .inset-block p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; font-style: italic; color: var(--ink-soft); line-height: 1.75; margin: 0; }
+
+  /* The family inventory — all eight boys */
+  .family-block { background: var(--garden); margin: 52px -24px; padding: 56px 48px; position: relative; overflow: hidden; }
+  .family-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(96,128,64,0.08) 0%, transparent 65%); }
+  .family-block-inner { position: relative; z-index: 1; }
+  .family-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--garden-pale); margin-bottom: 28px; display: block; }
+  .family-row { display: flex; gap: 16px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.06); align-items: baseline; }
+  .family-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .family-name { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(15px, 2.4vw, 18px); font-weight: 600; color: var(--garden-bright); min-width: 80px; flex-shrink: 0; }
+  .family-desc { font-family: 'Crimson Pro', Georgia, serif; font-size: 15px; font-style: italic; color: rgba(176,204,128,0.7); line-height: 1.5; }
+
+  /* The cabin block */
+  .cabin-block { background: var(--cabin); margin: 52px -24px; padding: 56px 48px; position: relative; overflow: hidden; text-align: center; }
+  .cabin-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(144,112,64,0.08) 0%, transparent 65%); }
+  .cabin-block-inner { position: relative; z-index: 1; }
+  .cabin-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--cabin-pale); margin-bottom: 28px; display: block; }
+  .cabin-block .cabin-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(17px, 2.8vw, 22px); font-style: italic; color: var(--cabin-bright); line-height: 1.65; margin: 0 0 14px; }
+  .cabin-block .cabin-text:last-child { margin: 0; }
+
+  .chapter-note { background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; padding: 24px 28px; margin: 52px 0 0; font-family: 'Crimson Pro', Georgia, serif; font-size: 16px; color: var(--ink-muted); line-height: 1.7; }
+  .chapter-note strong { display: block; font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-style: normal; font-weight: 400; }
+  .post-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 80px; border-top: 1px solid var(--rule); }
+  .footer-series { font-family: 'Crimson Pro', Georgia, serif; font-size: 14px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 20px; }
+  .chapter-nav { display: flex; justify-content: space-between; gap: 20px; }
+  .nav-item { flex: 1; padding: 18px 20px; background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; text-decoration: none; transition: border-color 0.2s; }
+  .nav-item:hover { border-color: var(--accent-soft); }
+  .nav-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .nav-title { font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: var(--ink); line-height: 1.35; }
+  .nav-item.next { text-align: right; }
+  .subscribe-bar { background: var(--ink); padding: 52px 24px; text-align: center; margin-top: 20px; }
+  .subscribe-bar h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 400; color: var(--paper); margin-bottom: 10px; }
+  .subscribe-bar p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; color: #9a9088; margin-bottom: 24px; }
+  .subscribe-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; }
+  .subscribe-form input { flex: 1; padding: 12px 16px; background: #2a2420; border: 1px solid #3d3530; border-radius: 2px; color: var(--paper); font-family: 'Source Serif 4', serif; font-size: 15px; outline: none; }
+  .subscribe-form input::placeholder { color: #5a504a; }
+  .subscribe-form input:focus { border-color: var(--accent-soft); }
+  .subscribe-form button { padding: 12px 20px; background: var(--accent); border: none; border-radius: 2px; color: white; font-family: 'Crimson Pro', serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
+  .subscribe-form button:hover { background: var(--accent-soft); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 0.7s ease both; }
+  .article { animation: fadeUp 0.7s 0.15s ease both; }
+  @media (max-width: 600px) { body { font-size: 17px; } .family-block { margin: 44px -24px; padding: 44px 28px; } .cabin-block { margin: 44px -24px; padding: 44px 28px; } .family-row { flex-direction: column; gap: 4px; } .chapter-nav { flex-direction: column; } .nav-item.next { text-align: left; } .subscribe-form { flex-direction: column; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-title">A Life of <span>Tender Mercies</span> &nbsp;·&nbsp; Dee Stevens</div>
+</header>
+
+<div class="hero">
+  <span class="series-label">Part Three: Kathy &nbsp;·&nbsp; Chapter Twenty-One</span>
+  <h1>Eight Boys <em>and a Pumpkin Patch</em></h1>
+  <div class="byline">
+    <div class="byline-avatar">D</div>
+    <div class="byline-text">
+      <strong>Dee Stevens</strong>
+      West Valley City &amp; Tooele, Utah &nbsp;·&nbsp; 1981–1987
+    </div>
+  </div>
+  <div class="ornamental-rule"><span class="ornamental-rule-glyph">&#10022;</span></div>
+</div>
+
+<article class="article">
+
+  <p class="drop-cap">I want to tell you what it was actually like — the years of raising a large family with Kathy, before we move into the harder chapters that follow. Not a sanitized version of it. Not a highlight reel. The actual texture of the thing: the gardens and the worm farms and the cabin in the canyon and the guitars and the boys growing up in John Denver land. It was full and loud and frequently chaotic, and I loved almost every minute of it.</p>
+
+  <p>By the time Adam was born in 1983 and Spencer McKay arrived in 1985, we had eight boys between us. Eight. I want you to understand what eight boys in a house actually means in practical terms. It means the refrigerator is never full for long. It means the backyard is never quiet. It means you buy shoes the way other families buy groceries — regularly and in bulk — and you learn early that any food left unguarded on a counter is a food that no longer exists.</p>
+
+  <p>It also means there is always someone to fish with. Always someone to work the garden with. Always someone to sit around a fire with and sing.</p>
+
+  <div class="family-block">
+    <div class="family-block-inner">
+      <span class="family-label">The eight boys, in order</span>
+      <div class="family-row"><div class="family-name">Travis</div><div class="family-desc">Kathy's oldest. Steady and responsible. Went to Russia on his mission. Married Krista at BYU.</div></div>
+      <div class="family-row"><div class="family-name">Jared</div><div class="family-desc">Kathy's second. Everyone's favorite. A laugh that filled any room he walked into.</div></div>
+      <div class="family-row"><div class="family-name">Michael</div><div class="family-desc">Dee's second. Quiet and capable. Went to Brazil. Later married Jamie in Salt Lake.</div></div>
+      <div class="family-row"><div class="family-name">David</div><div class="family-desc">Dee's third. Complex and searching. Served his mission to Washington DC South.</div></div>
+      <div class="family-row"><div class="family-name">Daniel</div><div class="family-desc">Dee's fourth. Called to Jacksonville, Florida. Steady and faithful.</div></div>
+      <div class="family-row"><div class="family-name">Ben</div><div class="family-desc">Kathy's third. Fearless. Caught everything at catcher. Survived things that should not be survived.</div></div>
+      <div class="family-row"><div class="family-name">Adam</div><div class="family-desc">Dee and Kathy's first together. Smart, lucky, and deeply romantic from an early age.</div></div>
+      <div class="family-row"><div class="family-name">McKay</div><div class="family-desc">The youngest. Happy and cubbly. Called to Tuxtla Gutierrez, Mexico. The one writing this down.</div></div>
+    </div>
+  </div>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>Kathy planted a pumpkin patch in the backyard of our West Valley home. She also planted tomatoes and green beans and kept fruit trees, and in the summers the garden produced more than we could eat, which suited a household of ten just fine. The boys and I dug a hole in the yard and filled it with worm bait — after rainstorms we would scoop nightcrawlers out of the ditches by the handful, like spaghetti, and add them to the worm farm. We never had to buy bait for fishing. This struck us all as a significant achievement.</p>
+
+  <p>I played guitar most evenings. I never wrote my own music the way my brother Ed did, but I had the gift of being able to pick up a song by ear and commit it to memory. I may have been guilty, for a period of several years, of believing I was John Denver. The boys grew up knowing his songs the way other families grow up knowing hymns — by the fire, in the car, around the cabin. Those songs became part of the fabric of who we were as a family.</p>
+
+  <div class="inset-block">
+    <span class="inset-label">The cabin in American Fork Canyon</span>
+    <p>Dee's father and Grandma Stevens had built a family cabin in American Fork Canyon — a gift left behind when his father died, passed down to the family. During the years in West Valley and Tooele, the cabin was the center of summer. They hiked to Silver Lake, fished at Silver Lake Flat Reservoir, sawed and gathered wood. Kathy learned to cook on an old wood stove and became expert at it. Evenings they sat around the fire and sang.</p>
+  </div>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>Adam had a romantic little heart from the time he was very small. He memorized lines from his favorite shows and delivered them with complete conviction. Dressed as Robin Hood, he would thrust his toy sword into the air and leap from the coffee table declaring, <em>"Faint heart never won fair maiden!"</em> We teased him about this until he finally got big enough to beat us all up, at which point we stopped.</p>
+
+  <p>The genuinely romantic end to that story came years later, when Jared's marriage fell apart and he ended up marrying Allison Brigman — the girl who had lived two doors down from us on Belfort Drive, whose family had been our closest friends, whose brother was also named Adam so that our son had been called Baby Adam for years. She became the rock of Jared's life and home ever after. Romantic little hearts sometimes know things the rest of us don't.</p>
+
+  <div class="pull-quote">
+    <p>"Eight boys. A pumpkin patch. A worm farm. A guitar in the evenings and a cabin in the canyon on weekends. That was the gift of those years. We were building something we could not quite see the shape of yet — but we were building it together, and that was enough."</p>
+  </div>
+
+  <div class="cabin-block">
+    <div class="cabin-block-inner">
+      <span class="cabin-label">What evenings at the cabin sounded like</span>
+      <div class="cabin-text">The fire. The wood smoke. Eight boys in various stages of tired.</div>
+      <div class="cabin-text">Dee with his guitar. Kathy with her voice.</div>
+      <div class="cabin-text">John Denver, mostly. Sometimes hymns. Sometimes both at once.</div>
+      <div class="cabin-text">The songs they learned there are still inside them somewhere, all eight of them, wherever they are now.</div>
+    </div>
+  </div>
+
+  <p>I think about those years often — more than I expected to, now that the house is quiet and the boys are scattered across several states and the guitar sits in McKay's keeping because my hands can't manage the chord changes anymore. The arthritis took that from me gradually, the way time takes most things: first harder to play, then painful, then not possible. The gift was on loan, as I have said before about other gifts.</p>
+
+  <p>What it left behind is not gone. It is inside eight grown men who can still sing the second verse of "Rocky Mountain High" without being prompted. That is not nothing. That is, in fact, quite a lot.</p>
+
+  <p>The pumpkin patch is long gone. The worm farm is long gone. The cabin still stands in American Fork Canyon, though Dee no longer goes there. But the songs remain, and the memories remain, and the particular shape of a large family built in faith and held together by a woman who made every house feel like a home — that remains too, in the people those eight boys became.</p>
+
+  <p>I am grateful for every loud, full, chaotic, beautiful year of it.</p>
+
+  <div class="chapter-note">
+    <strong>A Note for the Grandkids</strong>
+    Your dads and uncles grew up in a house with eight boys, a pumpkin patch, a worm farm, and a guitar that came out most evenings. Grandpa played John Denver songs by the fire at the cabin in American Fork Canyon until his hands couldn't manage it anymore. Grandma Kathy cooked on a wood stove and made every place they lived feel like home. Those years were loud and full and Grandpa loved almost every minute of them. The songs are still inside all eight of your dads and uncles somewhere. Ask them to prove it sometime.
+  </div>
+
+</article>
+
+<div class="post-footer">
+  <div class="footer-series">A Life of Tender Mercies &nbsp;·&nbsp; Part Three</div>
+  <div class="chapter-nav">
+    <a class="nav-item prev" href="chapter-20.html">
+      <div class="nav-label">&larr; Previous</div>
+      <div class="nav-title">Angels on the Doorstep</div>
+    </a>
+    <div class="nav-item next">
+      <div class="nav-label">Next &rarr;</div>
+      <div class="nav-title">Chapter 22 &mdash; Coming Soon</div>
+    </div>
+  </div>
+</div>
+
+<div class="subscribe-bar">
+  <h3>Follow along with Dee's story</h3>
+  <p>New chapters delivered to your inbox, free.</p>
+  <div class="subscribe-form">
+    <input type="email" placeholder="your@email.com">
+    <button>Subscribe</button>
+  </div>
+</div>
+
+</body>
+</html>
