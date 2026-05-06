@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Angels on the Doorstep — A Life of Tender Mercies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1612; --ink-soft: #3d3530; --ink-muted: #7a6e68;
+    --paper: #faf7f2; --paper-warm: #f5f0e8;
+    --accent: #8b3a2a; --accent-soft: #c4785f; --rule: #d9d0c4;
+    --winter: #101820; --winter-pale: #607888; --winter-bright: #b0c8d8;
+    --porch: #181410; --porch-pale: #887858; --porch-bright: #d4c498;
+  }
+  html { scroll-behavior: smooth; }
+  body { background-color: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-weight: 300; font-size: 19px; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+  .masthead { border-bottom: 1px solid var(--rule); padding: 20px 0 18px; text-align: center; background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .masthead-title { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); }
+  .masthead-title span { color: var(--accent); }
+  .hero { max-width: 680px; margin: 0 auto; padding: 72px 24px 0; }
+  .series-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: block; }
+  h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px, 5vw, 52px); font-weight: 600; line-height: 1.15; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 28px; }
+  h1 em { font-style: italic; font-weight: 400; color: var(--ink-soft); }
+  .byline { display: flex; align-items: center; gap: 14px; margin-bottom: 48px; }
+  .byline-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-soft), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 15px; color: white; flex-shrink: 0; }
+  .byline-text { font-family: 'Crimson Pro', Georgia, serif; font-size: 15px; color: var(--ink-muted); line-height: 1.4; }
+  .byline-text strong { color: var(--ink-soft); font-weight: 400; display: block; font-size: 16px; }
+  .ornamental-rule { display: flex; align-items: center; gap: 16px; margin: 0 0 52px; }
+  .ornamental-rule::before, .ornamental-rule::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+  .ornamental-rule-glyph { color: var(--accent-soft); font-size: 18px; }
+  .article { max-width: 680px; margin: 0 auto; padding: 0 24px 80px; }
+  .drop-cap::first-letter { font-family: 'Playfair Display', Georgia, serif; font-size: 5.2em; font-weight: 600; float: left; line-height: 0.72; margin-right: 10px; margin-top: 10px; color: var(--accent); }
+  p { margin-bottom: 1.6em; color: var(--ink-soft); }
+  p:last-child { margin-bottom: 0; }
+  .scene-break { text-align: center; margin: 44px 0; color: var(--accent-soft); font-size: 20px; letter-spacing: 0.4em; }
+  .pull-quote { border-left: 3px solid var(--accent); margin: 44px 0; padding: 4px 0 4px 28px; }
+  .pull-quote p { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-style: italic; line-height: 1.5; color: var(--ink); margin: 0; }
+  .inset-block { background: var(--paper-warm); border: 1px solid var(--rule); border-left: 4px solid var(--accent-soft); padding: 24px 28px; margin: 44px 0; border-radius: 0 2px 2px 0; }
+  .inset-label { font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 400; display: block; }
+  .inset-block p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; font-style: italic; color: var(--ink-soft); line-height: 1.75; margin: 0; }
+  .winter-block { background: var(--winter); margin: 52px -24px; padding: 56px 48px; position: relative; overflow: hidden; text-align: center; }
+  .winter-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(96,120,136,0.08) 0%, transparent 65%); }
+  .winter-block-inner { position: relative; z-index: 1; }
+  .winter-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--winter-pale); margin-bottom: 28px; display: block; }
+  .winter-block .winter-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(17px, 2.8vw, 22px); font-style: italic; color: var(--winter-bright); line-height: 1.65; margin: 0 0 14px; }
+  .winter-block .winter-text:last-child { margin: 0; }
+  .porch-block { background: var(--porch); margin: 52px -24px; padding: 56px 48px; position: relative; overflow: hidden; text-align: center; }
+  .porch-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(136,120,88,0.08) 0%, transparent 65%); }
+  .porch-block-inner { position: relative; z-index: 1; }
+  .porch-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--porch-pale); margin-bottom: 28px; display: block; }
+  .porch-block .porch-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(18px, 3vw, 26px); font-style: italic; color: var(--porch-bright); line-height: 1.6; margin: 0; max-width: 520px; margin-left: auto; margin-right: auto; }
+  .chapter-note { background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; padding: 24px 28px; margin: 52px 0 0; font-family: 'Crimson Pro', Georgia, serif; font-size: 16px; color: var(--ink-muted); line-height: 1.7; }
+  .chapter-note strong { display: block; font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-style: normal; font-weight: 400; }
+  .post-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 80px; border-top: 1px solid var(--rule); }
+  .footer-series { font-family: 'Crimson Pro', Georgia, serif; font-size: 14px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 20px; }
+  .chapter-nav { display: flex; justify-content: space-between; gap: 20px; }
+  .nav-item { flex: 1; padding: 18px 20px; background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; text-decoration: none; transition: border-color 0.2s; }
+  .nav-item:hover { border-color: var(--accent-soft); }
+  .nav-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .nav-title { font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: var(--ink); line-height: 1.35; }
+  .nav-item.next { text-align: right; }
+  .subscribe-bar { background: var(--ink); padding: 52px 24px; text-align: center; margin-top: 20px; }
+  .subscribe-bar h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 400; color: var(--paper); margin-bottom: 10px; }
+  .subscribe-bar p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; color: #9a9088; margin-bottom: 24px; }
+  .subscribe-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; }
+  .subscribe-form input { flex: 1; padding: 12px 16px; background: #2a2420; border: 1px solid #3d3530; border-radius: 2px; color: var(--paper); font-family: 'Source Serif 4', serif; font-size: 15px; outline: none; }
+  .subscribe-form input::placeholder { color: #5a504a; }
+  .subscribe-form input:focus { border-color: var(--accent-soft); }
+  .subscribe-form button { padding: 12px 20px; background: var(--accent); border: none; border-radius: 2px; color: white; font-family: 'Crimson Pro', serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
+  .subscribe-form button:hover { background: var(--accent-soft); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 0.7s ease both; }
+  .article { animation: fadeUp 0.7s 0.15s ease both; }
+  @media (max-width: 600px) { body { font-size: 17px; } .winter-block { margin: 44px -24px; padding: 44px 28px; } .porch-block { margin: 44px -24px; padding: 44px 28px; } .chapter-nav { flex-direction: column; } .nav-item.next { text-align: left; } .subscribe-form { flex-direction: column; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-title">A Life of <span>Tender Mercies</span> &nbsp;·&nbsp; Dee Stevens</div>
+</header>
+
+<div class="hero">
+  <span class="series-label">Part Three: Kathy &nbsp;·&nbsp; Chapter Twenty</span>
+  <h1>Angels <em>on the Doorstep</em></h1>
+  <div class="byline">
+    <div class="byline-avatar">D</div>
+    <div class="byline-text">
+      <strong>Dee Stevens</strong>
+      Saratoga Springs, New York &nbsp;·&nbsp; Christmas, 1971
+    </div>
+  </div>
+  <div class="ornamental-rule"><span class="ornamental-rule-glyph">&#10022;</span></div>
+</div>
+
+<article class="article">
+
+  <p class="drop-cap">I want to go back to my mission for this one — back to Saratoga Springs, the winter of 1971, when Elder Andelin was my companion and we were doing our best to cover a large area with limited resources and an unlimited supply of upstate New York cold. This is a Christmas story, though it doesn't feel like a Christmas story when it begins.</p>
+
+  <p>During that winter we met a family that lived in exceptional poverty. I won't describe the details of their circumstances beyond saying that the children in that home were going without things children should not go without, and that Christmas was coming, and that there was no money for it.</p>
+
+  <p>The ward members took notice. They took a particular liking to this family and felt for the children with the specific tenderness that people feel when children are bearing burdens that belong to adults. Our wonderful Primary president organized a drive — clothing and gifts and personal items, carefully chosen and purchased. She put together a large box of food herself, enough for a real Christmas dinner.</p>
+
+  <p>Elder Andelin and I were called upon to deliver it all on Christmas Eve.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <div class="winter-block">
+    <div class="winter-block-inner">
+      <span class="winter-label">Christmas Eve &nbsp;·&nbsp; Saratoga Springs, New York &nbsp;·&nbsp; Late night</span>
+      <div class="winter-text">Deep snow. The kind that comes up past your knees if you step off the path.</div>
+      <div class="winter-text">Two missionaries in suits, carrying boxes, traipsing through the dark.</div>
+      <div class="winter-text">They left everything on the porch. They knocked on nothing. They disappeared back into the night.</div>
+    </div>
+  </div>
+
+  <p>We knew they would see our tracks in the snow in the morning. Two sets of footprints leading up to the porch and back — not the tracks of anyone who lived there, not a neighbor, just two people who had come in the dark and left again. They would know it was us, or suspect it strongly, or at least know it was someone from the ward.</p>
+
+  <p>But during the night something happened that we had not arranged and could not have arranged.</p>
+
+  <p>It snowed again. Just enough. A quiet, gentle snowfall in the small hours of Christmas morning — enough to cover our tracks completely, so that when the family opened their door they found the gifts and the food and a porch with no footprints leading to it.</p>
+
+  <div class="porch-block">
+    <div class="porch-block-inner">
+      <span class="porch-label">Fast and testimony meeting &nbsp;·&nbsp; The following month</span>
+      <div class="porch-text">"This mother stood and bore her testimony. She told how angels had brought Christmas to their family. She had no idea who had come. She believed, completely, that it had been angels."</div>
+    </div>
+  </div>
+
+  <p>I sat in that meeting and did not say a word. Neither did Elder Andelin. Neither did the Primary president, or any of the ward members who had contributed to what that family received. We just sat there and let her testimony stand exactly as she had given it.</p>
+
+  <p>Because — was she wrong?</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>I have thought about that question for fifty years and I keep arriving at the same answer: not entirely.</p>
+
+  <p>We were two young men in suits carrying boxes through the snow. That part is true and mundane and entirely explicable. But the snow that fell afterward — the precise, gentle, sufficient snowfall that covered our tracks and left a porch full of gifts with no human footprints leading to it — that was not us. We did not arrange that. We did not pray for it specifically. It simply happened, at exactly the right moment, in exactly the right amount.</p>
+
+  <div class="pull-quote">
+    <p>"The Lord let a mother believe her family had been visited by angels. And then He arranged the snow so that she would have no reason to think otherwise. That is a particular kind of tenderness — the kind that protects a testimony rather than correcting it."</p>
+  </div>
+
+  <p>I think about this story whenever I hear people talk about the difference between what is literally true and what is spiritually true. The literally true version is two missionaries and a Primary president and a ward full of generous people. The spiritually true version is that a family in need was cared for at Christmas by people who were acting as instruments of the Lord — and that the Lord, who causes snow to fall where He wills, covered the evidence so cleanly that a mother could stand in fast meeting and testify of angels without being wrong.</p>
+
+  <p>Both versions are true. The second one is truer.</p>
+
+  <div class="inset-block">
+    <span class="inset-label">What happened to the family</span>
+    <p>They were baptized not long after that Christmas. The deep feelings of charity that spread through the ward when the mother bore her testimony — like a warm, fuzzy blanket, Dee always said — had ripened into something that brought them all the way in. The gift had done its work in more ways than anyone had planned.</p>
+  </div>
+
+  <p>I have carried this story as one of my favorites from the mission, not because of what we did — the ward did most of it, and the Primary president organized all of it — but because of what the Lord added to it. The snow. The timing. The gift of a testimony that was truer than the facts.</p>
+
+  <p>That is what it looks like when the Lord is paying attention down to the details. Not just the big miracles — rain stopping at a command, a baby returning through a window — but the small precise ones too. A light snowfall at 3am on Christmas morning. Just enough. No more than that.</p>
+
+  <p>Tender mercies come in every size.</p>
+
+  <div class="chapter-note">
+    <strong>A Note for the Grandkids</strong>
+    This happened during Grandpa's mission in New York, Christmas 1971. He and his companion delivered gifts and food to a poor family in the middle of the night and slipped away without knocking. They knew the family would see their tracks in the snow. But during the night it snowed just enough to cover the tracks completely. The next month the mother stood in testimony meeting and bore witness that angels had brought Christmas to her family. Grandpa sat there and said nothing. He has always believed she was more right than she knew.
+  </div>
+
+</article>
+
+<div class="post-footer">
+  <div class="footer-series">A Life of Tender Mercies &nbsp;·&nbsp; Part Three</div>
+  <div class="chapter-nav">
+    <a class="nav-item prev" href="chapter-19.html">
+      <div class="nav-label">&larr; Previous</div>
+      <div class="nav-title">The Neighbor With the Glass Eye</div>
+    </a>
+    <div class="nav-item next">
+      <div class="nav-label">Next &rarr;</div>
+      <div class="nav-title">Chapter 21 &mdash; Coming Soon</div>
+    </div>
+  </div>
+</div>
+
+<div class="subscribe-bar">
+  <h3>Follow along with Dee's story</h3>
+  <p>New chapters delivered to your inbox, free.</p>
+  <div class="subscribe-form">
+    <input type="email" placeholder="your@email.com">
+    <button>Subscribe</button>
+  </div>
+</div>
+
+</body>
+</html>
