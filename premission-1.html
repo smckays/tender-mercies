@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Blue Ribbon — A Life of Tender Mercies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1612; --ink-soft: #3d3530; --ink-muted: #7a6e68;
+    --paper: #faf7f2; --paper-warm: #f5f0e8;
+    --accent: #8b3a2a; --accent-soft: #c4785f; --rule: #d9d0c4;
+    --desert-night: #101418; --desert-pale: #608090; --desert-bright: #a8c0cc;
+    --ribbon: #0c1830; --ribbon-pale: #4870b0; --ribbon-bright: #90b0e0;
+  }
+  html { scroll-behavior: smooth; }
+  body { background-color: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-weight: 300; font-size: 19px; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+  .masthead { border-bottom: 1px solid var(--rule); padding: 20px 0 18px; text-align: center; background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .masthead-title { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); }
+  .masthead-title span { color: var(--accent); }
+  .hero { max-width: 680px; margin: 0 auto; padding: 72px 24px 0; }
+  .series-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: block; }
+  h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px, 5vw, 52px); font-weight: 600; line-height: 1.15; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 28px; }
+  h1 em { font-style: italic; font-weight: 400; color: var(--ink-soft); }
+  .byline { display: flex; align-items: center; gap: 14px; margin-bottom: 48px; }
+  .byline-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-soft), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 15px; color: white; flex-shrink: 0; }
+  .byline-text { font-family: 'Crimson Pro', Georgia, serif; font-size: 15px; color: var(--ink-muted); line-height: 1.4; }
+  .byline-text strong { color: var(--ink-soft); font-weight: 400; display: block; font-size: 16px; }
+  .ornamental-rule { display: flex; align-items: center; gap: 16px; margin: 0 0 52px; }
+  .ornamental-rule::before, .ornamental-rule::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+  .ornamental-rule-glyph { color: var(--accent-soft); font-size: 18px; }
+  .article { max-width: 680px; margin: 0 auto; padding: 0 24px 80px; }
+  .drop-cap::first-letter { font-family: 'Playfair Display', Georgia, serif; font-size: 5.2em; font-weight: 600; float: left; line-height: 0.72; margin-right: 10px; margin-top: 10px; color: var(--accent); }
+  p { margin-bottom: 1.6em; color: var(--ink-soft); }
+  p:last-child { margin-bottom: 0; }
+  .scene-break { text-align: center; margin: 44px 0; color: var(--accent-soft); font-size: 20px; letter-spacing: 0.4em; }
+  .pull-quote { border-left: 3px solid var(--accent); margin: 44px 0; padding: 4px 0 4px 28px; }
+  .pull-quote p { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-style: italic; line-height: 1.5; color: var(--ink); margin: 0; }
+  .inset-block { background: var(--paper-warm); border: 1px solid var(--rule); border-left: 4px solid var(--accent-soft); padding: 24px 28px; margin: 44px 0; border-radius: 0 2px 2px 0; }
+  .inset-label { font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 400; display: block; }
+  .inset-block p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; font-style: italic; color: var(--ink-soft); line-height: 1.75; margin: 0; }
+
+  /* The camporee setup block */
+  .desert-block { background: var(--desert-night); margin: 52px -24px; padding: 56px 48px; position: relative; overflow: hidden; text-align: center; }
+  .desert-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(96,128,144,0.08) 0%, transparent 65%); }
+  .desert-block-inner { position: relative; z-index: 1; }
+  .desert-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--desert-pale); margin-bottom: 28px; display: block; }
+  .desert-block .desert-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(16px, 2.6vw, 20px); font-style: italic; color: var(--desert-bright); line-height: 1.7; margin: 0 0 12px; }
+  .desert-block .desert-text:last-child { margin: 0; }
+
+  /* The blue ribbon moment */
+  .ribbon-block { background: var(--ribbon); margin: 52px -24px; padding: 52px 48px; position: relative; overflow: hidden; text-align: center; }
+  .ribbon-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(72,112,176,0.1) 0%, transparent 65%); }
+  .ribbon-block-inner { position: relative; z-index: 1; }
+  .ribbon-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ribbon-pale); margin-bottom: 24px; display: block; }
+  .ribbon-block .ribbon-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(18px, 3vw, 26px); font-style: italic; color: var(--ribbon-bright); line-height: 1.6; margin: 0; max-width: 520px; margin-left: auto; margin-right: auto; }
+
+  .chapter-note { background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; padding: 24px 28px; margin: 52px 0 0; font-family: 'Crimson Pro', Georgia, serif; font-size: 16px; color: var(--ink-muted); line-height: 1.7; }
+  .chapter-note strong { display: block; font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-style: normal; font-weight: 400; }
+  .post-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 80px; border-top: 1px solid var(--rule); }
+  .footer-series { font-family: 'Crimson Pro', Georgia, serif; font-size: 14px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 20px; }
+  .chapter-nav { display: flex; justify-content: space-between; gap: 20px; }
+  .nav-item { flex: 1; padding: 18px 20px; background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; text-decoration: none; transition: border-color 0.2s; }
+  .nav-item:hover { border-color: var(--accent-soft); }
+  .nav-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .nav-title { font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: var(--ink); line-height: 1.35; }
+  .nav-item.next { text-align: right; }
+  .subscribe-bar { background: var(--ink); padding: 52px 24px; text-align: center; margin-top: 20px; }
+  .subscribe-bar h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 400; color: var(--paper); margin-bottom: 10px; }
+  .subscribe-bar p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; color: #9a9088; margin-bottom: 24px; }
+  .subscribe-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; }
+  .subscribe-form input { flex: 1; padding: 12px 16px; background: #2a2420; border: 1px solid #3d3530; border-radius: 2px; color: var(--paper); font-family: 'Source Serif 4', serif; font-size: 15px; outline: none; }
+  .subscribe-form input::placeholder { color: #5a504a; }
+  .subscribe-form input:focus { border-color: var(--accent-soft); }
+  .subscribe-form button { padding: 12px 20px; background: var(--accent); border: none; border-radius: 2px; color: white; font-family: 'Crimson Pro', serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
+  .subscribe-form button:hover { background: var(--accent-soft); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 0.7s ease both; }
+  .article { animation: fadeUp 0.7s 0.15s ease both; }
+  @media (max-width: 600px) { body { font-size: 17px; } .desert-block { margin: 44px -24px; padding: 44px 28px; } .ribbon-block { margin: 44px -24px; padding: 44px 28px; } .chapter-nav { flex-direction: column; } .nav-item.next { text-align: left; } .subscribe-form { flex-direction: column; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-title">A Life of <span>Tender Mercies</span> &nbsp;·&nbsp; Dee Stevens</div>
+</header>
+
+<div class="hero">
+  <span class="series-label">Part One: From the Journals &nbsp;·&nbsp; Blanding, Utah, 1963</span>
+  <h1>The <em>Blue Ribbon</em></h1>
+  <div class="byline">
+    <div class="byline-avatar">D</div>
+    <div class="byline-text">
+      <strong>Dee Stevens</strong>
+      Sand Island, San Juan River &nbsp;·&nbsp; March, 1963
+    </div>
+  </div>
+  <div class="ornamental-rule"><span class="ornamental-rule-glyph">&#10022;</span></div>
+</div>
+
+<article class="article">
+
+  <p class="drop-cap">I was twelve years old and living in Blanding, Utah, which is about as far from anywhere as a town can get and still be on a map. Southeast corner of the state, red rock country, the kind of place where the horizon goes on forever and you learn early that the outdoors is not a weekend activity but simply the world you live in. I loved it there with the particular love that boys develop for places that give them room to run.</p>
+
+  <p>Our scoutmaster was a man named Leonard Hurst. He was rugged and demanding with us but he loved the outdoors the way a man loves something he has built his life around, and that love was contagious. Under Leonard we stopped thinking of scouting as something you did to earn badges and started thinking of it as a serious education in how to handle yourself in the world. By the time seventh grade came around I had advanced to First Class and was working on merit badges with genuine enthusiasm.</p>
+
+  <p>That winter the district announced a camporee — a competition between troops, held on the Sand Island of the San Juan River near Bluff. The date was in March. The wind over the mesa had been icy for a week. It had rained ice for nearly a week straight, the kind of cold that gets into your bones before you realize it's arrived.</p>
+
+  <div class="desert-block">
+    <div class="desert-block-inner">
+      <span class="desert-label">Who went — and who didn't</span>
+      <div class="desert-text">Leonard Hurst couldn't go. Family problems.</div>
+      <div class="desert-text">The older scouts decided not to go. Too cold. Too wet.</div>
+      <div class="desert-text">That left eight first-year scouts and the assistant scoutmaster, Arvid Black.</div>
+      <div class="desert-text">Eight greenhorns, just inexperienced enough not to know what we were getting ourselves into.</div>
+      <div class="desert-text">So off we went.</div>
+    </div>
+  </div>
+
+  <p>We set up our tents at Sand Island and stowed our gear. The air was bitter cold but the rain had at least stopped. Thanks to Arvid we all slept warm and dry that first night, which felt like a miracle of its own.</p>
+
+  <p>The next morning we woke up and there was not a cloud in the sky. The Four Corners sun came up like a day in May. It was so warm we actually stripped down and went swimming in the river — which, I should mention, was still absolutely freezing, because rivers don't care what the air temperature is. But we were twelve and that seemed irrelevant.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>The competition that day covered several events: pancake flipping, relay races, obstacle courses, general camping skills, and camp cleanliness. Now, our troop normally took last place in these contests. The older boys who usually represented us were rowdy and didn't care much for what they called sissy stuff like winning camp contests. But the older boys weren't here. It was just us greenhorns, inspired by Arvid, and we had decided — quietly, collectively, without making a big speech about it — that we were going to win.</p>
+
+  <p>We put our wits to each event and worked together in the way that a team works when everyone has something to prove. We won almost every event.</p>
+
+  <p>The last event to be judged was camp cleanliness. Each troop chose one person for the judging committee, and I was chosen from ours. I walked around with the committee feeling rather important, carefully checking each campsite. Ours was the last to be judged.</p>
+
+  <p>As we were carefully checking every inch of our campground I happened to glance into a hollow tree. There, bold as could be, was an old crusty pair of underwear. Boy scout size.</p>
+
+  <p>That would be exactly what it would take to disqualify us.</p>
+
+  <p>I looked around. Nobody was watching me. I grabbed the underwear and stuffed it down my pants.</p>
+
+  <p>I looked up. The head official of the entire camporee was staring directly at me with an expression that could only be described as stern.</p>
+
+  <p>I felt my face go the color of the red rock mesa. I couldn't speak. I couldn't explain. I just stood there with someone else's old scout underwear stuffed down my pants and absolutely no good account of myself to give.</p>
+
+  <p>Finally a small gleam came into his eye.</p>
+
+  <p><em>"Is your scoutmaster aware,"</em> he said, <em>"that he has a young man in his troop who wears two pairs of underwear at once?"</em></p>
+
+  <p>I mumbled something about how surely they were left over from last year. I gave him the biggest grin I had.</p>
+
+  <p>He nodded slowly and moved on.</p>
+
+  <div class="ribbon-block">
+    <div class="ribbon-block-inner">
+      <span class="ribbon-label">Final results &nbsp;·&nbsp; Sand Island Camporee, March 1963</span>
+      <div class="ribbon-text">"We won the blue ribbon. You never saw a prouder bunch of boys come home from a camporee."</div>
+    </div>
+  </div>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>We drove directly from Sand Island to Leonard Hurst's house. We knocked on his door and when he opened it we held up the ribbon. He was visibly touched. I remember his face — the way a proud man's face moves when he is surprised by something that matters to him. He had taught us. He had given us the standards we competed by that day. The ribbon belonged to him as much as it did to us.</p>
+
+  <div class="pull-quote">
+    <p>"That was the year I began to become aware of life and how much I loved to live it. Whatever you do — do your very best. If it's worth doing at all, do your very best."</p>
+  </div>
+
+  <p>I have held that principle my whole life. It came from Blanding, from a scoutmaster who demanded it of us before we were old enough to understand why, from a camporee in March on a river in the red rock desert where eight greenhorns decided to win.</p>
+
+  <div class="inset-block">
+    <span class="inset-label">Fifty years later &nbsp;·&nbsp; 2014</span>
+    <p>Kathy was assigned to visit Leonard Hurst as a ministering sister in his final years. He told her he remembered Dee as one of his scouts. He remembered his parents too. It was one of those full-circle moments that a long life occasionally delivers — the boy who won the blue ribbon, the scoutmaster who shaped him, and the wife who sat with the old man at the end and carried the connection home.</p>
+  </div>
+
+  <div class="chapter-note">
+    <strong>A Note for the Grandkids</strong>
+    Grandpa was twelve years old when this happened, living in Blanding in the red rock desert of southeast Utah. His scout troop's best boys stayed home because it was too cold. Eight greenhorns went instead and won the whole camporee. Grandpa stuffed a stranger's old underwear down his pants to protect the team's cleanliness score and nearly got caught by the head judge. He gave the judge his biggest grin and got away with it. Fifty years later, Grandma Kathy was assigned to visit the old scoutmaster in his final years. He still remembered Grandpa. Some people leave a mark that lasts.
+  </div>
+
+</article>
+
+<div class="post-footer">
+  <div class="footer-series">A Life of Tender Mercies &nbsp;·&nbsp; From the Journals</div>
+  <div class="chapter-nav">
+    <a class="nav-item prev" href="prologue.html">
+      <div class="nav-label">&larr; Previous</div>
+      <div class="nav-title">Prologue: Before the Mission</div>
+    </a>
+    <a class="nav-item next" href="chapter-1.html">
+      <div class="nav-label">Next &rarr;</div>
+      <div class="nav-title">The Summer That Changed Everything</div>
+    </a>
+  </div>
+</div>
+
+<div class="subscribe-bar">
+  <h3>Follow along with Dee's story</h3>
+  <p>New chapters delivered to your inbox, free.</p>
+  <div class="subscribe-form">
+    <input type="email" placeholder="your@email.com">
+    <button>Subscribe</button>
+  </div>
+</div>
+
+</body>
+</html>

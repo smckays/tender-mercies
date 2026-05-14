@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grandma Wright Meets the Machine — A Life of Tender Mercies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1612; --ink-soft: #3d3530; --ink-muted: #7a6e68;
+    --paper: #faf7f2; --paper-warm: #f5f0e8;
+    --accent: #8b3a2a; --accent-soft: #c4785f; --rule: #d9d0c4;
+    --elder: #141010; --elder-pale: #807060; --elder-bright: #c8b898;
+    --viewing: #101414; --viewing-pale: #507070; --viewing-bright: #90b8b8;
+  }
+  html { scroll-behavior: smooth; }
+  body { background-color: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-weight: 300; font-size: 19px; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+  .masthead { border-bottom: 1px solid var(--rule); padding: 20px 0 18px; text-align: center; background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .masthead-title { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); }
+  .masthead-title span { color: var(--accent); }
+  .hero { max-width: 680px; margin: 0 auto; padding: 72px 24px 0; }
+  .series-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: block; }
+  h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px, 5vw, 52px); font-weight: 600; line-height: 1.15; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 28px; }
+  h1 em { font-style: italic; font-weight: 400; color: var(--ink-soft); }
+  .byline { display: flex; align-items: center; gap: 14px; margin-bottom: 48px; }
+  .byline-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-soft), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 15px; color: white; flex-shrink: 0; }
+  .byline-text { font-family: 'Crimson Pro', Georgia, serif; font-size: 15px; color: var(--ink-muted); line-height: 1.4; }
+  .byline-text strong { color: var(--ink-soft); font-weight: 400; display: block; font-size: 16px; }
+  .ornamental-rule { display: flex; align-items: center; gap: 16px; margin: 0 0 52px; }
+  .ornamental-rule::before, .ornamental-rule::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+  .ornamental-rule-glyph { color: var(--accent-soft); font-size: 18px; }
+  .article { max-width: 680px; margin: 0 auto; padding: 0 24px 80px; }
+  .drop-cap::first-letter { font-family: 'Playfair Display', Georgia, serif; font-size: 5.2em; font-weight: 600; float: left; line-height: 0.72; margin-right: 10px; margin-top: 10px; color: var(--accent); }
+  p { margin-bottom: 1.6em; color: var(--ink-soft); }
+  p:last-child { margin-bottom: 0; }
+  .scene-break { text-align: center; margin: 44px 0; color: var(--accent-soft); font-size: 20px; letter-spacing: 0.4em; }
+  .pull-quote { border-left: 3px solid var(--accent); margin: 44px 0; padding: 4px 0 4px 28px; }
+  .pull-quote p { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-style: italic; line-height: 1.5; color: var(--ink); margin: 0; }
+  .inset-block { background: var(--paper-warm); border: 1px solid var(--rule); border-left: 4px solid var(--accent-soft); padding: 24px 28px; margin: 44px 0; border-radius: 0 2px 2px 0; }
+  .inset-label { font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 400; display: block; }
+  .inset-block p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; font-style: italic; color: var(--ink-soft); line-height: 1.75; margin: 0; }
+
+  /* Grandma's sayings — her lines deserve their own treatment */
+  .grandma-block { background: var(--elder); margin: 52px -24px; padding: 56px 48px; position: relative; overflow: hidden; }
+  .grandma-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(128,112,96,0.08) 0%, transparent 65%); }
+  .grandma-block-inner { position: relative; z-index: 1; }
+  .grandma-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--elder-pale); margin-bottom: 28px; display: block; }
+  .grandma-line { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(16px, 2.6vw, 21px); font-style: italic; color: var(--elder-bright); line-height: 1.7; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .grandma-line:last-child { border-bottom: none; padding-bottom: 0; }
+  .grandma-line .grandma-context { font-family: 'Crimson Pro', serif; font-size: 13px; font-style: normal; color: var(--elder-pale); display: block; margin-top: 6px; letter-spacing: 0.06em; }
+
+  /* The viewing block — the funeral joke */
+  .viewing-block { background: var(--viewing); margin: 52px -24px; padding: 52px 48px; position: relative; overflow: hidden; text-align: center; }
+  .viewing-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(80,112,112,0.08) 0%, transparent 65%); }
+  .viewing-block-inner { position: relative; z-index: 1; }
+  .viewing-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--viewing-pale); margin-bottom: 24px; display: block; }
+  .viewing-block .viewing-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(17px, 2.8vw, 22px); font-style: italic; color: var(--viewing-bright); line-height: 1.65; margin: 0 0 14px; }
+  .viewing-block .viewing-text:last-child { margin: 0; }
+
+  .chapter-note { background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; padding: 24px 28px; margin: 52px 0 0; font-family: 'Crimson Pro', Georgia, serif; font-size: 16px; color: var(--ink-muted); line-height: 1.7; }
+  .chapter-note strong { display: block; font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-style: normal; font-weight: 400; }
+  .post-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 80px; border-top: 1px solid var(--rule); }
+  .footer-series { font-family: 'Crimson Pro', Georgia, serif; font-size: 14px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 20px; }
+  .chapter-nav { display: flex; justify-content: space-between; gap: 20px; }
+  .nav-item { flex: 1; padding: 18px 20px; background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; text-decoration: none; transition: border-color 0.2s; }
+  .nav-item:hover { border-color: var(--accent-soft); }
+  .nav-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .nav-title { font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: var(--ink); line-height: 1.35; }
+  .nav-item.next { text-align: right; }
+  .subscribe-bar { background: var(--ink); padding: 52px 24px; text-align: center; margin-top: 20px; }
+  .subscribe-bar h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 400; color: var(--paper); margin-bottom: 10px; }
+  .subscribe-bar p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; color: #9a9088; margin-bottom: 24px; }
+  .subscribe-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; }
+  .subscribe-form input { flex: 1; padding: 12px 16px; background: #2a2420; border: 1px solid #3d3530; border-radius: 2px; color: var(--paper); font-family: 'Source Serif 4', serif; font-size: 15px; outline: none; }
+  .subscribe-form input::placeholder { color: #5a504a; }
+  .subscribe-form input:focus { border-color: var(--accent-soft); }
+  .subscribe-form button { padding: 12px 20px; background: var(--accent); border: none; border-radius: 2px; color: white; font-family: 'Crimson Pro', serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
+  .subscribe-form button:hover { background: var(--accent-soft); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 0.7s ease both; }
+  .article { animation: fadeUp 0.7s 0.15s ease both; }
+  @media (max-width: 600px) { body { font-size: 17px; } .grandma-block { margin: 44px -24px; padding: 44px 28px; } .viewing-block { margin: 44px -24px; padding: 44px 28px; } .chapter-nav { flex-direction: column; } .nav-item.next { text-align: left; } .subscribe-form { flex-direction: column; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-title">A Life of <span>Tender Mercies</span> &nbsp;·&nbsp; Dee Stevens</div>
+</header>
+
+<div class="hero">
+  <span class="series-label">Part Five: Letting Go &nbsp;·&nbsp; Chapter Twenty-Five</span>
+  <h1>Grandma Wright <em>Meets the Machine</em></h1>
+  <div class="byline">
+    <div class="byline-avatar">D</div>
+    <div class="byline-text">
+      <strong>Dee Stevens</strong>
+      Pleasant Grove, Utah &nbsp;·&nbsp; 1997–2003
+    </div>
+  </div>
+  <div class="ornamental-rule"><span class="ornamental-rule-glyph">&#10022;</span></div>
+</div>
+
+<article class="article">
+
+  <p class="drop-cap">She was ninety-six years old when she moved in with us, and she had not planned to last much longer. We had not planned for her to last much longer either. She arrived in Pleasant Grove in August of 1997 — a small, frail woman who had fallen in her room and lain on the floor for eleven hours before anyone found her — and we thought we were providing the kind of care you provide at the end of a long life. Comfortable, quiet, loving, brief.</p>
+
+  <p>Grandma Eva Wright had other plans.</p>
+
+  <p>She had been born in Koosharem, Utah, in 1901. She had lived through two World Wars, the Depression, the death of her husband, decades of watching her family grow. She had farmed and raised children and outlasted nearly everyone she had started with. When she came to live with us she was tired and thin and blue — but good food and good care and an active family life have a remarkable effect on the elderly, and within weeks she had perked right up and become fully, irrepressibly herself.</p>
+
+  <p>She lived for nearly six more years. She turned one hundred in our home. She did not cross the veil until she was nearly one hundred and two.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>The boys — Adam and McKay, still in their teens — were not what Grandma was accustomed to. She had not lived with children in decades, and teenagers in particular represented a kind of chaos that required monitoring. She appointed herself to this task without being asked.</p>
+
+  <p>Whenever one of the neighbors sat down at our computer, she would come find me immediately. <em>"There's a boy playing with the machine,"</em> she would report, with the gravity of someone flagging a genuine security concern. The computer was always the machine. She never called it anything else.</p>
+
+  <div class="grandma-block">
+    <div class="grandma-block-inner">
+      <span class="grandma-label">Things Grandma Wright said and did</span>
+      <div class="grandma-line">
+        "There's a boy playing with the machine."
+        <span class="grandma-context">— her standard report whenever a teenager approached the computer</span>
+      </div>
+      <div class="grandma-line">
+        "I am no longer fit for this world."
+        <span class="grandma-context">— after Dee explained that the letter she had dictated on the computer had been sent to the entire family in seconds</span>
+      </div>
+      <div class="grandma-line">
+        "When do we get to have that meeting?"
+        <span class="grandma-context">— asking when her funeral would be held, because she wanted to see who came while she was still alive to appreciate it</span>
+      </div>
+      <div class="grandma-line">
+        "You should see how he looks now!"
+        <span class="grandma-context">— said at a viewing, to two elderly cousins who remarked that Uncle Bob had looked very well at his funeral — held several years prior</span>
+      </div>
+    </div>
+  </div>
+
+  <p>The letter story deserves a little more room. One afternoon when we were home alone together, she decided she wanted to compose a message to the whole family. It was her idea entirely. So she dictated it to me while I typed, and she read it back and approved it, and I explained to her that in a matter of seconds every member of her family anywhere in the country would receive a copy.</p>
+
+  <p>She sat with that for a moment.</p>
+
+  <p>Then she sighed and said: <em>"I am no longer fit for this world."</em></p>
+
+  <p>She was not distressed. She was simply making an accurate assessment of the situation. The world had moved past her while she was busy living in it, and she was prepared to acknowledge this fact with dignity and humor and then move on to whatever came next.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>Her dementia increased gradually over those years, but she was remarkably skilled at concealing it. Visitors would come and she would visit warmly and at length, asking all the right questions, laughing at the right moments — and only afterward would she lean over and ask quietly who that had been.</p>
+
+  <p>She was sometimes uncertain whether Dee was her husband, her late son Bob, or her grandson. She navigated this uncertainty with tremendous grace, treating whoever was sitting with her with the same warmth regardless of which person she believed him to be.</p>
+
+  <div class="inset-block">
+    <span class="inset-label">The pacemaker decision</span>
+    <p>At around ninety-eight, her pacemaker battery began to run down. She could recharge it and live on — possibly years longer — or she could let nature take its course. She wanted someone else to decide for her. The family agreed that wasn't fair. Eventually she decided she wanted the new battery. At ninety-eight, her heart began ticking anew. Within months she deeply regretted the decision, and whenever she grew frustrated with old age she was heard to announce: "The worst thing I ever did was to get that new pacemaker."</p>
+  </div>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>The viewing story is the one I tell most often, because it is the most perfect thing she ever said.</p>
+
+  <p>A relative had passed away and there was a viewing in Provo. Dee dressed Grandma up and they went together, standing in the reception line with the rest of the family. Two elderly women — cousins of some kind — approached Grandma, happy to see her. After their pleasantries, one of the women mentioned that they had been to Uncle Bob's funeral some years before, and said that he had looked very well.</p>
+
+  <div class="viewing-block">
+    <div class="viewing-block-inner">
+      <span class="viewing-label">A viewing in Provo &nbsp;·&nbsp; Grandma Eva Wright, age 98 or 99</span>
+      <div class="viewing-text">The cousin said: "We were at Uncle Bob's funeral and thought he looked real good."</div>
+      <div class="viewing-text">Grandma smiled her sweet Eva Wright smile and replied:</div>
+      <div class="viewing-text">"You should see how he looks now!"</div>
+    </div>
+  </div>
+
+  <p>The two women looked puzzled and scurried away. Grandma moved serenely on down the line.</p>
+
+  <p>She was not being morbid. She was being theologically precise. Uncle Bob had been through the veil for some years, and in her worldview — a worldview built over nearly a century of faithful living — that was an upgrade worth acknowledging. Of course he looked better now. Why wouldn't he?</p>
+
+  <div class="pull-quote">
+    <p>"She had lived long enough to find death less frightening than inconvenient. She was ready to go. The new pacemaker kept delaying the appointment, and she found this annoying."</p>
+  </div>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>In the spring of 2003, Kathy and I needed a brief respite and placed Grandma in a care center for three days. We had never done this before and we felt guilty about it — she was nearly one hundred and two, and the care center was unfamiliar territory. While we were away she slipped and fell. A brittle bone shattered. Surgery was possible but not without risk at her age, and the healing was uncertain.</p>
+
+  <p>After consulting with the surgeon and with Grandma's own family, we made the difficult decision to keep her comfortable and let her go. She slipped into her eternal rest not long after. She left with the sweetest smile on her face.</p>
+
+  <p>She was buried in Koosharem, Sevier County, Utah — the same small town she had come from, a century before.</p>
+
+  <p>The story does not end there. On March 29th, 2022, Dee opened FamilySearch to do some genealogy work and was drawn to a name on his suggested list — Rosetta Beckstead, a little girl who had died at age three and whose sealing to her parents had never been completed. Following the prompting, he discovered that Rosetta was the younger sister of Sabre Jane Beckstead — Grandma Wright's own grandmother, a woman Grandma had spoken of constantly during her years in their home.</p>
+
+  <p>He completed the sealing that morning. Then he realized: it was Grandma Wright's birthday. She would have been one hundred and twenty-one years old. He knew exactly where the prompting had come from.</p>
+
+  <div class="chapter-note">
+    <strong>A Note for the Grandkids</strong>
+    Grandma Eva Wright moved in with Grandpa and Grandma Kathy when she was ninety-six and stayed for nearly six years. She referred to the computer as "the machine" and reported suspicious teenagers to Grandpa like a tiny security guard. She asked when her funeral would be held because she wanted to see who came while she was still alive. She said "You should see how he looks now" at a viewing and then moved serenely on. She got a new pacemaker at ninety-eight and regretted it immediately. She died at nearly one hundred and two with a smile on her face. Years later, on her birthday, Grandpa found her great-great-aunt's name in FamilySearch and sealed a family that had been waiting a century. He knew who sent him the prompting.
+  </div>
+
+</article>
+
+<div class="post-footer">
+  <div class="footer-series">A Life of Tender Mercies &nbsp;·&nbsp; Part Four</div>
+  <div class="chapter-nav">
+    <a class="nav-item prev" href="chapter-24.html">
+      <div class="nav-label">&larr; Previous</div>
+      <div class="nav-title">Ben</div>
+    </a>
+    <a class="nav-item next" href="chapter-26.html">
+      <div class="nav-label">Next &rarr;</div>
+      <div class="nav-title">My Miracle Kidney</div>
+    </a>
+  </div>
+</div>
+
+<div class="subscribe-bar">
+  <h3>Follow along with Dee's story</h3>
+  <p>New chapters delivered to your inbox, free.</p>
+  <div class="subscribe-form">
+    <input type="email" placeholder="your@email.com">
+    <button>Subscribe</button>
+  </div>
+</div>
+
+</body>
+</html>
