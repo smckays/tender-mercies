@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Killer Horse That Wasn't — A Life of Tender Mercies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1612; --ink-soft: #3d3530; --ink-muted: #7a6e68;
+    --paper: #faf7f2; --paper-warm: #f5f0e8;
+    --accent: #8b3a2a; --accent-soft: #c4785f; --rule: #d9d0c4;
+    --pasture: #101008; --pasture-pale: #807840; --pasture-bright: #c8bc70;
+    --barn: #140c08; --barn-pale: #806050; --barn-bright: #c8a880;
+  }
+  html { scroll-behavior: smooth; }
+  body { background-color: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-weight: 300; font-size: 19px; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+  .masthead { border-bottom: 1px solid var(--rule); padding: 20px 0 18px; text-align: center; background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .masthead-title { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); }
+  .masthead-title span { color: var(--accent); }
+  .hero { max-width: 680px; margin: 0 auto; padding: 72px 24px 0; }
+  .series-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: block; }
+  h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px, 5vw, 52px); font-weight: 600; line-height: 1.15; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 28px; }
+  h1 em { font-style: italic; font-weight: 400; color: var(--ink-soft); }
+  .byline { display: flex; align-items: center; gap: 14px; margin-bottom: 48px; }
+  .byline-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-soft), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 15px; color: white; flex-shrink: 0; }
+  .byline-text { font-family: 'Crimson Pro', Georgia, serif; font-size: 15px; color: var(--ink-muted); line-height: 1.4; }
+  .byline-text strong { color: var(--ink-soft); font-weight: 400; display: block; font-size: 16px; }
+  .ornamental-rule { display: flex; align-items: center; gap: 16px; margin: 0 0 52px; }
+  .ornamental-rule::before, .ornamental-rule::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+  .ornamental-rule-glyph { color: var(--accent-soft); font-size: 18px; }
+  .article { max-width: 680px; margin: 0 auto; padding: 0 24px 80px; }
+  .drop-cap::first-letter { font-family: 'Playfair Display', Georgia, serif; font-size: 5.2em; font-weight: 600; float: left; line-height: 0.72; margin-right: 10px; margin-top: 10px; color: var(--accent); }
+  p { margin-bottom: 1.6em; color: var(--ink-soft); }
+  p:last-child { margin-bottom: 0; }
+  .scene-break { text-align: center; margin: 44px 0; color: var(--accent-soft); font-size: 20px; letter-spacing: 0.4em; }
+  .pull-quote { border-left: 3px solid var(--accent); margin: 44px 0; padding: 4px 0 4px 28px; }
+  .pull-quote p { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-style: italic; line-height: 1.5; color: var(--ink); margin: 0; }
+  .inset-block { background: var(--paper-warm); border: 1px solid var(--rule); border-left: 4px solid var(--accent-soft); padding: 24px 28px; margin: 44px 0; border-radius: 0 2px 2px 0; }
+  .inset-label { font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 400; display: block; }
+  .inset-block p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; font-style: italic; color: var(--ink-soft); line-height: 1.75; margin: 0; }
+  .pasture-block { background: var(--pasture); margin: 52px -24px; padding: 56px 48px; position: relative; overflow: hidden; text-align: center; }
+  .pasture-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(128,120,64,0.08) 0%, transparent 65%); }
+  .pasture-block-inner { position: relative; z-index: 1; }
+  .pasture-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pasture-pale); margin-bottom: 28px; display: block; }
+  .pasture-block .pasture-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(18px, 3vw, 26px); font-style: italic; color: var(--pasture-bright); line-height: 1.6; margin: 0 0 14px; }
+  .pasture-block .pasture-text:last-child { margin: 0; }
+  .barn-block { background: var(--barn); margin: 52px -24px; padding: 52px 48px; position: relative; overflow: hidden; }
+  .barn-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(128,96,80,0.08) 0%, transparent 65%); }
+  .barn-block-inner { position: relative; z-index: 1; }
+  .barn-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--barn-pale); margin-bottom: 24px; display: block; }
+  .barn-block .barn-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(17px, 2.8vw, 22px); font-style: italic; color: var(--barn-bright); line-height: 1.65; margin: 0 0 14px; }
+  .barn-block .barn-text:last-child { margin: 0; }
+  .chapter-note { background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; padding: 24px 28px; margin: 52px 0 0; font-family: 'Crimson Pro', Georgia, serif; font-size: 16px; color: var(--ink-muted); line-height: 1.7; }
+  .chapter-note strong { display: block; font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-style: normal; font-weight: 400; }
+  .post-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 80px; border-top: 1px solid var(--rule); }
+  .footer-series { font-family: 'Crimson Pro', Georgia, serif; font-size: 14px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 20px; }
+  .chapter-nav { display: flex; justify-content: space-between; gap: 20px; }
+  .nav-item { flex: 1; padding: 18px 20px; background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; text-decoration: none; transition: border-color 0.2s; }
+  .nav-item:hover { border-color: var(--accent-soft); }
+  .nav-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .nav-title { font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: var(--ink); line-height: 1.35; }
+  .nav-item.next { text-align: right; }
+  .subscribe-bar { background: var(--ink); padding: 52px 24px; text-align: center; margin-top: 20px; }
+  .subscribe-bar h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 400; color: var(--paper); margin-bottom: 10px; }
+  .subscribe-bar p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; color: #9a9088; margin-bottom: 24px; }
+  .subscribe-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; }
+  .subscribe-form input { flex: 1; padding: 12px 16px; background: #2a2420; border: 1px solid #3d3530; border-radius: 2px; color: var(--paper); font-family: 'Source Serif 4', serif; font-size: 15px; outline: none; }
+  .subscribe-form input::placeholder { color: #5a504a; }
+  .subscribe-form input:focus { border-color: var(--accent-soft); }
+  .subscribe-form button { padding: 12px 20px; background: var(--accent); border: none; border-radius: 2px; color: white; font-family: 'Crimson Pro', serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
+  .subscribe-form button:hover { background: var(--accent-soft); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 0.7s ease both; }
+  .article { animation: fadeUp 0.7s 0.15s ease both; }
+  @media (max-width: 600px) { body { font-size: 17px; } .pasture-block { margin: 44px -24px; padding: 44px 28px; } .barn-block { margin: 44px -24px; padding: 44px 28px; } .chapter-nav { flex-direction: column; } .nav-item.next { text-align: left; } .subscribe-form { flex-direction: column; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-title">A Life of <span>Tender Mercies</span> &nbsp;·&nbsp; Dee Stevens</div>
+</header>
+
+<div class="hero">
+  <span class="series-label">Part One: From the Journals &nbsp;·&nbsp; Blanding, Utah, 1963</span>
+  <h1>The Killer Horse <em>That Wasn't</em></h1>
+  <div class="byline">
+    <div class="byline-avatar">D</div>
+    <div class="byline-text">
+      <strong>Dee Stevens</strong>
+      Brown's Canyon &nbsp;·&nbsp; San Juan County, Utah &nbsp;·&nbsp; Spring, 1963
+    </div>
+  </div>
+  <div class="ornamental-rule"><span class="ornamental-rule-glyph">&#10022;</span></div>
+</div>
+
+<article class="article">
+
+  <p class="drop-cap">There were four of us that day — Elo Heyman, Charlie Kimmerle, another boy whose name I no longer remember, and me. We had set out for Brown's Canyon, about ten miles south of Blanding, where larger Indian ruins sat along the canyon walls and a high rock tower the ancient cliff dwellers had probably used as a lookout still stood at the top of the ridge. It was the kind of destination that required a full day and rewarded you for it.</p>
+
+  <p>On the way there we passed a large barn filled with fifteen or twenty horses. The most dominant was a big red-brown stallion who moved restlessly when we came in and watched us with an eye that suggested he found our presence unwelcome. Charlie studied this horse for a moment and then informed us, with the gravity of someone sharing dangerous intelligence, that the stallion belonged to his uncle — and that his uncle had told him the horse was a killer. Wild, he said. Hated humans. Had once trampled to death the only man who had tried to ride him.</p>
+
+  <p>We got out of that barn fast.</p>
+
+  <p>We crossed the adjoining pasture and climbed to the canyon, where we spent the afternoon at the ruins, collecting arrowheads from the Moqui burial mounds and exploring the cliff dwellings. It was a good day. We started home in high spirits.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>We returned across the same pasture we had crossed on the way in. What none of us had registered that morning was that the pasture connected directly to the barn — the horses had free range of the whole property. We were about halfway across, which put us something close to a mile from any fence, when the ground began to shake.</p>
+
+  <div class="pasture-block">
+    <div class="pasture-block-inner">
+      <span class="pasture-label">Halfway across a mile-wide pasture</span>
+      <div class="pasture-text">The ground shook. Then thundered.</div>
+      <div class="pasture-text">All fifteen or twenty horses were coming at full speed.</div>
+      <div class="pasture-text">The big red-brown stallion was in the lead.</div>
+      <div class="pasture-text">The fear of death struck four boys simultaneously.</div>
+    </div>
+  </div>
+
+  <p>Elo went first — he could run like a deer, and he knew it, and he used this knowledge without hesitation or sentiment. I was the next fastest and I knew that too, and I was moving before the thought had fully formed. I had beaten Charlie Kimmerle in a foot race on enough occasions to know I could put some daylight between us, and in a genuine emergency the knowledge that you are faster than at least one other person in your group is a comfort, however mean-spirited.</p>
+
+  <p>Then Charlie Kimmerle tore past me like I was standing still.</p>
+
+  <p>Adrenaline is a remarkable substance.</p>
+
+  <p>We ran without stopping and threw ourselves into the barn, finding a spot behind some hay that the horses couldn't reach. We sat there in the dim light, hearts hammering, listening to the herd thunder past outside. When the noise settled we looked at each other. Four boys, breathing hard, all equally alive.</p>
+
+  <p>Then Charlie started chuckling.</p>
+
+  <p>He chuckled and chuckled. He hooted. He could not stop. We pressed him to explain and he finally admitted, through tears of laughter, that he had made the whole thing up. There was no killer stallion. There was no trampled man. He had invented the story to frighten us on the way in — and then when the horses came running toward us on the way back, he had gotten more frightened than anyone.</p>
+
+  <div class="barn-block">
+    <div class="barn-block-inner">
+      <span class="barn-label">What they established after the laughter died down</span>
+      <div class="barn-text">The horses had never come within five hundred feet of them.</div>
+      <div class="barn-text">A barn full of ordinary horses, curious about the boys crossing their pasture, had decided to have a look.</div>
+      <div class="barn-text">Four boys had run for their lives from a herd of completely indifferent animals.</div>
+      <div class="barn-text">Charlie Kimmerle had been the most terrified of all — entirely by a story he himself had invented.</div>
+    </div>
+  </div>
+
+  <p>They rolled around the barn hooting about this for quite a while.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>The day was not finished. They decided on the walk home that they had not had enough excitement, so they took a side road none of them had been on before. They came across a farm with mama pigs and a great quantity of piglets. They spent the next hour wrestling piglets and attempting to ride the mothers, which produced a noise that could be heard at considerable distance.</p>
+
+  <p>A man arrived in a pickup truck, yelling and leaning on his horn. They scattered across the fields, taking most of the dirt and mud from the pigpen with them.</p>
+
+  <div class="pull-quote">
+    <p>"All of our mothers were just pleased as pie to see us come home that evening."</p>
+  </div>
+
+  <p>That is Dee's exact line from the journal, written fifteen years after it happened, and it lands exactly as he intended it to. The mothers' pleasure was not the warm kind.</p>
+
+  <div class="inset-block">
+    <span class="inset-label">A note on Charlie Kimmerle</span>
+    <p>Charlie is mentioned only this once in the journal, but this one appearance tells you everything you need to know about him. He was the kind of boy who could invent a terrifying lie with complete conviction, get more frightened by it than anyone else when circumstances seemed to confirm it, and then laugh harder than anyone once the truth came out. Dee remembered him sixty years later. Some people are like that — one afternoon is enough.</p>
+  </div>
+
+  <div class="chapter-note">
+    <strong>A Note for the Grandkids</strong>
+    Grandpa was twelve or thirteen when this happened. Charlie Kimmerle told the boys a stallion was a killer that had trampled a man to death. On the way home a herd of completely ordinary horses trotted toward them and all four boys ran for their lives. Then Charlie admitted he had made the whole story up — and confessed he had been the most scared of all. The horses never came within five hundred feet of them. After that they went and tried to ride some pigs. Their mothers were very happy to see them come home.
+  </div>
+
+</article>
+
+<div class="post-footer">
+  <div class="footer-series">A Life of Tender Mercies &nbsp;·&nbsp; Part One: From the Journals</div>
+  <div class="chapter-nav">
+    <a class="nav-item prev" href="premission-4.html">
+      <div class="nav-label">&larr; Previous</div>
+      <div class="nav-title">Elo and the Bull</div>
+    </a>
+    <a class="nav-item next" href="chapter-1.html">
+      <div class="nav-label">Next &rarr;</div>
+      <div class="nav-title">The Summer That Changed Everything</div>
+    </a>
+  </div>
+</div>
+
+<div class="subscribe-bar">
+  <h3>Follow along with Dee's story</h3>
+  <p>New chapters delivered to your inbox, free.</p>
+  <div class="subscribe-form">
+    <input type="email" placeholder="your@email.com">
+    <button>Subscribe</button>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nolan Buckley's Last Inning — A Life of Tender Mercies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1612; --ink-soft: #3d3530; --ink-muted: #7a6e68;
+    --paper: #faf7f2; --paper-warm: #f5f0e8;
+    --accent: #8b3a2a; --accent-soft: #c4785f; --rule: #d9d0c4;
+    --diamond: #0c1410; --diamond-pale: #507050; --diamond-bright: #90b890;
+    --ninth: #100808; --ninth-pale: #806050; --ninth-bright: #d0a888;
+  }
+  html { scroll-behavior: smooth; }
+  body { background-color: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-weight: 300; font-size: 19px; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+  .masthead { border-bottom: 1px solid var(--rule); padding: 20px 0 18px; text-align: center; background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .masthead-title { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); }
+  .masthead-title span { color: var(--accent); }
+  .hero { max-width: 680px; margin: 0 auto; padding: 72px 24px 0; }
+  .series-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: block; }
+  h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px, 5vw, 52px); font-weight: 600; line-height: 1.15; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 28px; }
+  h1 em { font-style: italic; font-weight: 400; color: var(--ink-soft); }
+  .byline { display: flex; align-items: center; gap: 14px; margin-bottom: 48px; }
+  .byline-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-soft), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 15px; color: white; flex-shrink: 0; }
+  .byline-text { font-family: 'Crimson Pro', Georgia, serif; font-size: 15px; color: var(--ink-muted); line-height: 1.4; }
+  .byline-text strong { color: var(--ink-soft); font-weight: 400; display: block; font-size: 16px; }
+  .ornamental-rule { display: flex; align-items: center; gap: 16px; margin: 0 0 52px; }
+  .ornamental-rule::before, .ornamental-rule::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+  .ornamental-rule-glyph { color: var(--accent-soft); font-size: 18px; }
+  .article { max-width: 680px; margin: 0 auto; padding: 0 24px 80px; }
+  .drop-cap::first-letter { font-family: 'Playfair Display', Georgia, serif; font-size: 5.2em; font-weight: 600; float: left; line-height: 0.72; margin-right: 10px; margin-top: 10px; color: var(--accent); }
+  p { margin-bottom: 1.6em; color: var(--ink-soft); }
+  p:last-child { margin-bottom: 0; }
+  .scene-break { text-align: center; margin: 44px 0; color: var(--accent-soft); font-size: 20px; letter-spacing: 0.4em; }
+  .pull-quote { border-left: 3px solid var(--accent); margin: 44px 0; padding: 4px 0 4px 28px; }
+  .pull-quote p { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-style: italic; line-height: 1.5; color: var(--ink); margin: 0; }
+  .inset-block { background: var(--paper-warm); border: 1px solid var(--rule); border-left: 4px solid var(--accent-soft); padding: 24px 28px; margin: 44px 0; border-radius: 0 2px 2px 0; }
+  .inset-label { font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 400; display: block; }
+  .inset-block p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; font-style: italic; color: var(--ink-soft); line-height: 1.75; margin: 0; }
+
+  /* Scoreboard — the deficit */
+  .scoreboard {
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--accent);
+    background: var(--paper-warm);
+    padding: 28px 32px;
+    margin: 44px 0;
+    font-family: 'Crimson Pro', Georgia, serif;
+  }
+  .scoreboard-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; display: block; }
+  .scoreboard-row { display: flex; justify-content: space-between; align-items: baseline; padding: 8px 0; border-bottom: 1px solid var(--rule); font-size: 17px; color: var(--ink-soft); }
+  .scoreboard-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .scoreboard-team { font-style: italic; }
+  .scoreboard-score { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 600; color: var(--ink); }
+  .scoreboard-score.deficit { color: var(--accent); }
+
+  /* The mound walk block */
+  .mound-block { background: var(--diamond); margin: 52px -24px; padding: 60px 48px; position: relative; overflow: hidden; text-align: center; }
+  .mound-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(80,112,80,0.08) 0%, transparent 65%); }
+  .mound-block-inner { position: relative; z-index: 1; }
+  .mound-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--diamond-pale); margin-bottom: 28px; display: block; }
+  .mound-block .mound-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(17px, 2.8vw, 22px); font-style: italic; color: var(--diamond-bright); line-height: 1.7; margin: 0 0 14px; }
+  .mound-block .mound-text:last-child { margin: 0; }
+
+  /* The final at-bat — pitch by pitch */
+  .final-block { background: var(--ninth); margin: 52px -24px; padding: 56px 48px; position: relative; overflow: hidden; }
+  .final-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(128,96,80,0.08) 0%, transparent 65%); }
+  .final-block-inner { position: relative; z-index: 1; }
+  .final-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ninth-pale); margin-bottom: 28px; display: block; }
+  .pitch-line { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(16px, 2.6vw, 20px); font-style: italic; color: var(--ninth-bright); line-height: 1.65; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .pitch-line:last-child { border-bottom: none; padding-bottom: 0; }
+  .pitch-call { font-size: clamp(20px, 3.5vw, 30px); font-weight: 600; font-style: normal; color: #e8d0b8; display: block; margin-top: 4px; }
+
+  .chapter-note { background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; padding: 24px 28px; margin: 52px 0 0; font-family: 'Crimson Pro', Georgia, serif; font-size: 16px; color: var(--ink-muted); line-height: 1.7; }
+  .chapter-note strong { display: block; font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-style: normal; font-weight: 400; }
+  .post-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 80px; border-top: 1px solid var(--rule); }
+  .footer-series { font-family: 'Crimson Pro', Georgia, serif; font-size: 14px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 20px; }
+  .chapter-nav { display: flex; justify-content: space-between; gap: 20px; }
+  .nav-item { flex: 1; padding: 18px 20px; background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; text-decoration: none; transition: border-color 0.2s; }
+  .nav-item:hover { border-color: var(--accent-soft); }
+  .nav-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .nav-title { font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: var(--ink); line-height: 1.35; }
+  .nav-item.next { text-align: right; }
+  .subscribe-bar { background: var(--ink); padding: 52px 24px; text-align: center; margin-top: 20px; }
+  .subscribe-bar h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 400; color: var(--paper); margin-bottom: 10px; }
+  .subscribe-bar p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; color: #9a9088; margin-bottom: 24px; }
+  .subscribe-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; }
+  .subscribe-form input { flex: 1; padding: 12px 16px; background: #2a2420; border: 1px solid #3d3530; border-radius: 2px; color: var(--paper); font-family: 'Source Serif 4', serif; font-size: 15px; outline: none; }
+  .subscribe-form input::placeholder { color: #5a504a; }
+  .subscribe-form input:focus { border-color: var(--accent-soft); }
+  .subscribe-form button { padding: 12px 20px; background: var(--accent); border: none; border-radius: 2px; color: white; font-family: 'Crimson Pro', serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
+  .subscribe-form button:hover { background: var(--accent-soft); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 0.7s ease both; }
+  .article { animation: fadeUp 0.7s 0.15s ease both; }
+  @media (max-width: 600px) { body { font-size: 17px; } .mound-block { margin: 44px -24px; padding: 44px 28px; } .final-block { margin: 44px -24px; padding: 44px 28px; } .scoreboard-row { flex-direction: column; gap: 4px; } .chapter-nav { flex-direction: column; } .nav-item.next { text-align: left; } .subscribe-form { flex-direction: column; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-title">A Life of <span>Tender Mercies</span> &nbsp;·&nbsp; Dee Stevens</div>
+</header>
+
+<div class="hero">
+  <span class="series-label">Part One: From the Journals &nbsp;·&nbsp; Orem, Utah, Summer 1963</span>
+  <h1>Nolan Buckley's <em>Last Inning</em></h1>
+  <div class="byline">
+    <div class="byline-avatar">D</div>
+    <div class="byline-text">
+      <strong>Dee Stevens</strong>
+      Little League State Championship &nbsp;·&nbsp; Orem, Utah &nbsp;·&nbsp; Summer, 1963
+    </div>
+  </div>
+  <div class="ornamental-rule"><span class="ornamental-rule-glyph">&#10022;</span></div>
+</div>
+
+<article class="article">
+
+  <p class="drop-cap">That summer we moved back to Orem from Blanding and I played the last year of little league I was eligible for. I was twelve years old and we had a powerful team — the Hillcrest Cardinals. We had a pitcher named Eddie Cameron who threw so fast that hardly anyone could hit against him, and we breezed through the regular season practically unscored on. We won our league and advanced to the city tournament feeling, as twelve-year-old boys feel, essentially invincible.</p>
+
+  <p>There was another team in Orem who was just as good. The Eagles had had an equally dominant season and everyone said the city championship would come down to us and them. They were right. We beat our first tournament opponent and advanced to the finals — but we advanced with a problem. Eddie Cameron had pitched the entire first game. Tournament rules said a pitcher could only throw six innings total. Our ace was out of innings. Our second-best pitcher had been hit by a car that week and was in the hospital with a concussion.</p>
+
+  <p>That left our third-best pitcher for the city championship game against the Eagles. He was not strong enough to throw hard against a team like theirs, and everybody knew it.</p>
+
+  <p>Then I was warming up with my teammate Jon Cameroy — we called him Arch — and a ball he threw burned a hole through my hand. He was left-handed and had a fastball nobody knew about because he had never pitched in a game before in his life. I called Coach DeLynn Heaps over and made him watch.</p>
+
+  <p>We went into the city championship with a pitcher who had never faced a batter.</p>
+
+  <p>We lost 7 to 2. But the Eagles earned every one of those runs the hard way, and it was a miracle we were not skunked. And losing the city championship turned out not to be the end of the story.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>The state tournament was a larger affair. Each team was allowed to bring in two additional pitchers from their own league, so we came in with better arms than we'd had for the city finals. We played hard through the early rounds — close games, fought-for contests — and pushed our way to the top. Everyone on the team gave everything they had. We learned what teamwork actually means that summer, not as a phrase but as a felt thing, the way you only learn it when it's the only thing standing between you and going home.</p>
+
+  <p>Irony delivered us exactly the opponent we deserved. In the state championship game we faced the Eagles again — the same team that had beaten us for the city title. They came in with four innings left on their best pitcher. We came in with Eddie Cameron, who had two innings remaining, and a pick-up pitcher with four.</p>
+
+  <p>The game started badly.</p>
+
+  <div class="scoreboard">
+    <span class="scoreboard-label">After three innings &nbsp;·&nbsp; State Championship Game</span>
+    <div class="scoreboard-row">
+      <span class="scoreboard-team">Eagles</span>
+      <span class="scoreboard-score deficit">9</span>
+    </div>
+    <div class="scoreboard-row">
+      <span class="scoreboard-team">Hillcrest Cardinals</span>
+      <span class="scoreboard-score">2</span>
+    </div>
+  </div>
+
+  <p>Nine to two. Three innings. The first time in two seasons we had given up nine runs, and the Eagles had done it in three innings. Our pick-up pitcher had nothing. Their ace had a ball that took a little jump halfway down the pipe and kept stealing our eyes off it. The situation was as grim as it gets in little league baseball.</p>
+
+  <p>Coach Heaps put Eddie in and he fanned six straight Eagle batters. We came to bat in the bottom of the fifth trailing by seven. I was batting cleanup and led off the inning. I let the first pitch go — fastball down the pipe, strike one. I decided I could hit the ball this time and bumped a weak grounder past the mound. Somehow the second baseman missed it and I was on. I stole second on a bad throw. The next batter punched a single and I scored.</p>
+
+  <p>Then team spirit took over — that real thing, not the phrase. We batted completely around the inning. When the dust settled the scoreboard read Eagles 9, Cardinals 10.</p>
+
+  <p>We hustled out for the top of the sixth with a one-run lead, and I turned around to find that no pitcher had come onto the field.</p>
+
+  <p>Eddie was out of innings. Our pick-up pitcher had one inning left but he was the worst one we had. A tight panic went through the infield — quiet, invisible, but felt by every one of us. We knew we had to hold this lead because we were not going to score like that again. The Eagles were too good.</p>
+
+  <div class="mound-block">
+    <div class="mound-block-inner">
+      <span class="mound-label">What happened next on the Hillcrest Cardinals' bench</span>
+      <div class="mound-text">His head still wrapped in bandages, Nolan Buckley — our number two pitcher, hospitalized that week with a concussion — had dressed for the game under strict instruction not to play.</div>
+      <div class="mound-text">Coach DeLynn Heaps looked at him for a long moment.</div>
+      <div class="mound-text">"Nolan, buddy. You've pulled me out of a lot of tight spots before. Can you do it for me one last time?"</div>
+    </div>
+  </div>
+
+  <p>I wish I could describe what it looked like when that stocky, grinning pitcher walked to the mound. The whole city of Orem rose to their feet. I think even the Eagles had to swell with admiration — a kid with his head still wrapped in tape, who had no business being on a baseball field, taking his place on the mound with the state championship on the line.</p>
+
+  <p>The infield shook his hand. We took our positions.</p>
+
+  <p>Nolan wound up and threw — the first pitch he had thrown in almost a month. The crack of the bat sent the ball sailing deep into center field. Our centerfielder Arch ran back to the warning track and stood there looking up with his mitt hanging at his side. A lump came to my throat. Then the mitt went up and the ball dropped into it. One out.</p>
+
+  <p>Nolan threw so hard on the next pitch you could hear him grunt. The ball popped high over the infield. I called for it and went right to it — and collided with Nolan as the ball hit my mitt and fell. The shortstop dove and snagged it before it hit the ground. Two out.</p>
+
+  <p>Now Nolan faced the Eagles' best hitter. The kid with the highest batting average on their team looked grimly at that stocky, slightly grimacing pitcher. Sweat was pouring off Nolan's face.</p>
+
+  <div class="final-block">
+    <div class="final-block-inner">
+      <span class="final-label">Top of the sixth &nbsp;·&nbsp; Two outs &nbsp;·&nbsp; State championship</span>
+      <div class="pitch-line">Nolan wound up. The ball sang down the pipe. The batter took the pitch.
+        <span class="pitch-call">"Strike one!"</span>
+      </div>
+      <div class="pitch-line">The noise died. He chucked it hard and straight. The bat didn't move.
+        <span class="pitch-call">"Strike two!"</span>
+      </div>
+      <div class="pitch-line">A hush fell over the crowd. Nolan stopped his windup and looked straight at me for a split second. Then with every bit of strength he could muster he hurled it — as fast, I believe, as a little leaguer can throw. The batter swung with everything he had. A little puff of dust came out of the catcher's mitt.
+        <span class="pitch-call">"Steeeeeerike three!!"</span>
+      </div>
+    </div>
+  </div>
+
+  <p>The crowd rushed the field. The Hillcrest Cardinals were the state champions.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <div class="pull-quote">
+    <p>"What I learned about determination that day from a group of twelve-year-old kids and a certain hero pitcher cannot be written down any other way."</p>
+  </div>
+
+  <p>I have tried anyway, here and in my journal, because I think Nolan Buckley deserves to be remembered. A boy who dressed for a game he had been told not to play in, who walked to the mound with his head wrapped in bandages in front of a crowd that rose to their feet, who threw three pitches and got three strikes and won a state championship on pure determination.</p>
+
+  <p>I was twelve years old. I played third base. I was there for all of it. Some things you just don't forget.</p>
+
+  <div class="inset-block">
+    <span class="inset-label">A note on what this summer was</span>
+    <p>This was the same summer Dee moved back from Blanding for the last time. He had spent two years in the red rock desert learning what Leonard Hurst had to teach him about effort and character. He came home to Orem and played the last little league season of his life — and watched a boy with a bandaged head strike out the side to win a state championship. He was thirteen that fall. He started high school the next year. The boy he was becoming was already mostly built.</p>
+  </div>
+
+  <div class="chapter-note">
+    <strong>A Note for the Grandkids</strong>
+    Grandpa was twelve years old when this happened — the last year he was eligible for little league. His team was down seven runs in the state championship game and came back to lead by one going into the final inning with no pitcher left. A boy named Nolan Buckley, who had been hospitalized that week with a concussion and told not to play, put on his uniform anyway and walked to the mound with his head still wrapped in bandages. He struck out the side. The Cardinals won the state championship. Grandpa has never forgotten it. He wrote it down in his journal fifteen years later because some things are too good to let disappear.
+  </div>
+
+</article>
+
+<div class="post-footer">
+  <div class="footer-series">A Life of Tender Mercies &nbsp;·&nbsp; Part One: From the Journals</div>
+  <div class="chapter-nav">
+    <a class="nav-item prev" href="premission-1.html">
+      <div class="nav-label">&larr; Previous</div>
+      <div class="nav-title">The Blue Ribbon</div>
+    </a>
+    <a class="nav-item next" href="premission-3.html">
+      <div class="nav-label">Next &rarr;</div>
+      <div class="nav-title">The Initiation</div>
+    </a>
+  </div>
+</div>
+
+<div class="subscribe-bar">
+  <h3>Follow along with Dee's story</h3>
+  <p>New chapters delivered to your inbox, free.</p>
+  <div class="subscribe-form">
+    <input type="email" placeholder="your@email.com">
+    <button>Subscribe</button>
+  </div>
+</div>
+
+</body>
+</html>

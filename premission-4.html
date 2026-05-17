@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elo and the Bull — A Life of Tender Mercies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1612; --ink-soft: #3d3530; --ink-muted: #7a6e68;
+    --paper: #faf7f2; --paper-warm: #f5f0e8;
+    --accent: #8b3a2a; --accent-soft: #c4785f; --rule: #d9d0c4;
+    --canyon: #101408; --canyon-pale: #608040; --canyon-bright: #b0c870;
+    --cold: #0c1418; --cold-pale: #507080; --cold-bright: #90b0c0;
+  }
+  html { scroll-behavior: smooth; }
+  body { background-color: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-weight: 300; font-size: 19px; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+  .masthead { border-bottom: 1px solid var(--rule); padding: 20px 0 18px; text-align: center; background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .masthead-title { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); }
+  .masthead-title span { color: var(--accent); }
+  .hero { max-width: 680px; margin: 0 auto; padding: 72px 24px 0; }
+  .series-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: block; }
+  h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px, 5vw, 52px); font-weight: 600; line-height: 1.15; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 28px; }
+  h1 em { font-style: italic; font-weight: 400; color: var(--ink-soft); }
+  .byline { display: flex; align-items: center; gap: 14px; margin-bottom: 48px; }
+  .byline-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-soft), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 15px; color: white; flex-shrink: 0; }
+  .byline-text { font-family: 'Crimson Pro', Georgia, serif; font-size: 15px; color: var(--ink-muted); line-height: 1.4; }
+  .byline-text strong { color: var(--ink-soft); font-weight: 400; display: block; font-size: 16px; }
+  .ornamental-rule { display: flex; align-items: center; gap: 16px; margin: 0 0 52px; }
+  .ornamental-rule::before, .ornamental-rule::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+  .ornamental-rule-glyph { color: var(--accent-soft); font-size: 18px; }
+  .article { max-width: 680px; margin: 0 auto; padding: 0 24px 80px; }
+  .drop-cap::first-letter { font-family: 'Playfair Display', Georgia, serif; font-size: 5.2em; font-weight: 600; float: left; line-height: 0.72; margin-right: 10px; margin-top: 10px; color: var(--accent); }
+  p { margin-bottom: 1.6em; color: var(--ink-soft); }
+  p:last-child { margin-bottom: 0; }
+  .scene-break { text-align: center; margin: 44px 0; color: var(--accent-soft); font-size: 20px; letter-spacing: 0.4em; }
+  .pull-quote { border-left: 3px solid var(--accent); margin: 44px 0; padding: 4px 0 4px 28px; }
+  .pull-quote p { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-style: italic; line-height: 1.5; color: var(--ink); margin: 0; }
+  .inset-block { background: var(--paper-warm); border: 1px solid var(--rule); border-left: 4px solid var(--accent-soft); padding: 24px 28px; margin: 44px 0; border-radius: 0 2px 2px 0; }
+  .inset-label { font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 400; display: block; }
+  .inset-block p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; font-style: italic; color: var(--ink-soft); line-height: 1.75; margin: 0; }
+  .canyon-block { background: var(--canyon); margin: 52px -24px; padding: 56px 48px; position: relative; overflow: hidden; }
+  .canyon-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(96,128,64,0.08) 0%, transparent 65%); }
+  .canyon-block-inner { position: relative; z-index: 1; }
+  .canyon-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--canyon-pale); margin-bottom: 28px; display: block; }
+  .canyon-block .canyon-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(16px, 2.6vw, 20px); font-style: italic; color: var(--canyon-bright); line-height: 1.7; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .canyon-block .canyon-text:last-child { border-bottom: none; padding-bottom: 0; }
+  .cold-block { background: var(--cold); margin: 52px -24px; padding: 52px 48px; position: relative; overflow: hidden; text-align: center; }
+  .cold-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(80,112,128,0.08) 0%, transparent 65%); }
+  .cold-block-inner { position: relative; z-index: 1; }
+  .cold-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--cold-pale); margin-bottom: 24px; display: block; }
+  .cold-block .cold-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(17px, 2.8vw, 22px); font-style: italic; color: var(--cold-bright); line-height: 1.65; margin: 0 0 14px; }
+  .cold-block .cold-text:last-child { margin: 0; }
+  .chapter-note { background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; padding: 24px 28px; margin: 52px 0 0; font-family: 'Crimson Pro', Georgia, serif; font-size: 16px; color: var(--ink-muted); line-height: 1.7; }
+  .chapter-note strong { display: block; font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-style: normal; font-weight: 400; }
+  .post-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 80px; border-top: 1px solid var(--rule); }
+  .footer-series { font-family: 'Crimson Pro', Georgia, serif; font-size: 14px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 20px; }
+  .chapter-nav { display: flex; justify-content: space-between; gap: 20px; }
+  .nav-item { flex: 1; padding: 18px 20px; background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; text-decoration: none; transition: border-color 0.2s; }
+  .nav-item:hover { border-color: var(--accent-soft); }
+  .nav-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .nav-title { font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: var(--ink); line-height: 1.35; }
+  .nav-item.next { text-align: right; }
+  .subscribe-bar { background: var(--ink); padding: 52px 24px; text-align: center; margin-top: 20px; }
+  .subscribe-bar h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 400; color: var(--paper); margin-bottom: 10px; }
+  .subscribe-bar p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; color: #9a9088; margin-bottom: 24px; }
+  .subscribe-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; }
+  .subscribe-form input { flex: 1; padding: 12px 16px; background: #2a2420; border: 1px solid #3d3530; border-radius: 2px; color: var(--paper); font-family: 'Source Serif 4', serif; font-size: 15px; outline: none; }
+  .subscribe-form input::placeholder { color: #5a504a; }
+  .subscribe-form input:focus { border-color: var(--accent-soft); }
+  .subscribe-form button { padding: 12px 20px; background: var(--accent); border: none; border-radius: 2px; color: white; font-family: 'Crimson Pro', serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
+  .subscribe-form button:hover { background: var(--accent-soft); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 0.7s ease both; }
+  .article { animation: fadeUp 0.7s 0.15s ease both; }
+  @media (max-width: 600px) { body { font-size: 17px; } .canyon-block { margin: 44px -24px; padding: 44px 28px; } .cold-block { margin: 44px -24px; padding: 44px 28px; } .chapter-nav { flex-direction: column; } .nav-item.next { text-align: left; } .subscribe-form { flex-direction: column; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-title">A Life of <span>Tender Mercies</span> &nbsp;·&nbsp; Dee Stevens</div>
+</header>
+
+<div class="hero">
+  <span class="series-label">Part One: From the Journals &nbsp;·&nbsp; Blanding, Utah, 1963</span>
+  <h1>Elo <em>and the Bull</em></h1>
+  <div class="byline">
+    <div class="byline-avatar">D</div>
+    <div class="byline-text">
+      <strong>Dee Stevens</strong>
+      Devil's Punch Bowl &nbsp;·&nbsp; San Juan County, Utah &nbsp;·&nbsp; March, 1963
+    </div>
+  </div>
+  <div class="ornamental-rule"><span class="ornamental-rule-glyph">&#10022;</span></div>
+</div>
+
+<article class="article">
+
+  <p class="drop-cap">My best friend that year was Elo Heyman. He was not a member of the Church, but he had qualities that rubbed off on a person whether they intended it or not — powerful athleticism, a stamina that seemed almost inhuman, and an enthusiasm for the wilderness that matched my own. We spent hours together in the canyons and mesas around Blanding, learning the country the way boys learn things they genuinely love: through their feet, their hands, and the occasional near-disaster.</p>
+
+  <p>The Devil's Punch Bowl was our favorite location. It sat about five miles east of town through rocky wilderness you had to hike because no roads led there — a small canyon with a twenty-foot rock falls forming a pool at the bottom, a large cave on the west and south sides, and further along the wash a series of crystal-clear pools, some of them over our heads. Along the canyon walls ran the bricked-off cliff dwellings of the ancient Moqui Indians, a thousand years empty, still full of pottery and arrowheads if you knew where to look.</p>
+
+  <p>We had two dogs that came everywhere with us. Smokey was mine. Herbert was Elo's. They were fine dogs in most circumstances. This story is about the circumstances they were not fine in.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>It was March, so the water in the pools was ice water in the technical sense — cold enough to be genuinely dangerous, well below anything a sensible person would consider swimming in. I established my sensibility early by putting my feet in for a few seconds and getting out. I found a rock at the edge of the pool, sat down, and prepared to watch.</p>
+
+  <p>Elo, being stark raving crazy from time to time, took off every stitch of his clothing and waded in up to his chest.</p>
+
+  <p>He was screaming. He was yapping. He was calling me names with considerable creativity. I was laughing and denying my guilt and then admitting it. This is what friendship looked like in Blanding, Utah in 1963.</p>
+
+  <p>Then a huge snort sounded directly above my head.</p>
+
+  <p>I looked up. A bull was standing over me blowing steam out of his nostrils, close enough that I could smell him. I rolled sideways off the rock and down the bank of the wash as fast as a person can roll. The bull walked forward, stepping directly over Elo's clothes, and positioned himself between Elo and every stitch he owned.</p>
+
+  <div class="canyon-block">
+    <div class="canyon-block-inner">
+      <span class="canyon-label">The situation, assessed</span>
+      <div class="canyon-text">Elo: chest-deep in ice water, naked, turning blue.</div>
+      <div class="canyon-text">His clothes: on the bank, directly behind a bull.</div>
+      <div class="canyon-text">The canyon walls: too steep to climb anywhere except where the bull was standing.</div>
+      <div class="canyon-text">The dogs: nowhere. Absolutely nowhere.</div>
+      <div class="canyon-text">The sky: clouds rolling in, a stiff March wind picking up behind them.</div>
+    </div>
+  </div>
+
+  <p>Elo began yelling for me to do something. I tried yelling at the bull. I threw rocks at him. I found a stick and smacked him in a location I will describe only as persuasive. He did not budge. He stood with the patience of an animal that has absolutely nowhere else to be and regarded us both with complete indifference.</p>
+
+  <p>The blue day had gone dismal grey. Elo's yelling had taken on a tone of genuine desperation. I stood there with a stick in my hand, having exhausted my full repertoire of bull-removal strategies, feeling rather useless.</p>
+
+  <p>Then, from somewhere down the wash, the dogs materialized.</p>
+
+  <p>They saw the bull approximately when the bull saw them. What followed was best described as the charge of the light brigade — barking, snorting, howling, and a considerable quantity of dust as the dogs nipped at the bull's heels and the bull kicked and stumbled his way down the wash and out of our lives.</p>
+
+  <p>I have never seen anyone get dressed as fast as Elo Heyman did at that moment. He was halfway up the canyon before I registered that he was out of the pool.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>The bull episode had put us badly behind schedule, and climbing out of the wash we found that the March wind had returned with full conviction. We had not dressed for it. Four miles of open mesa between us and town, straight into the face of that wind.</p>
+
+  <div class="cold-block">
+    <div class="cold-block-inner">
+      <span class="cold-label">The walk home</span>
+      <div class="cold-text">Four miles into a March wind. Walking backwards half the time just to breathe.</div>
+      <div class="cold-text">Eyes watering so badly they could barely see each other.</div>
+      <div class="cold-text">Lying down behind stands of sage or juniper when they couldn't go on, which didn't really help.</div>
+      <div class="cold-text">Then: an abandoned ranch site. A pile of old appliances. The drum of a washing machine, torn apart and left to rust.</div>
+      <div class="cold-text">They built a lean-to from the washer parts, packed it with old straw, and started a fire. Heaven was never so good as that fire.</div>
+    </div>
+  </div>
+
+  <p>They sat twenty minutes getting warm, which was exactly what they needed and also exactly the wrong thing to do in terms of what happened next. Neither of them thought about the smoke. Neither of them considered what a column of smoke rising from an abandoned ranch site might look like to someone passing on the road.</p>
+
+  <p>Dee stood up and his pants had gotten too hot. He looked around.</p>
+
+  <p>Down the road: what appeared to be a whole fleet of police cars and fire trucks, roaring toward them at speed.</p>
+
+  <p><em>"Cheese it! The Cops!"</em></p>
+
+  <p>They were over the fence and across the fields the back way before the vehicles had stopped. The fear of prison for starting a fire cleared their heads entirely for the remaining miles home, which was at least one way to solve the cold problem.</p>
+
+  <div class="pull-quote">
+    <p>"We never had a dull moment, Elo and I. I could write a volume about that one year alone."</p>
+  </div>
+
+  <div class="inset-block">
+    <span class="inset-label">Who Elo Heyman was</span>
+    <p>Elo was not a member of the Church, but Dee considered him one of the formative friendships of his boyhood. He was a powerful athlete, gifted with stamina that seemed almost superhuman. They hiked together, ran together, and survived each other's bad ideas for the better part of two years. Dee never forgot him. He wrote about him in his journal fifteen years later as someone who had shaped him — not through any formal teaching, but through the specific education you only get from a friend who will wade naked into ice water just to see what happens.</p>
+  </div>
+
+  <div class="chapter-note">
+    <strong>A Note for the Grandkids</strong>
+    Grandpa was twelve years old when this happened. His friend Elo stripped down and waded into ice water in March, a bull walked over his clothes and stood between him and them, and the two dogs who were supposed to help were nowhere until the exact moment they were finally needed. Then Grandpa and Elo built an illegal fire in an abandoned ranch and ran from what looked like every police car in San Juan County. They made it home. Their mothers were delighted to see them, as mothers always are when their sons return from situations like this smelling of smoke and cattle.
+  </div>
+
+</article>
+
+<div class="post-footer">
+  <div class="footer-series">A Life of Tender Mercies &nbsp;·&nbsp; Part One: From the Journals</div>
+  <div class="chapter-nav">
+    <a class="nav-item prev" href="premission-3.html">
+      <div class="nav-label">&larr; Previous</div>
+      <div class="nav-title">The Initiation</div>
+    </a>
+    <a class="nav-item next" href="premission-5.html">
+      <div class="nav-label">Next &rarr;</div>
+      <div class="nav-title">The Killer Horse That Wasn't</div>
+    </a>
+  </div>
+</div>
+
+<div class="subscribe-bar">
+  <h3>Follow along with Dee's story</h3>
+  <p>New chapters delivered to your inbox, free.</p>
+  <div class="subscribe-form">
+    <input type="email" placeholder="your@email.com">
+    <button>Subscribe</button>
+  </div>
+</div>
+
+</body>
+</html>

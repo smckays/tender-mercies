@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Miracle Kidney — A Life of Tender Mercies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1612; --ink-soft: #3d3530; --ink-muted: #7a6e68;
+    --paper: #faf7f2; --paper-warm: #f5f0e8;
+    --accent: #8b3a2a; --accent-soft: #c4785f; --rule: #d9d0c4;
+    --dialysis: #101418; --dialysis-pale: #506070; --dialysis-bright: #90a8b8;
+    --transplant: #0c1810; --transplant-pale: #407050; --transplant-bright: #80b890;
+  }
+  html { scroll-behavior: smooth; }
+  body { background-color: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-weight: 300; font-size: 19px; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+  .masthead { border-bottom: 1px solid var(--rule); padding: 20px 0 18px; text-align: center; background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .masthead-title { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); }
+  .masthead-title span { color: var(--accent); }
+  .hero { max-width: 680px; margin: 0 auto; padding: 72px 24px 0; }
+  .series-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: block; }
+  h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px, 5vw, 52px); font-weight: 600; line-height: 1.15; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 28px; }
+  h1 em { font-style: italic; font-weight: 400; color: var(--ink-soft); }
+  .byline { display: flex; align-items: center; gap: 14px; margin-bottom: 48px; }
+  .byline-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-soft), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 15px; color: white; flex-shrink: 0; }
+  .byline-text { font-family: 'Crimson Pro', Georgia, serif; font-size: 15px; color: var(--ink-muted); line-height: 1.4; }
+  .byline-text strong { color: var(--ink-soft); font-weight: 400; display: block; font-size: 16px; }
+  .ornamental-rule { display: flex; align-items: center; gap: 16px; margin: 0 0 52px; }
+  .ornamental-rule::before, .ornamental-rule::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+  .ornamental-rule-glyph { color: var(--accent-soft); font-size: 18px; }
+  .article { max-width: 680px; margin: 0 auto; padding: 0 24px 80px; }
+  .drop-cap::first-letter { font-family: 'Playfair Display', Georgia, serif; font-size: 5.2em; font-weight: 600; float: left; line-height: 0.72; margin-right: 10px; margin-top: 10px; color: var(--accent); }
+  p { margin-bottom: 1.6em; color: var(--ink-soft); }
+  p:last-child { margin-bottom: 0; }
+  .scene-break { text-align: center; margin: 44px 0; color: var(--accent-soft); font-size: 20px; letter-spacing: 0.4em; }
+  .pull-quote { border-left: 3px solid var(--accent); margin: 44px 0; padding: 4px 0 4px 28px; }
+  .pull-quote p { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-style: italic; line-height: 1.5; color: var(--ink); margin: 0; }
+  .inset-block { background: var(--paper-warm); border: 1px solid var(--rule); border-left: 4px solid var(--accent-soft); padding: 24px 28px; margin: 44px 0; border-radius: 0 2px 2px 0; }
+  .inset-label { font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 400; display: block; }
+  .inset-block p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; font-style: italic; color: var(--ink-soft); line-height: 1.75; margin: 0; }
+
+  /* Timeline of the kidney years */
+  .timeline { margin: 44px 0; }
+  .timeline-item { display: flex; gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--rule); }
+  .timeline-item:last-child { border-bottom: none; }
+  .timeline-year { font-family: 'Playfair Display', Georgia, serif; font-size: 15px; font-weight: 600; color: var(--accent); min-width: 52px; flex-shrink: 0; padding-top: 2px; }
+  .timeline-text { font-family: 'Crimson Pro', Georgia, serif; font-size: 16px; color: var(--ink-soft); line-height: 1.6; font-style: italic; }
+
+  /* Dialysis block */
+  .dialysis-block { background: var(--dialysis); margin: 52px -24px; padding: 56px 48px; position: relative; overflow: hidden; text-align: center; }
+  .dialysis-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(80,96,112,0.08) 0%, transparent 65%); }
+  .dialysis-block-inner { position: relative; z-index: 1; }
+  .dialysis-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--dialysis-pale); margin-bottom: 28px; display: block; }
+  .dialysis-block .dialysis-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(17px, 2.8vw, 22px); font-style: italic; color: var(--dialysis-bright); line-height: 1.65; margin: 0 0 14px; }
+  .dialysis-block .dialysis-text:last-child { margin: 0; }
+
+  /* Transplant block */
+  .transplant-block { background: var(--transplant); margin: 52px -24px; padding: 52px 48px; position: relative; overflow: hidden; text-align: center; }
+  .transplant-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(64,112,80,0.1) 0%, transparent 65%); }
+  .transplant-block-inner { position: relative; z-index: 1; }
+  .transplant-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--transplant-pale); margin-bottom: 24px; display: block; }
+  .transplant-block .transplant-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(18px, 3vw, 26px); font-style: italic; color: var(--transplant-bright); line-height: 1.6; margin: 0; max-width: 520px; margin-left: auto; margin-right: auto; }
+
+  .chapter-note { background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; padding: 24px 28px; margin: 52px 0 0; font-family: 'Crimson Pro', Georgia, serif; font-size: 16px; color: var(--ink-muted); line-height: 1.7; }
+  .chapter-note strong { display: block; font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-style: normal; font-weight: 400; }
+  .post-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 80px; border-top: 1px solid var(--rule); }
+  .footer-series { font-family: 'Crimson Pro', Georgia, serif; font-size: 14px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 20px; }
+  .chapter-nav { display: flex; justify-content: space-between; gap: 20px; }
+  .nav-item { flex: 1; padding: 18px 20px; background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; text-decoration: none; transition: border-color 0.2s; }
+  .nav-item:hover { border-color: var(--accent-soft); }
+  .nav-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .nav-title { font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: var(--ink); line-height: 1.35; }
+  .nav-item.next { text-align: right; }
+  .subscribe-bar { background: var(--ink); padding: 52px 24px; text-align: center; margin-top: 20px; }
+  .subscribe-bar h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 400; color: var(--paper); margin-bottom: 10px; }
+  .subscribe-bar p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; color: #9a9088; margin-bottom: 24px; }
+  .subscribe-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; }
+  .subscribe-form input { flex: 1; padding: 12px 16px; background: #2a2420; border: 1px solid #3d3530; border-radius: 2px; color: var(--paper); font-family: 'Source Serif 4', serif; font-size: 15px; outline: none; }
+  .subscribe-form input::placeholder { color: #5a504a; }
+  .subscribe-form input:focus { border-color: var(--accent-soft); }
+  .subscribe-form button { padding: 12px 20px; background: var(--accent); border: none; border-radius: 2px; color: white; font-family: 'Crimson Pro', serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
+  .subscribe-form button:hover { background: var(--accent-soft); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 0.7s ease both; }
+  .article { animation: fadeUp 0.7s 0.15s ease both; }
+  @media (max-width: 600px) { body { font-size: 17px; } .dialysis-block { margin: 44px -24px; padding: 44px 28px; } .transplant-block { margin: 44px -24px; padding: 44px 28px; } .timeline-item { flex-direction: column; gap: 4px; } .chapter-nav { flex-direction: column; } .nav-item.next { text-align: left; } .subscribe-form { flex-direction: column; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-title">A Life of <span>Tender Mercies</span> &nbsp;·&nbsp; Dee Stevens</div>
+</header>
+
+<div class="hero">
+  <span class="series-label">Part Five: Letting Go &nbsp;·&nbsp; Chapter Twenty-Six</span>
+  <h1>My Miracle <em>Kidney</em></h1>
+  <div class="byline">
+    <div class="byline-avatar">D</div>
+    <div class="byline-text">
+      <strong>Dee Stevens</strong>
+      Pleasant Grove, Utah &nbsp;·&nbsp; 1997–2025
+    </div>
+  </div>
+  <div class="ornamental-rule"><span class="ornamental-rule-glyph">&#10022;</span></div>
+</div>
+
+<article class="article">
+
+  <p class="drop-cap">I want to tell you about my kidneys — both of them — because they are part of the story and because the story of how I have lived without them for twenty-five years is one of the clearest illustrations I have of the Lord keeping a specific promise to a specific person.</p>
+
+  <p>It started with polycystic kidney disease. I did not know I had it for a long time. The disease is hereditary — cysts grow on the kidneys over years and decades, slowly crowding out functioning tissue until the kidneys fail. There is no cure. There is management, and there is time, and eventually there is dialysis or transplant or death.</p>
+
+  <p>My kidneys began failing in my late forties. By the mid-1990s it was clear they were not going to last much longer. The question became what to do when they gave out entirely.</p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-year">1997</div>
+      <div class="timeline-text">Both kidneys removed. Dee begins dialysis three times a week — four hours each session — at a center in Pleasant Grove.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1998</div>
+      <div class="timeline-text">Listed for kidney transplant. The wait list is long. There is no guarantee. He continues dialysis and continues working.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2000</div>
+      <div class="timeline-text">A matching kidney becomes available. Dee receives his transplant at the University of Utah Hospital. The kidney functions immediately.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2025</div>
+      <div class="timeline-text">Twenty-five years later, the transplanted kidney is still functioning. Dee is in his mid-seventies. His doctors remain amazed.</div>
+    </div>
+  </div>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>I want to tell you what dialysis was actually like, because I don't think people who haven't been through it have any real idea.</p>
+
+  <p>Three times a week, every week, without exception. Four hours each session. You sit in a reclining chair while a machine does what your kidneys no longer can — filtering your blood, removing the waste that would otherwise poison you. Without it you die. With it you live, but you live tethered to a machine and a schedule and a clinic, and the living takes a considerable amount out of you.</p>
+
+  <div class="dialysis-block">
+    <div class="dialysis-block-inner">
+      <span class="dialysis-label">What three years on dialysis looked like</span>
+      <div class="dialysis-text">Three sessions a week. Four hours each. Never missed.</div>
+      <div class="dialysis-text">Working full time at the grocery store between sessions.</div>
+      <div class="dialysis-text">Kathy driving him, sitting with him, taking him home.</div>
+      <div class="dialysis-text">Praying. Waiting. Believing the kidney would come.</div>
+    </div>
+  </div>
+
+  <p>Kathy was extraordinary through those years. She sat with me through sessions when she could. She managed everything at home that I couldn't manage. She did not complain — not once, not where I could hear it — and she bore the weight of it alongside me with the same steadiness she brought to everything in our life together.</p>
+
+  <p>I prayed specifically and consistently that a kidney would come. Not a vague hope but a genuine petition — the kind I had learned to pray since I was a boy kneeling in Grandma Stevens' house asking for a mission call to Cumorah. I had learned by then that specific prayers get specific answers, and I had learned to trust the Lord's timing even when it was not my own.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>The call came in 2000. A matching kidney was available. The window for transplant surgery is narrow — you have hours, not days — and we moved fast. The surgery was performed at the University of Utah Hospital.</p>
+
+  <p>The kidney functioned immediately.</p>
+
+  <p>Not every transplanted kidney does that. Some take days or weeks to begin working, requiring dialysis to continue in the meantime. Mine worked from the first moment it was placed, as if it had always been there, as if it belonged.</p>
+
+  <div class="transplant-block">
+    <div class="transplant-block-inner">
+      <span class="transplant-label">University of Utah Hospital &nbsp;·&nbsp; 2000</span>
+      <div class="transplant-text">"The kidney worked immediately. I felt the difference right away. Twenty-five years later it is still working. My doctors are amazed. I am not amazed. I expected it to work. I had been promised it would."</div>
+    </div>
+  </div>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>I have thought carefully about the word <em>miracle</em> and whether it applies here. A transplant is a medical procedure. Doctors performed it. Science made it possible. The kidney came from another person — someone who died so that their organs could give life to others, an act of generosity so profound it is almost impossible to speak of adequately.</p>
+
+  <p>And yet.</p>
+
+  <p>The matching. The timing. The immediate function. The twenty-five years of continued function in a man who was told he might have five. The specific answer to a specific prayer, arriving in the Lord's time rather than mine, with results that exceed what medicine alone would have predicted.</p>
+
+  <div class="pull-quote">
+    <p>"I have had both my kidneys removed and survived on a borrowed one for twenty-five years. I do not call that lucky. I call it watched over. There is a difference."</p>
+  </div>
+
+  <p>I think about the person whose kidney I carry. I do not know who they were — the protocols of donation keep that private unless both families agree to share. What I know is that someone's family, in the worst moment of their lives, said yes. They gave something irreplaceable to a stranger. That stranger was me.</p>
+
+  <p>I have prayed for that family regularly since 2000. I don't know their names. I don't know their faces. But I know what they gave me, and I have tried to live in a way that honors it — to make the twenty-five years mean something, to be worth the gift.</p>
+
+  <div class="inset-block">
+    <span class="inset-label">What those twenty-five years contained</span>
+    <p>Kathy's illness and death. The marriages of his sons. The arrival of grandchildren. Years of family history work. Teaching. Serving. Moving to Orem. Living alone after Kathy was gone. Writing this book. All of it on a borrowed kidney, still working, in a man who was not supposed to still be here. The Lord had things for him yet to do. The kidney was the means He used to keep him available for them.</p>
+  </div>
+
+  <p>I am seventy-four years old as I write this. The kidney is still working. My doctors remain careful and monitoring, as they should be — it has been twenty-five years and the body changes. But it is working today, which is all I have ever been promised. Today.</p>
+
+  <p>That has always been enough. It has had to be. And it has always, so far, been true.</p>
+
+  <div class="chapter-note">
+    <strong>A Note for the Grandkids</strong>
+    Grandpa has been living without his own kidneys since 1997. Both were removed because of a hereditary disease called polycystic kidney disease. He spent three years on dialysis — four hours, three times a week — before a matching kidney became available in 2000. The transplanted kidney worked immediately and has been working ever since, for twenty-five years. His doctors are amazed. He is not amazed — he prayed specifically for this and expected specifically to receive it. Someone's family said yes when they didn't have to. Grandpa has prayed for them regularly ever since. He does not know their names. He knows what they gave him.
+  </div>
+
+</article>
+
+<div class="post-footer">
+  <div class="footer-series">A Life of Tender Mercies &nbsp;·&nbsp; Part Five</div>
+  <div class="chapter-nav">
+    <a class="nav-item prev" href="chapter-25.html">
+      <div class="nav-label">&larr; Previous</div>
+      <div class="nav-title">Grandma Wright Meets the Machine</div>
+    </a>
+    <a class="nav-item next" href="chapter-27.html">
+      <div class="nav-label">Next &rarr;</div>
+      <div class="nav-title">A Close Brush With Death</div>
+    </a>
+  </div>
+</div>
+
+<div class="subscribe-bar">
+  <h3>Follow along with Dee's story</h3>
+  <p>New chapters delivered to your inbox, free.</p>
+  <div class="subscribe-form">
+    <input type="email" placeholder="your@email.com">
+    <button>Subscribe</button>
+  </div>
+</div>
+
+</body>
+</html>
