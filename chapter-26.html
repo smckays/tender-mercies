@@ -14,6 +14,7 @@
     --accent: #8b3a2a; --accent-soft: #c4785f; --rule: #d9d0c4;
     --dialysis: #101418; --dialysis-pale: #506070; --dialysis-bright: #90a8b8;
     --transplant: #0c1810; --transplant-pale: #407050; --transplant-bright: #80b890;
+    --blessing: #14100c; --blessing-pale: #7a6040; --blessing-bright: #c8a870;
   }
   html { scroll-behavior: smooth; }
   body { background-color: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-weight: 300; font-size: 19px; line-height: 1.85; -webkit-font-smoothing: antialiased; }
@@ -62,7 +63,14 @@
   .transplant-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(64,112,80,0.1) 0%, transparent 65%); }
   .transplant-block-inner { position: relative; z-index: 1; }
   .transplant-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--transplant-pale); margin-bottom: 24px; display: block; }
-  .transplant-block .transplant-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(18px, 3vw, 26px); font-style: italic; color: var(--transplant-bright); line-height: 1.6; margin: 0; max-width: 520px; margin-left: auto; margin-right: auto; }
+  .transplant-block .transplant-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(18px, 3vw, 26px); font-style: italic; color: var(--transplant-bright); line-height: 1.6; margin: 0 auto; max-width: 520px; }
+
+  /* Blessing block */
+  .blessing-block { background: var(--blessing); margin: 52px -24px; padding: 52px 48px; position: relative; overflow: hidden; text-align: center; }
+  .blessing-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(122,96,64,0.1) 0%, transparent 65%); }
+  .blessing-block-inner { position: relative; z-index: 1; }
+  .blessing-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--blessing-pale); margin-bottom: 24px; display: block; }
+  .blessing-block .blessing-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(17px, 2.8vw, 22px); font-style: italic; color: var(--blessing-bright); line-height: 1.65; margin: 0 auto; max-width: 520px; }
 
   .chapter-note { background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; padding: 24px 28px; margin: 52px 0 0; font-family: 'Crimson Pro', Georgia, serif; font-size: 16px; color: var(--ink-muted); line-height: 1.7; }
   .chapter-note strong { display: block; font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-style: normal; font-weight: 400; }
@@ -86,7 +94,7 @@
   @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
   .hero { animation: fadeUp 0.7s ease both; }
   .article { animation: fadeUp 0.7s 0.15s ease both; }
-  @media (max-width: 600px) { body { font-size: 17px; } .dialysis-block { margin: 44px -24px; padding: 44px 28px; } .transplant-block { margin: 44px -24px; padding: 44px 28px; } .timeline-item { flex-direction: column; gap: 4px; } .chapter-nav { flex-direction: column; } .nav-item.next { text-align: left; } .subscribe-form { flex-direction: column; } }
+  @media (max-width: 600px) { body { font-size: 17px; } .dialysis-block { margin: 44px -24px; padding: 44px 28px; } .transplant-block { margin: 44px -24px; padding: 44px 28px; } .blessing-block { margin: 44px -24px; padding: 44px 28px; } .timeline-item { flex-direction: column; gap: 4px; } .chapter-nav { flex-direction: column; } .nav-item.next { text-align: left; } .subscribe-form { flex-direction: column; } }
 </style>
 </head>
 <body>
@@ -112,18 +120,18 @@
 
   <p class="drop-cap">I want to tell you about my kidneys — both of them — because they are part of the story and because the story of how I have lived without them for twenty-five years is one of the clearest illustrations I have of the Lord keeping a specific promise to a specific person.</p>
 
-  <p>It started with polycystic kidney disease. I did not know I had it for a long time. The disease is hereditary — cysts grow on the kidneys over years and decades, slowly crowding out functioning tissue until the kidneys fail. There is no cure. There is management, and there is time, and eventually there is dialysis or transplant or death.</p>
+  <p>It started with polycystic kidney disease. I did not know I had it for a long time. The disease is hereditary — cysts grow on the kidneys over years and decades, slowly crowding out functioning tissue until the kidneys fail. My mother's side of the family carried it. It was, as I understood it, simply my turn.</p>
 
   <p>My kidneys began failing in my late forties. By the mid-1990s it was clear they were not going to last much longer. The question became what to do when they gave out entirely.</p>
 
   <div class="timeline">
     <div class="timeline-item">
       <div class="timeline-year">1997</div>
-      <div class="timeline-text">Both kidneys removed. Dee begins dialysis three times a week — four hours each session — at a center in Pleasant Grove.</div>
+      <div class="timeline-text">Both kidneys removed. Dee begins dialysis — four hours every other day — at a center in Pleasant Grove. He quits working. The wait for a transplant begins.</div>
     </div>
     <div class="timeline-item">
-      <div class="timeline-year">1998</div>
-      <div class="timeline-text">Listed for kidney transplant. The wait list is long. There is no guarantee. He continues dialysis and continues working.</div>
+      <div class="timeline-year">1998–99</div>
+      <div class="timeline-text">Listed for kidney transplant. The wait list is long. There is no guarantee. The dialysis regimen continues.</div>
     </div>
     <div class="timeline-item">
       <div class="timeline-year">2000</div>
@@ -139,29 +147,28 @@
 
   <p>I want to tell you what dialysis was actually like, because I don't think people who haven't been through it have any real idea.</p>
 
-  <p>Three times a week, every week, without exception. Four hours each session. You sit in a reclining chair while a machine does what your kidneys no longer can — filtering your blood, removing the waste that would otherwise poison you. Without it you die. With it you live, but you live tethered to a machine and a schedule and a clinic, and the living takes a considerable amount out of you.</p>
+  <p>Every other day, for four hours, I would sit attached to a mechanical kidney while it circulated my blood through filters — seven times over — removing the waste my own body could no longer remove. Without it I would have died. With it I lived, but the living was its own kind of hard. I was forced to quit working. I had known for years that this day was coming — I had watched it approach the way you watch a storm build over the mountains — but knowing it was coming did not make it easier when it arrived. It was a miserable life for about a year and a half.</p>
 
   <div class="dialysis-block">
     <div class="dialysis-block-inner">
-      <span class="dialysis-label">What three years on dialysis looked like</span>
-      <div class="dialysis-text">Three sessions a week. Four hours each. Never missed.</div>
-      <div class="dialysis-text">Working full time at the grocery store between sessions.</div>
-      <div class="dialysis-text">Kathy driving him, sitting with him, taking him home.</div>
-      <div class="dialysis-text">Praying. Waiting. Believing the kidney would come.</div>
+      <span class="dialysis-label">What a year and a half on dialysis looked like</span>
+      <div class="dialysis-text">Four hours every other day. Never missed.</div>
+      <div class="dialysis-text">Blood filtered through a machine seven times each session.</div>
+      <div class="dialysis-text">No longer able to work. Waiting. Praying. Believing the kidney would come.</div>
     </div>
   </div>
-
-  <p>Kathy was extraordinary through those years. She sat with me through sessions when she could. She managed everything at home that I couldn't manage. She did not complain — not once, not where I could hear it — and she bore the weight of it alongside me with the same steadiness she brought to everything in our life together.</p>
 
   <p>I prayed specifically and consistently that a kidney would come. Not a vague hope but a genuine petition — the kind I had learned to pray since I was a boy kneeling in Grandma Stevens' house asking for a mission call to Cumorah. I had learned by then that specific prayers get specific answers, and I had learned to trust the Lord's timing even when it was not my own.</p>
 
   <div class="scene-break">· · ·</div>
 
-  <p>The call came in 2000. A matching kidney was available. The window for transplant surgery is narrow — you have hours, not days — and we moved fast. The surgery was performed at the University of Utah Hospital.</p>
+  <p>One morning, about a year and a half into the dialysis regimen, the call came from the University Hospital. They had a transplant for me.</p>
+
+  <p>A twenty-year-old young man had been traveling into Idaho in the middle of the night and rolled his car. His death was sudden and untimely. But he had the foresight — at twenty years old — to check the donor box on his driver's license. Because of that small decision, not just I but several other people received the gift of his organs. I have thought about that many times. What an extraordinary lesson in how even our smallest decisions ripple outward into lives we will never see.</p>
+
+  <p>His kidney was a perfect match for me. The surgery was performed at the University of Utah Hospital.</p>
 
   <p>The kidney functioned immediately.</p>
-
-  <p>Not every transplanted kidney does that. Some take days or weeks to begin working, requiring dialysis to continue in the meantime. Mine worked from the first moment it was placed, as if it had always been there, as if it belonged.</p>
 
   <div class="transplant-block">
     <div class="transplant-block-inner">
@@ -172,32 +179,45 @@
 
   <div class="scene-break">· · ·</div>
 
-  <p>I have thought carefully about the word <em>miracle</em> and whether it applies here. A transplant is a medical procedure. Doctors performed it. Science made it possible. The kidney came from another person — someone who died so that their organs could give life to others, an act of generosity so profound it is almost impossible to speak of adequately.</p>
+  <p>Not every transplanted kidney does that. Some take days or weeks to begin working. Mine worked from the first moment, as if it had always been there, as if it belonged.</p>
+
+  <p>But there was still something I had to work through. Before my transplant, two or three members of my extended family had received transplants and died within two weeks — complications from pneumonia during recovery. I was conscious of this as I tried to heal at home. The fear was real and specific, and eventually it was enough that I asked for a blessing.</p>
+
+  <p>Our neighborhood in Pleasant Grove was full of elderly high priests — good men who had lived long and faithful lives. We called two of them. They came to our home one evening, laid their hands on my head, and blessed me to heal.</p>
+
+  <div class="blessing-block">
+    <div class="blessing-block-inner">
+      <span class="blessing-label">Pleasant Grove, Utah &nbsp;·&nbsp; 2000</span>
+      <div class="blessing-text">"I got up from my chair and have never looked back."</div>
+    </div>
+  </div>
+
+  <p>I have thought carefully about the word <em>miracle</em> and whether it applies here. A transplant is a medical procedure. Doctors performed it. Science made it possible. The kidney came from another person — someone who died so that others could live, an act of generosity so profound it is almost impossible to speak of adequately.</p>
 
   <p>And yet.</p>
 
-  <p>The matching. The timing. The immediate function. The twenty-five years of continued function in a man who was told he might have five. The specific answer to a specific prayer, arriving in the Lord's time rather than mine, with results that exceed what medicine alone would have predicted.</p>
+  <p>The matching. The timing. The immediate function. The surgeon told me at the time that transplants were lasting approximately eight years. Twenty-five years later I am still here, still healthy, still running on that borrowed kidney. The specific answer to a specific prayer, arriving in the Lord's time rather than mine, with results that exceed what medicine alone would have predicted.</p>
 
   <div class="pull-quote">
     <p>"I have had both my kidneys removed and survived on a borrowed one for twenty-five years. I do not call that lucky. I call it watched over. There is a difference."</p>
   </div>
 
-  <p>I think about the person whose kidney I carry. I do not know who they were — the protocols of donation keep that private unless both families agree to share. What I know is that someone's family, in the worst moment of their lives, said yes. They gave something irreplaceable to a stranger. That stranger was me.</p>
+  <p>I think about the young man whose kidney I carry. I don't know his name. But I know he was twenty years old. I know he was traveling at night. I know he had already made the decision — long before that night — that if something happened to him, his body would be used to help someone else. He could not have known it would be me. But it was.</p>
 
-  <p>I have prayed for that family regularly since 2000. I don't know their names. I don't know their faces. But I know what they gave me, and I have tried to live in a way that honors it — to make the twenty-five years mean something, to be worth the gift.</p>
+  <p>I have prayed for his family regularly since 2000. I don't know their names either. But I know what they gave me in the worst moment of their lives, and I have tried to live in a way that honors it — to make the twenty-five years mean something, to be worth the gift.</p>
 
   <div class="inset-block">
     <span class="inset-label">What those twenty-five years contained</span>
-    <p>Kathy's illness and death. The marriages of his sons. The arrival of grandchildren. Years of family history work. Teaching. Serving. Moving to Orem. Living alone after Kathy was gone. Writing this book. All of it on a borrowed kidney, still working, in a man who was not supposed to still be here. The Lord had things for him yet to do. The kidney was the means He used to keep him available for them.</p>
+    <p>Kathy's illness and death. The marriages of his sons. The arrival of grandchildren. Years of family history work. Teaching. Serving. Moving to Orem. Living alone after Kathy was gone. Writing this book. All of it on a borrowed kidney, still working, in a man who was told it might last eight years. The Lord had things for him yet to do. The kidney was the means He used to keep him available for them.</p>
   </div>
 
-  <p>I am seventy-four years old as I write this. The kidney is still working. My doctors remain careful and monitoring, as they should be — it has been twenty-five years and the body changes. But it is working today, which is all I have ever been promised. Today.</p>
+  <p>I am seventy-four years old as I write this. The kidney is still working. My doctors remain careful and watchful, as they should be — it has been twenty-five years and the body changes. But it is working today, which is all I have ever been promised. Today.</p>
 
   <p>That has always been enough. It has had to be. And it has always, so far, been true.</p>
 
   <div class="chapter-note">
     <strong>A Note for the Grandkids</strong>
-    Grandpa has been living without his own kidneys since 1997. Both were removed because of a hereditary disease called polycystic kidney disease. He spent three years on dialysis — four hours, three times a week — before a matching kidney became available in 2000. The transplanted kidney worked immediately and has been working ever since, for twenty-five years. His doctors are amazed. He is not amazed — he prayed specifically for this and expected specifically to receive it. Someone's family said yes when they didn't have to. Grandpa has prayed for them regularly ever since. He does not know their names. He knows what they gave him.
+    Grandpa has been living without his own kidneys since 1997. Both were removed because of a hereditary disease called polycystic kidney disease. He spent about a year and a half on dialysis — four hours every other day — before a matching kidney became available in 2000. The donor was a twenty-year-old young man who died in a car accident in Idaho. He had already checked the donor box on his license. Because of that decision, Grandpa and several other people received the gift of his organs. The transplanted kidney worked immediately, and has been working ever since — twenty-five years. The surgeon said to expect eight. Grandpa has prayed for that young man's family ever since. He doesn't know their names. He knows what they gave him.
   </div>
 
 </article>
