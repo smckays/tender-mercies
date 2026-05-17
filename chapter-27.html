@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Close Brush With Death — A Life of Tender Mercies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1612; --ink-soft: #3d3530; --ink-muted: #7a6e68;
+    --paper: #faf7f2; --paper-warm: #f5f0e8;
+    --accent: #8b3a2a; --accent-soft: #c4785f; --rule: #d9d0c4;
+    --hospital: #0c1418; --hospital-pale: #507888; --hospital-bright: #90b8c8;
+    --line: #100808; --line-pale: #806058; --line-bright: #c8a898;
+  }
+  html { scroll-behavior: smooth; }
+  body { background-color: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-weight: 300; font-size: 19px; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+  .masthead { border-bottom: 1px solid var(--rule); padding: 20px 0 18px; text-align: center; background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .masthead-title { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); }
+  .masthead-title span { color: var(--accent); }
+  .hero { max-width: 680px; margin: 0 auto; padding: 72px 24px 0; }
+  .series-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: block; }
+  h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px, 5vw, 52px); font-weight: 600; line-height: 1.15; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 28px; }
+  h1 em { font-style: italic; font-weight: 400; color: var(--ink-soft); }
+  .byline { display: flex; align-items: center; gap: 14px; margin-bottom: 48px; }
+  .byline-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-soft), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 15px; color: white; flex-shrink: 0; }
+  .byline-text { font-family: 'Crimson Pro', Georgia, serif; font-size: 15px; color: var(--ink-muted); line-height: 1.4; }
+  .byline-text strong { color: var(--ink-soft); font-weight: 400; display: block; font-size: 16px; }
+  .ornamental-rule { display: flex; align-items: center; gap: 16px; margin: 0 0 52px; }
+  .ornamental-rule::before, .ornamental-rule::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+  .ornamental-rule-glyph { color: var(--accent-soft); font-size: 18px; }
+  .article { max-width: 680px; margin: 0 auto; padding: 0 24px 80px; }
+  .drop-cap::first-letter { font-family: 'Playfair Display', Georgia, serif; font-size: 5.2em; font-weight: 600; float: left; line-height: 0.72; margin-right: 10px; margin-top: 10px; color: var(--accent); }
+  p { margin-bottom: 1.6em; color: var(--ink-soft); }
+  p:last-child { margin-bottom: 0; }
+  .scene-break { text-align: center; margin: 44px 0; color: var(--accent-soft); font-size: 20px; letter-spacing: 0.4em; }
+  .pull-quote { border-left: 3px solid var(--accent); margin: 44px 0; padding: 4px 0 4px 28px; }
+  .pull-quote p { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-style: italic; line-height: 1.5; color: var(--ink); margin: 0; }
+  .inset-block { background: var(--paper-warm); border: 1px solid var(--rule); border-left: 4px solid var(--accent-soft); padding: 24px 28px; margin: 44px 0; border-radius: 0 2px 2px 0; }
+  .inset-label { font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 400; display: block; }
+  .inset-block p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; font-style: italic; color: var(--ink-soft); line-height: 1.75; margin: 0; }
+  .hospital-block { background: var(--hospital); margin: 52px -24px; padding: 56px 48px; position: relative; overflow: hidden; text-align: center; }
+  .hospital-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(80,120,136,0.08) 0%, transparent 65%); }
+  .hospital-block-inner { position: relative; z-index: 1; }
+  .hospital-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--hospital-pale); margin-bottom: 28px; display: block; }
+  .hospital-block .hospital-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(17px, 2.8vw, 22px); font-style: italic; color: var(--hospital-bright); line-height: 1.65; margin: 0 0 14px; }
+  .hospital-block .hospital-text:last-child { margin: 0; }
+  .line-block { background: var(--line); margin: 52px -24px; padding: 52px 48px; position: relative; overflow: hidden; text-align: center; }
+  .line-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(128,96,88,0.08) 0%, transparent 65%); }
+  .line-block-inner { position: relative; z-index: 1; }
+  .line-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--line-pale); margin-bottom: 24px; display: block; }
+  .line-block .line-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(18px, 3vw, 26px); font-style: italic; color: var(--line-bright); line-height: 1.6; margin: 0; max-width: 520px; margin-left: auto; margin-right: auto; }
+  .chapter-note { background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; padding: 24px 28px; margin: 52px 0 0; font-family: 'Crimson Pro', Georgia, serif; font-size: 16px; color: var(--ink-muted); line-height: 1.7; }
+  .chapter-note strong { display: block; font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-style: normal; font-weight: 400; }
+  .post-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 80px; border-top: 1px solid var(--rule); }
+  .footer-series { font-family: 'Crimson Pro', Georgia, serif; font-size: 14px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 20px; }
+  .chapter-nav { display: flex; justify-content: space-between; gap: 20px; }
+  .nav-item { flex: 1; padding: 18px 20px; background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; text-decoration: none; transition: border-color 0.2s; }
+  .nav-item:hover { border-color: var(--accent-soft); }
+  .nav-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .nav-title { font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: var(--ink); line-height: 1.35; }
+  .nav-item.next { text-align: right; }
+  .subscribe-bar { background: var(--ink); padding: 52px 24px; text-align: center; margin-top: 20px; }
+  .subscribe-bar h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 400; color: var(--paper); margin-bottom: 10px; }
+  .subscribe-bar p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; color: #9a9088; margin-bottom: 24px; }
+  .subscribe-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; }
+  .subscribe-form input { flex: 1; padding: 12px 16px; background: #2a2420; border: 1px solid #3d3530; border-radius: 2px; color: var(--paper); font-family: 'Source Serif 4', serif; font-size: 15px; outline: none; }
+  .subscribe-form input::placeholder { color: #5a504a; }
+  .subscribe-form input:focus { border-color: var(--accent-soft); }
+  .subscribe-form button { padding: 12px 20px; background: var(--accent); border: none; border-radius: 2px; color: white; font-family: 'Crimson Pro', serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
+  .subscribe-form button:hover { background: var(--accent-soft); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 0.7s ease both; }
+  .article { animation: fadeUp 0.7s 0.15s ease both; }
+  @media (max-width: 600px) { body { font-size: 17px; } .hospital-block { margin: 44px -24px; padding: 44px 28px; } .line-block { margin: 44px -24px; padding: 44px 28px; } .chapter-nav { flex-direction: column; } .nav-item.next { text-align: left; } .subscribe-form { flex-direction: column; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-title">A Life of <span>Tender Mercies</span> &nbsp;·&nbsp; Dee Stevens</div>
+</header>
+
+<div class="hero">
+  <span class="series-label">Part Five: Letting Go &nbsp;·&nbsp; Chapter Twenty-Seven</span>
+  <h1>A Close Brush <em>With Death</em></h1>
+  <div class="byline">
+    <div class="byline-avatar">D</div>
+    <div class="byline-text">
+      <strong>Dee Stevens</strong>
+      Pleasant Grove, Utah &nbsp;·&nbsp; 2002
+    </div>
+  </div>
+  <div class="ornamental-rule"><span class="ornamental-rule-glyph">&#10022;</span></div>
+</div>
+
+<article class="article">
+
+  <p class="drop-cap">Two years after the kidney transplant, I nearly bled to death in a hospital room in Provo.</p>
+
+  <p>The transplanted kidney was working well. The medical monitoring that comes with any transplant was ongoing — regular checkups, blood draws, adjustments to the anti-rejection medications that keep a borrowed organ from being rejected by the body that received it. I had learned to live with this as a permanent feature of my life, the way you learn to live with anything that is simply part of your situation now.</p>
+
+  <p>Then a routine procedure went wrong.</p>
+
+  <p>A pic line — a peripherally inserted central catheter, a thin tube threaded into a large vein to allow direct access for medications and blood draws — had been placed in my arm. These are common, generally safe, handled daily in hospitals across the country. Mine was incorrectly inserted. It perforated the vein.</p>
+
+  <p>I began bleeding internally. Because the blood was going into tissue rather than visible on the surface, nobody knew it was happening. Not the nurses. Not the attending physicians. Certainly not me. I knew something was wrong — I felt it the way you feel something is wrong before you can name what it is — but the wrongness had no clear shape yet.</p>
+
+  <div class="hospital-block">
+    <div class="hospital-block-inner">
+      <span class="hospital-label">What was happening inside the arm</span>
+      <div class="hospital-text">The pic line had perforated the vein wall.</div>
+      <div class="hospital-text">Blood was filling the tissue of his arm and chest.</div>
+      <div class="hospital-text">No external bleeding. Nothing visible to observe.</div>
+      <div class="hospital-text">His blood pressure was dropping. His body was going into shock.</div>
+      <div class="hospital-text">He did not know any of this yet.</div>
+    </div>
+  </div>
+
+  <p>Kathy was there. She noticed before anyone else did. She had spent years watching me go through dialysis, through the transplant, through the monitoring that followed — she had learned to read me in medical situations the way a person learns to read weather, from close observation over a long period of time. She knew something was wrong before the numbers on the machines confirmed it.</p>
+
+  <p>She went and got someone. That act — getting up, going to find someone, insisting — is the one that mattered most that afternoon.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>What followed was fast and serious. They identified the perforated vein, removed the pic line, and began working to stabilize my blood pressure, which had dropped to a level that puts a person in genuine danger. I had lost a significant amount of blood into the surrounding tissue. My arm and part of my chest had swollen badly. The pain was considerable.</p>
+
+  <p>I received a priesthood blessing.</p>
+
+  <p>A man from the hospital staff who was a member of the Church came and stood with a friend and administered to me — laying their hands on my head, anointing with oil, and sealing the anointing with a blessing of healing by the power of the Melchizedek Priesthood. I had received blessings like this throughout my life, in situations ranging from the serious to the mortal. Each time I have felt the same thing: a settling, a presence, a sense that whatever happens next is in hands larger than the ones on my head.</p>
+
+  <p>I felt it that afternoon.</p>
+
+  <div class="line-block">
+    <div class="line-block-inner">
+      <span class="line-label">What the blessing promised</span>
+      <div class="line-text">"I was promised that I would recover and that the Lord still had things for me to accomplish. I believed it. I went to sleep believing it. I woke up still believing it."</div>
+    </div>
+  </div>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>I recovered. The arm healed. The transplanted kidney, to everyone's relief, was not affected by the episode. I went home.</p>
+
+  <p>I have thought about that afternoon more than once since then — not with fear, but with a particular kind of attention. It is one thing to believe the Lord is watching over you in the abstract. It is another to have your blood pressure drop in a hospital room and feel, in the middle of that, a specific and personal assurance that you are not going to die here today because there are still things to do.</p>
+
+  <p>The list of what those things turned out to be is long. It includes years of family history work, the sealing of families who had been waiting a century. It includes the season of caring for Kathy through her illness and sitting with her at the end. It includes grandchildren born after that afternoon who I would not have held. It includes this book.</p>
+
+  <div class="pull-quote">
+    <p>"The Lord did not promise me a long life. He promised me that I was not finished yet. That has always been enough to go on."</p>
+  </div>
+
+  <p>I want to say something about Kathy's role in that room, because it deserves to be said plainly. A different person might have waited. Might have assumed the nurses had it handled. Might have deferred to the monitors and the charts and the professional authority of the people in scrubs. Kathy did not defer. She knew something was wrong and she went and got someone.</p>
+
+  <p>I am alive in part because she did not wait.</p>
+
+  <div class="inset-block">
+    <span class="inset-label">The pattern across thirty years</span>
+    <p>Kathy's arm around him in the dark in St. George when the pain disappeared. Her sitting with him through three years of dialysis sessions. Her going to get someone in that hospital room in Pleasant Grove. She was not a nurse or a doctor. She was simply a woman who paid close attention to the person she loved, and acted on what she observed. That combination — attention and action — is rarer than it sounds and worth more than it costs.</p>
+  </div>
+
+  <p>I went home from that hospital and went back to my life, which is what you do. You go back to your life because the alternative is to spend it being grateful for surviving things, and that is not the same as living.</p>
+
+  <p>The kidney is still working. I am still here. The things He said I still had left to do — I have been doing them, one by one, for twenty-five years since that afternoon.</p>
+
+  <div class="chapter-note">
+    <strong>A Note for the Grandkids</strong>
+    Two years after his kidney transplant, a routine hospital procedure went wrong and Grandpa nearly bled to death without anyone knowing it was happening. Grandma Kathy noticed before the machines did and went to get someone. He received a priesthood blessing and was promised he was not finished yet. He recovered. The kidney was unaffected. He has been doing the things he was promised he still had left to do ever since — including writing this book. Grandma Kathy's going to get someone in that hospital room is one of the reasons you exist.
+  </div>
+
+</article>
+
+<div class="post-footer">
+  <div class="footer-series">A Life of Tender Mercies &nbsp;·&nbsp; Part Five</div>
+  <div class="chapter-nav">
+    <a class="nav-item prev" href="chapter-26.html">
+      <div class="nav-label">&larr; Previous</div>
+      <div class="nav-title">My Miracle Kidney</div>
+    </a>
+    <a class="nav-item next" href="chapter-28.html">
+      <div class="nav-label">Next &rarr;</div>
+      <div class="nav-title">Back to School at Fifty-Four</div>
+    </a>
+  </div>
+</div>
+
+<div class="subscribe-bar">
+  <h3>Follow along with Dee's story</h3>
+  <p>New chapters delivered to your inbox, free.</p>
+  <div class="subscribe-form">
+    <input type="email" placeholder="your@email.com">
+    <button>Subscribe</button>
+  </div>
+</div>
+
+</body>
+</html>
