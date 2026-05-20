@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kathy — A Life of Tender Mercies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1612; --ink-soft: #3d3530; --ink-muted: #7a6e68;
+    --paper: #faf7f2; --paper-warm: #f5f0e8;
+    --accent: #8b3a2a; --accent-soft: #c4785f; --rule: #d9d0c4;
+    --kathy: #0c0c10; --kathy-pale: #807888; --kathy-bright: #d0c8e0;
+    --jared: #100808; --jared-pale: #806060; --jared-bright: #d0a898;
+    --shore: #0a0e0c; --shore-pale: #507060; --shore-bright: #98c0b0;
+  }
+  html { scroll-behavior: smooth; }
+  body { background-color: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-weight: 300; font-size: 19px; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+  .masthead { border-bottom: 1px solid var(--rule); padding: 20px 0 18px; text-align: center; background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .masthead-title { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); }
+  .masthead-title span { color: var(--accent); }
+  .hero { max-width: 680px; margin: 0 auto; padding: 72px 24px 0; }
+  .series-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: block; }
+  h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(40px, 7vw, 72px); font-weight: 600; line-height: 1.1; color: var(--ink); letter-spacing: -0.02em; margin-bottom: 28px; }
+  .byline { display: flex; align-items: center; gap: 14px; margin-bottom: 48px; }
+  .byline-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-soft), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 15px; color: white; flex-shrink: 0; }
+  .byline-text { font-family: 'Crimson Pro', Georgia, serif; font-size: 15px; color: var(--ink-muted); line-height: 1.4; }
+  .byline-text strong { color: var(--ink-soft); font-weight: 400; display: block; font-size: 16px; }
+  .ornamental-rule { display: flex; align-items: center; gap: 16px; margin: 0 0 52px; }
+  .ornamental-rule::before, .ornamental-rule::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+  .ornamental-rule-glyph { color: var(--accent-soft); font-size: 18px; }
+  .article { max-width: 680px; margin: 0 auto; padding: 0 24px 80px; }
+  .drop-cap::first-letter { font-family: 'Playfair Display', Georgia, serif; font-size: 5.2em; font-weight: 600; float: left; line-height: 0.72; margin-right: 10px; margin-top: 10px; color: var(--accent); }
+  p { margin-bottom: 1.6em; color: var(--ink-soft); }
+  p:last-child { margin-bottom: 0; }
+  .scene-break { text-align: center; margin: 44px 0; color: var(--accent-soft); font-size: 20px; letter-spacing: 0.4em; }
+  .pull-quote { border-left: 3px solid var(--accent); margin: 44px 0; padding: 4px 0 4px 28px; }
+  .pull-quote p { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-style: italic; line-height: 1.5; color: var(--ink); margin: 0; }
+  .inset-block { background: var(--paper-warm); border: 1px solid var(--rule); border-left: 4px solid var(--accent-soft); padding: 24px 28px; margin: 44px 0; border-radius: 0 2px 2px 0; }
+  .inset-label { font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 400; display: block; }
+  .inset-block p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; font-style: italic; color: var(--ink-soft); line-height: 1.75; margin: 0 0 12px; }
+  .inset-block p:last-child { margin: 0; }
+
+  /* Kathy's diagnosis */
+  .kathy-block { background: var(--kathy); margin: 52px -24px; padding: 56px 48px; position: relative; overflow: hidden; text-align: center; }
+  .kathy-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(128,120,136,0.08) 0%, transparent 65%); }
+  .kathy-block-inner { position: relative; z-index: 1; }
+  .kathy-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--kathy-pale); margin-bottom: 24px; display: block; }
+  .kathy-block .kathy-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(17px, 2.8vw, 22px); font-style: italic; color: var(--kathy-bright); line-height: 1.7; margin: 0 0 16px; }
+  .kathy-block .kathy-text:last-child { margin: 0; }
+
+  /* Jared block */
+  .jared-block { background: var(--jared); margin: 52px -24px; padding: 52px 48px; position: relative; overflow: hidden; text-align: center; }
+  .jared-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(128,96,88,0.08) 0%, transparent 65%); }
+  .jared-block-inner { position: relative; z-index: 1; }
+  .jared-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--jared-pale); margin-bottom: 24px; display: block; }
+  .jared-block .jared-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(17px, 2.8vw, 22px); font-style: italic; color: var(--jared-bright); line-height: 1.7; margin: 0 0 16px; }
+  .jared-block .jared-text:last-child { margin: 0; }
+
+  /* The shore / what remains */
+  .shore-block { background: var(--shore); margin: 52px -24px; padding: 52px 48px; position: relative; overflow: hidden; text-align: center; }
+  .shore-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(80,112,96,0.10) 0%, transparent 65%); }
+  .shore-block-inner { position: relative; z-index: 1; }
+  .shore-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--shore-pale); margin-bottom: 24px; display: block; }
+  .shore-block .shore-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(18px, 3vw, 26px); font-style: italic; color: var(--shore-bright); line-height: 1.6; margin: 0 auto; max-width: 540px; }
+
+  .chapter-note { background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; padding: 24px 28px; margin: 52px 0 0; font-family: 'Crimson Pro', Georgia, serif; font-size: 16px; color: var(--ink-muted); line-height: 1.7; }
+  .chapter-note strong { display: block; font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-style: normal; font-weight: 400; }
+  .post-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 80px; border-top: 1px solid var(--rule); }
+  .footer-series { font-family: 'Crimson Pro', Georgia, serif; font-size: 14px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 20px; }
+  .chapter-nav { display: flex; justify-content: space-between; gap: 20px; }
+  .nav-item { flex: 1; padding: 18px 20px; background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; text-decoration: none; transition: border-color 0.2s; }
+  .nav-item:hover { border-color: var(--accent-soft); }
+  .nav-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .nav-title { font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: var(--ink); line-height: 1.35; }
+  .nav-item.next { text-align: right; }
+  .subscribe-bar { background: var(--ink); padding: 52px 24px; text-align: center; margin-top: 20px; }
+  .subscribe-bar h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 400; color: var(--paper); margin-bottom: 10px; }
+  .subscribe-bar p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; color: #9a9088; margin-bottom: 24px; }
+  .subscribe-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; }
+  .subscribe-form input { flex: 1; padding: 12px 16px; background: #2a2420; border: 1px solid #3d3530; border-radius: 2px; color: var(--paper); font-family: 'Source Serif 4', serif; font-size: 15px; outline: none; }
+  .subscribe-form input::placeholder { color: #5a504a; }
+  .subscribe-form input:focus { border-color: var(--accent-soft); }
+  .subscribe-form button { padding: 12px 20px; background: var(--accent); border: none; border-radius: 2px; color: white; font-family: 'Crimson Pro', serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
+  .subscribe-form button:hover { background: var(--accent-soft); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 0.7s ease both; }
+  .article { animation: fadeUp 0.7s 0.15s ease both; }
+  @media (max-width: 600px) { body { font-size: 17px; } .kathy-block { margin: 44px -24px; padding: 44px 28px; } .jared-block { margin: 44px -24px; padding: 44px 28px; } .shore-block { margin: 44px -24px; padding: 44px 28px; } .chapter-nav { flex-direction: column; } .nav-item.next { text-align: left; } .subscribe-form { flex-direction: column; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-title">A Life of <span>Tender Mercies</span> &nbsp;·&nbsp; Dee Stevens</div>
+</header>
+
+<div class="hero">
+  <span class="series-label">Part Five: Letting Go &nbsp;·&nbsp; Chapter Thirty-Two</span>
+  <h1>Kathy</h1>
+  <div class="byline">
+    <div class="byline-avatar">D</div>
+    <div class="byline-text">
+      <strong>Dee Stevens</strong>
+      Orem, Utah &nbsp;·&nbsp; 2022–2023
+    </div>
+  </div>
+  <div class="ornamental-rule"><span class="ornamental-rule-glyph">&#10022;</span></div>
+</div>
+
+<article class="article">
+
+  <p class="drop-cap">On Sunday, May 15th, 2022, we had the privilege of giving a name and a blessing to little Nicholas Lane Brown — son of Nicholas Cole and Shaustia Isaacson Brown, our first great-grandchild. He will go by Lane. I sat in that meeting and thought: the Lord has allowed me to live long enough for this. It was a full and happy day.</p>
+
+  <p>A few weeks later, a terrible thing happened.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>Kathy was found to have an aggressive brain tumor.</p>
+
+  <p>The discovery process required a biopsy. As a result of the procedure she lost the use of her left eye and could no longer drive. She had spent forty years driving herself wherever she needed to go — to the store, to the temple, to pick up someone else's child, to visit someone who needed visiting. The car keys sitting on the counter became their own kind of grief, separate from everything else.</p>
+
+  <p>We were given a prognosis of eight to ten months.</p>
+
+  <div class="kathy-block">
+    <div class="kathy-block-inner">
+      <span class="kathy-label">Orem, Utah &nbsp;·&nbsp; Spring 2022</span>
+      <div class="kathy-text">Eight to ten months. That was what the doctors said.</div>
+      <div class="kathy-text">Kathy heard it. Then she kept herself faithful by imagining herself held in the arms of Jesus — and asked a granddaughter to paint her there, so she could keep it in front of her every day.</div>
+      <div class="kathy-text">None of us dared hope she would make it until Christmas.</div>
+      <div class="kathy-text">She sailed through the entire winter and into the summer.</div>
+    </div>
+  </div>
+
+  <p>Her doctor prescribed a treatment intended to make her more comfortable. Almost immediately the tumor shrank. For several months she had what felt like a new lease on life. We knew it was another of the Father's tender mercies — not a cure, but time. More time than the prognosis had offered. Time for the family to gather. Time for her to be herself a little longer.</p>
+
+  <p>I was her caretaker around the clock from the beginning. I cut pads for her feet when they became painful. I drove her wherever she needed to go. By early summer of 2023 the only place she went was to doctors. She put up the bravest, strongest fight I have ever seen a person wage — quiet and faithful and without self-pity, holding the painting Shaustia had made for her, imagining herself already held.</p>
+
+  <div class="pull-quote">
+    <p>"The Spirit of the Lord was so strong in our home. The family often gathered around her. I was her 24/7 caretaker. It was the privilege of my life."</p>
+  </div>
+
+  <p>By early summer it was evident her strength was dwindling. We did not say it plainly to each other. We did not need to. You live with someone for forty-two years and you learn to read what they cannot say.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>In mid-July of 2023 a call came that shook our whole family.</p>
+
+  <p>Our son Jared had experienced a heart attack. Allyson had found his body in the grass next to the fire pit in their backyard. Several attempts were made to revive him. He was gone. He was fifty-three years old.</p>
+
+  <div class="jared-block">
+    <div class="jared-block-inner">
+      <span class="jared-label">Mid-July 2023</span>
+      <div class="jared-text">Jared had called or visited his mother every single night since her cancer had been found. Every night, without fail, to check on her.</div>
+      <div class="jared-text">When he died, she seemed inconsolable. She wept for him for days and nights.</div>
+      <div class="jared-text">One evening Dee heard her on the stairs, calling for him.</div>
+    </div>
+  </div>
+
+  <p>Somehow she summoned the strength to stand at his funeral and bear her testimony to the family she loved. It was the last testimony she would ever bear. She stood and she spoke and she meant every word, and everyone in that room knew it was costing her something she did not have left to spend.</p>
+
+  <p>The shock of losing Jared seemed to be all she could handle. She had been fighting so hard, for so long — fighting past every deadline the doctors had set, fighting into a summer none of us had expected to have with her. But grief has a weight that illness alone does not, and losing her son broke through something that the tumor had not managed to break. She gradually lost her will to go on fighting.</p>
+
+  <p>She passed away quietly in her sleep on July 31st, 2023 — two weeks after Jared.</p>
+
+  <p>She is buried in the Timpanogos Memorial Gardens on 400 East in Orem.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>Losing Kathy was the ultimate loss. I do not have a better word for it than that. The scriptures say it is not good for a man to be alone, and I had always read that as a practical observation. Now I understood it as something else — a description of what happens to the interior of a person when the one who made the home a home is gone.</p>
+
+  <p>Every room rings with her spirit. The kitchen where she cooked. The chair where she read. The counter where she kept her things. I became ashamed, in those first weeks, at how much I had taken for granted — how many mornings I had walked past what she had done without seeing it, how many ordinary Tuesday evenings I had not understood were the good ones.</p>
+
+  <p>She cooked and cleaned and washed and prayed us to happiness. No matter how large the struggle. No matter how thin the money or how long the odds or how many of us were hurting at once. She held things together with a faith so steady it looked effortless from the outside, and I know now that nothing about it was effortless. She simply never let us see the cost.</p>
+
+  <div class="inset-block">
+    <span class="inset-label">What she left in every room</span>
+    <p>The painting Shaustia made for her — Kathy held in the arms of the Savior — kept in front of her day after day through every month of her illness. She had asked for it because she needed to see where she was going. She was not afraid. She was ready. She wanted to be held, and she believed she would be.</p>
+    <p>She was right.</p>
+  </div>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>I soldiered on through the end of that year. The holidays were hard. By the time winter settled in I found that evenings alone had become dark in a way I had not anticipated — a specific, physical dark, the kind that is not helped by turning on more lights.</p>
+
+  <p>But I was not, I came to understand, actually alone.</p>
+
+  <div class="shore-block">
+    <div class="shore-block-inner">
+      <span class="shore-label">Orem, Utah &nbsp;·&nbsp; Winter 2023</span>
+      <div class="shore-text">"Every room in my home rings with Kathy's spirit. There was a big hole in my heart. But I know I am not really alone. Tender, tender mercies."</div>
+    </div>
+  </div>
+
+  <p>I had a borrowed kidney that had been working for twenty-three years past its predicted lifespan. I had five sons who called and checked in. I had grandchildren and great-grandchildren, including Lane, who had arrived into the world on a happy Sunday in May just weeks before the diagnosis — as if the Lord had arranged one last uncomplicated joy before the hard season began. I had the family history work. I had the ward full of young people who had loved Kathy and who turned their attention toward me in her absence with a generosity I had not expected and could not have arranged.</p>
+
+  <p>And I had forty-two years of a woman who had prayed me to happiness through everything. Those years do not disappear when the person does. They are present in every room. They are present in the way I know how to get through a hard evening, which is the way she taught me — quietly, faithfully, one day at a time, trusting that the Lord is keeping track of the larger arc even when you cannot see it from where you are standing.</p>
+
+  <p>She is not gone. She is ahead.</p>
+
+  <p>I intend to catch up.</p>
+
+  <div class="chapter-note">
+    <strong>A Note for the Grandkids</strong>
+    In the spring of 2022, just weeks after the blessing of your cousin Lane — the first great-grandchild — Grandma Kathy was found to have an aggressive brain tumor. The doctors gave her eight to ten months. She made it through the entire winter and into the following summer. She asked your cousin Shaustia to paint her being held in the arms of Jesus, and she kept that painting in front of her every day. In mid-July 2023, your Uncle Jared died suddenly of a heart attack. Grandma was inconsolable. She had stood and borne her testimony at his funeral — the last testimony she ever bore — and the loss of him seemed to be more than she had left to carry. She passed away peacefully in her sleep two weeks later, on July 31st, 2023. She is buried in Orem. Every room in Grandpa's home still rings with her spirit. He says he is not really alone. He means it.
+  </div>
+
+</article>
+
+<div class="post-footer">
+  <div class="footer-series">A Life of Tender Mercies &nbsp;·&nbsp; Part Five</div>
+  <div class="chapter-nav">
+    <a class="nav-item prev" href="chapter-31.html">
+      <div class="nav-label">&larr; Previous</div>
+      <div class="nav-title">The Family History Years</div>
+    </a>
+    <a class="nav-item next" href="chapter-33.html">
+      <div class="nav-label">Next &rarr;</div>
+      <div class="nav-title">Not Really Alone</div>
+    </a>
+  </div>
+</div>
+
+<div class="subscribe-bar">
+  <h3>Follow along with Dee's story</h3>
+  <p>New chapters delivered to your inbox, free.</p>
+  <div class="subscribe-form">
+    <input type="email" placeholder="your@email.com">
+    <button>Subscribe</button>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Family History Years — A Life of Tender Mercies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1612; --ink-soft: #3d3530; --ink-muted: #7a6e68;
+    --paper: #faf7f2; --paper-warm: #f5f0e8;
+    --accent: #8b3a2a; --accent-soft: #c4785f; --rule: #d9d0c4;
+    --zoom: #100c14; --zoom-pale: #706080; --zoom-bright: #c0aee0;
+    --rosetta: #0a1208; --rosetta-pale: #507840; --rosetta-bright: #a8d088;
+  }
+  html { scroll-behavior: smooth; }
+  body { background-color: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-weight: 300; font-size: 19px; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+  .masthead { border-bottom: 1px solid var(--rule); padding: 20px 0 18px; text-align: center; background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .masthead-title { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); }
+  .masthead-title span { color: var(--accent); }
+  .hero { max-width: 680px; margin: 0 auto; padding: 72px 24px 0; }
+  .series-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: block; }
+  h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px, 5vw, 52px); font-weight: 600; line-height: 1.15; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 28px; }
+  h1 em { font-style: italic; font-weight: 400; color: var(--ink-soft); }
+  .byline { display: flex; align-items: center; gap: 14px; margin-bottom: 48px; }
+  .byline-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-soft), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 15px; color: white; flex-shrink: 0; }
+  .byline-text { font-family: 'Crimson Pro', Georgia, serif; font-size: 15px; color: var(--ink-muted); line-height: 1.4; }
+  .byline-text strong { color: var(--ink-soft); font-weight: 400; display: block; font-size: 16px; }
+  .ornamental-rule { display: flex; align-items: center; gap: 16px; margin: 0 0 52px; }
+  .ornamental-rule::before, .ornamental-rule::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+  .ornamental-rule-glyph { color: var(--accent-soft); font-size: 18px; }
+  .article { max-width: 680px; margin: 0 auto; padding: 0 24px 80px; }
+  .drop-cap::first-letter { font-family: 'Playfair Display', Georgia, serif; font-size: 5.2em; font-weight: 600; float: left; line-height: 0.72; margin-right: 10px; margin-top: 10px; color: var(--accent); }
+  p { margin-bottom: 1.6em; color: var(--ink-soft); }
+  p:last-child { margin-bottom: 0; }
+  .scene-break { text-align: center; margin: 44px 0; color: var(--accent-soft); font-size: 20px; letter-spacing: 0.4em; }
+  .pull-quote { border-left: 3px solid var(--accent); margin: 44px 0; padding: 4px 0 4px 28px; }
+  .pull-quote p { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-style: italic; line-height: 1.5; color: var(--ink); margin: 0; }
+  .inset-block { background: var(--paper-warm); border: 1px solid var(--rule); border-left: 4px solid var(--accent-soft); padding: 24px 28px; margin: 44px 0; border-radius: 0 2px 2px 0; }
+  .inset-label { font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 400; display: block; }
+  .inset-block p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; font-style: italic; color: var(--ink-soft); line-height: 1.75; margin: 0; }
+
+  /* The Zoom meeting shame block */
+  .zoom-block { background: var(--zoom); margin: 52px -24px; padding: 56px 48px; position: relative; overflow: hidden; }
+  .zoom-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(112,96,128,0.08) 0%, transparent 65%); }
+  .zoom-block-inner { position: relative; z-index: 1; }
+  .zoom-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--zoom-pale); margin-bottom: 28px; display: block; text-align: center; }
+  .zoom-block .zoom-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(16px, 2.6vw, 20px); font-style: italic; color: var(--zoom-bright); line-height: 1.75; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center; }
+  .zoom-block .zoom-text:last-child { border-bottom: none; padding-bottom: 0; }
+
+  /* Rosetta / birthday revelation */
+  .rosetta-block { background: var(--rosetta); margin: 52px -24px; padding: 52px 48px; position: relative; overflow: hidden; text-align: center; }
+  .rosetta-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(80,120,64,0.10) 0%, transparent 65%); }
+  .rosetta-block-inner { position: relative; z-index: 1; }
+  .rosetta-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rosetta-pale); margin-bottom: 24px; display: block; }
+  .rosetta-block .rosetta-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(18px, 3vw, 26px); font-style: italic; color: var(--rosetta-bright); line-height: 1.6; margin: 0 auto; max-width: 540px; }
+
+  .chapter-note { background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; padding: 24px 28px; margin: 52px 0 0; font-family: 'Crimson Pro', Georgia, serif; font-size: 16px; color: var(--ink-muted); line-height: 1.7; }
+  .chapter-note strong { display: block; font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-style: normal; font-weight: 400; }
+  .post-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 80px; border-top: 1px solid var(--rule); }
+  .footer-series { font-family: 'Crimson Pro', Georgia, serif; font-size: 14px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 20px; }
+  .chapter-nav { display: flex; justify-content: space-between; gap: 20px; }
+  .nav-item { flex: 1; padding: 18px 20px; background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; text-decoration: none; transition: border-color 0.2s; }
+  .nav-item:hover { border-color: var(--accent-soft); }
+  .nav-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .nav-title { font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: var(--ink); line-height: 1.35; }
+  .nav-item.next { text-align: right; }
+  .subscribe-bar { background: var(--ink); padding: 52px 24px; text-align: center; margin-top: 20px; }
+  .subscribe-bar h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 400; color: var(--paper); margin-bottom: 10px; }
+  .subscribe-bar p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; color: #9a9088; margin-bottom: 24px; }
+  .subscribe-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; }
+  .subscribe-form input { flex: 1; padding: 12px 16px; background: #2a2420; border: 1px solid #3d3530; border-radius: 2px; color: var(--paper); font-family: 'Source Serif 4', serif; font-size: 15px; outline: none; }
+  .subscribe-form input::placeholder { color: #5a504a; }
+  .subscribe-form input:focus { border-color: var(--accent-soft); }
+  .subscribe-form button { padding: 12px 20px; background: var(--accent); border: none; border-radius: 2px; color: white; font-family: 'Crimson Pro', serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
+  .subscribe-form button:hover { background: var(--accent-soft); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 0.7s ease both; }
+  .article { animation: fadeUp 0.7s 0.15s ease both; }
+  @media (max-width: 600px) { body { font-size: 17px; } .zoom-block { margin: 44px -24px; padding: 44px 28px; } .rosetta-block { margin: 44px -24px; padding: 44px 28px; } .chapter-nav { flex-direction: column; } .nav-item.next { text-align: left; } .subscribe-form { flex-direction: column; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-title">A Life of <span>Tender Mercies</span> &nbsp;·&nbsp; Dee Stevens</div>
+</header>
+
+<div class="hero">
+  <span class="series-label">Part Five: Letting Go &nbsp;·&nbsp; Chapter Thirty-One</span>
+  <h1>The Family History <em>Years</em></h1>
+  <div class="byline">
+    <div class="byline-avatar">D</div>
+    <div class="byline-text">
+      <strong>Dee Stevens</strong>
+      Orem, Utah &nbsp;·&nbsp; 2018–2022
+    </div>
+  </div>
+  <div class="ornamental-rule"><span class="ornamental-rule-glyph">&#10022;</span></div>
+</div>
+
+<article class="article">
+
+  <p class="drop-cap">When you retire from a career you loved, there is a particular kind of restlessness that sets in — not grief, exactly, but its impatient cousin. I had spent nine years in a classroom. I had spent the years before that in hard rooms with harder students. I had spent thirty years before that managing grocery stores and raising boys and coaching teams and teaching Sunday School and doing every other thing that needed doing. I did not know how to sit still. I was not interested in learning.</p>
+
+  <p>The Lord, who knows this about me, arranged for a calling.</p>
+
+  <p>After a stint as second counselor in the Elders Quorum — working alongside our bishop to get young elders to report their ministering visits, which is a particular kind of herding cats — I was called to be the ward Temple and Family History Leader. I accepted. Then I went home and sat in my office and waited for someone to tell me what that meant.</p>
+
+  <p>Nobody came. No training arrived. A month passed. I sat on my hands and waited and felt increasingly that I was failing at something I had not yet been allowed to attempt.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>Then the stake president called a Zoom meeting. This was during Covid, when Zoom meetings were the primary vehicle for all human communication, which I accepted as one of the stranger features of that period. President Danny Miller gathered all the family history leaders from across the stake — I counted faces in the grid of small rectangles on my screen — and he went around the group and asked each of us what we had been doing in our calling since we had been called.</p>
+
+  <p>I have sat through a great many uncomfortable moments in my life. I want to be honest that this one was among them.</p>
+
+  <div class="zoom-block">
+    <div class="zoom-block-inner">
+      <span class="zoom-label">A Zoom meeting &nbsp;·&nbsp; Covid, 2020</span>
+      <div class="zoom-text">President Miller went around the group. Each family history leader reported what they had done.</div>
+      <div class="zoom-text">All but one of them had done nothing. They had been waiting to be trained.</div>
+      <div class="zoom-text">Dee was one of them.</div>
+      <div class="zoom-text">"I never felt so stupid in my life," he said later. "I swore I would never sit through a meeting like that again."</div>
+    </div>
+  </div>
+
+  <p>The one exception was the Elders Quorum president from the first ward, who had used some videos from the Family History website and taken them to members' homes. It was a modest effort — he and one other, reaching perhaps a handful of families in a month — but it was something. Everyone else, including me, had done nothing.</p>
+
+  <p>President Miller did not shame us. He bore a simple, sweet testimony about the importance of family history work and the importance of the calling. It was the kind of testimony that goes into you quietly and rearranges things. By the time he was done I had sworn to myself that I would never again sit in a room — or a grid of Zoom rectangles — and report nothing.</p>
+
+  <p>He challenged us to go do something. He said he would ask us to report the following month.</p>
+
+  <p>I went home and made my office into a pondering room.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>I prayed seriously that month. I studied what the first ward elder had done and concluded that while it was inspired in its simplicity, it did not go far enough — one man visiting families one at a time would reach maybe a dozen people in a month. The ward had hundreds of families. I needed a multiplying approach.</p>
+
+  <p>With the help of heaven — and I use that phrase deliberately, because I do not think I was smart enough to arrive at this on my own — I developed an action plan.</p>
+
+  <div class="inset-block">
+    <span class="inset-label">The action plan</span>
+    <p>Each auxiliary president in the ward — Relief Society, Young Men, Young Women, Primary — would be visited personally and trained using the same Family History videos from the website, plus instruction on how to launch an organized project. Once trained, each president was specifically assigned to carry the same training to every member of their own presidency. All visits were tracked by Sister Wilkins, who kept accurate records of who had been reached and what goals had been set. The result: one man's effort multiplied across every organization in the ward simultaneously.</p>
+  </div>
+
+  <p>Before the next Zoom meeting I typed the whole plan up and sent copies to the stake presidency. When President Miller asked me to report, I walked him through it. He looked it over, handed his copy to President Johnston, and said: "Get ahold of all your leaders and tell them this is the program."</p>
+
+  <p>Within the next few months we had recorded thirty-two families visited.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>The calling stretched across several years and grew more ambitious each year. The second year we went back to the thirty-two families and checked in, while continuing to reach those we had missed. By the third year, with most of my consultants reassigned and the work largely on my own shoulders, we got more aggressive. Bishop Brown gave us two sacrament meetings in October to build momentum. We passed out Family booklets and taught members how to use them to gather their own history.</p>
+
+  <p>The fourth year we ran a campaign we called 44 for Four. The goal was to seal forty-four families in four months. I thought it was an ambitious goal. I was wrong about what our ward was capable of.</p>
+
+  <div class="pull-quote">
+    <p>"By the time three and a half months had passed, we had sealed fifty-eight families. Those people in our ward really went to town."</p>
+  </div>
+
+  <p>I want to say something about family history work that I did not understand when I accepted this calling and understand now. It is not a filing exercise. It is not genealogical bookkeeping. It is the work of finding people who are waiting — people who died without the covenants they needed, who cannot make those covenants for themselves, and who depend on the living to remember them. When you seal a family, you are not completing a form. You are finishing something that was left unfinished. The chills that come with it are real and they are earned.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>On the morning of March 29th, 2022, I opened FamilySearch to check on some family names. At the end of my search, my eyes were drawn to a name in my suggested list — Rosetta Beckstead — and I felt a strong pull to look into her case.</p>
+
+  <p>All her ordinance work was done except one: sealing to parents. The record showed she had died around age three. The block on her sealing was a missing detail — a standardized residence at the time of her death, never recorded. A clerical gap, small enough that it had apparently gone unnoticed for a very long time.</p>
+
+  <p>I found her parents: Sydney Beckstead and Ann Rollins. Those names were familiar. I opened Sydney's record and scrolled down a long list of children — and stopped cold when I came across Sabre Jane. Grandma Wright's grandmother. A woman Grandma had spoken of constantly during the six years she lived with us in Pleasant Grove. I had heard Sabre Jane's name more times than I could count.</p>
+
+  <p>Rosetta Beckstead was Sabre Jane's little sister. She was the only child in the family who had never been sealed to her parents. She had died at three years old and had been waiting, in whatever way the waiting works, ever since.</p>
+
+  <p>I found the missing residence in a brief biography that Sabre Jane had written herself — one line, the place where the family had lived when Rosetta passed. I entered it. I requested the sealing ordinance. Permission was granted to print.</p>
+
+  <div class="rosetta-block">
+    <div class="rosetta-block-inner">
+      <span class="rosetta-label">March 29, 2022 &nbsp;·&nbsp; Orem, Utah</span>
+      <div class="rosetta-text">"Chills actually overwhelmed me as I realized that today is Grandma Wright's birthday. I knew at that moment where I was getting my promptings from."</div>
+    </div>
+  </div>
+
+  <p>She would have been one hundred and twenty-one years old.</p>
+
+  <p>I sat with that for a while. Grandma Wright had lived with us for six years and filled our house with her stories and her wit and her opinions about teenagers on computers. She had died with a smile on her face at nearly one hundred and two. And on the morning of her birthday, nineteen years after her death, she had apparently decided it was time for her great-grandmother's little sister to be sealed to her parents at last — and had sent the prompting to the right person to do it.</p>
+
+  <p>Family history work is a miraculous thing. I did not know that when I accepted the calling. I sat on my hands for a month and waited for someone to teach me what it was. Nobody came. I had to find out for myself, which, now that I think about it, is exactly how the Lord usually arranges for the most important lessons to arrive.</p>
+
+  <div class="chapter-note">
+    <strong>A Note for the Grandkids</strong>
+    After retiring from teaching, Grandpa was called to be the ward Temple and Family History Leader. He spent a month doing nothing because nobody trained him, then got embarrassed in a Zoom meeting and swore he would never be caught unprepared again. He built a program from scratch that eventually reached every family in the ward and ended with fifty-eight families sealed in less than four months — fourteen more than the goal. On March 29, 2022, while searching FamilySearch, he found a name: Rosetta Beckstead, a little girl who died at age three and had never been sealed to her parents. He traced her back through the records and discovered she was the little sister of Sabre Jane — Grandma Wright's own grandmother. He completed her sealing that morning. Then he looked at the date. It was Grandma Wright's birthday. He knew exactly where the prompting had come from.
+  </div>
+
+</article>
+
+<div class="post-footer">
+  <div class="footer-series">A Life of Tender Mercies &nbsp;·&nbsp; Part Five</div>
+  <div class="chapter-nav">
+    <a class="nav-item prev" href="chapter-30.html">
+      <div class="nav-label">&larr; Previous</div>
+      <div class="nav-title">The Dream</div>
+    </a>
+    <a class="nav-item next" href="chapter-32.html">
+      <div class="nav-label">Next &rarr;</div>
+      <div class="nav-title">Kathy</div>
+    </a>
+  </div>
+</div>
+
+<div class="subscribe-bar">
+  <h3>Follow along with Dee's story</h3>
+  <p>New chapters delivered to your inbox, free.</p>
+  <div class="subscribe-form">
+    <input type="email" placeholder="your@email.com">
+    <button>Subscribe</button>
+  </div>
+</div>
+
+</body>
+</html>

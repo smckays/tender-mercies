@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Dream — A Life of Tender Mercies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1612; --ink-soft: #3d3530; --ink-muted: #7a6e68;
+    --paper: #faf7f2; --paper-warm: #f5f0e8;
+    --accent: #8b3a2a; --accent-soft: #c4785f; --rule: #d9d0c4;
+    --dream: #0c0e14; --dream-pale: #607090; --dream-bright: #a8b8d8;
+    --morning: #14100a; --morning-pale: #806040; --morning-bright: #d0a860;
+  }
+  html { scroll-behavior: smooth; }
+  body { background-color: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-weight: 300; font-size: 19px; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+  .masthead { border-bottom: 1px solid var(--rule); padding: 20px 0 18px; text-align: center; background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .masthead-title { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); }
+  .masthead-title span { color: var(--accent); }
+  .hero { max-width: 680px; margin: 0 auto; padding: 72px 24px 0; }
+  .series-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: block; }
+  h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px, 5vw, 52px); font-weight: 600; line-height: 1.15; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 28px; }
+  h1 em { font-style: italic; font-weight: 400; color: var(--ink-soft); }
+  .byline { display: flex; align-items: center; gap: 14px; margin-bottom: 48px; }
+  .byline-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-soft), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 15px; color: white; flex-shrink: 0; }
+  .byline-text { font-family: 'Crimson Pro', Georgia, serif; font-size: 15px; color: var(--ink-muted); line-height: 1.4; }
+  .byline-text strong { color: var(--ink-soft); font-weight: 400; display: block; font-size: 16px; }
+  .ornamental-rule { display: flex; align-items: center; gap: 16px; margin: 0 0 52px; }
+  .ornamental-rule::before, .ornamental-rule::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+  .ornamental-rule-glyph { color: var(--accent-soft); font-size: 18px; }
+  .article { max-width: 680px; margin: 0 auto; padding: 0 24px 80px; }
+  .drop-cap::first-letter { font-family: 'Playfair Display', Georgia, serif; font-size: 5.2em; font-weight: 600; float: left; line-height: 0.72; margin-right: 10px; margin-top: 10px; color: var(--accent); }
+  p { margin-bottom: 1.6em; color: var(--ink-soft); }
+  p:last-child { margin-bottom: 0; }
+  .scene-break { text-align: center; margin: 44px 0; color: var(--accent-soft); font-size: 20px; letter-spacing: 0.4em; }
+  .pull-quote { border-left: 3px solid var(--accent); margin: 44px 0; padding: 4px 0 4px 28px; }
+  .pull-quote p { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-style: italic; line-height: 1.5; color: var(--ink); margin: 0; }
+  .inset-block { background: var(--paper-warm); border: 1px solid var(--rule); border-left: 4px solid var(--accent-soft); padding: 24px 28px; margin: 44px 0; border-radius: 0 2px 2px 0; }
+  .inset-label { font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 400; display: block; }
+  .inset-block p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; font-style: italic; color: var(--ink-soft); line-height: 1.75; margin: 0; }
+
+  /* The dream sequence */
+  .dream-block { background: var(--dream); margin: 52px -24px; padding: 56px 48px; position: relative; overflow: hidden; }
+  .dream-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(96,112,144,0.10) 0%, transparent 65%); }
+  .dream-block-inner { position: relative; z-index: 1; }
+  .dream-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--dream-pale); margin-bottom: 28px; display: block; text-align: center; }
+  .dream-block .dream-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(16px, 2.6vw, 20px); font-style: italic; color: var(--dream-bright); line-height: 1.75; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center; }
+  .dream-block .dream-text:last-child { border-bottom: none; padding-bottom: 0; }
+
+  /* The morning after / waking */
+  .waking-block { background: var(--morning); margin: 52px -24px; padding: 52px 48px; position: relative; overflow: hidden; text-align: center; }
+  .waking-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(128,96,64,0.10) 0%, transparent 65%); }
+  .waking-block-inner { position: relative; z-index: 1; }
+  .waking-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--morning-pale); margin-bottom: 24px; display: block; }
+  .waking-block .waking-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(18px, 3vw, 26px); font-style: italic; color: var(--morning-bright); line-height: 1.6; margin: 0 auto; max-width: 540px; }
+
+  .chapter-note { background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; padding: 24px 28px; margin: 52px 0 0; font-family: 'Crimson Pro', Georgia, serif; font-size: 16px; color: var(--ink-muted); line-height: 1.7; }
+  .chapter-note strong { display: block; font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-style: normal; font-weight: 400; }
+  .post-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 80px; border-top: 1px solid var(--rule); }
+  .footer-series { font-family: 'Crimson Pro', Georgia, serif; font-size: 14px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 20px; }
+  .chapter-nav { display: flex; justify-content: space-between; gap: 20px; }
+  .nav-item { flex: 1; padding: 18px 20px; background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; text-decoration: none; transition: border-color 0.2s; }
+  .nav-item:hover { border-color: var(--accent-soft); }
+  .nav-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .nav-title { font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: var(--ink); line-height: 1.35; }
+  .nav-item.next { text-align: right; }
+  .subscribe-bar { background: var(--ink); padding: 52px 24px; text-align: center; margin-top: 20px; }
+  .subscribe-bar h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 400; color: var(--paper); margin-bottom: 10px; }
+  .subscribe-bar p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; color: #9a9088; margin-bottom: 24px; }
+  .subscribe-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; }
+  .subscribe-form input { flex: 1; padding: 12px 16px; background: #2a2420; border: 1px solid #3d3530; border-radius: 2px; color: var(--paper); font-family: 'Source Serif 4', serif; font-size: 15px; outline: none; }
+  .subscribe-form input::placeholder { color: #5a504a; }
+  .subscribe-form input:focus { border-color: var(--accent-soft); }
+  .subscribe-form button { padding: 12px 20px; background: var(--accent); border: none; border-radius: 2px; color: white; font-family: 'Crimson Pro', serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
+  .subscribe-form button:hover { background: var(--accent-soft); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 0.7s ease both; }
+  .article { animation: fadeUp 0.7s 0.15s ease both; }
+  @media (max-width: 600px) { body { font-size: 17px; } .dream-block { margin: 44px -24px; padding: 44px 28px; } .waking-block { margin: 44px -24px; padding: 44px 28px; } .chapter-nav { flex-direction: column; } .nav-item.next { text-align: left; } .subscribe-form { flex-direction: column; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-title">A Life of <span>Tender Mercies</span> &nbsp;·&nbsp; Dee Stevens</div>
+</header>
+
+<div class="hero">
+  <span class="series-label">Part Five: Letting Go &nbsp;·&nbsp; Chapter Thirty</span>
+  <h1><em>The</em> Dream</h1>
+  <div class="byline">
+    <div class="byline-avatar">D</div>
+    <div class="byline-text">
+      <strong>Dee Stevens</strong>
+      Pleasant Grove &amp; Orem, Utah &nbsp;·&nbsp; 2016–2017
+    </div>
+  </div>
+  <div class="ornamental-rule"><span class="ornamental-rule-glyph">&#10022;</span></div>
+</div>
+
+<article class="article">
+
+  <p class="drop-cap">There is a morning in 2016 that I want to tell you about, because it is the strangest thing that happened to me during thirteen years of teaching, and because I think it was the Lord's way of telling me something I was not quite ready to hear on my own.</p>
+
+  <p>By 2016 I was in my mid-sixties and I had been at Dixon Middle School for nine years. I loved my work. I was not looking to stop. But the body keeps its own counsel, and that fall I had reached a level of exhaustion that I was managing rather than acknowledging — the kind of tired you do not fully admit to yourself until something forces the admission.</p>
+
+  <p>One morning I got up and got ready for work like any other day. Kathy was still sleeping, so I crept out of the house without waking her. I got in the car, turned onto State Street, and drove.</p>
+
+  <p>Somewhere on that drive, I fell back asleep.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>Not all the way asleep — not in any way I recognized at the time. What happened was stranger than that. I slipped into a dream while still behind the wheel of a moving car, and the dream was so ordinary that I did not know it was a dream. I was driving to school, as I did every morning. And in the dream, Kathy was somewhere behind me in her own car, following me to work.</p>
+
+  <p>I kept watching the rearview mirror for her. She never appeared.</p>
+
+  <p>Eventually I turned off State Street onto a side road — 1600 South — and pulled over in front of someone's house to wait. I sat there with the engine running, watching the road, certain she would come around the corner at any moment. She did not come. I turned the engine off. I waited some more. The street was quiet. The morning light was ordinary. I was parked in front of a stranger's house in Pleasant Grove waiting for my wife, who was at home asleep.</p>
+
+  <div class="dream-block">
+    <div class="dream-block-inner">
+      <span class="dream-label">1600 South, Pleasant Grove &nbsp;·&nbsp; 2016</span>
+      <div class="dream-text">He pulled over and waited for Kathy to appear in the rearview mirror.</div>
+      <div class="dream-text">She did not come. He turned off the engine. He waited some more.</div>
+      <div class="dream-text">After what must have been an hour, his phone rang.</div>
+      <div class="dream-text">"Dee, where are you? It's time for school to start."</div>
+    </div>
+  </div>
+
+  <p>After what must have been an hour, my phone rang. It was one of my fellow teachers.</p>
+
+  <p>"Dee, where are you? It's time for school to start and all your students are sitting here waiting for you. Are you coming?"</p>
+
+  <p>I began to wake up and realize I had been dreaming. The school contacted the DARE officer — a police officer assigned to our building who had the authority to ping the location of my phone, which was fortunate, because I could not have told anyone where I was. I had no idea. I was parked on a side street in Pleasant Grove, in front of a house I did not recognize, waiting in a dream for a woman who was home in bed.</p>
+
+  <div class="waking-block">
+    <div class="waking-block-inner">
+      <span class="waking-label">What waking up looked like</span>
+      <div class="waking-text">"I began to wake up and realize I had been dreaming. They had to send a police officer to find me using my phone, since I could not tell them where I was."</div>
+    </div>
+  </div>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>The story is funny, in the way that most frightening things become funny once they are behind you. A sixty-five-year-old social studies teacher, located by law enforcement on a residential side street, having driven there in a dream. My colleagues were kind enough to find it amusing rather than alarming, which tells you something about the kind of school it was.</p>
+
+  <p>But I have thought about it many times since, and there is something in it that is not entirely funny. The exhaustion that sent me back to sleep behind the wheel was real. A man in his mid-sixties, on a borrowed kidney, driving to work in the dark on a weekday morning — the body was keeping track of things the mind had chosen not to think about.</p>
+
+  <div class="inset-block">
+    <span class="inset-label">What the dream was actually about</span>
+    <p>He was looking for Kathy. That is the thing he keeps coming back to. In the dream, the only problem was that Kathy had not appeared yet. Everything else — the school, the students waiting, the side street — was simply backdrop. He had pulled over and turned off his engine and was prepared to wait as long as it took. He does not know what to make of that, exactly. He knows what came later. He tries not to read too much into it. He cannot help reading something into it.</p>
+  </div>
+
+  <p>I retired from Dixon Middle School in 2017. It was not entirely my choice and not entirely not my choice — the way most endings are, when you are honest about them. The work had been good. The students had been worth every year. I had taught a hundred and forty lessons and watched children learn to write thesis statements and sat a boy with a fork problem next to my desk and watched him bring me celery. That was enough for a career. That was more than enough.</p>
+
+  <div class="pull-quote">
+    <p>"I had not planned to stop. The Lord had other ideas, which I have come to accept is simply how He operates. He rarely asks permission. He tends to arrange circumstances and trust you to read them."</p>
+  </div>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>After I retired, Kathy and I began looking for a place of our own to buy. We had been renting for years — first in Pleasant Grove, then up in Salt Lake with Kathy's mother during those years caring for her, then back down to Lindon in the basement apartment of a good man named Bill Hardy who made me do his yardwork as part of the rental agreement and turned out to be one of the better neighbors we ever had.</p>
+
+  <p>We looked for nearly two years before we found the right place. It was a townhome in Orem — the Sharon Park area, a ward full of young families and college students and the particular energy of people who are just beginning their lives. Every summer a third of the ward would move out and a new group would move in. We had expected, at our age, to go somewhere and finally serve. What we found was that the young people around us loved us and served us instead, and that this was its own kind of tender mercy — to be received into a community that did not need you to be useful, that simply wanted you there.</p>
+
+  <p>We moved in. We unpacked one more time. Kathy learned the new ward kitchen and I found my way around the new neighborhood, and we settled in to whatever the Lord had next.</p>
+
+  <p>It turned out He had quite a lot.</p>
+
+  <div class="chapter-note">
+    <strong>A Note for the Grandkids</strong>
+    In 2016, Grandpa drove to work, fell asleep at the wheel somewhere on State Street, and ended up parked on a residential side street in Pleasant Grove waiting — in a dream — for Grandma Kathy to appear in his rearview mirror. The school had to send the DARE officer to find him using his phone, because he could not tell anyone where he was. He retired the following year. He and Grandma spent nearly two years looking for a place to buy and eventually found a townhome in Orem, in a ward full of people young enough to be their grandchildren. They had expected to serve. They found themselves being served instead, which surprised them, and which they eventually accepted as the Lord knowing better than they did what they needed.
+  </div>
+
+</article>
+
+<div class="post-footer">
+  <div class="footer-series">A Life of Tender Mercies &nbsp;·&nbsp; Part Five</div>
+  <div class="chapter-nav">
+    <a class="nav-item prev" href="chapter-29.html">
+      <div class="nav-label">&larr; Previous</div>
+      <div class="nav-title">The Boy With the Fork</div>
+    </a>
+    <a class="nav-item next" href="chapter-31.html">
+      <div class="nav-label">Next &rarr;</div>
+      <div class="nav-title">The Family History Years</div>
+    </a>
+  </div>
+</div>
+
+<div class="subscribe-bar">
+  <h3>Follow along with Dee's story</h3>
+  <p>New chapters delivered to your inbox, free.</p>
+  <div class="subscribe-form">
+    <input type="email" placeholder="your@email.com">
+    <button>Subscribe</button>
+  </div>
+</div>
+
+</body>
+</html>
