@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Not Really Alone — A Life of Tender Mercies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1612; --ink-soft: #3d3530; --ink-muted: #7a6e68;
+    --paper: #faf7f2; --paper-warm: #f5f0e8;
+    --accent: #8b3a2a; --accent-soft: #c4785f; --rule: #d9d0c4;
+    --recliner: #0c0e14; --recliner-pale: #607090; --recliner-bright: #b0b8d8;
+    --warmth: #100c08; --warmth-pale: #806848; --warmth-bright: #d8b888;
+    --linda: #0a100e; --linda-pale: #487060; --linda-bright: #90c0b0;
+  }
+  html { scroll-behavior: smooth; }
+  body { background-color: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-weight: 300; font-size: 19px; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+  .masthead { border-bottom: 1px solid var(--rule); padding: 20px 0 18px; text-align: center; background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .masthead-title { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); }
+  .masthead-title span { color: var(--accent); }
+  .hero { max-width: 680px; margin: 0 auto; padding: 72px 24px 0; }
+  .series-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: block; }
+  h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px, 5vw, 52px); font-weight: 600; line-height: 1.15; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 28px; }
+  h1 em { font-style: italic; font-weight: 400; color: var(--ink-soft); }
+  .byline { display: flex; align-items: center; gap: 14px; margin-bottom: 48px; }
+  .byline-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-soft), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 15px; color: white; flex-shrink: 0; }
+  .byline-text { font-family: 'Crimson Pro', Georgia, serif; font-size: 15px; color: var(--ink-muted); line-height: 1.4; }
+  .byline-text strong { color: var(--ink-soft); font-weight: 400; display: block; font-size: 16px; }
+  .ornamental-rule { display: flex; align-items: center; gap: 16px; margin: 0 0 52px; }
+  .ornamental-rule::before, .ornamental-rule::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+  .ornamental-rule-glyph { color: var(--accent-soft); font-size: 18px; }
+  .article { max-width: 680px; margin: 0 auto; padding: 0 24px 80px; }
+  .drop-cap::first-letter { font-family: 'Playfair Display', Georgia, serif; font-size: 5.2em; font-weight: 600; float: left; line-height: 0.72; margin-right: 10px; margin-top: 10px; color: var(--accent); }
+  p { margin-bottom: 1.6em; color: var(--ink-soft); }
+  p:last-child { margin-bottom: 0; }
+  .scene-break { text-align: center; margin: 44px 0; color: var(--accent-soft); font-size: 20px; letter-spacing: 0.4em; }
+  .pull-quote { border-left: 3px solid var(--accent); margin: 44px 0; padding: 4px 0 4px 28px; }
+  .pull-quote p { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-style: italic; line-height: 1.5; color: var(--ink); margin: 0; }
+  .inset-block { background: var(--paper-warm); border: 1px solid var(--rule); border-left: 4px solid var(--accent-soft); padding: 24px 28px; margin: 44px 0; border-radius: 0 2px 2px 0; }
+  .inset-label { font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 400; display: block; }
+  .inset-block p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; font-style: italic; color: var(--ink-soft); line-height: 1.75; margin: 0 0 12px; }
+  .inset-block p:last-child { margin: 0; }
+
+  /* The recliner — the dark night of the ankle */
+  .recliner-block { background: var(--recliner); margin: 52px -24px; padding: 56px 48px; position: relative; overflow: hidden; }
+  .recliner-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(96,112,144,0.08) 0%, transparent 65%); }
+  .recliner-block-inner { position: relative; z-index: 1; }
+  .recliner-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--recliner-pale); margin-bottom: 28px; display: block; text-align: center; }
+  .recliner-block .recliner-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(16px, 2.6vw, 20px); font-style: italic; color: var(--recliner-bright); line-height: 1.75; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center; }
+  .recliner-block .recliner-text:last-child { border-bottom: none; padding-bottom: 0; }
+
+  /* The warmth — Christ in the chair */
+  .warmth-block { background: var(--warmth); margin: 52px -24px; padding: 52px 48px; position: relative; overflow: hidden; text-align: center; }
+  .warmth-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(128,104,72,0.12) 0%, transparent 65%); }
+  .warmth-block-inner { position: relative; z-index: 1; }
+  .warmth-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--warmth-pale); margin-bottom: 24px; display: block; }
+  .warmth-block .warmth-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(18px, 3vw, 26px); font-style: italic; color: var(--warmth-bright); line-height: 1.65; margin: 0 auto; max-width: 540px; }
+
+  /* Linda block */
+  .linda-block { background: var(--linda); margin: 52px -24px; padding: 52px 48px; position: relative; overflow: hidden; text-align: center; }
+  .linda-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(72,112,96,0.10) 0%, transparent 65%); }
+  .linda-block-inner { position: relative; z-index: 1; }
+  .linda-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--linda-pale); margin-bottom: 24px; display: block; }
+  .linda-block .linda-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(17px, 2.8vw, 22px); font-style: italic; color: var(--linda-bright); line-height: 1.7; margin: 0 0 14px; }
+  .linda-block .linda-text:last-child { margin: 0; }
+
+  .chapter-note { background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; padding: 24px 28px; margin: 52px 0 0; font-family: 'Crimson Pro', Georgia, serif; font-size: 16px; color: var(--ink-muted); line-height: 1.7; }
+  .chapter-note strong { display: block; font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-style: normal; font-weight: 400; }
+  .post-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 80px; border-top: 1px solid var(--rule); }
+  .footer-series { font-family: 'Crimson Pro', Georgia, serif; font-size: 14px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 20px; }
+  .chapter-nav { display: flex; justify-content: space-between; gap: 20px; }
+  .nav-item { flex: 1; padding: 18px 20px; background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; text-decoration: none; transition: border-color 0.2s; }
+  .nav-item:hover { border-color: var(--accent-soft); }
+  .nav-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .nav-title { font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: var(--ink); line-height: 1.35; }
+  .nav-item.next { text-align: right; }
+  .subscribe-bar { background: var(--ink); padding: 52px 24px; text-align: center; margin-top: 20px; }
+  .subscribe-bar h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 400; color: var(--paper); margin-bottom: 10px; }
+  .subscribe-bar p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; color: #9a9088; margin-bottom: 24px; }
+  .subscribe-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; }
+  .subscribe-form input { flex: 1; padding: 12px 16px; background: #2a2420; border: 1px solid #3d3530; border-radius: 2px; color: var(--paper); font-family: 'Source Serif 4', serif; font-size: 15px; outline: none; }
+  .subscribe-form input::placeholder { color: #5a504a; }
+  .subscribe-form input:focus { border-color: var(--accent-soft); }
+  .subscribe-form button { padding: 12px 20px; background: var(--accent); border: none; border-radius: 2px; color: white; font-family: 'Crimson Pro', serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
+  .subscribe-form button:hover { background: var(--accent-soft); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 0.7s ease both; }
+  .article { animation: fadeUp 0.7s 0.15s ease both; }
+  @media (max-width: 600px) { body { font-size: 17px; } .recliner-block { margin: 44px -24px; padding: 44px 28px; } .warmth-block { margin: 44px -24px; padding: 44px 28px; } .linda-block { margin: 44px -24px; padding: 44px 28px; } .chapter-nav { flex-direction: column; } .nav-item.next { text-align: left; } .subscribe-form { flex-direction: column; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-title">A Life of <span>Tender Mercies</span> &nbsp;·&nbsp; Dee Stevens</div>
+</header>
+
+<div class="hero">
+  <span class="series-label">Part Five: Letting Go &nbsp;·&nbsp; Chapter Thirty-Three</span>
+  <h1>Not Really <em>Alone</em></h1>
+  <div class="byline">
+    <div class="byline-avatar">D</div>
+    <div class="byline-text">
+      <strong>Dee Stevens</strong>
+      Orem, Utah &nbsp;·&nbsp; 2024
+    </div>
+  </div>
+  <div class="ornamental-rule"><span class="ornamental-rule-glyph">&#10022;</span></div>
+</div>
+
+<article class="article">
+
+  <p class="drop-cap">In the winter of 2024 I began going to the stake family history center on Wednesday evenings. I needed somewhere to be. The family history work had not stopped needing doing, and Wednesday evenings at home had become the kind of long that is not helped by sitting still.</p>
+
+  <p>There was a woman there on the same evenings I was. I did not know her name at first. What I noticed was her laugh — sweet, unselfconscious, the laugh of a person who finds the world genuinely amusing — and the sparkle in her eyes when she looked up from her work. I noticed both of these things before I learned anything else about her.</p>
+
+  <p>Her name was Linda Ogden.</p>
+
+  <p>Around the time I found that out, she shifted her seat and began sitting next to me. I did not think I was imagining it. I was also not entirely sure I was reading it correctly. I was a man who had been married for forty-two years and widowed for a few months. The territory was unfamiliar.</p>
+
+  <div class="linda-block">
+    <div class="linda-block-inner">
+      <span class="linda-label">Stake Family History Center &nbsp;·&nbsp; Orem, Utah &nbsp;·&nbsp; 2024</span>
+      <div class="linda-text">He asked her if she would attend a play with him — Fiddler on the Roof at Hale Center in Sandy.</div>
+      <div class="linda-text">To his surprise, she said yes.</div>
+      <div class="linda-text">They agreed it would be a nice friendship and could go no farther. She had been a widow for six years. He had been alone for just a few months.</div>
+      <div class="linda-text">Their next date was an endowment session at the Timpanogos Temple. They stood together in the prayer circle.</div>
+    </div>
+  </div>
+
+  <p>She is such a special woman, and every minute we spend together makes me happy. The Light of Christ shines in her eyes — I do not say that as a figure of speech. I mean it as a plain description of what I see when I look at her. She has been through her own losses and carries them with a grace that is evident without being performed. I did not think, in the fall of 2023, that I was capable of being this happy again. I was wrong about that, which is one of the better things I have been wrong about.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>On March 28th, 2024, my doctor told me my right ankle was bone on bone. It would need to be fused. It had been making a scraping sound for three months that I had been doing my best to ignore, and the ignoring had not helped. The neuropathy in my feet made surgical healing uncertain, so we agreed to try a fitted boot first. I drove home from that appointment feeling sorry for myself, which I try not to do and am not always successful at avoiding.</p>
+
+  <p>When I stepped inside my door, a large loneliness came in with me. I had felt it building all through March — not sudden, but accumulating, the way weather accumulates. I sat down in Kathy's recliner and fell asleep.</p>
+
+  <p>When I woke up, I felt worse than before.</p>
+
+  <div class="recliner-block">
+    <div class="recliner-block-inner">
+      <span class="recliner-label">Orem, Utah &nbsp;·&nbsp; March 28, 2024</span>
+      <div class="recliner-text">Bone on bone. A scraping sound for three months. A boot, maybe surgery. More to carry.</div>
+      <div class="recliner-text">He sat in Kathy's recliner and slept. When he woke he felt more lonely than ever.</div>
+      <div class="recliner-text">He picked up the book he had been reading.</div>
+      <div class="recliner-text">He read about Christ praying for Simon Peter.</div>
+    </div>
+  </div>
+
+  <p>The book was called <em>Remember, Remember.</em> I had been reading through it slowly over the previous weeks. I opened it that afternoon to a chapter on the Savior's prayers — the account in Third Nephi of the 2,500 Nephites who heard the Savior pray for them and described afterward what that had felt like, and the account at the Last Supper when He turned to Simon Peter and said: <em>I have prayed for you, that your faith fail not.</em></p>
+
+  <p>I sat with that for a while. I thought about what it would feel like to stand face to face with my Savior and hear Him say that He had prayed for me. Personally. By name.</p>
+
+  <p>And then something happened that I want to describe carefully, because I want to get it right.</p>
+
+  <p>I was almost suddenly overwhelmed with the warmest, most comforting feeling I have ever experienced. It came over me completely. I felt — and I choose this word deliberately, because it is the accurate one — I felt that the Savior had wrapped me in His arms and was simply holding me. The tears came and did not stop for some time.</p>
+
+  <div class="warmth-block">
+    <div class="warmth-block-inner">
+      <span class="warmth-label">Kathy's recliner &nbsp;·&nbsp; Orem, Utah &nbsp;·&nbsp; March 2024</span>
+      <div class="warmth-text">"Thinking back, I wonder if My Friend was reminding me He had answered many prayers on my behalf during my life. I am still physically alone in my house. But I know I am not really alone. Tender, tender mercies."</div>
+    </div>
+  </div>
+
+  <p>I have been the recipient of tender mercies my entire life. I know what they feel like by now — the specific quality of something arriving that you did not arrange and could not have arranged, something that fits precisely into the shape of what you needed. What I felt in that chair on that afternoon was the largest version of that feeling I have ever known. Not comfort in a general sense. Comfort addressed to me, from Someone who knew exactly what March 2024 had cost and was choosing to be present in it.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>I kept going to the family history center through that winter and into spring, eventually navigating on a walker after the ankle surgery, accepting the help of good neighbors without too much complaint. I had found through continued searching a pattern I had not noticed before: by looking up spousal sealings and cross-referencing the ordinances recorded for each spouse, I could identify sealings that had fallen through the cracks — faithful saints who had done careful genealogy work but whose ordinances had never been completed. There were more of them than I expected.</p>
+
+  <div class="inset-block">
+    <span class="inset-label">The second campaign — 44 for Four, 2024</span>
+    <p>The Orem Temple had recently opened. President Christofferson had said in general conference that the reason this earth was created was to seal families together for eternity. That statement burned in Dee's heart. With Linda's encouragement, and drawing on what he had learned from running the first campaign, he built a second 44 for Four program — this time aimed at getting young couples into the newly opened temple. Bishop Jarad Hall received the proposal, jumped out of his chair, and immediately dispatched his counselors to build a pilot group of five families.</p>
+    <p>A month later those families stood and reported their experiences. Grown men stood with tears on their faces and said their lives had changed. By the end of summer, fifty-eight families had been sealed.</p>
+  </div>
+
+  <p>Linda was part of how that happened. Her encouragement kept me moving when the ankle and the loneliness and the accumulated weight of the year were all pressing in the same direction. She had a way of making things feel possible that I had not expected to find again in this season of my life.</p>
+
+  <div class="pull-quote">
+    <p>"She is such a special girl. Every minute we spend together makes me so happy. The Light of Christ shines in her eyes."</p>
+  </div>
+
+  <p>I am still physically alone in my house. That is the plain fact of it and I do not pretend otherwise. The rooms still ring with Kathy. The evenings are still long in ways they never used to be. I have a borrowed kidney and a fused ankle and a life that has cost more than I would have chosen to pay.</p>
+
+  <p>And I am not really alone.</p>
+
+  <p>The Savior prayed for Simon Peter by name. I believe He has prayed for me. I believe the evidence for this is sitting in seventy-four years of a life that should have ended a half-dozen times and did not — a block that missed by inches, a nurse who noticed a soaking pillow, a kidney that kept working when the doctors said to expect eight years, a grant that arrived on the last possible day, a boy who brought me celery, a woman with a laugh I heard from across a room. Every chapter of this record is a chapter of that evidence.</p>
+
+  <p>Tender, tender mercies. I know what they look like by now.</p>
+
+  <div class="chapter-note">
+    <strong>A Note for the Grandkids</strong>
+    In 2024 Grandpa met a woman named Linda Ogden at the family history center. He noticed her laugh first, and then the light in her eyes. He asked her to a play. She said yes. They have been careful with each other — she had been a widow for six years, he for just a few months — but happy together in a way he did not think was still possible for him. That same year his ankle gave out and he came home from the doctor feeling very sorry for himself, sat in Grandma Kathy's recliner, and fell asleep. When he woke up feeling worse, he picked up a book and read about Christ telling Simon Peter that He had prayed for him specifically. Then the warmest feeling he had ever felt came over him entirely, and the tears ran down his face. He says he believes the Savior was reminding him of how many prayers had been answered over a long life. He is still alone in his house. He says he knows he is not really alone.
+  </div>
+
+</article>
+
+<div class="post-footer">
+  <div class="footer-series">A Life of Tender Mercies &nbsp;·&nbsp; Part Five</div>
+  <div class="chapter-nav">
+    <a class="nav-item prev" href="chapter-32.html">
+      <div class="nav-label">&larr; Previous</div>
+      <div class="nav-title">Kathy</div>
+    </a>
+    <a class="nav-item next" href="epilogue.html">
+      <div class="nav-label">Next &rarr;</div>
+      <div class="nav-title">The Floor</div>
+    </a>
+  </div>
+</div>
+
+<div class="subscribe-bar">
+  <h3>Follow along with Dee's story</h3>
+  <p>New chapters delivered to your inbox, free.</p>
+  <div class="subscribe-form">
+    <input type="email" placeholder="your@email.com">
+    <button>Subscribe</button>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elora Lyn — A Life of Tender Mercies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1612; --ink-soft: #3d3530; --ink-muted: #7a6e68;
+    --paper: #faf7f2; --paper-warm: #f5f0e8;
+    --accent: #8b3a2a; --accent-soft: #c4785f; --rule: #d9d0c4;
+    --elora: #0c0a10; --elora-pale: #706880; --elora-bright: #c8b8d8;
+    --airport: #100e08; --airport-pale: #806848; --airport-bright: #d0b888;
+  }
+  html { scroll-behavior: smooth; }
+  body { background-color: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-weight: 300; font-size: 19px; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+  .masthead { border-bottom: 1px solid var(--rule); padding: 20px 0 18px; text-align: center; background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .masthead-title { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); }
+  .masthead-title span { color: var(--accent); }
+  .hero { max-width: 680px; margin: 0 auto; padding: 72px 24px 0; }
+  .series-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: block; }
+  h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(40px, 7vw, 72px); font-weight: 600; line-height: 1.1; color: var(--ink); letter-spacing: -0.02em; margin-bottom: 28px; }
+  .byline { display: flex; align-items: center; gap: 14px; margin-bottom: 48px; }
+  .byline-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-soft), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 15px; color: white; flex-shrink: 0; }
+  .byline-text { font-family: 'Crimson Pro', Georgia, serif; font-size: 15px; color: var(--ink-muted); line-height: 1.4; }
+  .byline-text strong { color: var(--ink-soft); font-weight: 400; display: block; font-size: 16px; }
+  .ornamental-rule { display: flex; align-items: center; gap: 16px; margin: 0 0 52px; }
+  .ornamental-rule::before, .ornamental-rule::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+  .ornamental-rule-glyph { color: var(--accent-soft); font-size: 18px; }
+  .article { max-width: 680px; margin: 0 auto; padding: 0 24px 80px; }
+  .drop-cap::first-letter { font-family: 'Playfair Display', Georgia, serif; font-size: 5.2em; font-weight: 600; float: left; line-height: 0.72; margin-right: 10px; margin-top: 10px; color: var(--accent); }
+  p { margin-bottom: 1.6em; color: var(--ink-soft); }
+  p:last-child { margin-bottom: 0; }
+  .scene-break { text-align: center; margin: 44px 0; color: var(--accent-soft); font-size: 20px; letter-spacing: 0.4em; }
+  .pull-quote { border-left: 3px solid var(--accent); margin: 44px 0; padding: 4px 0 4px 28px; }
+  .pull-quote p { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-style: italic; line-height: 1.5; color: var(--ink); margin: 0; }
+  .inset-block { background: var(--paper-warm); border: 1px solid var(--rule); border-left: 4px solid var(--accent-soft); padding: 24px 28px; margin: 44px 0; border-radius: 0 2px 2px 0; }
+  .inset-label { font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 400; display: block; }
+  .inset-block p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; font-style: italic; color: var(--ink-soft); line-height: 1.75; margin: 0 0 12px; }
+  .inset-block p:last-child { margin: 0; }
+
+  /* The airport — the photo */
+  .airport-block { background: var(--airport); margin: 52px -24px; padding: 56px 48px; position: relative; overflow: hidden; text-align: center; }
+  .airport-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(128,104,72,0.10) 0%, transparent 65%); }
+  .airport-block-inner { position: relative; z-index: 1; }
+  .airport-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--airport-pale); margin-bottom: 24px; display: block; }
+  .airport-block .airport-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(17px, 2.8vw, 22px); font-style: italic; color: var(--airport-bright); line-height: 1.7; margin: 0 0 14px; }
+  .airport-block .airport-text:last-child { margin: 0; }
+
+  /* Elora block */
+  .elora-block { background: var(--elora); margin: 52px -24px; padding: 52px 48px; position: relative; overflow: hidden; text-align: center; }
+  .elora-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(112,104,128,0.08) 0%, transparent 65%); }
+  .elora-block-inner { position: relative; z-index: 1; }
+  .elora-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--elora-pale); margin-bottom: 24px; display: block; }
+  .elora-block .elora-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(18px, 3vw, 26px); font-style: italic; color: var(--elora-bright); line-height: 1.6; margin: 0 auto; max-width: 540px; }
+
+  .chapter-note { background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; padding: 24px 28px; margin: 52px 0 0; font-family: 'Crimson Pro', Georgia, serif; font-size: 16px; color: var(--ink-muted); line-height: 1.7; }
+  .chapter-note strong { display: block; font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-style: normal; font-weight: 400; }
+  .post-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 80px; border-top: 1px solid var(--rule); }
+  .footer-series { font-family: 'Crimson Pro', Georgia, serif; font-size: 14px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 20px; }
+  .chapter-nav { display: flex; justify-content: space-between; gap: 20px; }
+  .nav-item { flex: 1; padding: 18px 20px; background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; text-decoration: none; transition: border-color 0.2s; }
+  .nav-item:hover { border-color: var(--accent-soft); }
+  .nav-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .nav-title { font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: var(--ink); line-height: 1.35; }
+  .nav-item.next { text-align: right; }
+  .subscribe-bar { background: var(--ink); padding: 52px 24px; text-align: center; margin-top: 20px; }
+  .subscribe-bar h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 400; color: var(--paper); margin-bottom: 10px; }
+  .subscribe-bar p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; color: #9a9088; margin-bottom: 24px; }
+  .subscribe-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; }
+  .subscribe-form input { flex: 1; padding: 12px 16px; background: #2a2420; border: 1px solid #3d3530; border-radius: 2px; color: var(--paper); font-family: 'Source Serif 4', serif; font-size: 15px; outline: none; }
+  .subscribe-form input::placeholder { color: #5a504a; }
+  .subscribe-form input:focus { border-color: var(--accent-soft); }
+  .subscribe-form button { padding: 12px 20px; background: var(--accent); border: none; border-radius: 2px; color: white; font-family: 'Crimson Pro', serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
+  .subscribe-form button:hover { background: var(--accent-soft); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 0.7s ease both; }
+  .article { animation: fadeUp 0.7s 0.15s ease both; }
+  @media (max-width: 600px) { body { font-size: 17px; } .airport-block { margin: 44px -24px; padding: 44px 28px; } .elora-block { margin: 44px -24px; padding: 44px 28px; } .chapter-nav { flex-direction: column; } .nav-item.next { text-align: left; } .subscribe-form { flex-direction: column; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-title">A Life of <span>Tender Mercies</span> &nbsp;·&nbsp; Dee Stevens</div>
+</header>
+
+<div class="hero">
+  <span class="series-label">Part Five: Letting Go &nbsp;·&nbsp; Chapter Thirty-Five</span>
+  <h1>Elora Lyn</h1>
+  <div class="byline">
+    <div class="byline-avatar">D</div>
+    <div class="byline-text">
+      <strong>Dee Stevens</strong>
+      Pleasant Grove, Utah &nbsp;·&nbsp; 2007
+    </div>
+  </div>
+  <div class="ornamental-rule"><span class="ornamental-rule-glyph">&#10022;</span></div>
+</div>
+
+<article class="article">
+
+  <p class="drop-cap">McKay came home from his mission to Mexico in the spring of 2007, and the whole family came to the airport. That is the kind of thing this family does — we show up, all of us, for the arrivals and the departures, the homecomings and the farewells. Travis and Krista were there with their children: Caleb, Shaustia, Walker, and little Elora Lyn, who was two years old.</p>
+
+  <p>We have pictures from that day. In one of them, Ellie is holding a welcome home sign, beaming the way two-year-olds beam when they are part of something important and know it. It is a happy photograph. It is one of the last ones of her well.</p>
+
+  <p>She had been showing signs of something for a little while — a painful illness no one had yet named. That night, after the homecoming, after the hugs and the stories and the particular joy of having a missionary back in the room, little Ellie ended up at Primary Children's Hospital.</p>
+
+  <p>They found a brain tumor.</p>
+
+  <p>It was inoperable.</p>
+
+  <p>She passed away that night.</p>
+
+  <div class="airport-block">
+    <div class="airport-block-inner">
+      <span class="airport-label">The Salt Lake Airport &nbsp;·&nbsp; Spring 2007</span>
+      <div class="airport-text">McKay comes through the doors. The family is all there. Ellie holds her sign.</div>
+      <div class="airport-text">That night she is at Primary Children's. By morning she is gone.</div>
+      <div class="airport-text">She was two years old.</div>
+    </div>
+  </div>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>I do not have words adequate to what Travis and Krista went through that night, and in the weeks and months and years that followed. I am her grandfather and I felt the loss deeply. They are her parents. There is no comparison to be made between those two experiences. What I know of what they carried, I know from watching them carry it — from the outside, from a distance, from the place where grandparents stand when their children are suffering something they cannot fix.</p>
+
+  <p>Krista, over the eight years that followed, began writing. She recorded her thoughts about Elora — about that night, about grief and faith and the long work of learning to let go of a child. The writing was honest and difficult and took the better part of a decade to complete. It became a book.</p>
+
+  <div class="inset-block">
+    <span class="inset-label">Unbearable Burden</span>
+    <p>Krista Walker Stevens spent eight years writing about the night they lost Elora Lyn and the years that followed. The book is called <em>Unbearable Burden.</em> It is, as Dee describes it, a touching story about what it means to let go of a child — to hold faith in one hand and grief in the other and keep walking forward. It exists because Krista had the courage to sit with the hardest thing and put it into words, and because she believed that words might help someone else do the same.</p>
+    <p>It is available and worth reading. It is not an easy book. It is an honest one.</p>
+  </div>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>Elora Lyn is buried in the American Fork Cemetery. Two of her uncles — Benjamin and Jared — have since been buried there as well. Three members of this family, in the same ground, all of them gone before their time by any accounting the living would make.</p>
+
+  <p>I have thought often about what it means that they are together there. I do not think it means the Lord made a mistake. I think it means the Lord's accounting is different from ours — that what looks like early from this side may look entirely different from the other side, where Elora has been waiting all this time, and where Jared and Ben arrived to find a niece they had loved.</p>
+
+  <div class="elora-block">
+    <div class="elora-block-inner">
+      <span class="elora-label">American Fork Cemetery</span>
+      <div class="elora-text">"Our little angel granddaughter passed away that night. She is buried in American Fork. Benjamin and Jared, two of her uncles, have since joined her there."</div>
+    </div>
+  </div>
+
+  <p>The day McKay came home was one of the happiest days of that year. Elora held her sign and the whole family was together and a missionary walked through the doors and everyone was present for it. That happened. The photograph is real. The joy of that afternoon was real.</p>
+
+  <p>And then the evening came and brought what it brought.</p>
+
+  <p>I have lived long enough to know that this is sometimes how it goes — that the Lord does not always separate the happy days from the hard ones, that sometimes the joy and the grief arrive in the same twenty-four hours, in the same family, in the same airport. I do not know why He arranges it that way sometimes. I know that He does.</p>
+
+  <div class="pull-quote">
+    <p>"We have the pictures from that day. Ellie holding her sign. Everyone together. That afternoon was real, and it was good, and nothing that came after it erases what it was."</p>
+  </div>
+
+  <p>Elora Lyn was two years old. She had Caleb and Shaustia and Walker for siblings, and Travis and Krista for parents, and a grandfather who thinks about her still. She held a welcome home sign at an airport on the day her uncle came home from his mission. She was beaming.</p>
+
+  <p>That is the picture I keep.</p>
+
+  <div class="chapter-note">
+    <strong>A Note for the Grandkids</strong>
+    On the day your Uncle McKay came home from his mission in Mexico, Travis and Krista's daughter Elora Lyn — little Ellie, two years old — held a welcome home sign at the airport while everyone gathered around. That same night she was admitted to Primary Children's Hospital. She had an inoperable brain tumor. She passed away that night. She is buried in American Fork, and your Uncle Jared and Uncle Ben are now buried near her. Krista spent eight years writing about losing Ellie. The book is called <em>Unbearable Burden.</em> It is a tender and honest account of faith and grief and letting go. Your grandfather thinks about Ellie still. He keeps the airport picture.
+  </div>
+
+</article>
+
+<div class="post-footer">
+  <div class="footer-series">A Life of Tender Mercies &nbsp;·&nbsp; Part Five</div>
+  <div class="chapter-nav">
+    <a class="nav-item prev" href="chapter-34.html">
+      <div class="nav-label">&larr; Previous</div>
+      <div class="nav-title">The Floor</div>
+    </a>
+    <a class="nav-item next" href="chapter-36.html">
+      <div class="nav-label">Next &rarr;</div>
+      <div class="nav-title">The Christmas Tree</div>
+    </a>
+  </div>
+</div>
+
+<div class="subscribe-bar">
+  <h3>Follow along with Dee's story</h3>
+  <p>New chapters delivered to your inbox, free.</p>
+  <div class="subscribe-form">
+    <input type="email" placeholder="your@email.com">
+    <button>Subscribe</button>
+  </div>
+</div>
+
+</body>
+</html>
