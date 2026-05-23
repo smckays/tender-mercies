@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Darrell Fairbanks — A Life of Tender Mercies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1612; --ink-soft: #3d3530; --ink-muted: #7a6e68;
+    --paper: #faf7f2; --paper-warm: #f5f0e8;
+    --accent: #8b3a2a; --accent-soft: #c4785f; --rule: #d9d0c4;
+    --tenth: #0e0e12; --tenth-pale: #707080; --tenth-bright: #c0c0d0;
+    --darrell: #080e0c; --darrell-pale: #406858; --darrell-bright: #88b8a0;
+  }
+  html { scroll-behavior: smooth; }
+  body { background-color: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-weight: 300; font-size: 19px; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+  .masthead { border-bottom: 1px solid var(--rule); padding: 20px 0 18px; text-align: center; background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .masthead-title { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); }
+  .masthead-title span { color: var(--accent); }
+  .hero { max-width: 680px; margin: 0 auto; padding: 72px 24px 0; }
+  .series-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: block; }
+  h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px, 5vw, 52px); font-weight: 600; line-height: 1.15; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 28px; }
+  h1 em { font-style: italic; font-weight: 400; color: var(--ink-soft); }
+  .byline { display: flex; align-items: center; gap: 14px; margin-bottom: 48px; }
+  .byline-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-soft), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 15px; color: white; flex-shrink: 0; }
+  .byline-text { font-family: 'Crimson Pro', Georgia, serif; font-size: 15px; color: var(--ink-muted); line-height: 1.4; }
+  .byline-text strong { color: var(--ink-soft); font-weight: 400; display: block; font-size: 16px; }
+  .ornamental-rule { display: flex; align-items: center; gap: 16px; margin: 0 0 52px; }
+  .ornamental-rule::before, .ornamental-rule::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+  .ornamental-rule-glyph { color: var(--accent-soft); font-size: 18px; }
+  .article { max-width: 680px; margin: 0 auto; padding: 0 24px 80px; }
+  .drop-cap::first-letter { font-family: 'Playfair Display', Georgia, serif; font-size: 5.2em; font-weight: 600; float: left; line-height: 0.72; margin-right: 10px; margin-top: 10px; color: var(--accent); }
+  p { margin-bottom: 1.6em; color: var(--ink-soft); }
+  p:last-child { margin-bottom: 0; }
+  .scene-break { text-align: center; margin: 44px 0; color: var(--accent-soft); font-size: 20px; letter-spacing: 0.4em; }
+  .pull-quote { border-left: 3px solid var(--accent); margin: 44px 0; padding: 4px 0 4px 28px; }
+  .pull-quote p { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-style: italic; line-height: 1.5; color: var(--ink); margin: 0; }
+  .inset-block { background: var(--paper-warm); border: 1px solid var(--rule); border-left: 4px solid var(--accent-soft); padding: 24px 28px; margin: 44px 0; border-radius: 0 2px 2px 0; }
+  .inset-label { font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 400; display: block; }
+  .inset-block p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; font-style: italic; color: var(--ink-soft); line-height: 1.75; margin: 0 0 12px; }
+  .inset-block p:last-child { margin: 0; }
+
+  /* The tenth grade year */
+  .tenth-block { background: var(--tenth); margin: 52px -24px; padding: 56px 48px; position: relative; overflow: hidden; }
+  .tenth-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(112,112,128,0.07) 0%, transparent 65%); }
+  .tenth-block-inner { position: relative; z-index: 1; }
+  .tenth-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--tenth-pale); margin-bottom: 28px; display: block; text-align: center; }
+  .tenth-block .tenth-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(16px, 2.6vw, 20px); font-style: italic; color: var(--tenth-bright); line-height: 1.75; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center; }
+  .tenth-block .tenth-text:last-child { border-bottom: none; padding-bottom: 0; }
+
+  /* What Darrell was */
+  .darrell-block { background: var(--darrell); margin: 52px -24px; padding: 52px 48px; position: relative; overflow: hidden; text-align: center; }
+  .darrell-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(64,104,88,0.10) 0%, transparent 65%); }
+  .darrell-block-inner { position: relative; z-index: 1; }
+  .darrell-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--darrell-pale); margin-bottom: 24px; display: block; }
+  .darrell-block .darrell-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(17px, 2.8vw, 22px); font-style: italic; color: var(--darrell-bright); line-height: 1.7; margin: 0 0 14px; }
+  .darrell-block .darrell-text:last-child { margin: 0; }
+
+  .chapter-note { background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; padding: 24px 28px; margin: 52px 0 0; font-family: 'Crimson Pro', Georgia, serif; font-size: 16px; color: var(--ink-muted); line-height: 1.7; }
+  .chapter-note strong { display: block; font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-style: normal; font-weight: 400; }
+  .post-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 80px; border-top: 1px solid var(--rule); }
+  .footer-series { font-family: 'Crimson Pro', Georgia, serif; font-size: 14px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 20px; }
+  .chapter-nav { display: flex; justify-content: space-between; gap: 20px; }
+  .nav-item { flex: 1; padding: 18px 20px; background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; text-decoration: none; transition: border-color 0.2s; }
+  .nav-item:hover { border-color: var(--accent-soft); }
+  .nav-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .nav-title { font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: var(--ink); line-height: 1.35; }
+  .nav-item.next { text-align: right; }
+  .subscribe-bar { background: var(--ink); padding: 52px 24px; text-align: center; margin-top: 20px; }
+  .subscribe-bar h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 400; color: var(--paper); margin-bottom: 10px; }
+  .subscribe-bar p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; color: #9a9088; margin-bottom: 24px; }
+  .subscribe-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; }
+  .subscribe-form input { flex: 1; padding: 12px 16px; background: #2a2420; border: 1px solid #3d3530; border-radius: 2px; color: var(--paper); font-family: 'Source Serif 4', serif; font-size: 15px; outline: none; }
+  .subscribe-form input::placeholder { color: #5a504a; }
+  .subscribe-form input:focus { border-color: var(--accent-soft); }
+  .subscribe-form button { padding: 12px 20px; background: var(--accent); border: none; border-radius: 2px; color: white; font-family: 'Crimson Pro', serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
+  .subscribe-form button:hover { background: var(--accent-soft); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 0.7s ease both; }
+  .article { animation: fadeUp 0.7s 0.15s ease both; }
+  @media (max-width: 600px) { body { font-size: 17px; } .tenth-block { margin: 44px -24px; padding: 44px 28px; } .darrell-block { margin: 44px -24px; padding: 44px 28px; } .chapter-nav { flex-direction: column; } .nav-item.next { text-align: left; } .subscribe-form { flex-direction: column; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-title">A Life of <span>Tender Mercies</span> &nbsp;·&nbsp; Dee Stevens</div>
+</header>
+
+<div class="hero">
+  <span class="series-label">Part One: From the Journals &nbsp;·&nbsp; Orem, Utah</span>
+  <h1>Darrell <em>Fairbanks</em></h1>
+  <div class="byline">
+    <div class="byline-avatar">D</div>
+    <div class="byline-text">
+      <strong>Dee Stevens</strong>
+      Orem, Utah &nbsp;·&nbsp; 1966
+    </div>
+  </div>
+  <div class="ornamental-rule"><span class="ornamental-rule-glyph">&#10022;</span></div>
+</div>
+
+<article class="article">
+
+  <p class="drop-cap">I want to tell you about a hard year, because hard years are part of the record too and because what saved me during this one is worth naming.</p>
+
+  <p>We had moved back to Orem by the time I started the tenth grade. I was sixteen, and sixteen is old enough to know what you want and young enough to have almost none of it. A pretty face with a friendly smile would send me into a state that lasted a day or two. I was looking for a girlfriend and I went through the entire year without finding one. My grades had slipped. I felt behind in ways I couldn't easily explain to anyone.</p>
+
+  <p>There was a crowd at our high school that I wanted to be part of and couldn't quite bring myself to join, not because I wasn't likeable enough but because joining required drinking on weekends and being involved with things I had no interest in and no intention of participating in. So I stood at the edge of that world, wanting to belong to it and refusing to pay the price, and spent a good portion of my sophomore year feeling that nobody liked me and that things were not going particularly well.</p>
+
+  <div class="tenth-block">
+    <div class="tenth-block-inner">
+      <span class="tenth-label">Orem, Utah &nbsp;·&nbsp; Tenth grade, 1966</span>
+      <div class="tenth-text">No girlfriend. Grades slipping. Didn't fit the popular crowd and wouldn't pay what it cost to join.</div>
+      <div class="tenth-text">Part of him wanted to belong. The other part said: be true to yourself. Be true to your principles.</div>
+      <div class="tenth-text">He was constantly depressed and felt that no one liked him.</div>
+      <div class="tenth-text">Then there was Darrell.</div>
+    </div>
+  </div>
+
+  <p>Darrell Fairbanks had been in my life since earlier — we had known each other from the neighborhood, from the ward, from the years of growing up in the same general orbit. But it was during that tenth grade year that the friendship became something closer than brother. He was going through almost exactly what I was going through: the same ideals, the same principles, the same frustrated pursuit of girls who remained stubbornly uninterested, the same refusal to compromise on the things that mattered. We had, in the journal's phrase, totally hopeless crushes on the same girls at the same time.</p>
+
+  <p>We spent many hours together. Talking and listening. Philosophizing, the way sixteen-year-olds philosophize — which is to say seriously and imprecisely, but with genuine effort. Girl problems. Parent problems. The ordinary and the profound tangled together the way they always are at that age.</p>
+
+  <div class="darrell-block">
+    <div class="darrell-block-inner">
+      <span class="darrell-label">What the friendship was</span>
+      <div class="darrell-text">"We had so much in common. Our ideals were the same, our principles — our likes and dislikes. We strengthened each other a lot. Especially when it came to things concerning the gospel and our testimonies of it. We both grew quite strong together during this period."</div>
+    </div>
+  </div>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>I want to sit with that last sentence for a moment, because I think it is one of the most important things in my journal from those years.</p>
+
+  <p>We grew quite strong together. Not one of us pulling the other along. Not a mentor and a student. Two boys in approximately equal difficulty, holding the same things, refusing to let go of them, and finding that the refusal was easier in company than alone. I did not have the language for it then — I do not think I would have said anything as formal as "mutual testimony strengthening" — but that is what it was. We talked about the gospel, and the talking made it more real for both of us.</p>
+
+  <div class="inset-block">
+    <span class="inset-label">What he did not know at sixteen</span>
+    <p>That this is how faith usually works. Not in dramatic conversion moments, not at firesides where something extraordinary is shared, but in the ordinary hours between two people who have decided to take the same things seriously and are willing to say so out loud to each other.</p>
+    <p>The fireside with Stephen Burtenshaw had given him a story he could return to. Darrell Fairbanks gave him something different: a companion for the returning. Someone to be faithful alongside. That is not a small thing. It may be the larger thing.</p>
+  </div>
+
+  <p>The year ended. It had been hard in the ways that tenth grade is hard — privately, persistently, without drama. The girls remained unavailable. The popular crowd remained available at a price I wasn't willing to pay. None of that changed. What changed was that by the end of it, Darrell and I had come through it with our testimonies intact and somewhat stronger than they had been in September, which was not the result I would have predicted in September.</p>
+
+  <div class="pull-quote">
+    <p>"I really don't remember too much of what we said, but I do know that the important thing was the sharing. We strengthened each other a lot."</p>
+  </div>
+
+  <p>I have thought about that year when I have watched my own sons go through the years that are hard for young men — the years of not quite fitting, of wanting things they couldn't have, of holding principles that cost them socially. I have thought: find a Darrell Fairbanks. Find someone going through what you are going through, who is trying to hold the same things, and spend some hours with him. You will not solve each other's problems. You will probably not solve any of them. But you will both come out the other side stronger than you went in, and that is the main thing required.</p>
+
+  <p>The Lord arranges these friendships. I believe that. He knew what that year was costing me, and He arranged for someone to sit in it with me, which turned out to be the only kind of help that actually worked.</p>
+
+  <div class="chapter-note">
+    <strong>A Note for the Grandkids</strong>
+    When Grandpa was sixteen, he had a hard year — no girlfriend, grades slipping, didn't fit in with the popular kids because he wasn't willing to drink or compromise his principles. He spent a lot of that year feeling like nobody liked him. What got him through was a friendship with a boy named Darrell Fairbanks, who was going through almost exactly the same things at the same time — same ideals, same principles, even hopeless crushes on the same girls. They spent hours together talking and listening. Grandpa wrote that he doesn't remember much of what they said, but that the important thing was the sharing. They both came out of that year with their testimonies stronger than when they went in. If you are ever in a hard year, find a Darrell. That's the advice.
+  </div>
+
+</article>
+
+<div class="post-footer">
+  <div class="footer-series">A Life of Tender Mercies &nbsp;·&nbsp; Part One</div>
+  <div class="chapter-nav">
+    <a class="nav-item prev" href="premission-5.html">
+      <div class="nav-label">&larr; Previous</div>
+      <div class="nav-title">The Killer Horse That Wasn't</div>
+    </a>
+    <a class="nav-item next" href="chapter-1.html">
+      <div class="nav-label">Next &rarr;</div>
+      <div class="nav-title">The Summer That Changed Everything</div>
+    </a>
+  </div>
+</div>
+
+<div class="subscribe-bar">
+  <h3>Follow along with Dee's story</h3>
+  <p>New chapters delivered to your inbox, free.</p>
+  <div class="subscribe-form">
+    <input type="email" placeholder="your@email.com">
+    <button>Subscribe</button>
+  </div>
+</div>
+
+</body>
+</html>

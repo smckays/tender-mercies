@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Warm Bread — A Life of Tender Mercies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1612; --ink-soft: #3d3530; --ink-muted: #7a6e68;
+    --paper: #faf7f2; --paper-warm: #f5f0e8;
+    --accent: #8b3a2a; --accent-soft: #c4785f; --rule: #d9d0c4;
+    --bread: #12100a; --bread-pale: #907848; --bread-bright: #e0c888;
+    --porch: #0e0c10; --porch-pale: #686080; --porch-bright: #c0b8d8;
+  }
+  html { scroll-behavior: smooth; }
+  body { background-color: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-weight: 300; font-size: 19px; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+  .masthead { border-bottom: 1px solid var(--rule); padding: 20px 0 18px; text-align: center; background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .masthead-title { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); }
+  .masthead-title span { color: var(--accent); }
+  .hero { max-width: 680px; margin: 0 auto; padding: 72px 24px 0; }
+  .series-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: block; }
+  h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px, 5vw, 52px); font-weight: 600; line-height: 1.15; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 28px; }
+  h1 em { font-style: italic; font-weight: 400; color: var(--ink-soft); }
+  .byline { display: flex; align-items: center; gap: 14px; margin-bottom: 48px; }
+  .byline-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-soft), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 15px; color: white; flex-shrink: 0; }
+  .byline-text { font-family: 'Crimson Pro', Georgia, serif; font-size: 15px; color: var(--ink-muted); line-height: 1.4; }
+  .byline-text strong { color: var(--ink-soft); font-weight: 400; display: block; font-size: 16px; }
+  .ornamental-rule { display: flex; align-items: center; gap: 16px; margin: 0 0 52px; }
+  .ornamental-rule::before, .ornamental-rule::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+  .ornamental-rule-glyph { color: var(--accent-soft); font-size: 18px; }
+  .article { max-width: 680px; margin: 0 auto; padding: 0 24px 80px; }
+  .drop-cap::first-letter { font-family: 'Playfair Display', Georgia, serif; font-size: 5.2em; font-weight: 600; float: left; line-height: 0.72; margin-right: 10px; margin-top: 10px; color: var(--accent); }
+  p { margin-bottom: 1.6em; color: var(--ink-soft); }
+  p:last-child { margin-bottom: 0; }
+  .scene-break { text-align: center; margin: 44px 0; color: var(--accent-soft); font-size: 20px; letter-spacing: 0.4em; }
+  .pull-quote { border-left: 3px solid var(--accent); margin: 44px 0; padding: 4px 0 4px 28px; }
+  .pull-quote p { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-style: italic; line-height: 1.5; color: var(--ink); margin: 0; }
+  .inset-block { background: var(--paper-warm); border: 1px solid var(--rule); border-left: 4px solid var(--accent-soft); padding: 24px 28px; margin: 44px 0; border-radius: 0 2px 2px 0; }
+  .inset-label { font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 400; display: block; }
+  .inset-block p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; font-style: italic; color: var(--ink-soft); line-height: 1.75; margin: 0 0 12px; }
+  .inset-block p:last-child { margin: 0; }
+
+  /* The bread block */
+  .bread-block { background: var(--bread); margin: 52px -24px; padding: 56px 48px; position: relative; overflow: hidden; text-align: center; }
+  .bread-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(144,120,72,0.10) 0%, transparent 65%); }
+  .bread-block-inner { position: relative; z-index: 1; }
+  .bread-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--bread-pale); margin-bottom: 24px; display: block; }
+  .bread-block .bread-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(17px, 2.8vw, 22px); font-style: italic; color: var(--bread-bright); line-height: 1.7; margin: 0 0 14px; }
+  .bread-block .bread-text:last-child { margin: 0; }
+
+  /* The porch */
+  .porch-block { background: var(--porch); margin: 52px -24px; padding: 52px 48px; position: relative; overflow: hidden; text-align: center; }
+  .porch-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(104,96,128,0.08) 0%, transparent 65%); }
+  .porch-block-inner { position: relative; z-index: 1; }
+  .porch-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--porch-pale); margin-bottom: 24px; display: block; }
+  .porch-block .porch-text { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(18px, 3vw, 26px); font-style: italic; color: var(--porch-bright); line-height: 1.6; margin: 0 auto; max-width: 540px; }
+
+  .chapter-note { background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; padding: 24px 28px; margin: 52px 0 0; font-family: 'Crimson Pro', Georgia, serif; font-size: 16px; color: var(--ink-muted); line-height: 1.7; }
+  .chapter-note strong { display: block; font-family: 'Playfair Display', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-style: normal; font-weight: 400; }
+  .post-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 80px; border-top: 1px solid var(--rule); }
+  .footer-series { font-family: 'Crimson Pro', Georgia, serif; font-size: 14px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 20px; }
+  .chapter-nav { display: flex; justify-content: space-between; gap: 20px; }
+  .nav-item { flex: 1; padding: 18px 20px; background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; text-decoration: none; transition: border-color 0.2s; }
+  .nav-item:hover { border-color: var(--accent-soft); }
+  .nav-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .nav-title { font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: var(--ink); line-height: 1.35; }
+  .nav-item.next { text-align: right; }
+  .subscribe-bar { background: var(--ink); padding: 52px 24px; text-align: center; margin-top: 20px; }
+  .subscribe-bar h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 400; color: var(--paper); margin-bottom: 10px; }
+  .subscribe-bar p { font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; color: #9a9088; margin-bottom: 24px; }
+  .subscribe-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; }
+  .subscribe-form input { flex: 1; padding: 12px 16px; background: #2a2420; border: 1px solid #3d3530; border-radius: 2px; color: var(--paper); font-family: 'Source Serif 4', serif; font-size: 15px; outline: none; }
+  .subscribe-form input::placeholder { color: #5a504a; }
+  .subscribe-form input:focus { border-color: var(--accent-soft); }
+  .subscribe-form button { padding: 12px 20px; background: var(--accent); border: none; border-radius: 2px; color: white; font-family: 'Crimson Pro', serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
+  .subscribe-form button:hover { background: var(--accent-soft); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 0.7s ease both; }
+  .article { animation: fadeUp 0.7s 0.15s ease both; }
+  @media (max-width: 600px) { body { font-size: 17px; } .bread-block { margin: 44px -24px; padding: 44px 28px; } .porch-block { margin: 44px -24px; padding: 44px 28px; } .chapter-nav { flex-direction: column; } .nav-item.next { text-align: left; } .subscribe-form { flex-direction: column; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-title">A Life of <span>Tender Mercies</span> &nbsp;·&nbsp; Dee Stevens</div>
+</header>
+
+<div class="hero">
+  <span class="series-label">Part Six: Building a Life &nbsp;·&nbsp; Chapter Thirty-Eight</span>
+  <h1>The Warm <em>Bread</em></h1>
+  <div class="byline">
+    <div class="byline-avatar">D</div>
+    <div class="byline-text">
+      <strong>Dee Stevens</strong>
+      Orem, Utah &nbsp;·&nbsp; Fall 2023
+    </div>
+  </div>
+  <div class="ornamental-rule"><span class="ornamental-rule-glyph">&#10022;</span></div>
+</div>
+
+<article class="article">
+
+  <p class="drop-cap">After Kathy was buried, the meals started arriving. Day after day, sometimes evening after evening, people from the ward would leave food on the porch. I would come home to find a casserole dish covered in foil, a plate of cookies, a pot of soup still warm from someone's stove. I accepted all of it gratefully. It was exactly the right thing for them to do and I knew it, even as I sat eating alone at a table that had always had someone across from it.</p>
+
+  <p>After a few months I began to feel bad about the imbalance of it. People were being generous to me in a way I had done nothing to earn, and I was giving nothing back. I am not constitutionally suited to being on the receiving end indefinitely. Kathy was — she accepted love as gracefully as she gave it, which is a gift I have always admired and never quite managed. For me there is always the pull to be useful, to be doing something, to be hoing to the end of the row even when the row is just getting through a November evening by yourself.</p>
+
+  <p>I thought about what I could do for people. I am not a cookie baker. I do not have Kathy's particular ease in the kitchen. But I had an idea.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>My theory was simple: receiving warm bread is essentially the same experience as receiving chicken soup. It is not about the bread. It is about someone deciding you were worth the trouble of making something warm and bringing it to you. The warmth is the message. The loaf is just the vehicle.</p>
+
+  <p>Rhodes frozen dough is extraordinarily forgiving. You thaw it, you let it rise, you bake it, and what comes out is something that smells like a kitchen that is loved and in use. I am not claiming to be a baker. I am claiming that Rhodes dough and an oven are within the reach of a seventy-three-year-old man who is trying to give something back.</p>
+
+  <div class="bread-block">
+    <div class="bread-block-inner">
+      <span class="bread-label">Orem, Utah &nbsp;·&nbsp; October 2023 through New Year's</span>
+      <div class="bread-text">Rhodes dough. Let it rise. Bake it warm.</div>
+      <div class="bread-text">Over sixty loaves delivered by New Year's. Then pies. Then cinnamon rolls.</div>
+      <div class="bread-text">"It helped take the sting out of being so alone."</div>
+    </div>
+  </div>
+
+  <p>I started in October, not long after the burial. By the time New Year's arrived I had delivered over sixty loaves. I expanded my repertoire as I went — pies came next, then cinnamon rolls. I would package them up and leave them on porches after dark, or knock and hand them over directly, depending on the person and what I thought they needed. A few people figured out immediately that it was me. Others seemed genuinely surprised. I liked it either way.</p>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>I want to be honest about what was driving this, because it was not entirely altruism. Service, in my experience, is often a two-directional thing — the person who receives it gets the meal, and the person who gives it gets the reason to get out of the recliner and do something. I needed the reason. The evenings alone were long in a way I had not been prepared for, and having somewhere to be and something to deliver gave the evenings a shape they otherwise lacked.</p>
+
+  <div class="inset-block">
+    <span class="inset-label">What he had learned about service</span>
+    <p>Back in the 1980s, during the months after his first marriage ended and he was living in a friend's home in Kearns, he had started making soup — buying a stewpot and leaving it quietly on the doorsteps of neighbors who were having hard times. He thought no one knew it was him. People probably knew. Nobody said anything.</p>
+    <p>The soup had helped him get through that season. The bread helped him get through this one. He had learned the lesson once already, forty years before. It still worked.</p>
+  </div>
+
+  <p>Kathy would have understood this immediately and approved. She spent her whole life doing exactly this kind of thing — finding someone who needed something and figuring out what she had to give them. The bread campaign was not me becoming Kathy. It was me trying, in my own limited way, to inhabit the same impulse she had lived by naturally for forty-two years.</p>
+
+  <div class="pull-quote">
+    <p>"I am not a cookie baker. But warm bread is within reach of anyone who is paying attention to the people around them and willing to go to the trouble."</p>
+  </div>
+
+  <div class="scene-break">· · ·</div>
+
+  <p>There is a theological dimension to this that I have thought about. The Lord, throughout my life, has sent people to my door with what I needed. The nurse who noticed the soaking pillow. The state official who saw the bruises. The neighbor who was a policeman. The angel who put hundred-dollar bills in the Christmas tree. Cobe Peay on a Sunday morning. Over and over, someone has shown up at my door or my bedside or my staircase with exactly what the moment required.</p>
+
+  <p>I have been the recipient of this kind of attention for seventy-four years. The bread was my attempt to be on the other end of it for a while — to be the one who showed up, who noticed, who went to the trouble. The Lord has always used ordinary people doing ordinary things to take care of His children. Sixty loaves of Rhodes bread is as ordinary as it gets. That seemed about right.</p>
+
+  <div class="porch-block">
+    <div class="porch-block-inner">
+      <span class="porch-label">Orem, Utah &nbsp;·&nbsp; October 2023</span>
+      <div class="porch-text">"My theory was that receiving warm bread was similar to getting chicken soup. It helped to take the sting out of being so alone."</div>
+    </div>
+  </div>
+
+  <p>Winter came. The bread kept going out. The evenings were still long, but they had a purpose in them, which is not the same as not being hard. It was enough. I have learned, at this age, that enough is often exactly what the Lord provides — not more than enough, not comfort that erases the difficulty, but sufficient. Bread enough for the evening. Company enough to get through the dark. Faith enough to believe that the morning is coming.</p>
+
+  <p>It always has been, so far.</p>
+
+  <div class="chapter-note">
+    <strong>A Note for the Grandkids</strong>
+    After Grandma Kathy's burial, people brought Grandpa meals for months. He accepted them gratefully and then started to feel bad about having nothing to give back. He is not a cookie baker. But he figured out that warm bread does the same thing as chicken soup — it tells the person receiving it that someone went to the trouble for them. So starting in October 2023 he began baking Rhodes frozen bread dough and delivering loaves to friends and family around Orem. By New Year's he had delivered over sixty loaves. Then he added pies. Then cinnamon rolls. He left them on porches after dark, or knocked and handed them over. He said it helped take the sting out of being so alone. He had done something similar with soup forty years earlier, after his first marriage ended. The lesson still worked.
+  </div>
+
+</article>
+
+<div class="post-footer">
+  <div class="footer-series">A Life of Tender Mercies &nbsp;·&nbsp; Part Six</div>
+  <div class="chapter-nav">
+    <a class="nav-item prev" href="chapter-33.html">
+      <div class="nav-label">&larr; Previous</div>
+      <div class="nav-title">Not Really Alone</div>
+    </a>
+    <a class="nav-item next" href="chapter-34.html">
+      <div class="nav-label">Next &rarr;</div>
+      <div class="nav-title">The Floor</div>
+    </a>
+  </div>
+</div>
+
+<div class="subscribe-bar">
+  <h3>Follow along with Dee's story</h3>
+  <p>New chapters delivered to your inbox, free.</p>
+  <div class="subscribe-form">
+    <input type="email" placeholder="your@email.com">
+    <button>Subscribe</button>
+  </div>
+</div>
+
+</body>
+</html>
