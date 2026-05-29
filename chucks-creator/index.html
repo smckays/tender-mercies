@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Chuck's Creator!</title>
+  <meta name="description" content="Chuck's Creator — build characters and scenes from a catalog of assets, spend ChuckBux at the store, and give your creation to Chuck!" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='52' r='44' fill='%23f5891f'/><circle cx='40' cy='46' r='8' fill='white'/><circle cx='60' cy='46' r='8' fill='white'/><circle cx='40' cy='47' r='4'/><circle cx='60' cy='47' r='4'/></svg>" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="title">CHUCK'S<small>Creator!</small></div>
+    <div class="wallet" title="Your ChuckBux and Prizes">
+      <span class="coin">🪙</span><span id="cbCount">25</span>&nbsp;CB
+      <span class="prizes">&nbsp;·&nbsp;★ <span id="prizeCount">0</span></span>
+    </div>
+    <button id="signBtn" class="sign open" title="The store only sells when the sign says OPEN">Sign: OPEN!</button>
+  </header>
+
+  <div class="layout">
+    <!-- Stage / board -->
+    <section class="stage-wrap">
+      <div class="stage-toolbar">
+        <button id="giveBtn" class="btn primary">🎁 Give it to Chuck!</button>
+        <span id="itemTools" class="item-tools" style="display:none">
+          <button id="biggerBtn" class="btn">➕ Bigger</button>
+          <button id="smallerBtn" class="btn">➖ Smaller</button>
+          <button id="frontBtn" class="btn">⬆ Front</button>
+          <button id="deleteBtn" class="btn danger">🗑 Delete</button>
+        </span>
+        <span style="flex:1"></span>
+        <button id="clearBgBtn" class="btn">Clear Background</button>
+        <button id="resetBtn" class="btn">Start Over</button>
+      </div>
+      <div id="stage" class="stage">
+        <div id="bgLayer" class="bg-layer"></div>
+        <div id="emptyHint" class="empty-hint">
+          Tap things in Chuck's Store →<br />to add them to your board.<br />Drag to move, then "Give it to Chuck!"
+        </div>
+      </div>
+    </section>
+
+    <!-- Store -->
+    <aside class="store">
+      <div class="store-head">
+        <h2>Chuck's Store</h2>
+        <p>CB = ChuckBux. CB-0 is free. ★ PRIZE items need a Prize (earn one when Chuck approves your work!).</p>
+      </div>
+      <div id="tabs" class="tabs"></div>
+      <div id="catalog" class="catalog"></div>
+    </aside>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast"></div>
+
+  <!-- Give-it-to-Chuck dialog -->
+  <div id="modalBack" class="modal-back">
+    <div class="modal">
+      <div id="chuckArt" class="chuck"></div>
+      <h2 id="chuckLine">Approved!</h2>
+      <p id="chuckReward"></p>
+      <button id="modalOk" class="btn primary">Yay! Keep creating</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
