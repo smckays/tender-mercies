@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>In Memoriam · A Life of Tender Mercies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1612; --ink-soft: #3d3530; --ink-muted: #7a6e68;
+    --paper: #faf7f2; --paper-warm: #f5f0e8;
+    --accent: #8b3a2a; --accent-soft: #c4785f; --rule: #d9d0c4;
+  }
+  html { scroll-behavior: smooth; }
+  body { background-color: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-weight: 300; font-size: 19px; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+
+  /* Masthead */
+  .masthead { border-bottom: 1px solid var(--rule); padding: 20px 0 18px; text-align: center; background: var(--paper); position: sticky; top: 0; z-index: 100; }
+  .masthead-title { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); }
+  .masthead-title span { color: var(--accent); }
+
+  /* Section header */
+  .section-hero { max-width: 680px; margin: 0 auto; padding: 72px 24px 0; text-align: center; }
+  .section-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 12px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; display: block; }
+  .section-title { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(36px, 6vw, 56px); font-weight: 600; line-height: 1.1; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 16px; }
+  .section-subtitle { font-family: 'Crimson Pro', Georgia, serif; font-size: 18px; font-style: italic; color: var(--ink-muted); margin-bottom: 52px; }
+  .ornamental-rule { display: flex; align-items: center; gap: 16px; margin: 0 0 64px; }
+  .ornamental-rule::before, .ornamental-rule::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+  .ornamental-rule-glyph { color: var(--accent-soft); font-size: 18px; }
+
+  /* Tribute cards */
+  .tributes-list { max-width: 680px; margin: 0 auto; padding: 0 24px 80px; }
+  .tribute { margin-bottom: 80px; }
+  .tribute:last-child { margin-bottom: 0; }
+  .tribute-byline { display: flex; align-items: center; gap: 16px; margin-bottom: 36px; }
+  .tribute-avatar { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-soft), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 18px; color: white; flex-shrink: 0; }
+  .tribute-meta strong { font-family: 'Playfair Display', Georgia, serif; font-size: 18px; font-weight: 400; color: var(--ink); display: block; }
+  .tribute-meta span { font-family: 'Crimson Pro', Georgia, serif; font-size: 14px; color: var(--ink-muted); letter-spacing: 0.06em; }
+  .tribute-body p { margin-bottom: 1.6em; color: var(--ink-soft); }
+  .tribute-body p:last-child { margin-bottom: 0; }
+  .tribute-body .drop-cap::first-letter { font-family: 'Playfair Display', Georgia, serif; font-size: 5.2em; font-weight: 600; float: left; line-height: 0.72; margin-right: 10px; margin-top: 10px; color: var(--accent); }
+  .lyric { border-left: 3px solid var(--rule); margin: 32px 0; padding: 4px 0 4px 24px; font-family: 'Playfair Display', Georgia, serif; font-size: 17px; font-style: italic; color: var(--ink-muted); line-height: 1.75; }
+  .lyric-attr { font-family: 'Crimson Pro', Georgia, serif; font-size: 13px; font-style: normal; color: var(--accent-soft); display: block; margin-top: 6px; letter-spacing: 0.06em; }
+  .tribute-divider { border: none; border-top: 1px solid var(--rule); margin: 80px 0 0; }
+
+  /* Nav */
+  .post-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 80px; border-top: 1px solid var(--rule); }
+  .footer-series { font-family: 'Crimson Pro', Georgia, serif; font-size: 14px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 20px; }
+  .chapter-nav { display: flex; justify-content: space-between; gap: 20px; }
+  .nav-item { flex: 1; padding: 18px 20px; background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; text-decoration: none; transition: border-color 0.2s; }
+  .nav-item:hover { border-color: var(--accent-soft); }
+  .nav-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .nav-title { font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: var(--ink); line-height: 1.35; }
+  .nav-item.next { text-align: right; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .section-hero { animation: fadeUp 0.7s ease both; }
+  .tributes-list { animation: fadeUp 0.7s 0.15s ease both; }
+  @media (max-width: 600px) { body { font-size: 17px; } .chapter-nav { flex-direction: column; } .nav-item.next { text-align: left; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-title">A Life of <span>Tender Mercies</span> &nbsp;·&nbsp; Dee Stevens</div>
+</header>
+
+<div class="section-hero">
+  <span class="section-label">In Memoriam</span>
+  <div class="section-title">Tributes</div>
+  <p class="section-subtitle">Words from those who loved him</p>
+  <div class="ornamental-rule"><span class="ornamental-rule-glyph">&#10022;</span></div>
+</div>
+
+<div class="tributes-list">
+
+  <!-- TRIBUTE: ADAM STEVENS -->
+  <div class="tribute" id="adam">
+    <div class="tribute-byline">
+      <div class="tribute-avatar">A</div>
+      <div class="tribute-meta">
+        <strong>Adam Stevens</strong>
+        <span>Son &nbsp;·&nbsp; Pleasant Grove, Utah</span>
+      </div>
+    </div>
+    <div class="tribute-body">
+
+      <p class="drop-cap">It was perhaps only a month or two before his passing that I learned my dad had been writing a memoir of his life. In the days leading up to his passing, and for several days afterward, I had been giving quite a bit of thought to what I would talk about if I were to speak at the funeral. In the midst of exchanging ideas for funeral plans and the program, I had the thought that my contributions to memorializing my dad could — or rather should — take the form of a written dedication in his memoir instead.</p>
+
+      <p>My mind has not raced with countless thoughts and an overflow of memories. I have shed some tears in private moments of reflection, I have shared tears of sorrow with my grieving family, but my mind has been focused on remembering my dad in some very specific ways. One of those ways is music.</p>
+
+      <p>Growing up, we can all recall countless nights lying in bed while dad sat in a chair in the hall, playing and singing songs while we went to sleep. Then we would hear those songs in the car, on the radio, on cassette, and many of his favorite songs became my favorite songs and still are to this day. The refrains of John Denver have been a part of my heart and soul for my whole life because of the bedtime songs and campfire singalongs. When I think of the passion with which my dad lived his life, poured himself into his work, served God and others, and made sure we spent plenty of family time at the cabin and sitting next to a lake, I can't help but hear:</p>
+
+      <div class="lyric">
+        "Give him the love of a good family and a woman of his own. Give him a fire in his heart, give him a light in his eyes, give him a wild wind for a brother in the wild Montana skies."
+        <span class="lyric-attr">John Denver</span>
+      </div>
+
+      <div class="lyric">
+        "Joy was just the thing that he was raised on. Love was just a way to live and die. Gold was just the windy Kansas wheatfields, and blue was just the Kansas summer sky."
+        <span class="lyric-attr">John Denver</span>
+      </div>
+
+      <div class="lyric">
+        "If I had a day that I could give you, I'd give to you a day just like today. If I had a song that I could sing for you, I'd sing a song to make you feel this way… If I had a wish that I could wish for you, I'd make a wish for sunshine all the while."
+        <span class="lyric-attr">John Denver</span>
+      </div>
+
+      <div class="lyric">
+        "Perhaps love is like a window, perhaps an open door. It invites you to come closer, it wants to show you more. And even if you lose yourself and don't know what to do, the memory of love will see you through."
+        <span class="lyric-attr">John Denver</span>
+      </div>
+
+      <p>I will cherish forever a brief recording of my dad singing along with my aunt Anne, who went to visit and play her guitar for him on one of his final days. Though he struggled to recall the words:</p>
+
+      <div class="lyric">
+        "To sail on a dream on crystal clear ocean, to ride on the crest of a wild raging storm. To work in the service of life and the living, in search of the answers to questions unknown. To be part of the movement and part of the growing, part of beginning to understand. Aye Calypso, the places you've been to, the things that you've shown us, the stories you tell. Aye Calypso, I sing to your spirit the men who have served you so long and so well."
+        <span class="lyric-attr">John Denver, "Calypso"</span>
+      </div>
+
+      <p>As I grew older my musical experiences with my dad grew into participating in the ward choir together. One of the ways I learned how to sing was sitting next to my dad in church and hearing him sing the tenor line, pointing to the notes as we went along so I could hear and see what I was supposed to be singing. It prepared me for choir at school and gave me confidence that I could contribute to something beautiful that would enrich the lives of other people.</p>
+
+      <p>Ward choir was something my dad clung to devoutly for as long as he possibly could. Even at Christmas in 2025, when he couldn't get on the stand in the chapel on his own, let alone stand up straight with the rest of the choir, he was there behind the pulpit singing with his ward choir — probably for the last time. One song stands out in my mind above all the others. At my dad's request it was chosen to be sung by the ward choir at my mom's funeral in 2023.</p>
+
+      <div class="lyric">
+        "Oh holy Jesus, oh holy Jesus, most merciful redeemer. May I know thee more clearly, love thee more dearly, and follow thee more nearly day by day."
+      </div>
+
+      <p>I still know every note and phrase by heart. I told him about my wish to have sung it with him that day and he expressed the same regret. So to the reader: take advantage of those chances to expand upon your shared memories and experiences with your loved ones, so you don't have to watch them turn into regrets later.</p>
+
+      <p>One thing my dad shared with me long ago was that he had a favorite song as a missionary — a text from Alma 29, expressing his desire to be a great missionary:</p>
+
+      <div class="lyric">
+        "Oh that I were an angel, and could have the wish of mine heart, that I might go forth and speak with the trump of God, with a voice to shake the earth, and cry repentance unto every people!"
+        <span class="lyric-attr">Alma 29:1</span>
+      </div>
+
+      <p>This desire to do his Heavenly Father's will not only stayed with him but grew stronger over the years of his life. I believe he did have the wish of his heart and spoke with the "trump of God," and he was blessed with the voice — as well as the tenderness of an earthly father — to do so.</p>
+
+      <p>The other primary way I have thought to remember my dad is as my lifelong fishing partner. Since I've lived farther away for the last ten years it's been more challenging, but in August 2024 I learned the other brothers were taking their kids fishing with grandpa at Mill Hollow, one of his favorite spots. So I packed my boys into the truck and we showed up and surprised everyone. For some of the kids it may have been their first time, and for me it was the last time fishing with him.</p>
+
+      <p>I remember being a young boy and learning how to fish — sitting quietly at lakes, fishing stealthily on the Santa Clara, American Fork Canyon, the Provo River. I learned how to tie all my knots and set up my line early on so he could just enjoy fishing with me instead of having to do all my work for me. In more recent years, as he lost agility in his fingers, I found myself tying his knots, rigging his line, baiting his hooks, cleaning his fish. And I was happy to do it — because I was still fishing with my dad. We went full circle doing one of our favorite things, and I'll always cherish it.</p>
+
+      <p>One of the core themes of this memoir is Tender Mercies. Like the rest of us, my dad was not a perfect human being, but his faithfulness, obedience, and humility certainly invited the tender mercies of the Lord into his life. Having lost a father as a young man about to return from his mission, then to lose a daughter — his firstborn child — at the age of ten, and to later endure the losses of other loved ones, illness, and declining physical health — only to endure and endure and endure each and every time. As far as I know he never lost an ounce of faith.</p>
+
+      <p>When my mom was going through her trials with brain cancer, he told us that she was leaning into Jesus, and "Lean into Jesus" became a family theme. She made the choice to lean into Jesus during her last great trial, strengthening her own testimony all along the way. I believe that in his own way, he too had to lean into Jesus to come to terms with his own physical trials that would ultimately lead to the end of his life.</p>
+
+      <p>In recent months he expressed concern to one of the brothers about what kind of legacy he would be leaving. I am proud to say that the most important legacy both of my parents left is one that boldly bears testimony of faith through trials, love of the gospel of Jesus Christ, service and sacrifice for others, and humbly enduring to the end. My parents' legacy was truly worthy of the tender mercies of the Lord.</p>
+
+      <p>We now face a difficult time of saying goodbye to dad, to grandpa, brother, uncle, friend. But the tender mercies have not stopped. He was blessed to pass peacefully in his sleep. I told my kids he went to sleep one night, and he woke up to Grandma Kathy. After 43 years he got to hold his Keri Lyn again, and I can only imagine that he has yet to let go of her for even a second. His parents, Merlin and Barbara. Jared, Ben, Ed, and little Elora. The happy reunions are easy to number and easy to look for comfort in.</p>
+
+      <p>The last time I visited him and gave him a hug goodbye, I found myself letting my head rest on his shoulder for a few extra moments as we embraced the best we could with him confined to a chair. Somewhere inside of me I knew that would be the last time I would see him, hear him, talk to him, hug him, and tell him "I love you dad." Strangely enough, that thought brought me peace.</p>
+
+      <p>The other thing that brought me peace was learning that he pranked Mckay, David, Daniel, and Michael by shouting that one of them was standing on his oxygen hose — before confessing "Just kidding" from inside the bathroom. Classic.</p>
+
+      <div class="lyric">
+        "I thank you for the music and your stories of the road. I thank you for the freedom when it came my time to go. I thank you for the kindness and the times when you got tough. And papa, I don't think I said I love you near enough. The leader of the band is tired and his eyes are growin' old, but his blood runs through my instrument and his song is in my soul. My life has been a poor attempt to imitate the man. I'm just a living legacy to the leader of the band."
+        <span class="lyric-attr">Dan Fogelberg, "Leader of the Band"</span>
+      </div>
+
+      <p>May all who read this memoir, even if it's just in part, find inspiration, strength, comfort, joy, peace, and laughter by the voice of dearly departed Dee Merlin Stevens — that his final written words may serve as his "voice to shake the earth" and to be like "the trump of God" to those whose souls desire it.</p>
+
+      <p>I know I would be remiss if I didn't close with one final thought on my dad's musical legacy:</p>
+
+      <div class="lyric">
+        "Giddy-up a-oom papa oom papa mow-mow, hi-ho Silver, away!"
+      </div>
+
+    </div>
+  </div>
+  <!-- END TRIBUTE: ADAM -->
+
+</div>
+
+<div class="post-footer">
+  <div class="footer-series">A Life of Tender Mercies &nbsp;·&nbsp; In Memoriam</div>
+  <div class="chapter-nav">
+    <a class="nav-item prev" href="obituary.html">
+      <div class="nav-label">&larr; Previous</div>
+      <div class="nav-title">Dee Merlin Stevens</div>
+    </a>
+    <a class="nav-item next" href="contents.html">
+      <div class="nav-label">Contents &rarr;</div>
+      <div class="nav-title">Table of Contents</div>
+    </a>
+  </div>
+</div>
+
+</body>
+</html>

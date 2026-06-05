@@ -47,7 +47,15 @@
 
   .closing { background: var(--ink); padding: 52px 24px; text-align: center; margin-top: 52px; }
   .closing p { font-family: 'Playfair Display', Georgia, serif; font-size: 18px; font-style: italic; color: #d0c8c0; line-height: 1.7; max-width: 540px; margin: 0 auto; }
-  @media (max-width: 600px) { body { font-size: 17px; } }
+  .post-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 60px; border-top: 1px solid var(--rule); }
+  .footer-series { font-family: 'Crimson Pro', Georgia, serif; font-size: 14px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 20px; }
+  .chapter-nav { display: flex; justify-content: space-between; gap: 20px; }
+  .nav-item { flex: 1; padding: 18px 20px; background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 2px; text-decoration: none; transition: border-color 0.2s; }
+  .nav-item:hover { border-color: var(--accent-soft); }
+  .nav-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .nav-title { font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: var(--ink); line-height: 1.35; }
+  .nav-item.next { text-align: right; }
+  @media (max-width: 600px) { body { font-size: 17px; } .chapter-nav { flex-direction: column; } .nav-item.next { text-align: left; } }
 </style>
 </head>
 <body>
@@ -242,6 +250,20 @@
 
 <div class="closing">
   <p>He caught up.<br>May 22, 2026.</p>
+</div>
+
+<div class="post-footer">
+  <div class="footer-series">A Life of Tender Mercies &nbsp;·&nbsp; In Memoriam</div>
+  <div class="chapter-nav">
+    <a class="nav-item prev" href="chapter-34.html">
+      <div class="nav-label">&larr; Previous</div>
+      <div class="nav-title">The Floor</div>
+    </a>
+    <a class="nav-item next" href="tributes.html">
+      <div class="nav-label">Next &rarr;</div>
+      <div class="nav-title">Tributes</div>
+    </a>
+  </div>
 </div>
 
 </body>
